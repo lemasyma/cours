@@ -1,11 +1,12 @@
 ---
-layout: post
-title:  CAMA : ma01
-date:   2020-03-30 10:00
-tags:   CAMA Shannon
+layout:     post
+mathjax:    true
+comments:   true
+title:      "CAMA : ma01"
+date:       2020-03-30 10:00
+tags:       CAMA Shannon
 description: Transformations isometriques
 ---
-
 ```python=
 angle = np.array([θ for θ in np.linspace(-np.pi/2,np.pi/2,7)])
 shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]), 
