@@ -96,8 +96,8 @@ Rα(θ) @ Sx @ Rα(-θ)
 > Ce n'est pas non plus une **transformation isométrique**.
 {: .note .warning}
 
-* Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
-* On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
+Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
+On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
 
 > La translation par le vecteur $(v_1, v_2)$ est : 
 > $$T(X) = 
@@ -113,12 +113,14 @@ Rα(θ) @ Sx @ Rα(-θ)
 > \end{bmatrix}$$
 {: .note .danger}
 
+
 ~~~python
 v = np.array([1,2])
 
 T = np.identity(3) # matrice de translation
 T[0:2,2] = v
 ~~~
+
 ~~~
 Matrice de translation:
  [[1. 0. 1.]
