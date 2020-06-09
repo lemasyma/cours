@@ -1,6 +1,7 @@
 ---
 layout:     post
 mathjax:    true
+permalink:  https://hackmd.io/@lemasymasa/rk6uMXBnL
 title:      "CAMA : ma01"
 date:       2020-03-30 10:00
 tags:       CAMA Shannon
