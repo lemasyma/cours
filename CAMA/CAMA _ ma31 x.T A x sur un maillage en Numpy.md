@@ -1,0 +1,117 @@
+# CAMA : ma31 x.T A x sur un maillage en Numpy
+# Cours du 17/05
+
+## Calculons $x^TAx$ avec Numpy
+Nous voulons tracer la courbe, avec $x\in\mathbb{R}^2$ :
+$$
+J_A(x) = x^TAx
+$$
+On prendra $x\in\mathbb{R}^n$ plus tard.
+:::info
+Pour une valeur de $x$ le calcul est `x.T @ A @ x`, mais on veut faire ce calcul pour un ensemble de $x$
+:::
+:::danger
+On construit un **maillage**: un ensemble de point $x$ pour lesquels on calculera $J_A(x)$
+:::
+On utilise `np.meshgrid`
+```python=
+x = np.linspace(-1,1,3) # retourne des nombres espaces egalement dans un intervalle specifie
+y = np.linspace(-1,2,4)
+
+mesh = np.meshgrid(x,y) # donne les x puis les y du maillage
+M = np.array(mesh)
+M = M.transpose([1,2,0])
+```
+```
+shape of M: (4, 3, 2)
+M = array([[[-1., -1.],
+        [ 0., -1.],
+        [ 1., -1.]],
+
+       [[-1.,  0.],
+        [ 0.,  0.],
+        [ 1.,  0.]],
+
+       [[-1.,  1.],
+        [ 0.,  1.],
+        [ 1.,  1.]],
+
+       [[-1.,  2.],
+        [ 0.,  2.],
+        [ 1.,  2.]]])
+```
+Pour calculer $x^TAx$, on commence par calculer $x^TA$ pour tous points du maillage. On utilise la matrice identité pour vérifier nos calculs.
+
+### Cas avec $A = 2*Id$
+```python=
+A = 2 * np.diag([1, 1]) # Construit un array diagonal
+MA = np.einsum("ijk, ka -> ija", M, A) # Notation d'Einstein
+```
+```
+MA = array([[[-2., -2.],
+        [ 0., -2.],
+        [ 2., -2.]],
+
+       [[-2.,  0.],
+        [ 0.,  0.],
+        [ 2.,  0.]],
+
+       [[-2.,  2.],
+        [ 0.,  2.],
+        [ 2.,  2.]],
+
+       [[-2.,  4.],
+        [ 0.,  4.],
+        [ 2.,  4.]]])
+```
+:::success
+On retrouve `2*M`.
+:::
+
+
+On peut vérifier sur un certain point:
+```python=
+M[0,1] @ A
+```
+```
+array([ 0., -2.])
+```
+:::info
+Notez qu'on a écrit $xA$ et non $x^TA$. Lorsqu'on a un vecteur, Numpy privilégie le produit matrice vecteur qui donne un vecteur. Ainsi: `m[0,1] @ A == m[0,1].T @ A`
+:::
+Si on veut une différence entre un vecteur vertical et horizontal, il faut utiliser des `arrays` 2D de taille `1*n` ou `n*1`
+```python=
+np.einsum("ijk, ijk -> ij", MA, M)   # comme k n'est pas dans le résultat, c'est sur lui qu'on fait la somme
+```
+```
+array([[ 4.,  2.,  4.],
+       [ 2.,  0.,  2.],
+       [ 4.,  2.,  4.],
+       [10.,  8., 10.]])
+```
+:::success
+Comme A est la matrice identité x2, on retrouve pour tout point sa norme au carré
+:::
+## Optimisons :`np.tensordot`
+:::danger
+Un tensor est une matrice en N dimensions.
+:::
+Comparons les temps de calcul.
+```python=
+%timeit np.einsum("ijk, ijk -> ij", np.einsum("ijk, ka -> ija", M, A), M)
+```
+```
+135 µs ± 2.56 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+```
+```python=
+%%timeit                              # pour calculer le temps d'execution de toute la cellule %%
+
+MA = np.tensordot(M, A, axes=(2,1))   # on somme sur l'axe 2 de M (les points) et l'axe 1 de A (les colonnes)
+np.einsum("ijk, ijk -> ij", MA, M)   
+```
+```
+102 µs ± 1.2 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+```
+:::info
+On peut avoir un gain de temps 30% et plus ou un peu moins bien que einsum
+:::
