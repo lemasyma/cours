@@ -3,7 +3,7 @@ layout:     post
 mathjax:    true
 comments:   true
 title:      "CAMA : Derivees partielles"
-date:       2020-24-05 10:00
+date:       2020-05-24 10:00
 tags:       Shannon CAMA
 description: Fiche sur les derivees partielles
 ---
