@@ -49,5 +49,6 @@ markdown: kramdown
 kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: true
+  mathjax: true
 
 exclude: ['README.md', 'LICENSE']
