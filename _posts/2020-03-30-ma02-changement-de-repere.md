@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  CAMA : ma02
+mathjax:    true
+comments:   true
+title:  "CAMA : ma02"
 date:   2020-03-30 10:00
 tags:   CAMA Shannon
 description: Changement de repere

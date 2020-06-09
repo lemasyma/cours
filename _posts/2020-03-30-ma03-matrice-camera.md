@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  CAMA : ma03
+mathjax:    true
+comments:   true
+title:  "CAMA : ma03"
 date:   2020-03-30 10:00
 tags:   Shannon CAMA
 description: Matrice Camera
