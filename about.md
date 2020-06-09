@@ -4,23 +4,16 @@ title: About
 
 ---
 
-# Bienvenue sur le resume des conferences de la semaine du 20 janvier
-
-**Attention: les conferences obligatoires sont celles des Shannon**
+# Bienvenue sur ma collection de notes de cours
 
 ## Home
-Vous retrouverez la les conferences les plus recentes, classees par ordre chronologique
+Vous retrouverez les notes de cours les plus recentes.
 
 ## Archive
-Listes toutes les conferences dont j'ai deja pris notes.
+Listes tous les cours disponibles.
 
 ## Tags
-~je m'en sert pas encore, peut-etre plus tard si j'ai pas la flemme~
-Au final je les ai utilises, ils sont tous disponibles dans la categorie tag,
-comme ca ca sera beaucoup plus simple pour retrouver une conference.
-
-## About
-Je... eh... Je dois vraiment expliquer?
+Je les utilise pour regrouper les cours sous differents categories (pratique quand tu sais pas qu'est-ce qui est un electif)
 
 ## Copyright
 Le theme que j'utilise s'appelle [Jekyll Clean Dark](https://github.com/streetturtle/jekyll-clean-dark).
