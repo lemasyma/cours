@@ -6,9 +6,6 @@ tags:   CAMA Shannon
 description: Transformations isometriques
 ---
 
-# CAMA : ma01 Transformations isometriques
-# Cours du 30 / 03
-
 ```python=
 angle = np.array([θ for θ in np.linspace(-np.pi/2,np.pi/2,7)])
 shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]), 
