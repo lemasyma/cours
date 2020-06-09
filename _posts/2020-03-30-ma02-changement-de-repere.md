@@ -1,3 +1,11 @@
+---
+layout: post
+title:  CAMA : ma02
+date:   2020-03-30 10:00
+tags:   CAMA Shannon
+description: Changement de repere
+---
+
 # CAMA : ma02 Changement de repere
 # Cours du 30 / 03
 

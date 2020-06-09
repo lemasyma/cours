@@ -1,4 +1,11 @@
-# CAMA : ma04 Vectors propres
+---
+layout: post
+title:  CAMA : ma04
+date:   2020-03-30 10:00
+tags:   Shannon CAMA
+description: Vecteurs propres
+---
+# CAMA : ma04 Vecteurs propres
 # Cours du 30 / 03
 
 Soit A une matrice qui représente une application linéaire quelconque. Que se passe-t-il si on l'applique $n$ fois ?

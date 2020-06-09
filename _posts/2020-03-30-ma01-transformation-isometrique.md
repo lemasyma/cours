@@ -2,7 +2,7 @@
 layout: post
 title:  CAMA : ma01
 date:   2020-03-30 10:00
-tags:   CAMA
+tags:   CAMA Shannon
 description: Transformations isometriques
 ---
 

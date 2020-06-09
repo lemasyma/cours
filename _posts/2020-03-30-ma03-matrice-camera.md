@@ -1,3 +1,11 @@
+---
+layout: post
+title:  CAMA : ma03
+date:   2020-03-30 10:00
+tags:   Shannon CAMA
+description: Matrice Camera
+---
+
 # CAMA : ma03 Matrice Camera
 # Cours du 30 / 03
 

@@ -1,3 +1,11 @@
+---
+layout: post
+title:  CAMA : ma32
+date:   2020-17-05 10:00
+tags: Shannon CAMA
+description: Méthode du gradiant pour système matriciel
+---
+
 # CAMA : ma32 Méthode du gradiant pour système matriciel
 # Cours du 17/05
 
