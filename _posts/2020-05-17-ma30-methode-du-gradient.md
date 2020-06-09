@@ -2,7 +2,7 @@
 layout: post
 mathjax:    true
 comments:   true
-title:  CAMA : ma30
+title:  "CAMA : ma30"
 date:   2020-05-17 10:00
 tags:   Shannon CAMA
 description: Optimisation - Méthode du gradient
