@@ -1,3 +1,11 @@
+---
+layout: post
+title:  CAMA : ma01
+date:   2020-03-30 10:00
+tags:   CAMA
+description: Transformations isometriques
+---
+
 # CAMA : ma01 Transformations isometriques
 # Cours du 30 / 03
 
