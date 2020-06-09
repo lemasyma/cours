@@ -30,7 +30,7 @@ Si on calcule ${\bf x^k}$ comme avant on a l'orthogonnalité de 2 directions suc
 $$
 J({\bf x}^{k+1}) = \min_{\bf v \in G_k} J({\bf x}^k + {\bf v})
 $$
-avec ${\bf G_k} = span\{{\bf d}^0, {\bf d}^1,\dots, {\bf d}^k\} =  \left\{ {\bf v} = \sum_{i=0}^{k} \alpha_i \, {\bf d}^i \quad \forall \alpha_i \in ℝ \right\}$.
+avec ${\bf G_k} = span\{ {\bf d}^0, {\bf d}^1,\dots, {\bf d}^k \} =  \left\{ {\bf v} = \sum_{i=0}^{k} \alpha_i \, {\bf d}^i \quad \forall \alpha_i \in ℝ \right\}$.
 :::danger
 Toutes les dérivées partielles par rapport aux vecteurs de ${\bf G_k}$ sont nulles :
 $$
