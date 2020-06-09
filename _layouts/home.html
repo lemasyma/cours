@@ -1,0 +1,36 @@
+---
+layout: page
+---
+
+{% for post in site.posts limit:10 %}
+<h2 class="post-title">
+    <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+    </a>
+</h2>
+
+<div class="post-meta">
+    <div class="post-time">
+        <i class="fa fa-calendar-alt"></i>
+        <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
+    </div>
+    <ul>
+        {% for tag in post.tags %}
+        <li><a href="{{'/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="post-descr">
+    <p>
+        {{ post.description }}
+    </p>
+</div>
+{% endfor %}
+
+
+<div class="post-footer">
+    <div class="column-full">
+        <h3><a href="{{ 'archive' | relative_url }}">Blog archive</a></h3>
+    </div>
+</div>

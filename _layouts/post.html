@@ -1,0 +1,47 @@
+{% include header.html %}
+    <div class="wrapper">
+      <div class="content">
+        <div class="container container-center">
+          <div class="row">
+            <div class="col-md-8 offset-md-1">
+              <div class="article">
+                <div class="card">
+                  <h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+                  <div class="post-meta">
+                    <div class="post-time">
+                      <i class="fa fa-calendar-alt"></i>
+                      <time>{{ page.date | date_to_string }}</time>
+                    </div>
+                    <ul>
+                      {% for tag in page.tags %}
+                        <li><a href="{{ '/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="post-content">
+                    {% if page.toc %}
+                      {% include toc.html html=content class='toc' %}
+                    {% endif %}
+                    {{ content }}
+                    {% include share.html %}
+                  </div>
+                  {% if page.comments %}
+                  <div id="disqus_thread">
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 hidden-xs">
+              {% include sidebar.html %}
+            </div>
+          </div>
+        </div>
+        {% include disqus-comments.html %}
+      </div>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

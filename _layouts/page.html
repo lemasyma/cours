@@ -1,0 +1,21 @@
+{% include header.html %}
+
+    <div class="wrapper">
+      <div class="content">
+        <div class="container container-center">
+          <div class="row">
+            <div class="col-md-8 offset-md-1">
+              <div class="card">
+                {{ content }}
+              </div>
+            </div>
+            <div class="col-md-3 hidden-xs">
+              {% include sidebar.html %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
