@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  CAMA : ma04
+mathjax:    true
+comments:   true
+title:  "CAMA : ma04"
 date:   2020-03-30 10:00
 tags:   Shannon CAMA
 description: Vecteurs propres

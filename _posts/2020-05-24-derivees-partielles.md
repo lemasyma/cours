@@ -1,3 +1,13 @@
+---
+layout:     post
+mathjax:    true
+comments:   true
+title:      "CAMA : Derivees partielles"
+date:       2020-24-05 10:00
+tags:       Shannon CAMA
+description: Fiche sur les derivees partielles
+---
+
 # CAMA : Dérivées partielles
 ## Les fonctions
 * Une fonction $f$ est dite **scalaire** lorsque son espace d'arrivée est $\mathbb{R}$.

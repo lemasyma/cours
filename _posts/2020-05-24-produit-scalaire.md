@@ -1,3 +1,13 @@
+---
+layout:     post
+mathjax:    true
+comments:   true
+title:      "CAMA : Ecriture du produit scalaire"
+date:       2020-05-24 10:00
+tags:       CAMA Shannon
+description: Ecriture du produit scalaire
+---
+
 # CAMA : Ecriture du produit scalaire
 :::warning
 Attention a l'écriture du produit scalaire !

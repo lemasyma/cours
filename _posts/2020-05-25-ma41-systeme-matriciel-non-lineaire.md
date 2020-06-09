@@ -1,3 +1,14 @@
+---
+layout:     post
+mathjax:    true
+comments:   true
+title:      "CAMA : ma41"
+date:       2020-05-25 10:00
+tags:       CAMA Shannon
+description: Système matriciel non linéaire
+---
+
+
 # CAMA : ma41 Système matriciel non linéaire
 # Cours du 25 / 05
 
