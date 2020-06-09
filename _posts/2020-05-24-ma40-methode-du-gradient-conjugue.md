@@ -3,7 +3,7 @@ layout:     post
 mathjax:    true
 comments:   true
 title:      "CAMA : ma40"
-date:       2020-24-05 10:00
+date:       2020-05-24 10:00
 tags:       Shannon CAMA
 description: Méthode du gradiant conjugué
 ---
