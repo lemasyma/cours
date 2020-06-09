@@ -7,16 +7,16 @@ date:       2020-03-30 10:00
 tags:       CAMA Shannon
 description: Transformations isometriques
 ---
-```python=
+python=
 angle = np.array([θ for θ in np.linspace(-np.pi/2,np.pi/2,7)])
 shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]), 
                          np.array([[-0.5, -1, -1, -1], [1, 1, 0.5, 0]]),
                          np.array([[-0.5, 0], [-0.5, -1]])], axis=1)
-```
-```
+
+
 [[ 0.     0.5    0.866  1.     0.866  0.5    0.    -0.5   -1.    -1.    -1.    -0.5    0.   ]
  [-1.    -0.866 -0.5    0.     0.5    0.866  1.     1.     1.     0.5    0.    -0.5   -1.   ]]
-```
+
 ![](https://i.imgur.com/mDwFYuu.png)
 ## Matrice de rotation centrée en $(0, 0)$
 {% highlight scss %}
@@ -31,18 +31,18 @@ shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]),
 * Effectue une rotation de centre (0,0) et d'angle θ
 * Déterminant = 1
 * Matrice orthogonale $\rightarrow$ pas de déformation ni d'agrandissement de la forme (automorphisme orthogonal)
-```python=
+python=
 θ = np.pi / 4
 
 R = np.array([[np.cos(θ), -np.sin(θ)], [np.sin(θ), np.cos(θ)]])
-```
-```
+
+
 [[ 0.707 -0.707]
  [ 0.707  0.707]]
-```
-```python=
+
+python=
 R @ shape1 # multiplication de matrices
-```
+
 ![](https://i.imgur.com/5gX0s31.png)
 * Matrice orthogonale donc (par définition) $R.R^T = \textrm{Id}$.
 * La transposée est la rotation d'angle -θ puisque sinus est une fonction impaire.
@@ -64,7 +64,7 @@ $$
 S = R_{-α}^{-1}\; Sx\; R_{-α} = R_α\;Sx\; R_{-α}
 $$
 :::
-```python=
+python=
 def Rα(α):
     return np.array([[np.cos(α), -np.sin(α)], [np.sin(α), np.cos(α)]])
 
@@ -73,16 +73,16 @@ Sx = np.array([[1, 0],[0,-1]])
 θ = 70 * (2 * np.pi)/360  # 70 degrés
 
 Rα(θ) @ Sx @ Rα(-θ) @ shape1
-```
+
 ![](https://i.imgur.com/6xoIcP1.png)
 La rotation selon l'angle est :
-```python=
+python=
 Rα(θ) @ Sx @ Rα(-θ)
-```
-```
+
+
 [[-0.766  0.643]
  [ 0.643  0.766]]
-```
+
 
 ## Translation
 :::warning
@@ -108,23 +108,23 @@ x_2 \\
 1 \\
 \end{bmatrix}$$
 :::
-```python=
+python=
 v = np.array([1,2])
 
 T = np.identity(3) # matrice de translation
 T[0:2,2] = v
-```
-```
+
+
 Matrice de translation:
  [[1. 0. 1.]
  [0. 1. 2.]
  [0. 0. 1.]]
-```
-```python=
+
+python=
 shape1_3d = np.concatenate([shape1, np.ones((1, len(shape1[0])))], axis=0) 
 # rajoute une nouvelle dimension à la matrice pour la translation
 T @ shape1_3d
-```
+
 ![](https://i.imgur.com/mDN8rHe.png)
 :::info
 La matrice inverse replacant la forme orange à sa position d'origine applique la transition $-\textbf{v} = (-1,-2)$.
