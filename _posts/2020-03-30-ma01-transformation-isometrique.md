@@ -19,13 +19,11 @@ shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]),
 
 ![](https://i.imgur.com/mDwFYuu.png)
 ## Matrice de rotation centrée en $(0, 0)$
-{% highlight scss %}
 > $$R = \begin{bmatrix}
 > cos(θ) & -sin(θ) \\
 > sin(θ) & cos(θ)  \\
 > \end{bmatrix}$$
 {: .note .danger}
-{% endhighlight %}
 
 ### Propriétés
 * Effectue une rotation de centre (0,0) et d'angle θ
