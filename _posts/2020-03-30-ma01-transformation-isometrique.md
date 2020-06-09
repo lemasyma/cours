@@ -1,7 +1,6 @@
 ---
 layout:     post
 mathjax:    true
-comments:   true
 title:      "CAMA : ma01"
 date:       2020-03-30 10:00
 tags:       CAMA Shannon
@@ -96,8 +95,8 @@ Rα(θ) @ Sx @ Rα(-θ)
 > Ce n'est pas non plus une **transformation isométrique**.
 {: .note .warning}
 
-Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
-On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
+* Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
+* On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
 
 > La translation par le vecteur $(v_1, v_2)$ est : 
 > $$T(X) = 
@@ -135,6 +134,7 @@ T @ shape1_3d
 ~~~
 
 ![](https://i.imgur.com/mDN8rHe.png)
+
 > La matrice inverse replacant la forme orange à sa position d'origine applique la transition $-\textbf{v} = (-1,-2)$.
 > $$T^{-1} = 
 > \begin{bmatrix}
