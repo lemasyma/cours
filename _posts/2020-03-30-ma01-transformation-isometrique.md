@@ -31,11 +31,13 @@ shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]),
 * Effectue une rotation de centre (0,0) et d'angle θ
 * Déterminant = 1
 * Matrice orthogonale $\rightarrow$ pas de déformation ni d'agrandissement de la forme (automorphisme orthogonal)
+
 ~~~ python
 θ = np.pi / 4
 
 R = np.array([[np.cos(θ), -np.sin(θ)], [np.sin(θ), np.cos(θ)]])
 ~~~
+
 ~~~
 [[ 0.707 -0.707]
  [ 0.707  0.707]]
@@ -86,14 +88,17 @@ Rα(θ) @ Sx @ Rα(-θ)
 ~~~
 
 ## Translation
+
 > La translation ne peut pas etre exprimée avec un produit matriciel car ce n'est pas une **application linéaire :**
 > $$
 > T(2\;\textbf{x}) \ne 2\; T(\textbf{x})
 > $$
 > Ce n'est pas non plus une **transformation isométrique**.
 {: .note .warning}
+
 * Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
 * On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
+
 > La translation par le vecteur $(v_1, v_2)$ est : 
 > $$T(X) = 
 > \begin{bmatrix}
@@ -107,7 +112,8 @@ Rα(θ) @ Sx @ Rα(-θ)
 > 1 \\
 > \end{bmatrix}$$
 {: .note .danger}
- ~~~python
+
+~~~python
 v = np.array([1,2])
 
 T = np.identity(3) # matrice de translation
@@ -136,8 +142,10 @@ T @ shape1_3d
 > \end{bmatrix}$$
 > Ce n'est pas la transposée de T, T n'est pas **orthogonale**.
 {: .note}
+
 Il y a 2 types d'isométries : 
 * l'isométrie *vectorielle* ou *automorphisme orthogonal* : $\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$ et conserve les angles
 * l'isométrie *geométrique* : $\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$.
+
 > La translation est une isométrie geométrique mais pas vectorielle, c'est un **automorphisme orthogonal**.
 {: .note}
