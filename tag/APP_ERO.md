@@ -1,4 +1,4 @@
 ---
 layout: tag_index
-tag: `APP ERO`
+tag: APP_ERO
 ---
