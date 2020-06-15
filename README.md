@@ -1,2 +1,2 @@
 # Cours
-Rassemblement des differents cours Shannon, note papiers re-ecrites en hackmd
+Rassemblement des differents cours du tronc commun, Shannon et electifs
