@@ -13,8 +13,8 @@ tags: Shannon partiels
 
 |Lundi 13 juillet|Mardi 14 juillet|Mercredi 15 juillet|Jeudi 16 juillet|Vendredi 17 juillet|
 |:--------------:|:--------------:|:------------------:|:--------------:|:-----------------:|
-|                |                |SEDE<br/>10h00      |                |CAMA<br/>10h00-11h30|
-|                |                |TRSE<br/>14h00      |                |                   |
+|                |                |SEDE<br/>10h00-11h30|                |CAMA<br/>10h00-11h30|
+|                |                |TRSE<br/>14h00-14h45|                |                   |
 
 |Lundi 20 juillet|Mardi 21 juillet|Mercredi 22 juillet|Jeudi 23 juillet|Vendredi 24 juillet|
 |:--------------:|:--------------:|:-----------------:|:--------------:|:-----------------:|
