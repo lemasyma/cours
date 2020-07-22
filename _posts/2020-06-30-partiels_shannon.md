@@ -18,6 +18,6 @@ tags: Shannon partiels
 
 |Lundi 20 juillet|Mardi 21 juillet|Mercredi 22 juillet|Jeudi 23 juillet|Vendredi 24 juillet|
 |:--------------:|:--------------:|:-----------------:|:--------------:|:-----------------:|
-|ASE1<br/>10h00-11h30||LOFO<br/>LOGI2<br/>FMSI\_E<br/>10h00-11h00||JANGU<br/>SOCRA<br/>SEDE2<br/>10h00|
+|ASE1<br/>10h00-11h30||LOFO<br/>LOGI2<br/>FMSI\_E<br/>10h00-11h00||JANGU<br/>SOCRA<br/>SEDE2<br/>10h00-11h30|
 |ANFI<br/>14h00-15h00||RESE<br/>14h00-15h00||DRG1<br/>14h00-15h00|
 |BGEN<br/>15h30-16h30||RXAN<br/>MOB2<br/>15h30-16h30|||
