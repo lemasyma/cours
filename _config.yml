@@ -5,7 +5,7 @@ theme: jekyll-theme-chirpy
 
 # Only if your site type is GitHub Project sites and doesn't have a custom domain,
 # change below value to '/projectname'.
-baseurl: '/cours'
+baseurl: '/jekyll-theme-chirpy'
 
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
 lang: fr-FR
@@ -17,7 +17,7 @@ timezone: Europe/Paris
 # --------------------------
 title: Cours                          # the main title
 
-tagline: Cours parfois en francais, parfois en anglais, parfois les deux   # it will display as the sub-title
+tagline: Deso pour le manque d'accents, je suis en qwerty   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Plusieurs notes de cours, ecrit par une etudiante en PLS qui a uniquement un clavier QWERTY
