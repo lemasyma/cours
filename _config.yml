@@ -17,7 +17,7 @@ timezone: Europe/Paris
 # --------------------------
 title: Cours                          # the main title
 
-tagline: Deso pour le manque d'accents, je suis en qwerty   # it will display as the sub-title
+tagline: Certains cours sont en francais, certains sont en anglais, d'autres sont un mix des deux   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Plusieurs notes de cours, ecrit par une etudiante en PLS qui a uniquement un clavier QWERTY
