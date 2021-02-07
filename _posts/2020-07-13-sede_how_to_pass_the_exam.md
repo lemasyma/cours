@@ -3,6 +3,7 @@ layout:         external
 title:          "SEDE : How to pass the exam?"
 external_url:   https://hackmd.io/@lemasymasa/BJpweJ5kw
 date:           2020-07-13 15:00
-tags:           SEDE tronc_commun
+categories:     [S6, tronc commun, SEDE]
+tags:           [S6, SEDE, tronc commun]
 description: Les conseils pour pouvoir valider le partiel
 ---

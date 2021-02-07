@@ -1,54 +1,177 @@
-# Jekyll configuration
+# The Site Configuration
 
-name: Cours
-description: Toutes mes notes de cours prises sur ordinateur
+# Import the theme
+theme: jekyll-theme-chirpy
 
-# Url is currently only used only for the RSS feed in feed.xml
-url: https://lemasyma.github.io/cours/
-#url: http://localhost:4000
+# Only if your site type is GitHub Project sites and doesn't have a custom domain,
+# change below value to '/projectname'.
+baseurl: '/cours'
 
-# For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: 'cours/'
+# the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
+lang: fr-FR
 
-share:
-  facebook: true
-  twitter: true
-  gplus: true
-  linkedin: true
-  pinterest: true
-  email: true
+# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzontimezone: Asia/Shanghai
+timezone: Europe/Paris
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# --------------------------
+title: Cours                          # the main title
+
+tagline: Deso pour le manque d'accents, je suis en qwerty   # it will display as the sub-title
+
+description: >-                        # used by seo meta and the atom feed
+  Plusieurs notes de cours, ecrit par une etudiante en PLS qui a uniquement un clavier QWERTY
+
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+url: 'https://lemasyma.github.io'
+
+author: lemasyma                  # change to your full name
+
+github:
+  username: lemasyma             # change to your github username
+
+twitter:
+  username: twitter_username            # change to your twitter username
 
 social:
-  github: lemasyma
-  stackoverflow:
-  linkedin:
-  instagram:
-  lastfm:
-  rss: feed.xml
+  name: lemasyma                  # it will shows as the copyright owner in Footer
+  email: example@doamin.com             # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+    - https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/username       # change to your github homepage
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+    # - https://www.linkedin.com/in/username
 
-# Google Analytics key, leave blank to ignore
-google_analytics_key:
-# Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
-yandex_metrica:
+google_site_verification: google_meta_tag_verification # change to your verification string
+# --------------------------
 
+google_analytics:
+  id: ''          # Fill with your Google Analytics ID
+  pv:
+    # The Google Analytics pageviews switch.
+    # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
+    enabled: false
+    # the next options only valid when `google_analytics.pv` is enabled.
+    proxy_url: ''
+    proxy_endpoint: ''
+    cache: false  # pv data local cache, good for the users from GFW area.
 
-# Set this to your disqus shortname to enable comments. Note that the 'comments'
-# setting below must also be true. Individual posts can override 'comments' to
-# disable on a post-by-post basis
-disqus: lemasyma
-comments: false
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light  - Use the light color scheme
+#     dark   - Use the dark color scheme
+#
+theme_mode:   # [light|dark]
 
-permalink: /:year/:month/:title/
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn: ''
 
-# Enable for using pages, more details are here: http://jekyllrb.com/docs/pagination/
-#paginate: 3
+# the avatar on sidebar, support local or CORS resources
+avatar: assets/img/favicons/logo.png
 
-#highlighter: rouge
+# boolean type, the global switch for ToC in posts.
+toc: true
+
+disqus:
+  comments: false  # boolean type, the global switch for posts comments.
+  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+
+paginate: 10
+
+# ------------ The following options are not recommended to be modified ------------------
 
 markdown: kramdown
 kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: true
   mathjax: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-exclude: ['README.md', 'LICENSE']
+# DO NOT change this unless you're a Pro user on Jekyll and Web development,
+# Or you think you're smart enough to change other relevant URLs within this template.
+permalink: /posts/:title/
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+
+defaults:
+  -
+    scope:
+      path: ''          # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      comments: true    # Enable comments in posts.
+      toc: true         # Display TOC column in posts.
+  -
+    scope:
+      path: _drafts
+    values:
+      comments: false
+  -
+    scope:
+      path: ''
+      type: tabs             # see `site.collections`
+    values:
+      layout: page
+      permalink: /:title/
+      dynamic_title: true    # Hide title in mobile screens.
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - '*.gem'
+  - '*.gemspec'
+  - tools
+  - docs
+  - README.md
+  - LICENSE
+  - gulpfile.js
+  - node_modules
+  - package.json
+  - package-lock.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

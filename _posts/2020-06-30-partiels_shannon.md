@@ -3,7 +3,7 @@ layout: post
 title: "Partiels Shannon"
 date: 2020-06-30 00:05
 description: Emploi du temps des partiels Shannon
-tags: Shannon partiels
+tags: [Shannon, partiels]
 ---
 
 |Lundi 6 juillet|Mardi 7 juillet|Mercredi 8 juillet|Jeudi 9 juillet|Vendredi 10 juillet|
