@@ -30,6 +30,7 @@ sin(θ) & cos(θ)  \\
 * Effectue une rotation de centre (0,0) et d'angle θ
 * Déterminant = 1
 * Matrice orthogonale $\rightarrow$ pas de déformation ni d'agrandissement de la forme (automorphisme orthogonal)
+
 ``` python
 θ = np.pi / 4
 
@@ -136,8 +137,8 @@ $$T^{-1} =
 Ce n'est pas la transposée de T, T n'est pas **orthogonale**.
 </div>
 Il y a 2 types d'isométries : 
-* l'isométrie *vectorielle* ou *automorphisme orthogonal* : $\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$ et conserve les angles
-* l'isométrie *geométrique* : $\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$.
+* l'isométrie *vectorielle* ou *automorphisme orthogonal* : $$\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$$ et conserve les angles
+* l'isométrie *geométrique* : $$\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$$.
 <div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
 La translation est une isométrie geométrique mais pas vectorielle, c'est un **automorphisme orthogonal**.
 </div>
