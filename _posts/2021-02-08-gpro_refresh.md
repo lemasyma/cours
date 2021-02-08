@@ -9,7 +9,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkITr20ed)
 
 Refresh du cours de GPRO de l'ing1
 # What is a Project ?
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert" markdown="1">
 Un projet est une entreprise **temporaire** initiee dans le but de fournir un produit, un service ou un resultat unique.
 </div>
 Exemple:
@@ -20,7 +20,7 @@ Exemple:
 * Mobile Ap
 * Web Site
 
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 NOT a project: Operations
 </div>
 
@@ -42,7 +42,7 @@ A quoi ca nous sert le project management ?
 ![](https://i.imgur.com/hDnNidS.png)
 
 # Parties prenantes - Stakeholders
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert" markdown="1">
 Toute personne ayant une influence sur le projet
 </div>
 Dans les parties prenantes:
@@ -73,7 +73,7 @@ Execute/control:
 * Decoupe en lots de travaux
 * Partage le travail
 
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert" markdown="1">
 Predictive car on prevoit tout des le depart.
 </div>
 
@@ -164,7 +164,7 @@ Product Scope (Perimetre Produit) pour un logiciel applicatif:
 * Contraintes (techniques, de qualite, projet)
 
 ## Exigence fonctionnelle
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert" markdown="1">
 Ce que le client attend comme fonction de notre produit
 </div>
 
@@ -173,13 +173,13 @@ Exemples pour une application:
 * Permet de rejoindre un groupe de discussiom
 * Permet de prendre RDV
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 Exigence fonctionnelle **N'EST PAS** une specifite fonctionnelle.
 </div>
 
 ## Get the product scope
 Situation 1: Customer team provides fully Documented Product/Project Scope
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 Dev team reviews the Scope with appropriate Product Owner
 </div>
 
@@ -192,7 +192,7 @@ Dev team reviews the Scope with appropriate Product Owner
 
 # Agile Methodology: The product backlog
 ## User story
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 En tant que `<qui>`, je veux `<quoi>` afin de `<pourquoi>`.
 </div>
 
@@ -222,7 +222,7 @@ Dans la methode Predictive, un cahier des charges ou un tableau des exigences, o
 ## Take scope definition result as INPUT
 ![](https://i.imgur.com/Qp8jK39.png)
 
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 Work Breakdown Structure: WBS
 Work Package: WB
 </div>
@@ -236,7 +236,7 @@ One WBS for Presence:
 # Defining activities
 Amount of work that can be estimated
 
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 Need for expert judgement
 </div>
 
@@ -248,12 +248,12 @@ Presence 1-POC
 ![](https://i.imgur.com/9mRTA3m.png)
 
 # Resources
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 Need for expert judgement
 </div>
 
 # Duration
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 Need for expert judgement
 </div>
 * Estimate
@@ -266,7 +266,7 @@ Need for expert judgement
 Construite via Microsoft project
 ![](https://i.imgur.com/eMCUAI9.png)
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 En resume, en decoupant l'ensemble des productions a realiser et le travail qu'elles representent.
 
 Puis apres estimation, en repartissant dans le temps ces activites.
@@ -290,7 +290,7 @@ L'affectation des points doit etre fait par l'equipe de developpement.
 
 ![](https://i.imgur.com/xmHA2i4.png)
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 En resume,
 Vous avez convenu dans le Productbacklog le perimetre de la release a realiser.
 
@@ -307,7 +307,7 @@ Vous avez decompose cette release en N Sprints d'un poids equivalent pouvant etr
 ![](https://i.imgur.com/DPx7uQW.png)
 
 ## Des prerequis avant de commencer le developpement Sprint 0 ?
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" markdown="1">
 Each Sprint Starts with: **SPRINT PLANNING**
 </div>
 ![](https://i.imgur.com/oGmk6Y0.png)
@@ -346,7 +346,7 @@ Bien s'accorder sur les moyens (canaux, convocation, calendrier) pour fluidifier
 # Executing in Predictive/Classic Project Management
 Baseline to control
 
-<div class="alert alert-success" role="alert">
+<div class="alert alert-success" role="alert" markdown="1">
 In predictive just follow the plan but lot of unexpected events
 </div>
 Mettre en place un cadre de communication pour controler le dev du projet
@@ -366,7 +366,7 @@ Mettre en place un cadre de communication pour controler le dev du projet
 ![](https://i.imgur.com/1DBZjBV.png)
 
 # Plan & Execute/control
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert" markdown="1">
 Individual project risk an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives
 </div>
 
@@ -393,7 +393,7 @@ Dans ce cas le rouge et noir, en bleu on ignore, en jaune on regarde un peu en d
 * **Mitigate**
     * Action is taken to **reduce** the probability and/or impact of a threat
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" markdown="1">
 En resume,
 * Identifiez les risques qui peuvent affecter le projet
 * Filtrez pour ne conserver que les plus significatifs
