@@ -8,7 +8,7 @@ description: Système matriciel non linéaire
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJ8QNnfh8)
 # Cours du 25 / 06
 
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Si la matrice $A$ dépend de ${\bf x}$ (noté $A({\bf x})$), alors le système matriciel 
 $$
 A({\bf x)x = b}
@@ -47,7 +47,7 @@ $$
 *Comment résoudre un tel système ?*
 
 ## La méthode du point fixe
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La méthode du point fixe consiste à appliquer l'algorithme itératif suivant : 
 $$
 {\bf x}^{k+1} = g({\bf x}^k)
@@ -61,12 +61,12 @@ pour résoudre $g({\bf x}) = {\bf x}$.
 ***Est-ce que $g({\bf x}^k)^k$ converge ?***
 * Si $\bf{x_0} \lt {\bf \bar x_2}$ : $\lim_{k\to+\infty} = {\bf \bar x_1}$
 * Si $\bf{x_0} \gt {\bf \bar x_2}$ : $\lim_{k\to+\infty} = +\infty$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Selon le point de départ, la méthode converge ou diverge.
 </div>
 
 ### La méthode du point fixe pour résoudre $A({\bf x)x = b}$
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On doit définir une fonction $g$ telle que la solution de $J({\bf x}) = {\bf x}$ soit la solution du système matriciel non linéaire : 
 $$
 g({\bf x}) = A^{-1}({\bf x}) \, {\bf b}
@@ -128,20 +128,20 @@ for i in range(1, 10):
 ...
 x^9 =  [1.00876429 1.98253948]
 ```
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 La convergence est rapide (9 iterations). L'inertie augmente le rayon de convergence : plus $\mu$ est petit plus le rayon de convergence est grand.
 </div>
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Pour trouver les autres solutions il faut choisir un autre point initial.
 </div>
 
 ## La méthode de Newton-Raphson
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 $$
 {\bf x}^{k+1} = {\bf x} - \frac{f({\bf x_n})}{f'({\bf x_n})}
 $$
 </div>
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La méthode de Newton est une méthode de point fixe.
 $$
 {\bf x}^{k+1} = g({\bf x}^k)
@@ -197,7 +197,7 @@ for i in range(30):
 x^29 =  [2.05693134 1.05693134]
 ```
 On converge (moins vite) où la methode du point fixe oscille sans converger.
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 * Le coût de la construction de la matrice Jacobienne peut être tres élevé.
 * Pour aller plus vite on peut recalculer la matrice toutes les 3 iterations ou plus.
 * Il s'agit d'une matrice pleine qui rend compliqué la resolution du systeme (une methode de gradient ne marchera pas)

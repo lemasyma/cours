@@ -10,7 +10,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByMD5LGTL)
 
 ## La simulation numérique
 ![](https://i.imgur.com/ztx6iDL.jpg)
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Pour faire cette image, on transforme des **équations physique** en **systèmes matriciels** ou les inconnues sont définies en chaque point d'un maillage a définir.
 </div>
 Dans ce cas l'inconnue est la pression et le maillage est une boîte imaginaire comprenant l'avion et l'air qui circule autour.
@@ -37,15 +37,15 @@ f_{10^9} \\
 \end{bmatrix}
 $$
 Cela prendrait 300 000 ans à inverser la matrice.
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 **Inverser une matrice ou résoudre par une méthode directe n'est pas la bonne solution pour résoudre un grand système matriciel.**
 </div>
 ## Méthodes itératives
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Les méthodes itératives s'approchent pas à pas de la solution recherchée et permettent de trouver une approximation de ${\bf x}$ dans $A\, {\bf x} = b$.
 </div>
 On arrête le calcul lorsqu'on est à une distance choisie de la solution, appelée **l'erreur.**
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 **On cherchera jamais à avoir une erreur plus petite que notre précision maximale**.
 </div>
 On a une formule $\; {\bf x}^{t+1} = B \, {\bf x}^t + {\bf c}\;$ ou en Python:
@@ -57,14 +57,14 @@ while np.square(x - old_x) > seuil:
     x = B @ x + c
 ```
 
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Si ${\bf x}$ converge on a atteint un point fixe, c.a.d ${\bf x}^{t+1} = {\bf x}^t$ et donc 
 
 $${\bf x}^t = B \, {\bf x}^t + {\bf c} \quad \textrm{c.a.d.} \quad (Id -B) \, {\bf x}^t = {\bf c}$$
 </div>
 
 ## Méthode de Jacobi
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La méthode de Jacobi découpe la matrice A en M et N avec
 
 * $M$ : matrice diagonale des éléments de la diagonale de $A$
@@ -129,7 +129,7 @@ x_17 = [6.531 3.45  1.255 6.35 ]
 x_18 = [-4.891 -1.608  0.728 -4.704]
 x_19 = [7.277 3.779 1.29  7.073]
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Ca ne converge pas.
 </div>
 2e essai :
@@ -175,7 +175,7 @@ x_18 = [1. 1. 1. 1.]
 x_19 = [1. 1. 1. 1.]
 ```
 ### Pourquoi le 2e cas marche ?
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Pour qu'une méthode itérative du type  ${\bf x} = B\; {\bf x} + {\bf c}$  converge il faut au choix :
 * $\rho(B) < 1\quad$ 
     * $\rho$ : le rayon spectral (la plus grande valeur propre en valeur absolue)

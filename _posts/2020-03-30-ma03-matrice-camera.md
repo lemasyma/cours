@@ -8,7 +8,7 @@ description: Matrice Camera
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJDGOYDhL)
 # Cours du 30 / 03
 
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Calculons l'image que genere une camera :
 * positionnee en $(c_x, c_y, c_z)$
 * regardant dans la direction $(v_x, v_y, v_z)$
@@ -16,7 +16,7 @@ Calculons l'image que genere une camera :
 * avec une focale $f$
 </div>
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On a pour tout point $X$ de l'espace sa position $x$ sur l'image donnée par 
 
 $$
@@ -42,7 +42,7 @@ Le but est de trouver $P$.
 * celui de la camera en 3D
 
 ## Focale
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On représente la focale comme la distance entre l'origine est la position virtuelle de l'image 2D.
 </div>
 ![](https://i.imgur.com/FW5BVZV.png)
@@ -64,10 +64,10 @@ f X_y \\
 X_z \\
 \end{bmatrix}
 $$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 C'est presque le resultat recherche, on a $x$ a un facteur $X_z$ pret.
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Pour garantir $x_z = 1$ on ajoute une normalisation : 
 </div>
 ``` python
@@ -88,10 +88,10 @@ def normalize(x):
 ```
 
 ## Changement de repère
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 L'axe principal de la camera est $z$, soit $x$ dans le repere du monde 3D. On choisit comme repère inital de la caméra : $(x,y,z)_{cam} = (y, z, x)_{3D}$.
 </div>
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La matrice de passage est:
 $$ X_{cam} = 
 \begin{bmatrix}
@@ -119,7 +119,7 @@ f & 0 & 0 & 0 \\
 $$
 
 ## Translation de la caméra
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Si la camera est en $(c_x, c_y, c_z)$ et non en $(0, 0, 0)$, c'est une **translation :**
 
 $$T = 
@@ -134,14 +134,14 @@ $$
 
 ## Axe principal de la caméra
 On change la direction de la camera et son axe principal n'est plus $x$ du monde 3D.
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Pour pointer un vecteur 3D dans une direction, il faut 2 rotations autour de 2 axes orthogonaux a notre vecteur. En 2D il suffit d'une rotation autour de $z$.
 </div>
 Pour diriger la camera dans une direction $v$, les rotations se font autour des axes $z$ et $y$ du monde: 
 * la rotation horizontale $\psi$ tourne autour de $z$
 * la rotation verticale $\phi$ tourne autour de $y$
 
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 $$D = 
 \begin{bmatrix}
 cos(\phi) & 0 & sin(\phi) & 0 \\

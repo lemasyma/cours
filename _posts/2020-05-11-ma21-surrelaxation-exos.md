@@ -167,7 +167,7 @@ def gauss_seidel_r(A, b, x0, w=0.5, n=100):
     return np.array(values)
 ~~~
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 [L'algorithme](https://en.wikipedia.org/wiki/Successive_over-relaxation) de Wikipedia est difficile alire, lent et il s'agit de Jacobi avec relaxation et non Gauss-Seidel avec relaxation, il est tout ce qu'il ne faut pas faire.
 </div>
 
@@ -350,7 +350,7 @@ plot_convergences(gauss_seidel_r(A, b, x0, w=0.36, n=100), np.ones(4))
 Itération du minimum : 99 99
 ~~~
 ![](https://i.imgur.com/LzqNE9B.png)
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Trouver la valeur optimale de $\omega$ doit bien sûr pouvoir être fait rapidement. Pour certains problèmes particulier on connait la formule qui donne le $\omega$ optimal, sinon il faut utiliser des heuristiques sans garanties.
 </div>
 </details>

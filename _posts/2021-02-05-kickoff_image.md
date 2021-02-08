@@ -9,7 +9,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJIxzY9ed)
 # Cours
 ![](https://i.imgur.com/SpTAjrV.png)
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Tous les cours sont TD/TP
 </div>
 
@@ -35,10 +35,10 @@ Tous les cours sont TD/TP
 * 6h TD/TP
 * Sur zoom
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Cours de Olivier Ricou en distanciel
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert" markdown="1">
 Olivier Ricou ouvert aux remarques **constructives**
 </div>
 
@@ -64,7 +64,7 @@ Olivier Ricou ouvert aux remarques **constructives**
 * Elody presente plus avance et en python
     * Evalue par projet
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Projet communs a plusieurs matieres pour des projets plus avances et moins de projets a completer, charge de travail plus legere
 </div>
 Pour tous les modules doit etre fourni une note a l'adm
@@ -103,17 +103,17 @@ Pour tous les modules doit etre fourni une note a l'adm
     * Pas le droit de faire du deep learning
     * Seulement traitement d'image classique
 
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 20h de cours de spe/semaine, 4j de cours sur 5, journee remplie 3h de cours le matin et 3h l'aprem, avoir des creneaux libres pour avancer sur les projets
 </div>
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Peut rajouter des heures en plus (soutenance, etc.)
 </div>
 L'an dernier les etudiants on pas eu de soutenance, juste rendre projet/video prez, dur de faire un retour personnalise.
 Cette annee repasse sous un systeme de soutenance pour les projets, pas de rapport mais presentation (et soutenance de mini-projets).
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Si on nous donne un projet a faire pour dans 2 mois, veut pas dire que 2 mois de boulot mais 2 mois pour s'organiser et etaler la charge de travail.
 </div>
 
@@ -194,7 +194,7 @@ Organisation
 * Cette annee: creneaux
     * Mise au point avec Elodie
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Si l'entreprise ne donne plus de signe de vie, contacter Elodie **directement**.
 </div>
 
@@ -209,7 +209,7 @@ Les chefs de majeure ne seront pas sur le Discord
 
 # Les roles
 ## Les delegues
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 2 delegues, a elire avant mercredi 10/02, trait d'union entre l'adm et les chefs de majeure
 </div>
 * Communiquer avec les chefs de majeure, leur transferer les mails

@@ -37,7 +37,7 @@ x = lin.solve(A, b)
 ```
 array([1., 1., 1., 1.])
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Perturbons $b$, comme s'il y avait une erreur de mesure ou d'arrondi.
 </div>
 ``` python
@@ -52,7 +52,7 @@ eb = lin.norm(b - bp) / lin.norm(b)
 
 On a une erreur de l'ordre de $0,3\%$.
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On note l'erreur :
 $$ \frac{||{\bf \delta b}||}{||{\bf b}||}$$
 </div>
@@ -63,7 +63,7 @@ xp = lin.solve(A, bp)
 ```
 array([  9.2, -12.6,   4.5,  -1.1])
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 La solution n'a rien n'a voir avec $[1,1,1,1]$
 </div>
 ``` python
@@ -80,7 +80,7 @@ ex / eb
 ```
 2460.567236431514
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 C'est $2460$ fois plus que l'erreur sur $b$.
 </div>
 
@@ -112,7 +112,7 @@ lin.norm(lin.inv(A)) * lin.norm(A)
 ```
 3009.5787080586942
 ```
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On appelle cela le conditionnement de $A$ : 
 $$cond(A) = ||A^{-1}|| \, ||A||$$
 **Une matrice mal conditionnée va générer des erreurs de calcul lors de la résolution du système matriciel.**
@@ -170,10 +170,10 @@ ex / ea # valeur de l'erreur
 ```
 166.44235204505293
 ```
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 L'erreur est moins grande.
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Une erreur peut fortement perturber $A$, le conditionnement et l'erreur sont tous les deux importants.
 </div>
 Pour retrouver le conditionnement de $A$ dans ce cas : 
@@ -213,13 +213,13 @@ vp.max() / vp.min()
 * le conditionnement n'est pas modifié par transformation unitaire
 
 ## Préconditionnement
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Le conditionnement peut etre tranformé : 
 
 $$
 \forall A, \exists B \; \textrm{appelée matrice de préconditionnement t.q.} \quad cond(B\, A) < cond(A)
 $$
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On résoud $B\, A {\bf x} = B\, {\bf b}$.
 </div>

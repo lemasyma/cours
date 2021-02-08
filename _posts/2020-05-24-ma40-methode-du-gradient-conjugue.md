@@ -15,7 +15,7 @@ $$
 \nabla J ({\bf x}^{k+1})^T \, . \, \nabla J ({\bf x}^k) = 0
 $$
 Le minimum suivant ${\bf x^{k+2}}$ sera le minimum de l'espace généré par $\nabla J ({\bf x}^{k+1})$ et $\nabla J ({\bf x}^k)$.
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On ne sait pas si ${\bf x^{k+3}}$ sera calculé le long de la direction $\nabla J ({\bf x}^k)$.
 </div>
 Une recherche optimale du minimum d'une fonction convexe dans un espace $\mathbb{R}^n$ ne devrait pas prendre plus de $n$ itérations si on est capable de calculer le $\mu$ optimal dans la direction choisie.
@@ -38,13 +38,13 @@ $$
 J({\bf x}^{k+1}) = \min_{\bf v \in G_k} J({\bf x}^k + {\bf v})
 $$
 avec ${\bf G_k} = span\{ {\bf d}^0, {\bf d}^1,\dots, {\bf d}^k\} =  \left\{ {\bf v} = \sum_{i=0}^{k} \alpha_i \, {\bf d}^i \quad \forall \alpha_i \in ℝ \right\}$.
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Toutes les dérivées partielles par rapport aux vecteurs de ${\bf G_k}$ sont nulles :
 $$
 \nabla J({\bf x}^{k+1}) \, . \, {\bf w} = 0 \quad \forall {\bf w} \in {\bf G_k}
 $$
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Cela se vérifie si ${\bf w}$ est un des vecteurs de la base:
 $$ 
 \nabla J({\bf x}^{k+1}) \, . \, {\bf e}_i = \begin{bmatrix}
@@ -67,7 +67,7 @@ $$
 \frac{\partial J}{\partial x_i}({\bf x}^{k+1}) 
 $$
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 La dérivée partielle de $J$ dans une direction ${\bf w}$ de ${\bf G_k}$ est nulle revient a dire  $\nabla J({\bf x}^{k+1})$ est orthogonal à ${\bf w}$.
 </div>
 #### Générer les directions  ${\bf d}^i$
@@ -80,7 +80,7 @@ $$
 $$
 \nabla J({\bf x}^{k+1}) \, . \, {\bf d}^i = 0 \quad \forall i \le k \qquad (1) \\
 $$
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 En déroulant les calculs on obtient : 
 $$
 \begin{align}

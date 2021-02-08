@@ -20,7 +20,7 @@ B = np.array((5,4))
 C = np.array((1.5,4))
 ```
 ![](https://i.imgur.com/23vasZo.png)
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La matrice de passage sans la translation est l'ensemble des vecteurs de la seconde base exprimes dans la premiere.
 ``` python
 D = np.array([(B-A), (C-A)]).T  # déformation sans la translation
@@ -78,7 +78,7 @@ Appliquons une rotation qui prend un point et le fais tourner dans le sens trigo
 * on déforme le cercle bleu avec la matrice de passage P  (la forme noire)
 * on applique plusieurs fois la rotation déformée par P du point B autour de A (la forme orange pointillé)
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Pour calculer la rotation R dans le nouveau repere : 
 $$Q = P \, R \, P^{-1}$$
 avec  $P^{-1}$ permettant de revenir au repere d'origine pour effectuer la rotation

@@ -9,14 +9,14 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rygt1_MT8)
 # Cours du 11 / 05
 
 ## Ajouter de l'inertie à Jacobi
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La méthode de Jacobi mène au système itératif :
 $$
 {\bf x}^{k+1} = M^{-1} \, ( N\; {\bf x}^k + {\bf b})
 $$
 </div>
 Cette méthode converge ssi la matrice $b$ a un rayon spectral inférieur à 1 (cf ma12).
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On peut agrandir le rayon de convergence en ajoutant de **l'inertie**:
 $$
 {\bf x}^{k+1} =  w \, M^{-1} \, (N\; {\bf x}^k + {\bf b}) + (1-w) \, {\bf x}^k
@@ -26,7 +26,7 @@ $$
 * si $w = 1$ : Jacobi classique
 * si $w = 0$ : on néglige les termes en dehors de la diagonale et $b$ donc ça ne marche pas
 
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On parle d'inertie car on avance "moins vite": la nouvelle valeur de ${\bf x}^{k+1}$ est comprise entre l'ancienne  valeur de ${\bf x}^{k+1}$ et ${\bf x}^k$. C'est la **surrelaxation**
 </div>
 ### Programmons l'inertie pour Jacobi
@@ -76,7 +76,7 @@ x_17 = [7627.267 3238.983 7114.521 3399.456]
 x_18 = [-13068.402  -5548.37  -12190.539  -5823.066]
 x_19 = [22399.965  9511.401 20894.459  9982.548]
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Ajoutons de l'inertie :
 </div>
 ``` python
@@ -91,7 +91,7 @@ x_17 = [1.059 0.977 0.972 1.03 ]
 x_18 = [1.063 0.977 0.968 1.031]
 x_19 = [1.067 0.978 0.963 1.032]
 ```
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 La solution est [1,1,1,1], l'inertie fonctionne.
 </div>
 ### Étudions la convergence
@@ -110,12 +110,12 @@ for i in range(20):
 ![](https://i.imgur.com/tbOjvyX.png)
 A l'échelle logarithmique:
 ![](https://i.imgur.com/WM0W8Xv.png)
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Il faut toujours regarder une erreur en échelle logarithmique.
 </div>
 En faisant le calcul sur 200 itérations : 
 ![](https://i.imgur.com/3dUrGA5.png)
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 On s'est rapproché de la solution puis on a divergé.
 </div>
 #### Erreur relative
@@ -130,10 +130,10 @@ for i in range(200):
     error2.append(np.square(x - old_x).sum())
 ```
 ![](https://i.imgur.com/q2oLsLi.png)
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Il y a une relation entre l'écart de deux valeurs successives et l'erreur absolue.
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 L'écart entre 2 ${\bf x}$ successifs est une facon de savoir quand arrêter un algorithme itératif.
 </div>
 
@@ -152,7 +152,7 @@ for i in range(200):
 ## Normaliser
 * Si la solution est un milliard, avoir une erreur de 0.1 est très bien.
 * Si la solution est 0.01, avoir une erreur de 0.1 est énorme.
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 On ne peut juger une erreur qu'avec une référence. Si on connait la solution exacte : 
 $$
 \frac{||{\bf x}^k - {\bf x}||}{||{\bf x}||}
@@ -206,6 +206,6 @@ plot_error(M, N, b, x0, w=0.1, n=1000)
 plot_error_normalized(M, N, b, x0, w=0.1, n=1000) 
 ```
 ![](https://i.imgur.com/2MTkNOH.png)
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 L'erreur relative normalisée se stabilise.
 </div>

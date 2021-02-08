@@ -23,10 +23,10 @@ as1 = np.dot(A, mouse)
 as2 = 3 * A @ mouse # souris 3 fois plus grande
 ```
 ![](https://i.imgur.com/ATVie90.png)
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La transformation n'est pas une isométrie donc la matrice n'est pas orthogonale.
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 La souris 3x plus grande est isométrique car $A$ est une application linéaire.
 </div>
 ``` python
@@ -35,12 +35,12 @@ aaas1 = A @ A @ A @ mouse
 ```
 ![](https://i.imgur.com/wf9vAdY.png)
 La figure s'étire suivant le vecteur $(2, 1)$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Si $A{\bf x}$ fait tourner la souris d'environ 25°, appliquer 2 ou 3 fois $A$ ne fait plus tourner la figure.
 </div>
 
 ## Vecteurs propres et valeurs propres
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Les valeurs et vecteurs propres respectent cette priopriété : 
 $$ 
 A \, {\bf v_i} = \lambda_i \, {\bf v_i} 
@@ -57,7 +57,7 @@ Vecteurs propres de A (chaque vecteur propre est écrit verticalement):
  [[ 0.894 -0.707]
  [ 0.447  0.707]]
 ```
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Les vecteurs propres sont des **attracteurs** qui capturent tous les points si on fait un nombre infini de multiplications par $A$.
 Les points **s'alignent** sur l'un des deux vecteurs propres.
 </div>
@@ -107,7 +107,7 @@ Vecteurs propres de R :
  [[ 0.-0.707j  0.+0.707j]
  [-0.707+0.j    -0.707-0.j]]
 ```
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 * Les valeurs et vecteurs propres sont des complexes
 * Les valeurs propres ont la même norme
 </div>
@@ -151,7 +151,7 @@ Vecteurs propres de D :
 ```
 
 ## Diagonalisation d'une matrice
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 En changeant de repère, on peut représenter une application linéaire par une matrice diagonale contenant ses valeurs propres.
 $$
 \exists P \; / \; A = P\, \Lambda \, P^{-1} \quad

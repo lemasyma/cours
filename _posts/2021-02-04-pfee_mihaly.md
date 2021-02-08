@@ -15,7 +15,7 @@ Prototypage d'un voxeliseur avec VTK
 * Precision a l'echelle du micrometre
 * Creation de l'application et du pipeline de traitements des objets a imprimer
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 
 **Problematique**:
 * Impression 2.5D/3D dans un espace reduit

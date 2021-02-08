@@ -17,7 +17,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkZtmUHxu)
 * 170 connectes au lieu de 220 (*oups*)
 
 # Les cours
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 **Maximum de presentiel !**
 </div>
 * Accueil dans les labos
@@ -26,7 +26,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkZtmUHxu)
     * > Pour ne pas le nommer, le laboratoire de Gistre - Jojo
     * Depends des eleves, des personnes souhaitant revenir
     * Travaux d'aggrandissiment impossible car corona
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On ne peut pas avoir une pure attitude de consommateur, on doit **co-construire des solutions**.
 </div>
 
@@ -47,10 +47,10 @@ Nouveaux personnes dans l'adm pour le suivi des etudiants, equipe mises en place
 
 # Job a la sortie
 ~20 etudiants n'ayant pas fait leur stage TC car pas d'offre
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On est dans le creux de la vague.
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Les ing3 ont des stages avec un taux similaires aux annees precedentes.
 </div>
 La demande reste extremement forte, notre arrivee sur le marche du travail sera probablement apres la pandemie. Les entreprises vont chasser les epiteens/epiteennes
@@ -66,7 +66,7 @@ Soumis aux aleas, prob confinement dans les semaines a suivre, etc.
 
 1er annee eprouvantes, conditions sanitaires pas oufs, eleves en souffrance
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 On doit creer des collectifs etudiants de notre cote, pour apprendre, retransmettre aux eleves a distance, etc.
 </div>
 

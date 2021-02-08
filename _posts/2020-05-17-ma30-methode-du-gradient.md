@@ -15,17 +15,17 @@ $$
 J(u) = \inf_{v\in\mathbb{R}^n}J(v)
 $$
 ### Problème d'optimisation avec contrainte
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Il est possible de chercher $u$ non pas dans $\mathbb{R}^n$ mais dans une partie de $\mathbb{R}^n$, c'est alors un problème d'optimisation avec contrainte.
 </div>
 **Exemple** : On cherche le minimum de $J(x, y)$ avec $x \lt y$, on cherche dans la partie de $\mathbb{R}^2$ qui vérifie $x \lt y$.
 
 ## La méthode du gradient
 On imagine un problème d'optimisation en 2D comme un terrain avec du relief, $J(x, y)$ represente l'altitude en tout point $(x, y)$.
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La méthode du gradient consiste a prendre un point au hasard et *descendre dans la direction qui descend le plus* afin de trouver le **minimum** de $J$.
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 L'algorithme du gradient consiste à :
 * prendre un point de départ au hasard $p^0 = (x_0, y_0)$
 * calculer le gradient de $J$ en ce point
@@ -49,14 +49,14 @@ y = np.linspace(-3,3,100)
 mx, my = np.meshgrid(x,y)
 mz = J(mx, my)
 ```
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 **Calcul du gradient :**
 ``` python
 def grad_J(x,y):
     return np.array([2*x-2, y])   # calculé à la main à partir de J
 ```
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 **Algorithme du gradient :**
 ``` python
 x = np.array([0,0])  # un point au hasard
@@ -93,6 +93,6 @@ x = minimum_J(start_value = (0,1)) # valeur initiale non alignee avec la solutio
 * $\mu = 2$ : on diverge, les *pas* sont trop grands. On passe de $1$ a $-1$ puis $1$, $-1$ sans tomber sur la solution $0$.
 * $\mu = 0.8$ : on converge en $17$ iterations contre $46$ avec $\mu = 0.1$, c'est 3x plus rapide.
 * $\mu = 1$ : boucle infinie, on oscille infiniment entre $[0, 0]$ et $[2, 0]$.
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La valeur de $\mu$ est **importante**. Si elle est trop petite on perd du temps, si elle est trop grande on ne trouve pas la solution.
 </div>

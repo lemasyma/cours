@@ -9,7 +9,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryhz1KA3U)
 # Cours du 26 / 04
 
 ## Systèmes matriciels
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Un système de plusieurs équations à autant d'inconnues peut s'écrire comme système matriciel $A {\bf x} = {\bf b}$ : 
 $$
 \begin{bmatrix}
@@ -51,7 +51,7 @@ array([0.8, 0.9, 0.6])
 ```
 ## Résolution d'un système matriciel
 ### Méthode du pivot de Gauss
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 On transforme $A$ en une matrice triangulaire pour résoudre le système de $O(n^2)$ opérations.
 </div>
 On met des $0$ sur la première colonne en dessous de la diagonale en multipliant $A$ par la matrice $E_1$ suivante : 
@@ -66,11 +66,11 @@ E_1 =
 \end{bmatrix}
 $$
 $E_2$ sera similaire avec des termes $\frac{-a_{k2}}{a_{22}}$ sous la diagonale, de même pour les matrices $E_n$ suivantes.
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Si on multiplie $A$ par $E_1$ il faut également multiplier $b$ par $E_1$.
 </div>
 #### Système matriciel avec matrice triangulaire
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Il faut résoudre $U{\bf x} = c$ avec $U$ une matrice triangulaire supérieure.
 </div>
 On part de la dernière ligne et on obtient
@@ -111,7 +111,7 @@ b
 solve_gauss(A, b)
 ```
 ### Décomposition Lower Upper
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Si on a besoin de résoudre plusieurs systèmes matriciels avec $A$, on décompose $A$ en un produit d'une matrice triangulaire inférieure et d'une matrice triangulaire supérieure.
 $$
 A = LU
@@ -126,7 +126,7 @@ E_n \ldots E_2\, E_1 \, A\, x &= E_n \ldots E_2\, E_1 \, b \quad \textrm{donc} \
 E_1^{-1} \, E_2^{-1} \ldots E_n^{-1} \; E_n \ldots E_2\, E_1 \, A\, x &=  b \\
 \end{aligned}
 $$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Ce calcul est **simple**, la matrice inverse a les valeurs opposées : 
 $$
 E_1^{-1} = 
@@ -139,7 +139,7 @@ E_1^{-1} =
 \end{bmatrix}
 $$
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Le produit $E^{-1} = E_1^{-1} \,E_1^{-1} \,E_2^{-1} \,E_3^{-1} \, \ldots \,E_n^{-1}$ est la concaténation des colonnes : 
 $$
 E^{-1} = 
@@ -201,7 +201,7 @@ array([[ 0.,  0.,  0.,  0.,  0.],
        [ 0.,  0.,  0.,  0.,  0.]])
 ```
 ### Gauss Jordan
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 On diagonalise $A$ par des multiplications matricielles similaire à celles de Gauss qui annulent aussi les termes au dessus de la diagonale : 
 $$
 E_3 = 

@@ -18,7 +18,7 @@ La dérivée s'annule en ce point et est $Ax - b$
 ## Calcul de la dérivée
 Les derivées de dimension supérieure a 1 peuvent être manipulées comme des derivées partielles ou une derivée totale. On s'intéresse à la derivée dans une direction, c.a.d la derivée partielle en $y$ si on va dans la direction de l'axe $y$.
 
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 **Définition**
 $f : \Omega \subset {X\to Y}$ ($\Omega$ ouvert) est dérivable en $a\in\Omega$ si
 $$
@@ -34,7 +34,7 @@ Si $f$ est dérivable en $a$ alors $\forall h \in X$
 $$
 f'(a)(h) = lim_{\theta\to0}\frac{f(a + \theta h) - f(a)}{\theta}
 $$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Attention à vérifier le type de chaque terme.
 $f$ est une fonction scalaire donc :
 * $Y = \mathbb{R}$
@@ -66,16 +66,16 @@ Dans le cas ou A est symétrique, on a:
 $$
 J'(x) = \nabla J(x) = Ax - b
 $$
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Si la dérivée s'annule, c.a.d qu'on trouve le minimum, on a résolu le système matriciel
 </div>
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Les conditions pour utiliser la méthode de gradient sont:
 * A symétrique
 * J a un minimum
 </div>
 
 ## Propriéte
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Si A est symétrique et **définie positive** alors $J$ est convexe strictement et **coervice** ($\lim_{\lVert a \rVert\to\infty}J(a) = +\infty$), alors elle a un minimum.
 </div>

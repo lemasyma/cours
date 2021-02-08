@@ -20,7 +20,7 @@ shape1 = np.concatenate([np.array([np.cos(angle), np.sin(angle)]),
 ```
 ![](https://i.imgur.com/mDwFYuu.png)
 ## Matrice de rotation centrée en $(0, 0)$
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 $$R = \begin{bmatrix}
 cos(θ) & -sin(θ) \\
 sin(θ) & cos(θ)  \\
@@ -48,14 +48,14 @@ R @ shape1 # multiplication de matrices
 * La transposée est la rotation d'angle -θ puisque sinus est une fonction impaire.
 
 ## Symétrie axiale
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La symétrie horizontale tranformant (a,b) en (a,-b) est:
 $$Sx = \begin{bmatrix}
 1 & 0 \\
 0 & -1  \\
 \end{bmatrix}$$
 </div>
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Pour avoir un symétrie axiale par rapport à une droite passant par $(0,0)$ qui a un angle $\alpha$ :
 * rotation pour mettre l'axe de symétrie a l'horizontale
 * appliquer la symétrie horizontale
@@ -85,7 +85,7 @@ Rα(θ) @ Sx @ Rα(-θ)
 ```
 
 ## Translation
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 La translation ne peut pas etre exprimée avec un produit matriciel car ce n'est pas une **application linéaire :**
 $$
 T(2\;\textbf{x}) \ne 2\; T(\textbf{x})
@@ -94,7 +94,7 @@ Ce n'est pas non plus une **transformation isométrique**.
 </div>
 * Une translation est une addition : $T(\textbf{x}) = \textbf{x} + \textbf{v}_t$.
 * On change la représentation des points pour exprimer les translations sous forme de produit matriciel : $\textbf{x} = (x_1, x_2)$ devient $\textbf{x} = (x_1, x_2, 1)$
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La translation par le vecteur $(v_1, v_2)$ est : 
 $$T(X) = 
 \begin{bmatrix}
@@ -126,7 +126,7 @@ shape1_3d = np.concatenate([shape1, np.ones((1, len(shape1[0])))], axis=0)
 T @ shape1_3d
 ```
 ![](https://i.imgur.com/mDN8rHe.png)
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La matrice inverse replacant la forme orange à sa position d'origine applique la transition $-\textbf{v} = (-1,-2)$.
 $$T^{-1} = 
 \begin{bmatrix}
@@ -139,6 +139,6 @@ Ce n'est pas la transposée de T, T n'est pas **orthogonale**.
 Il y a 2 types d'isométries : 
 * l'isométrie *vectorielle* ou *automorphisme orthogonal* : $$\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$$ et conserve les angles
 * l'isométrie *geométrique* : $$\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$$.
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 La translation est une isométrie geométrique mais pas vectorielle, c'est un **automorphisme orthogonal**.
 </div>

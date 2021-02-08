@@ -10,7 +10,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1t1q9Beu)
 Sous la supervision d'Odyssee Merveille
 Par Camille, Rene-Louis, Salome et Sophie
 
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Analyse des consequences du Covid dans les vaisseaux sanguins.
 </div>
 
@@ -125,7 +125,7 @@ RORPO ne fait directement de segmentation: quelle est la brique rajoutee pour la
 Utilisation des output du stagiaire ?
 > Faire une pipeline qui prend tout en compte mais algorithme lourd donc division des taches
 
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 Utilistion de Matplotlib: attention car segmentation binaire mais 3 couleurs a cause de Matplotlib qui en melange pour les objets fins $$\rightarrow$$ ne jamais faire confiance a Matplotlib et son interpolation
 </div>
 ## Guillaume Tochon

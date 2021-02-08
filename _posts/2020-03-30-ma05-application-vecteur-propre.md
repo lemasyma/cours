@@ -9,7 +9,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkKm0wR2L)
 # Cours du 30 / 03
 
 ## Nuage de points
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 On peut étudier la forme d'un nuage de points par une **analyse en composantes principales (ACP)**, c.a.d. chercher les vecteurs propres de la matrice de covariance ou de corrélation.
 </div>
 On vérifie avec un nuage de points ayant une corrélation forte entre $x$ et $y$ : 
@@ -18,7 +18,7 @@ $$
 Entre x et y il y a:
 * une pente de 0.2
 * un décalage vertical de 1.45 en x = 0
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 On essaye de retrouver la corrélation entre x et y malgré le bruit avec seulement le nuage de points.
 </div>
 ``` python
@@ -29,7 +29,7 @@ nuage = np.array([x, 0.2 * x + 1.45 + np.random.rand(N)])
 ![](https://i.imgur.com/3OKHvTV.png)
 
 On cherche la droite qui minimise la distance entre les points et leur projection sur la droite.
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 On construit la **matrice de covariance**, le premier vecteur propre est égal au coefficient 0.2 et est le vecteur directeur de la droite recherchée. On fait la moyenne du nuage de point dans un point de la droite. 
 </div>
 ``` python
@@ -63,7 +63,7 @@ eq_droite = lambda x: pente * (x - moyenne[0]) + moyenne[1]
 ![](https://i.imgur.com/Q2BLHjo.png)
 
 ## Matrice de covariance
-<div style="background-color:rgba(252, 23, 23, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 La **covariance** entre deux variables indique à quel point elles sont liées.
 $$
 \textrm{cov}(\textbf{x},\textbf{y}) = \frac{1}{N} \sum_{i=1}^N (x_i - \overline{\textbf{x}}) (y_i - \overline{\textbf{y}})
@@ -91,13 +91,13 @@ array([[2.69 , 0.47 ],
        [0.47 , 0.164]])
 ```
 ## Fibonnacci
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Tu le sais, je le sais, on le sais Fibonnacci c'est ca :
 $$x_n = x_{n-2} + x_{n-1}$$ 
 * $x_0 = 1$
 * $x_1 = 1$.
 </div>
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Quelle est la complexité pour calculer $x_n$?
 </div>
 Ecrivons fibonnacci sous forme d'un système matriciel : 
@@ -118,10 +118,10 @@ x_n  \\
 x_{n-2}\\
 x_{n-1}  \\
 \end{bmatrix}$$
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Calculer n produits matriciels n'est pas rentable.
 </div>
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 Sachant que $F = P\, D\, P^{-1}$, avec P matrice des vecteurs propres et D matrice diagonale des valeurs propres : 
 $$
 \begin{bmatrix}
@@ -165,7 +165,7 @@ fibo = lambda n : (fvec @ np.diag(fval**n) @ lin.inv(fvec) @ x0)[0]
 ```
 
 ## Google page rank
-<div style="background-color:rgba(24, 20, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 Soit $N$ pages web numerotées qui font référence les unes aux autres. La i-ième ligne montre par qui est référencée la i-ième page web. Il y a 1 dans la j-ième colonne si la page j cite la page i et 0 sinon.
 </div>
 ``` python
@@ -184,7 +184,7 @@ array([[0, 1, 0, 0, 0, 1, 0, 0],
        [1, 1, 0, 1, 0, 1, 0, 1],
        [1, 0, 0, 0, 0, 0, 0, 0]])
 ```
-<div style="background-color:rgba(250, 178, 45, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-warning" role="alert" markdown="1">
 Le classement des pages utilise les vecteurs propres de cette matrice.
 </div>
 ``` python
@@ -196,7 +196,7 @@ A.sum(axis=1) # nombre de citations
 Valeur des pages    : [0.217 0.153 0.376 0.489 0.243 0.514 0.47  0.071]
 Nombre de citations : [2 1 5 5 3 4 5 1]
 ```
-<div style="background-color:rgba(23, 252, 31, 0.5); text-align:center; vertical-align: middle; padding:40px 0;"  markdown="1">
+<div class="alert alert-success" role="alert">
 * La page ayant le meilleur score n'a que 4 citations mais est citée par les 3 pages ayant 5 citations
 * une page ayant 5 citations est moins bien notée que les autres car elle n'est pas citée par la meilleure page
 
