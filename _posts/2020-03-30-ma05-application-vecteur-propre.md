@@ -9,18 +9,22 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkKm0wR2L)
 # Cours du 30 / 03
 
 ## Nuage de points
+
 <div class="alert alert-info" role="alert" markdown="1">
 On peut étudier la forme d'un nuage de points par une **analyse en composantes principales (ACP)**, c.a.d. chercher les vecteurs propres de la matrice de covariance ou de corrélation.
 </div>
+
 On vérifie avec un nuage de points ayant une corrélation forte entre $x$ et $y$ : 
 $$  y = 0.2 \, x + 1.45 + U(-1,1) \quad \textrm{avec U la loi uniforme qui simule du bruit.}
 $$
 Entre x et y il y a:
 * une pente de 0.2
 * un décalage vertical de 1.45 en x = 0
+
 <div class="alert alert-warning" role="alert" markdown="1">
 On essaye de retrouver la corrélation entre x et y malgré le bruit avec seulement le nuage de points.
 </div>
+
 ``` python
 N = 50
 x = 6 * np.random.rand(N) - 3
@@ -29,9 +33,11 @@ nuage = np.array([x, 0.2 * x + 1.45 + np.random.rand(N)])
 ![](https://i.imgur.com/3OKHvTV.png)
 
 On cherche la droite qui minimise la distance entre les points et leur projection sur la droite.
+
 <div class="alert alert-success" role="alert">
 On construit la **matrice de covariance**, le premier vecteur propre est égal au coefficient 0.2 et est le vecteur directeur de la droite recherchée. On fait la moyenne du nuage de point dans un point de la droite. 
 </div>
+
 ``` python
 cov = np.cov(nuage.copy()) # estime la matrice de covariance
 ```
@@ -71,6 +77,7 @@ $$
 * $N$ le nombre de points du nuage
 * $\overline{\textbf{x}}$ et $\overline{\textbf{y}}$ les moyennes de $\textbf{x}$ et de $\textbf{y}$.
 </div>
+
 La matrice de covariance exprime toutes les covariances possibles : 
 
 $$
@@ -91,22 +98,29 @@ array([[2.69 , 0.47 ],
        [0.47 , 0.164]])
 ```
 ## Fibonnacci
+
 <div class="alert alert-info" role="alert" markdown="1">
 Tu le sais, je le sais, on le sais Fibonnacci c'est ca :
 $$x_n = x_{n-2} + x_{n-1}$$ 
 * $x_0 = 1$
 * $x_1 = 1$.
 </div>
+
 <div class="alert alert-warning" role="alert" markdown="1">
 Quelle est la complexité pour calculer $x_n$?
 </div>
+
 Ecrivons fibonnacci sous forme d'un système matriciel : 
-$$\begin{align}
-x_{n-1} &= x_{n-1} \\
-x_n &= x_{n-2} + x_{n-1} \\
-\end{align}$$
+
+$$
+x_{n-1} = x_{n-1} \\
+x_n = x_{n-2} + x_{n-1} \\
+$$
+
 ce qui donne
-$$\begin{bmatrix}
+
+$$
+\begin{bmatrix}
 x_{n-1}\\
 x_n  \\
 \end{bmatrix} =
@@ -117,7 +131,9 @@ x_n  \\
 \begin{bmatrix}
 x_{n-2}\\
 x_{n-1}  \\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
+
 <div class="alert alert-warning" role="alert" markdown="1">
 Calculer n produits matriciels n'est pas rentable.
 </div>

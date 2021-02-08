@@ -47,6 +47,7 @@ A \, {\bf v_i} = \lambda_i \, {\bf v_i}
 $$
 * $(\lambda_i, {\bf v_i})$ : couple valeur / vecteur propres
 </div>
+
 ``` python
 val_propre, vec_propre = lin.eig(A)
 ```
@@ -57,10 +58,12 @@ Vecteurs propres de A (chaque vecteur propre est écrit verticalement):
  [[ 0.894 -0.707]
  [ 0.447  0.707]]
 ```
+
 <div class="alert alert-danger" role="alert" markdown="1">
 Les vecteurs propres sont des **attracteurs** qui capturent tous les points si on fait un nombre infini de multiplications par $A$.
 Les points **s'alignent** sur l'un des deux vecteurs propres.
 </div>
+
 ``` python
 N = 100
 cercle = np.array([[np.cos(i * 2*np.pi/N), np.sin(i * 2*np.pi/N)] for i in range(N)]).T
@@ -71,6 +74,7 @@ nb1 = np.sum([lin.norm(a10cn[:,i] - vec_propre[:,0]) < 0.01 for i in range(N)]) 
 nb2 = np.sum([lin.norm(a10cn[:,i] - vec_propre[:,1]) < 0.01 for i in range(N)])   \
       + np.sum([lin.norm(a10cn[:,i] + vec_propre[:,1]) < 0.01 for i in range(N)])
 ```
+
 ```
 Nombre de points proche du 1er vecteur propre :  100
 Nombre de points proche du 2e  vecteur propre :  0
@@ -111,6 +115,7 @@ Vecteurs propres de R :
 * Les valeurs et vecteurs propres sont des complexes
 * Les valeurs propres ont la même norme
 </div>
+
 ## Symétrie axiale horizontale
 $$
 Sx = 
@@ -135,6 +140,7 @@ Vecteurs propres de Sx :
 
 * Une matrice diagonale modifie que la i-ième coordonnéee de ${\bf x}$ par la i-ième valeur de sa diagonale.
 * Ses vecteurs propres sont ceux de la base d'origine : 
+
 ``` python
 D = np.diag(np.random.randint(10,size=5))
 D_valp, D_vecp = lin.eig(D)
@@ -151,6 +157,7 @@ Vecteurs propres de D :
 ```
 
 ## Diagonalisation d'une matrice
+
 <div class="alert alert-danger" role="alert" markdown="1">
 En changeant de repère, on peut représenter une application linéaire par une matrice diagonale contenant ses valeurs propres.
 $$
@@ -159,6 +166,7 @@ $$
 * avec $\Lambda$ la matrice diagonale des valeurs propres $\lambda_i$
 * P matrice de passage : vecteurs propres
 </div>
+
 ``` python
 A
 vec_propre @ np.diag(val_propre) @ lin.inv(vec_propre)
