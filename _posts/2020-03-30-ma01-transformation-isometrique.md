@@ -137,8 +137,12 @@ $$T^{-1} =
 Ce n'est pas la transposée de T, T n'est pas **orthogonale**.
 </div>
 Il y a 2 types d'isométries : 
-* l'isométrie *vectorielle* ou *automorphisme orthogonal* : $$\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$$ et conserve les angles
-* l'isométrie *geométrique* : $$\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$$.
+* l'isométrie *vectorielle* ou *automorphisme orthogonal* : 
+$\forall\, \textbf{x}, \;||\textbf{f}(\textbf{x})|| = \textbf{x}$
+ et conserve les angles
+* l'isométrie *geométrique* :
+$\forall\, \textbf{a}, \textbf{b}, \; ||\textbf{f}(\textbf{a}) - \textbf{f}(\textbf{b})|| = ||\textbf{a} - \textbf{b}||$
+
 <div class="alert alert-info" role="alert" markdown="1">
 La translation est une isométrie geométrique mais pas vectorielle, c'est un **automorphisme orthogonal**.
 </div>
