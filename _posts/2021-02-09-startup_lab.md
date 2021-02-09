@@ -33,7 +33,7 @@ Il n'y a jamais eu de meilleur moment pour creer une startup tech
 ![](https://i.imgur.com/79w8Bla.png)
 
 <div class="alert alert-info" role="alert" markdown="1">
-Pas besoin de faire une ecole de commerce pour reussir, mais trop peu d'ingenieurs osent se lances
+Pas besoin de faire une ecole de commerce pour reussir, mais trop peu d'ingenieurs osent se lancer
 </div>
 
 * 12 millionaires crees depuis la creation du StartUp Lab
