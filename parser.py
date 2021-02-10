@@ -3,7 +3,7 @@ import sys
 import fileinput
 import re
 
-replacements = {':::info':'<div class="alert alert-info" role="alert">', ':::warning':'<div class="alert alert-warning" role="alert">', ':::danger':'<div class="alert alert-danger" role="alert">', ':::success':'<div class="alert alert-success" role="alert">', ':::':'</div>'}
+replacements = {':::info':'<div class="alert alert-info" role="alert" markdown="1">', ':::warning':'<div class="alert alert-warning" role="alert" markdown="1">', ':::danger':'<div class="alert alert-danger" role="alert" markdown="1">', ':::success':'<div class="alert alert-success" role="alert" markdown="1">', ':::':'</div>'}
 
 is_details = False
 lines = []
