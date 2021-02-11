@@ -92,20 +92,20 @@ $$
 {\bf \delta x} &= A^{-1} \, {\bf \delta b}
 \end{aligned}
 $$
-Comme $A$ et son inverse sont des applications linéaires : 
+Comme $A$ et son inverse sont des applications linéaires :
+
 $$
-\begin{align}
-& ||{\bf b}|| \le ||A|| \, ||{\bf x}||
+||{\bf b}|| \le ||A|| \, ||{\bf x}||
 \quad \textrm{et} \quad ||{\bf \delta x}|| \le ||A^{-1}|| \, ||{\bf \delta b}||
-\end{align}
 $$
+
 donc : 
+
 $$
-\begin{align}
 \frac{||{\bf \delta x}||}{||{\bf x}||}  \le ||A^{-1}|| \, \frac{||{\bf \delta b}||}{||{\bf x}||}
 \le ||A^{-1}|| \, ||A|| \, \frac{||{\bf \delta b}||}{||{\bf b}||}
-\end{align}
 $$
+
 ``` python
 lin.norm(lin.inv(A)) * lin.norm(A)
 ```

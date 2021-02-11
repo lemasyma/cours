@@ -185,14 +185,14 @@ $$
 En développant on a
 
 $$
-\begin{align}
-\frac{\partial J ({\bf x}^{k+1})}{\partial {\bf x}^{k+1}} \; 
-\frac{\partial {\bf x}^{k+1}}{\partial µ} & = 0   \\
-J'({\bf x}^{k+1}) \, . \, (- \nabla J ({\bf x}^k)) & = 0 \\
-(A\, {\bf x}^{k+1}  - b) \, . \, \nabla J ({\bf x}^k) & = 0 \quad \textrm{puisque A est symétrique}\\
-\nabla J ({\bf x}^{k+1})  \, . \, \nabla J ({\bf x}^k) & = 0 \quad \textrm{CQFD}
-\end{align}
+\begin{aligned}
+\frac{\partial J ({\bf x}^{k+1})}{\partial {\bf x}^{k+1}} \; \frac{\partial {\bf x}^{k+1}}{\partial µ} &= 0 \\
+J'({\bf x}^{k+1}) \, . \, (- \nabla J ({\bf x}^k)) &= 0 \\
+(A\, {\bf x}^{k+1}  - b) \, . \, \nabla J ({\bf x}^k) &= 0 \quad \textrm{puisque A est symétrique}\\
+\nabla J ({\bf x}^{k+1})  \, . \, \nabla J ({\bf x}^k) &= 0 \quad \textrm{CQFD}
+\end{aligned}
 $$
+
 ![](https://i.imgur.com/yxvHNX9.png)
 
 En utilisant cette propriété, évaluer la valeur optimale de µ pour atteindre le minimum dans la direction de
