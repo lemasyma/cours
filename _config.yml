@@ -143,7 +143,6 @@ defaults:
 sass:
   # loading path from site root
   # default to _sass
-  sass_dir: bower_components/bootstrap-sass/assets/stylesheets
   style: compressed
 
 compress_html:
