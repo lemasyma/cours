@@ -131,7 +131,7 @@ On écrira deux fonctions :
    
 Comme toujours, attention à limiter les `for` et à faire le plus possible d'opérations vectorielles et matricielles.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python
@@ -202,7 +202,7 @@ def plot_convergences(values, result):
 plot_convergences(res, np.ones(4))
 ```
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Resultat</summary>
 
 ~~~
@@ -215,7 +215,7 @@ Itération du minimum : 99 99
 
 Est-ce que la méthode de Gauss-Seidel non relaxée converge dans ce cas ?
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Reponse</summary>
 
 ~~~ python
@@ -231,7 +231,7 @@ array([1., 1., 1., 1.])
 Trouver un `seed` qui permet de générer un cas qui ne converge pas avec Gauss-Seidel de base mais qui 
 converge avec la relaxation ($w=0.2$).
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python
@@ -256,7 +256,7 @@ while True:
 
 Tracer les courbes de convergence pour le cas retenu avec et sans relaxation.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python
@@ -292,7 +292,7 @@ Trouver la valeur optimiale de $w$ pour converger le plus rapidement pour ce cas
 
 La précision demandée pour l'intervale et la valeur optimale est de $10^{-2}$.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python

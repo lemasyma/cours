@@ -19,7 +19,7 @@ pour résoudre le système matriciel $A {\bf x} = {\bf b}$ avec A symétrique et
 
 Il peut être intéressant de normaliser la matrice A pour éviter que les calculs explosent.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ## 2x2
@@ -137,7 +137,7 @@ array([[  0.   ,   0.   ,   0.   , ...,   0.   ,   0.   ,   0.   ],
 
 Introduire de l'inertie dans la méthode du gradient. Que constate-t-on ?
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Reponse</summary>
 
 Ajouter de l'inertie dans une méthode itérative veut dire qu'on avance moins vite vers le point suivant : 
@@ -201,7 +201,7 @@ $\nabla J ({\bf x}^k)$.
 ## Exercice
 Écrire le méthode du gradient avec le calcul du µ optimal à chaque itération pour résoudre $A {\bf x} = {\bf b}$.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 On reprend l'avant-dernière ligne de la démonstration et on remplace $\bf x^{k+1}$ par $\bf x^{k} -\mu\nabla J(\bf x^k)$:
 

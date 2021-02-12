@@ -20,7 +20,7 @@ votre code.
 
 Note : Veuillez écrire des fonctions les plus propres possibles, en particulier qui n'utilisent pas des variables globales comme c'est le cas dans ma correction du gradient (ma33).
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python
@@ -194,7 +194,7 @@ b = npz['b']
 * Refaites la comparaison entre les deux méthodes avec ce système matriciel.
 * Regardez la documentation de `lin.solve` (en particulier les options) et comparer `lin.solve` à vos deux algorithmes.
 
-<details markdown="1">>
+<details markdown="1">
 <summary>Solution</summary>
 
 ~~~ python
