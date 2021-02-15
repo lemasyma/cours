@@ -235,7 +235,7 @@ Convolution avec une image: probleme aux bords. La "fenetre glissante" passant s
 
 ## Definition
 $$
-(f*g)(t) = \int_{-\infty}^{+\infty}g(xg(t-x))dx = \int_{-\infty}^{+\infty}g(x)f(t-x)dx = (g*f)(t)
+(f*g)(t) = \int_{-\infty}^{+\infty}g(x)f(t-x)dx = \int_{-\infty}^{+\infty}g(x)f(t-x)dx = (g*f)(t)
 $$
 
 Difference de la correlation:
