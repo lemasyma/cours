@@ -161,7 +161,7 @@ $\Gamma_{xx}(0)$ est maximale car *il n'y a pas de decalage*
 $$
 \begin{aligned}
 &= <x(t), x(t)>\\
-&= \int_{\mathbb{R}}|x(t)y|^2\\
+&= \int_{\mathbb{R}}|x(t)|^2\\
 &= ||x(t)||^2 = \text{ENERGIE du signal}
 \end{aligned}
 $$
