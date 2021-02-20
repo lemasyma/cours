@@ -384,7 +384,6 @@ P +
 \end{pmatrix}
 $$
 - Coordonnees projective: on a une coordonnees de plus
-
 $$
 \begin{pmatrix}
     x + t_x\\
