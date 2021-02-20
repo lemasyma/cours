@@ -1,6 +1,6 @@
 ---
 title:          "DEVI: Presentation"
-date:           2021-02-18 14:00
+date:           2021-02-18 13:00
 categories:     [Image S8, DEVI]
 tags:           [Image, DEVI, S8]
 description: Presentation
