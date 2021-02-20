@@ -375,7 +375,14 @@ Representation des transformations usuelles dans l'espace projectif
 Combinaison des transformations.
 
 ### Translation
-- Euclidien: $P + \begin{pmatrix}t_x\\t_y\end{pmatrix}$
+- Euclidien: 
+$$
+P + 
+\begin{pmatrix}
+	t_x\\
+	t_y
+\end{pmatrix}
+$$
 - Coordonnees projective: on a une coordonnees de plus
 
 $$
