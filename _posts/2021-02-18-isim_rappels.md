@@ -154,8 +154,7 @@ Le modele RGB est **directement issue de notre perception des couleurs**.
 Simuler les phenomenes optiques qui conduisent a la formation de l'image.
 </div>
 
-# Mathematiques: geometrie euclidienne et projective
-## Geometrie Euclidienne
+# Geometrie Euclidienne
 - Produit scalaire: forme nilineaire, symetrique, definie positive
 - Espace pre-hilbertien $(E,\vert)$ reel
     - $E$: R-espace vectoriel
@@ -191,7 +190,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - $u.v = 0 \Leftrightarrow u$ et $v$ ortho
     - $(u.v)^2 + (u\times v)^2 = \Vert u\Vert^2\Vert v\Vert^2$
 
-### Equation de droites
+## Equation de droites
 - 2D
     - Cartesienne: $y=ax + b$
     - Implicite: $ax+by+c=0$
@@ -201,7 +200,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - Implicite
     - Parametrique: $A+\lambda\overrightarrow v$
 
-### Equation d'un plan
+## Equation d'un plan
 - 3D
     - Cartesienne: $ax+by+cz+d=0$
     - Implicite
@@ -209,13 +208,13 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
         - Prendre un point du plan et donner 2 vecteurs qui vont definir une base
         - $A+\lambda_1\overrightarrow v_1\lambda_2\overrightarrow v_2$
 
-### Equation d'un cercle/sphere
+## Equation d'un cercle/sphere
 - 2D/3D
     - Cartesienne: $(x-a)^2+(y-b)^2+(z-c)^2 = r^2$
     - Implicite
     - Parametrique
 
-### Determinant
+## Determinant
 - Utilite du determinant:
     - Equation de droite passant par ($x_1$, $y_1$) et $u(a,b)$
     $$
@@ -235,8 +234,8 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     $$
 - Idem pour l'equation d'un plan dans un espace 3D
 
-### Intersection
-#### Intersection droite/plan
+## Intersection
+### Intersection droite/plan
 - Droite: $P+t\overrightarrow v$
 - Plan: $ax+by+cz+d=0$ ou $\overrightarrow N.\overrightarrow X = d$
 - $\overrightarrow N.(P+t\overrightarrow v) = d$
@@ -244,7 +243,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - Cas particulier si $d$ parallele au plan ($\overrightarrow N\overrightarrow v=0$)
 - $I=P+t_i\overrightarrow v$
 
-#### Intersectoin droite/plan $\rightarrow$ droite\triangle
+### Intersectoin droite/plan $\rightarrow$ droite\triangle
 - Verifier que $I$ est dans le triangle $ABC$
     - Exprimer $I$ en fonction de $A$, $B$ et $C$
         - Les coordonnees barycentriques doivent etre toutes positives
@@ -256,7 +255,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
 ![](https://i.imgur.com/G5UZKWC.png)
 
 
-#### Intersection droite/sphere
+### Intersection droite/sphere
 - Calcul de l'intersection dans le repere local ou global ?
 - Idem que pour le plan mais avec l'equation de la sphere. 3 cas possibles:
     1. Pas de solution (pas d'intersection)
@@ -272,7 +271,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - $d(D_1, D_2) = [\overrightarrow{A_1A_2}, \overrightarrow{v_1}, \overrightarrow{v_1}]/\Vert\overrightarrow{v_1}\overrightarrow{v_2}\Vert$
 - Distance sphere/sphere
 
-## Geometrie projective
+# Geometrie projective
 - Geometrie euclidienne
     - Etude des formes des "objets"
     - Invariance par rotation, tranlsation, reflexion
@@ -290,7 +289,7 @@ Exemple avec des rails de train paralleles mais qui semblent se rejoindre au poi
 Dependant du point de vie, B est entre A et C ou A est entre B et C:
 ![](https://i.imgur.com/PToCKlZ.png)
 
-### Projection sur le plan image
+## Projection sur le plan image
 <div class="alert alert-info" role="alert" markdown="1">
 On a juste a projeter les sommets d'une face
 ![](https://i.imgur.com/yx5sdlr.png)
@@ -301,14 +300,14 @@ Dans l'espace, on ne prend pas l'objet entier mais juste une face. On trace une 
 
 ![](https://i.imgur.com/DtOsnI5.png)
 
-### Point de fuite
+## Point de fuite
 Si on a une droite qu'on veut projeter sur le plan image, on prend le plan forme par la droite et le plan qui inclut le foyer de projection. Si on fait une intersection de ce plan avec le plan image, c'est **exactement** la projection de la droite sur le plan image en accord avec le foyer.
 
 <div class="alert alert-info" role="alert" markdown="1">
 Si on fait de meme avec d'autres droites, elle convergeraient toutes vers un meme point: **la point de fuite**.
 </div>
 
-### Horizon
+## Horizon
 <div class="alert alert-info" role="alert" markdown="1">
 Intersection du plan passant par le foyer et parallele au plan objet
 ![](https://i.imgur.com/yvlGlBE.png)
@@ -318,7 +317,7 @@ Intersection du plan passant par le foyer et parallele au plan objet
 Tous les points de fuite de droites paralleles sont alignees sur le l'horizon
 ![](https://i.imgur.com/BkQKk0Y.png)
 
-### Points a l'infini
+## Points a l'infini
 
 On a l'ensemble de droites, si on les projettent on a undividuellement l'ensemble des points de la droite, avec **une image et un antecedent** sauf que si on prend une droit qui va suffisament loin on est **parallele au plan objet**.
 
@@ -347,7 +346,7 @@ Le point de fuite est le meme de chaque cote du plan image.
 Pour le rajouter sur le disque, on doit le "plier" pour que les extremites se rejoignent.
 ![](https://i.imgur.com/iMjUT0L.png)
 
-### Coordonnees homogenes
+## Coordonnees homogenes
 Dans le plan
 - $RP^2$ est l'ensemble des triplets $[p] = [p_1, p_2, p_3]$ avec $(p1,p2,p3)$ dans $\mathbb R^3$ prive de $(0,0,0)$
 - Deux points $p$ et $q$ sont egaux si et seulement si il existe un $k$ dans $R^*$ tel que:
@@ -366,7 +365,7 @@ $[a,b,0]:(a,b)$ donne la direction des points associes
 </div>
 Idem pour une droite projective et pour l'espace 3D.
 
-### Transformation usuelles
+## Transformation usuelles
 Representation des transformations usuelles dans l'espace projectif
 - Translation
 - Echelle 
@@ -375,7 +374,7 @@ Representation des transformations usuelles dans l'espace projectif
 
 Combinaison des transformations.
 
-#### Translation
+### Translation
 - Euclidien: $P + \begin{pmatrix}t_x\\t_y\end{pmatrix}$
 - Coordonnees projective: on a une coordonnees de plus
 
@@ -457,7 +456,7 @@ L'ordre des rotations compte
     - $j.i=-k;k.j=-i;i.k=-j$
     - Les quaternions unites (norme $(Q) = 1$) permettent une representation plus compacte de n'importe qu'elle rotation
 
-### Combinaisom des transformations
+## Combinaisom des transformations
 <div class="alert alert-danger" role="alert" markdown="1">
 On peut **pre-calculer** une matrice qui est **l'ensemble** des transformations.
 </div>
