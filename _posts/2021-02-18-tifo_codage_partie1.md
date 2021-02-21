@@ -416,7 +416,7 @@ Resultat:
 
 ## Modification de l'organisation spatiale des pixels
 Application: effets artistiques
-- $image\_resultat(x,y) = image\_origin(g(x,y), h(x,y))$
+- $\text{image_resultat}(x,y) = \text{image_origin}(g(x,y), h(x,y))$
     - Les fonctions $g$ et $h$ ne tiennent pas forcement compte de la valeur du pixel
 - Rotation - cisaillement
 ![](https://i.imgur.com/q6npf2K.jpg)
@@ -433,7 +433,7 @@ Application: effets artistiques
 > La 2e image c'est quand on me chatouille le cou
 
 <div class="alert alert-danger" role="alert" markdown="1">
-$image\_resultat(x,y) = image\_origin(g(x,y), h(x,y))$
+$\text{image_resultat}(x,y) = \text{image_origin}(g(x,y), h(x,y))$
 La transformation doit etre appliquee dans ce sens !
 </div>
 
