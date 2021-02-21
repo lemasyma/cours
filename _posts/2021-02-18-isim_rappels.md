@@ -155,7 +155,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
 </div>
 
 # Geometrie Euclidienne
-- Produit scalaire: forme nilineaire, symetrique, definie positive
+- Produit scalaire: forme ilineaire, symetrique, definie positive
 - Espace pre-hilbertien $(E,\vert)$ reel
     - $E$: R-espace vectoriel
     - $\vert$: produit scalaire
@@ -170,7 +170,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - Dim 2 $\Rightarrow$ un plan affine
 - Repere cartesien de $\mathcal F : (O, B)$ avec $O$ un point de $\mathcal F$ et $B$ une famille de vecteurs de $\mathcal F$ formant une base de $\mathcal F$
 - Soir $E$ un $\mathbb R$-espace vectoriel, une norme $N$ sur $E$ est une application de $E$ dans $\mathbb R$ tel que:
-    - $\forall u\in E, N(u) ge 0$
+    - $\forall u\in E, N(u) \ge 0$
     - $\forall u \in E, N(u) = 0 \Leftrightarrow u = 0$
     - $\forall (u,\lambda)\in (E\times\mathbb R), N(\lambda u) = \vert\lambda\vert N(u)$
     - $\forall(u,v)\in E^2,N(u+v)\le N(u)+N(v)$
@@ -178,7 +178,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - $N(u)=\sqrt{u\vert u}$: norme euclidienne
 - Produit mixte:
     - $[u,v,w] = det(u,v,w)$
-    - = (u\times v).w
+    - $= (u\times v).w$
     - Donne le volume du parallelepipede
 - Produit vectoriel;
     - $x;[u,v,w] = x.w(x=u\times v)$
@@ -213,6 +213,13 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - Cartesienne: $(x-a)^2+(y-b)^2+(z-c)^2 = r^2$
     - Implicite
     - Parametrique
+$$
+\begin{cases}
+	x &= a + r\cos(\theta)\sin(\lambda)\\
+	y &= b + r\sin(\theta)\cos(\lambda)\\
+	z &= c + r\sin(\lambda)\\
+\end{cases}
+$$
 
 ## Determinant
 - Utilite du determinant:
