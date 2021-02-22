@@ -10,7 +10,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkloGbZzd)
 # La Radiosite
 On essaye d'estimer la "*radiosite*" de chaque element de la scene, c'est a dire la quantite d'energie de chaque element emet...
 
-- B_i$ la radiosite de la surface $i$
+- $B_i$ la radiosite de la surface $i$
 - $E_i$ la quantite de lumiere emise par la surface $i$
 - $P_i$ la fraction de lumiere incidente qui est reflechie par la surface $i$
 - $F_{ij}$ la fraction de lumiere quittant la surface $i$ et atteignant la surface $j$
