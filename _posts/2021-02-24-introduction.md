@@ -13,16 +13,20 @@ Determiner les fonctions caracteristiques dans les cas suivants:
 <details markdown="1"><summary>Solution</summary>
 $X$ suit la loi $B(n,p)$.
 $X$ est une somme independante de variables de Bernoulli $B(p)$.
+
 $$
 X = \sum^n_{j=1}X_j
 $$
+
 ou $X_j\to B(p) \forall j = 1,..., n$
 D'apres le cours, on a calcule la fonction caracteristique de Bernouilli $\phi_{x_j}(t) = q + pe^{it}$ avec $q = 1-p$ or les $X_i$ sont independantes"
+
 $$
 \phi_{\sum_{j=1}^{k}X_j} = \Pi^k_{j=1}\phi_{X_j}(t) = (q+pe^{it})^n
 $$
 
 Remarque: Comme 2e methode on peut calculer directement $\phi_X(t)$, $X\to B(n,p)$
+
 $$
 \begin{aligned}
 \phi_X(t) &= \sum^n_{k=0}e^{itk}P(X=k)\\
@@ -32,12 +36,14 @@ $$
 &= (q+pe^{it})
 \end{aligned}
 $$
+
 </details>
 
 ## $X$ suit la loi de Poissons $P(\lambda)$
 <details markdown="1">
 <summary>Solution</summary>
 $X\to P(\lambda)$ Poisson de parametre $\lambda$.
+
 $$
 \begin{aligned}
 P(X=k) &= e^{-\lambda}\frac{\lambda^k}{k!} \forall k\in\mathbb N\\
@@ -45,14 +51,17 @@ P(X=k) &= e^{-\lambda}\frac{\lambda^k}{k!} \forall k\in\mathbb N\\
 &=e^{-\lambda}\sum_{k=0}^{+\infty}\frac{(\lambda e^{it})^{k}}{k!}\\
 \end{aligned}
 $$
+
 Rappel: $\sum_0^{+\infty}\frac{x^k}{k!} = e^x$
 Donc:
+
 $$
 \begin{aligned}
 phi_X(t) &= e^{-\lambda}\exp(\lambda e^{it})\\
 &= \exp(-\lambda+\lambda e^{it})
 \end{aligned}
 $$
+
 </details>
 
 ## $X$ suit la loi uniforme $U[-a,a]$
@@ -67,7 +76,9 @@ f(x)=
     0 &\text{sinon}
 \end{cases}
 $$
-Donc 
+
+Donc:
+
 $$
 \begin{aligned}
 \phi_X(t) &= \int_{\mathbb R}e^{itx}f(x)dx = \frac{1}{2a}\int_{-a}^ae^{itx}dx\\
@@ -75,6 +86,7 @@ $$
 &\Rightarrow \phi_X(t) = \frac{2i\sin(at)}{2ait} = \frac{sin(at)}{at}
 \end{aligned}
 $$
+
 </details>
 
 ## $X$ suit la loi normale $N(0,1)$
@@ -82,18 +94,22 @@ $$
 <summary>Solution</summary>
 $X\to N(0,1)$ (Loi normale centree reduite)
 En utilisant la formule de Mac-Laurin:
+
 $$
 \phi_X(t) = \sum_{k=0}^{+\infty}\frac{t^k}{k!}i^kE(X^k)
 $$
+
 or $X\to N(0,1)$
 $E(X^k) = 0$ si $k$ impair et $E(X^{2k}) = \frac{(2k)!}{2^kk!}$
 Donc:
+
 $$
 \begin{aligned}
 \phi_X(t) &= \sum_{k=0}^{+\infty}\frac{(-\frac{t^2}{2})^2}{k!} \\
 &= e^{-\frac{t^2}{2}}
 \end{aligned}
 $$
+
 </details>
 
 # Exercice 2
