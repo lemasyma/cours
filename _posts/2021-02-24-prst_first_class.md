@@ -68,7 +68,7 @@ C'est une proba **a posteriori**, cad apres que l'experience ait eu lieu.
     - $p_p = \frac{5}{6}$
 
 <div class="alert alert-warning" role="alert" markdown="1">
-Cf. Exercice 4
+Cf. [Exercice 4](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exercice-4)
 </div>
 
 Prenons Clara et Nizar en cobayent avec leurs numero prefere
@@ -131,7 +131,7 @@ On utilise le triangle de Pascal
 - $\binom{n}{1} = \binom{n}{n - 1} = n$
 </div>
 <div class="alert alert-warning" role="alert" markdown="1">
-Cf. Exercice 3
+Cf. [Exercice 3](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exercice-3)
 </div>
 
 # Loi binomial negative de parametre $n$ et $p$
@@ -152,7 +152,7 @@ C'est une loi **sans memoire**.
 > La loi geometrique est "sans memoire", cad que les evenements passes n'influent pas les evenements futurs.
 
 <div class="alert alert-warning" role="alert" markdown="1">
-Cf. Exercice 14
+Cf. [Exercice 14](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exercice-14)
 </div>
 
 
@@ -171,7 +171,7 @@ Les 2 grandes lois sans memoire sont les lois:
 5. loi notee $P(\lambda)$
 
 <div class="alert alert-warning" role="alert" markdown="1">
-Cf. Exercice 6
+Cf. [Exercice 6](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exercice-6)
 </div>
 
 # Cadre
@@ -215,7 +215,7 @@ Tout depend de la dependance des variables, si $X$ et $Y$ sont independantes: $E
 5. Notee $U([a;b])$
 
 <div class="alert alert-warning" role="alert" markdown="1">
-CF. Exercice 11
+CF. [Exercice 11](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exercice-11)
 </div>
 
 # Loi exponentielle de parametre $\lambda\gt 0$
