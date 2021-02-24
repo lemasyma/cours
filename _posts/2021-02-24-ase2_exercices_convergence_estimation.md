@@ -1,8 +1,8 @@
 ---
 title:          "ASE2: Exercices - Convergence et estimation"
 date:           2021-02-24 9:00
-categories:     [Image S8, ASE2]
-tags:           [Image, ASE2, S8]
+categories:     [tronc commun S8, ASE2]
+tags:           [tronc commun, ASE2, S8]
 description: Exercices sur la convergence et estimation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkBV8jmMO)
