@@ -10,7 +10,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkBV8jmMO)
 # Exercice 1
 Determiner les fonctions caracteristiques dans les cas suivants:
 ## $X$ suit la loi binomiale $B(n,p)$
-<details markdown="1"><summary>Solutionr</summary>
+<details markdown="1"><summary>Solution</summary>
 $X$ suit la loi $B(n,p)$.
 $X$ est une somme independante de variables de Bernoulli $B(p)$.
 $$
@@ -36,7 +36,7 @@ $$
 
 ## $X$ suit la loi de Poissons $P(\lambda)$
 <details markdown="1">
-<summary>Solutionr</summary>
+<summary>Solution</summary>
 $X\to P(\lambda)$ Poisson de parametre $\lambda$.
 $$
 \begin{aligned}
@@ -57,7 +57,7 @@ $$
 
 ## $X$ suit la loi uniforme $U[-a,a]$
 <details markdown="1">
-<summary>Solutionr</summary>
+<summary>Solution</summary>
 $X\to U_{[-a, a]}$ (Loi uniforme sur $[-a, a]$)
 Sa densite est:
 $$
@@ -79,7 +79,7 @@ $$
 
 ## $X$ suit la loi normale $N(0,1)$
 <details markdown="1">
-<summary>Solutionr</summary>
+<summary>Solution</summary>
 $X\to N(0,1)$ (Loi normale centree reduite)
 En utilisant la formule de Mac-Laurin:
 $$
@@ -101,7 +101,7 @@ Soit $X_n$ une suite de variables aleatoires de densite $f(x)=\frac{ne^{-nx}}{(1
 Montrer que $X_n\to^P_{n\to+\infty}0$
 
 <details markdown="1">
-<summary>Solutionr</summary>
+<summary>Solution</summary>
 $X_n$ suite de VA
 $f_n(x) = \frac{ne^{-nx}}{(1+e^{-nx})^2}$
 
