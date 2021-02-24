@@ -72,6 +72,7 @@ Cf. [Exercice 4](https://lemasyma.github.io/cours/posts/prst_first_exercise/#exe
 </div>
 
 Prenons Clara et Nizar en cobayent avec leurs numero prefere
+
 ||Clara|Nizar||
 |-|-|-|-|
 |1|-10|30|20|
