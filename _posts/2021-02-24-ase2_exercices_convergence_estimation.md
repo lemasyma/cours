@@ -1,6 +1,6 @@
 ---
 title:          "ASE2: Exercices - Convergence et estimation"
-date:           2021-02-24 9:00
+date:           2021-02-24 10:00
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8]
 description: Exercices sur la convergence et estimation
@@ -10,7 +10,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkBV8jmMO)
 # Exercice 1
 Determiner les fonctions caracteristiques dans les cas suivants:
 ## $X$ suit la loi binomiale $B(n,p)$
-<details markdown="1"><summary>Solution</summary>
+<details markdown="1">
+<summary>Solution</summary>
 $X$ suit la loi $B(n,p)$.
 $X$ est une somme independante de variables de Bernoulli $B(p)$.
 
