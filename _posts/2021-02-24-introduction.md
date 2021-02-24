@@ -20,7 +20,7 @@ $$
 
 ou $X_j\to B(p) \forall j = 1,..., n$
 
-D'apres le cours, on a calcule la fonction caracteristique de Bernouilli $\phi_{x_j}(t) = q + pe^{it}$ avec $q = 1-p$ or les $X_i$ sont independantes"
+D'apres le cours, on a calcule la fonction caracteristique de Bernouilli $\phi_{x_j}(t) = q + pe^{it}$ avec $q = 1-p$ or les $X_i$ sont independantes
 
 $$
 \phi_{\sum_{j=1}^{k}X_j} = \Pi^k_{j=1}\phi_{X_j}(t) = (q+pe^{it})^n
