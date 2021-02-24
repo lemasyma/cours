@@ -19,6 +19,7 @@ X = \sum^n_{j=1}X_j
 $$
 
 ou $X_j\to B(p) \forall j = 1,..., n$
+
 D'apres le cours, on a calcule la fonction caracteristique de Bernouilli $\phi_{x_j}(t) = q + pe^{it}$ avec $q = 1-p$ or les $X_i$ sont independantes"
 
 $$
@@ -53,6 +54,7 @@ P(X=k) &= e^{-\lambda}\frac{\lambda^k}{k!} \forall k\in\mathbb N\\
 $$
 
 Rappel: $\sum_0^{+\infty}\frac{x^k}{k!} = e^x$
+
 Donc:
 
 $$
@@ -100,7 +102,9 @@ $$
 $$
 
 or $X\to N(0,1)$
+
 $E(X^k) = 0$ si $k$ impair et $E(X^{2k}) = \frac{(2k)!}{2^kk!}$
+
 Donc:
 
 $$
@@ -119,9 +123,11 @@ Montrer que $X_n\to^P_{n\to+\infty}0$
 <details markdown="1">
 <summary>Solution</summary>
 $X_n$ suite de VA
+
 $f_n(x) = \frac{ne^{-nx}}{(1+e^{-nx})^2}$
 
 On veut montrer que $X_n\to^P_{n\to+\infty}0$
+
 $$
 \begin{aligned}
 P(\vert X_n\vert\gt\varepsilon) &= 1 - P(\vert X_n\vert\le\varepsilon)\\
@@ -132,5 +138,6 @@ P(\vert X_n\vert\gt\varepsilon) &= 1 - P(\vert X_n\vert\le\varepsilon)\\
 \lim_{n\to+\infty}P(\vert X_n\vert\gt\varepsilon) &= 1- 1 + 0 =0\\
 \end{aligned}\\
 $$
+
 Donc $X_n\to^{P}_{n\to+\infty}0$
 </details>
