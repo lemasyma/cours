@@ -87,7 +87,7 @@ Donc $V(U) = \frac{1}{\sqrt{\pi}}\sqrt{\pi} = 1$
 ## Moments de la loi normale centree reduite
 Soit $U$ une variable normale centree reduite, on appelle moment d'ordre $k$ de $U$: $u_k = E(U^k)$
 - Si $k = 2p + 1$ alors $u_{2p+1} = 0$ (car fonction impaire)
-- Si $k = 2p$ alors $u_{2p} = \frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}u^{2p}\exp(-\frac{1}{2}u^2)du = \frac{2}{\sqrt{2\pi}}\int^{+\infty}_{0}u^{2p}\exp(-\frac{1}{2}u^2)du$
+- Si $k = 2p$ alors $u_{2p} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}u^{2p}\exp(-\frac{1}{2}u^2)du = \frac{2}{\sqrt{2\pi}}\int^{+\infty}_{0}u^{2p}\exp(-\frac{1}{2}u^2)du$
 
 Posons:
 - $t= \frac{u^2}{2}$
