@@ -69,7 +69,7 @@ ou:
 Avec le changement de variable $U=\frac{X-m}{\sigma}$ (variable normale centree reduite), la densite de $U$ est $f(u) = \frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}u^2)$.
 
 ### Montrons que $V(U) = 1$
-On a $V(U) = E(U^2) = \int^{+\infty}_{-\infty}\frac{1}{\sqrt{2\pi}}u^2\exp(-\frac{1}{2}u^2)du = \frac{2}{\sqrt{2\pi}}\int^{+\infty}_{0}u^2\exp(-\frac{1}{2}u^2)du$.
+On a $V(U) = E(U^2) = \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}u^2\exp(-\frac{1}{2}u^2)du = \frac{2}{\sqrt{2\pi}}\int^{+\infty}_{0}u^2\exp(-\frac{1}{2}u^2)du$.
 Posons:
 - $t = \frac{u^2}{2}$
 - ut = udu
