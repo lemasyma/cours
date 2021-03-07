@@ -78,7 +78,7 @@ Considerons une variable aleatoire $X$ suivant une loi de Poisson de parametre 3
 <details markdown="1">
 <summary>Solution</summary>
 $$
-P(X=10) = e^{-3}\times\frac{3^{10}}{10!}
+P(X=10) = e^{-3}\times\frac{3^{10}}{10!}\\
 E(X) = V(X) = 3
 $$
 </details>
