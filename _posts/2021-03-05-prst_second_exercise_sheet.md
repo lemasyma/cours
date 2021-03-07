@@ -13,9 +13,7 @@ L'ordre des exos dans le cours est 6 $\to$ 4 $\to$ 15 $\to$ 19 $\to$ 18
 
 # Exercice 4
 
-Montrer que la somme de n variables aléatoires indépendantes suivant
-une loi de Bernoulli de paramètre p suit une loi binomiale de paramètres n
-et p.
+Montrer que la somme de n variables aléatoires indépendantes suivant une loi de Bernoulli de paramètre p suit une loi binomiale de paramètres n et p.
 
 <details markdown="1">
 <summary>Solution</summary>
@@ -51,10 +49,7 @@ $$
 Exercice qui risque d'etre au partiel !
 </div>
 
-Soient deux variables aléatoires indépendantes suivant respectivement des
-lois exponentielles de paramètres respectifs $\lambda1$ et $\lambda2$.
-Montrer que la variable aléatoire $min(X1; X2)$ suit une loi exponentielle de
-paramètre $\lambda1 + \lambda2$.
+Soient deux variables aléatoires indépendantes suivant respectivement des lois exponentielles de paramètres respectifs $\lambda1$ et $\lambda2$. Montrer que la variable aléatoire $min(X1; X2)$ suit une loi exponentielle de paramètre $\lambda1 + \lambda2$.
 
 <details markdown="1">
 <summary>Solution</summary>
@@ -99,9 +94,7 @@ Conclusion: $Y\sim \xi(\lambda_1+\lambda_2)$
 </details>
 
 # Exercice 15
-Soient $X$ et $Y$ deux variables aléatoires indépendantes et suivant toutes
-deux une loi normale centrée réduite.
-Considérons les variables aléatoires $U = X + Y$ et $V = X − Y$
+Soient $X$ et $Y$ deux variables aléatoires indépendantes et suivant toutes deux une loi normale centrée réduite. Considérons les variables aléatoires $U = X + Y$ et $V = X − Y$
 
 <details markdown="1">
 <summary>Solution</summary>

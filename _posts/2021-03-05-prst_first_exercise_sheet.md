@@ -44,8 +44,7 @@ $$
 </details>
 
 # Exercice 9
-Dans une fabrication en série, 7% des produits présentent un défaut. 40
-articles sont contrôlés
+Dans une fabrication en série, 7% des produits présentent un défaut. 40 articles sont contrôlés
 1. Que vaut la probabilité que 4 articles présentent un défaut?
 2. Que vaut la probabilité que moins de 4 articles présentent un défaut?
 
@@ -129,14 +128,12 @@ P(0\lt x\le2) &= P(1\le Y\le2) = \int_1^2\alpha x^{-\alpha-1}dx\\
 \end{aligned}
 $$
 
-3. $\alpha\gt 1$
+3.$\alpha\gt 1$
 
 </details>
 
 # Exercice 15
-Les œufs pondus par une poule ont une longueur pouvant être modélisée
-à l’aide d’une loi normale d’espérance 6 et d’écart-type 1,4. Quelle est la
-probabilité de trouver un oeuf:
+Les œufs pondus par une poule ont une longueur pouvant être modélisée à l’aide d’une loi normale d’espérance 6 et d’écart-type 1,4. Quelle est la probabilité de trouver un oeuf:
 1. d’une longueur supérieure à 8cm?
 2. d’une longueur inférieure à 5cm?
 
