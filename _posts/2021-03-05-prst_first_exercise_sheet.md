@@ -120,7 +120,7 @@ $$
 F_X(x) = \int_1^x\alpha t^{-\alpha-1}dt = 1-x^{-\alpha}
 $$
 
-2. 
+2.
 
 $$
 \begin{aligned}
@@ -157,7 +157,7 @@ $$
 1-P(Y\le1,43)\simeq0,92\sim0,08
 $$
 
-2. 
+2.
 
 $$
 \begin{aligned}

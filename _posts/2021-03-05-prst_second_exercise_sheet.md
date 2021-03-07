@@ -134,7 +134,7 @@ $$
 
 Toute combinaison lineaire de $U$ et $V$ es une combinaison de $X$ et $Y$, comme ce sont des vecteurs gaussien alors $(U,V)^T$ est un vecteur gaussien.
 
-2. 
+2.
 
 $$
 \begin{aligned} 
@@ -169,7 +169,7 @@ pour un certain réel $\alpha$.
 <summary>Solution</summary>
 
 <div class="alert alert-danger" role="alert" markdown="1">
-Par definition:
+1. Par definition:
 
 $$
 \sum_{k\ge 1}P(X=k)=1
@@ -200,7 +200,7 @@ $$
 
 Notons que $\alpha$ est positif.
 
-2. 
+2.
  
 $$
 \begin{aligned}
@@ -239,7 +239,7 @@ On pose, pour tout entier $n \ge 1$, $M_n := max(U_1, . . . , U_n)$ et $X_n = n(
 
 <details markdown="1">
 <summary>Solution</summary>
-1. Soit $x$ un reel.
+1.Soit $x$ un reel.
 
 $$
 \begin{aligned}
@@ -287,7 +287,7 @@ G_n(x) = P(X_n\le x) &= 1-P(X_n\gt x)\\
 \end{aligned}
 $$
 
-2. Quelle propriete du cours doit-on utiliser ?
+2.Quelle propriete du cours doit-on utiliser ?
 
 Remarquons que:
 
