@@ -247,7 +247,7 @@ Applications:
 
 # Environnement
 
-::info
+<div class="alert alert-info" role="alert" markdown="1">
 On peut s'enfermer dans un objet pour avoir notre environnement
 </div>
 
