@@ -26,7 +26,7 @@ Soit $X\to\mathcal N(0,1)$ (Loi normale centree reduite).
 D'apres l'inegalite de Techbychev:
 
 $$
-\begin{align}
+\begin{aligned}
 \forall\varepsilon\gt0, &P(\vert X-E(X)\vert\ge\varepsilon)\le\frac{V(X)}{\varepsilon^2}\\
 \text{or: } &E(X) = 0 \text{ et } V(X) = 1\\
 &P(\vert X\vert\ge\varepsilon)\le\frac{1}{\varepsilon^2}\\
@@ -36,16 +36,16 @@ $$
 &F(\varepsilon) - F(-\varepsilon)\ge 1-\frac{1}{\varepsilon^2} \text{ F: fonction de densite de }\mathcal N(0,1)\\
 &F(\varepsilon) - (1-F(\varepsilon))\ge 1-\frac{1}{\varepsilon^2}, \forall\varepsilon\gt0\\
 \Rightarrow &2F(\varepsilon) -1 \ge 1-\frac{1}{\varepsilon^2}(*)
-\end{align}
+\end{aligned}
 $$
 
 On a aussi $\frac{1}{\sqrt{2\pi}}\int_0^xe^{-\frac{t^2}{2}} = F(x) - F(0) = F(x) - \frac{1}{2}, \forall x\gt0$
 
 $$
-\begin{align}
+\begin{aligned}
 \Rightarrow \int_0^xe^{-\frac{t^2}{2}} &= \sqrt{2\pi}(F(x) - \frac{1}{2})\\
 &=\frac{\sqrt{2\pi}}{2}(2F(x) - 1), \forall x\gt0
-\end{align}
+\end{aligned}
 $$
 
 Grace a l'inegalite $(*)$ et en remplacant $\varepsilon$ par $x$, on obtient $\forall x\gt0$:
@@ -110,10 +110,10 @@ $X$ suit la loi exponentielle$(\lambda)$ de parametre $\lambda$.
 1.On rappelle que $E(X)=\frac{1}{\lambda}$ et $V(X)=\frac{1}{\lambda^2}$. En appliquant l'inegalite de Tchebychev:
 
 $$
-\begin{align}
+\begin{aligned}
 &P(\vert X-E(X)\vert\ge\varepsilon)\le\frac{V(X)}{\varepsilon^2}, \forall\varepsilon\gt0\\
 \Rightarrow &P(\vert X-\frac{1}{\lambda}\vert\ge\varepsilon)\le\frac{\lambda}{\lambda^2\varepsilon^2}, \forall\varepsilon\gt0
-\end{align}
+\end{aligned}
 $$
 
 2.L'evenement:
@@ -127,10 +127,10 @@ $$
 On en deduit, par croissance de la probabilite:
 
 $$
-\begin{align}
+\begin{aligned}
 &P(X-\frac{1}{\lambda}\ge\varepsilon)\le P(\vert X-\frac{1}{\lambda}\vert\ge\varepsilon)\\
 \Rightarrow &P(X-\frac{1}{\lambda}\ge\varepsilon)\le\frac{1}{\lambda^2\varepsilon^2} \text{ (d'apres la question 1)}
-\end{align}
+\end{aligned}
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -153,10 +153,10 @@ $(X_n), n\gt0$ une suite de v.a. geometrique $G(\frac{1}{n})$ avec $p=\frac{1}{n
 Rappel:
 
 $$
-\begin{align}
+\begin{aligned}
 P(X_n = k) &= (1-p)^{k-1}p, \forall k\ge1\\
 &= (1-\frac{1}{n})^{k-1}\frac{1}{n}
-\end{align}
+\end{aligned}
 $$
 
 </div>
@@ -172,12 +172,12 @@ Remarque: donc $\forall x\le 0$, $\lim_{n\to+\infty}P(Y_n\le x) = 0$, $\forall x
 Des que $n$ est assez grand, $nx\ge 1$.
 
 $$
-\begin{align}
+\begin{aligned}
 P(Y_n\le x) &= P(X_n\le nx) = \sum_{k=1}^{[nx]}P(X_n=k) \text{ }([nx] \text{participation entiere de } nx)\\
 \forall x\gt0, P(Y_n\le x) &= \sum_{k=1}^{[nx]}(1-\frac{1}{n})^{k-1}\frac{1}{n}\\
 &= \frac{1}{n}\sum_{k=1}^{[nx]}(1-\frac{1}{n}^{k-1}) = \frac{1}{n}\biggr(\frac{1-(1-\frac{1}{n})^{[nk]}}{1-(1-\frac{1}{n})}\biggr)\\
 &= P(Y_n\le x) = 1 - (1-\frac{1}{n})^{[nk]}
-\end{align}
+\end{aligned}
 $$
 
 Donc:
@@ -200,13 +200,13 @@ $$
 
 Par definition de la partie entiere:
 $$
-\begin{align}
+\begin{aligned}
 &[nx]\le nx\lt[nx] + 1\\
 &nx-1\lt[nx]\le nx\\
 &\Rightarrow 1-\frac{1}{nx}\lt\frac{[nx]{nx}}\le1\\
 &\Rightarrow\lim_{n\to+\infty}\frac{[nx]}{nx}\le1\\
 &\Rightarrow [nx]\sim nx \text{ (} n \text{ au voisinage de } +\infty\text{)}
-\end{align}
+\end{aligned}
 $$
 
 Donc $[nx]\ln(1-\frac{1}{n})\sim nx(-\frac{1}{n})=-x$.
