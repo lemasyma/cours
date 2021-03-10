@@ -58,9 +58,10 @@ $$
 - $V(X) = \frac{1-p}{p^2}$
 
 $(X_n), n\gt0$ une suite de v.a. geometrique $G(\frac{1}{n})$ avec $p=\frac{1}{n}$ parametre.
+
 $$
-\begin{align}
+\begin{aligned}
 P(X_n = k) &= (1-p)^{k-1}p, \forall k\ge1\\
 &= (1-\frac{1}{n})^{k-1}\frac{1}{n}
-\end{align}
+\end{aligned}
 $$
