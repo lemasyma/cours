@@ -3,11 +3,9 @@ title:          "PRST: Feuille 3 - Exercice"
 date:           3021-03-10 14:30
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8]
-description: Feuille 2 - Exercice
+description: Feuille 3 - Exercice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SygaNL8X_)
-
-# PRST - Feuille 3
 
 # Exercice du cours
 Déterminer les estimateurs des paramètres $m$ et $\sigma$ 2 donnés par la méthode des moments pour une loi normale $N (m, \sigma^2)$.
