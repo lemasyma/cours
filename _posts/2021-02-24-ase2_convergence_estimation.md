@@ -223,7 +223,7 @@ On notera $(X_n)\to^PX$
 <div class="alert alert-danger" role="alert" markdown="1">
 Inégalité de Bienaymé-Tchebychev:
 $$
-P(\vert X - E(X)\vert\gt\varepsilon)\lt\frac{V(X)}{\varepsilon^2} \forall\varepsilon\gt 0
+P(\vert X - E(X)\vert\gt\varepsilon)\lt\frac{V(X)}{\varepsilon^2} \text{  } \forall\varepsilon\gt 0
 $$
 </div>
 

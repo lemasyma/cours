@@ -165,7 +165,7 @@ Simuler les phenomenes optiques qui conduisent a la formation de l'image.
     - $\mathcal F$ s.e.v de $E$
     - Soit $A\in E, \forall x\in\mathcal F; A + x\in\mathcal F$
 - Cas particuliers:
-    - Dim 0 $\Rightarrow un point
+    - Dim 0 $\Rightarrow$ un point
     - Dim 1 $\Rightarrow$ une droite affine
     - Dim 2 $\Rightarrow$ un plan affine
 - Repere cartesien de $\mathcal F : (O, B)$ avec $O$ un point de $\mathcal F$ et $B$ une famille de vecteurs de $\mathcal F$ formant une base de $\mathcal F$
