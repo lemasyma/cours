@@ -7,8 +7,6 @@ description: Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SyU52FvX_)
 
-# OCVX
-
 # Introduction
 L’optimisation fait partie des missions historiques de l’ingénierie. Elle naît avec l’ère industrielle: une fois un concept élaboré il s’agit de réduire les coups, minimiser les risques de défauts de livraisons ou étendre le scope d’action ...
 
