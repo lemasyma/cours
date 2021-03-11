@@ -7,8 +7,6 @@ description: Les textures
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJT3ierQ_)
 
-# ISIM - Les textures
-
 # Les textures
 - Objectifs
     - Ajouter du realisme
