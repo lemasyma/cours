@@ -90,7 +90,7 @@ Comparaison ave le filtre moyenneur
 ![](https://i.imgur.com/0TnBTHw.png)
 > Je suis pas du tout narcissique
 
-On a completement enleve le bruit *"poivre et sel"* de la 2$^{\text{nde}$ image
+On a completement enleve le bruit *"poivre et sel"* de la 2$^{\text{nde}}$ image
 
 # Lissage
 - Lissage (gaussien, moyenne...)
