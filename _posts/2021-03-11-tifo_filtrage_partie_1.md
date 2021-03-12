@@ -516,7 +516,7 @@ $$
 $$
 \begin{aligned}
 &I_x=\biggr(\frac{\delta I}{\delta x}\biggr) &\Vert\overrightarrow{grad(P)}\Vert^2=I_x^2+I_y^2\\
-&\sin(\widehat{ox,grad(P)})=\frac{I_y}{\sqrt{I_x^2+I_y^2}} &\cos(\widehat{ox,grad(P)})=\frac{I_y}{\sqrt{I_x^2+I_y^2}}\\
+&\widehat{\sin(ox,grad(P)})=\frac{I_y}{\sqrt{I_x^2+I_y^2}} &\widehat{\cos(ox,grad(P)})=\frac{I_y}{\sqrt{I_x^2+I_y^2}}\\
 &k=I_x^2<I_y^2>+I_y^2<I_x^2>-2I_xI_y<I_xI_y> &<I>I\times
 \begin{pmatrix}
 1&1&1\\
