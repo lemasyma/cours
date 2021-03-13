@@ -393,7 +393,7 @@ C'est ce qu'on fait lors du produit de convolution.
 
 ## Proprietes
 - Commutative: $f(t)* g(t)=g(t)* f(t)$
-- Distributive: $(x(t)+y(t))*g(t) = x(t)* g(t)+y(t)* g(t)$
+- Distributive: $(x(t)+y(t)) * g(t) = x(t) * g(t)+y(t) * g(t)$
 - Associative: $(x(t)* y(t))* z(t)=x(t)* (y(t)* z(t))$
 
 ## Theoreme de Plancherel
