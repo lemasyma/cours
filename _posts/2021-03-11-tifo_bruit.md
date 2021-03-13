@@ -163,7 +163,7 @@ $$
 Filtre de Wiener:
 
 $$
-w = \biggr[\frac{H^c}{\vert H\vert^2+\frac{\vert N\vert^2}{\vert F\vert^2}}\biggr]
+w = \biggr[\frac{H^c}{\vert H\vert^2+\underbrace{\frac{\vert N\vert^2}{\vert F\vert^2}}}_{=K}\biggr]
 $$
 
 </div>
