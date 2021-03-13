@@ -82,6 +82,7 @@ UO(noe, parent_leve, max_contrast) {
 ```
 
 Resultats:
+
 |Format|Nb of pixels|Time (ms)|
 |-|-|-|
 |128x128|16384|0,18|
