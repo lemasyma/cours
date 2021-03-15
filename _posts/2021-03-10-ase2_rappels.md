@@ -7,8 +7,6 @@ description: Rappels sur les lois
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJ7bOb8mO)
 
-# ASE2 - Rappels
-
 # Loi normale centree reduite
 - $E(X) = 0$
 - $V(X) = 1$
