@@ -250,7 +250,7 @@ $$
     - Cas particulier si $d$ parallele au plan ($\overrightarrow N\overrightarrow v=0$)
 - $I=P+t_i\overrightarrow v$
 
-### Intersectoin droite/plan $\rightarrow$ droite\triangle
+### Intersection droite/plan $\rightarrow$ droite\triangle
 - Verifier que $I$ est dans le triangle $ABC$
     - Exprimer $I$ en fonction de $A$, $B$ et $C$
         - Les coordonnees barycentriques doivent etre toutes positives
