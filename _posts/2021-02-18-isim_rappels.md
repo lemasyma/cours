@@ -255,7 +255,7 @@ $$
     - Exprimer $I$ en fonction de $A$, $B$ et $C$
         - Les coordonnees barycentriques doivent etre toutes positives
     - Determiner les  de chaque cote du triangle
-        - Determiner la positiom de $I$ vis a vis de chaque cote i.e $ax+by+c\lt0$ ou $ax+by+c\gt0$
+        - Determiner la position de $I$ vis a vis de chaque cote i.e $ax+by+c\lt0$ ou $ax+by+c\gt0$
     - Avec l'algorithme de Cyrus-Beck
     - En regardant l'orientation du sens de parcours
 
