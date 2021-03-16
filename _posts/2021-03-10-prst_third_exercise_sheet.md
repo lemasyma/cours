@@ -93,13 +93,13 @@ $$
 L(x_1,...,x_n,\alpha)&=\Pi_{k=1}^nf(x_k,\alpha)\\
 &= \Pi_{k=1}^n\alpha x^{-\alpha-1}\\
 &= \alpha^n\Pi_{k=1}^nx^{-\alpha-1}\\
-\log(x_1,...,x_n,\alpha) &= n\log(\alpha)+\Pi_{k=1}^n\log(xk^{-\alpha-1})\\
-&= n\log\alpha-(\alpha-1)\Pi_{k=1}^n\log(xk)\\
+\log(L(x_1,...,x_n,\alpha)) &= n\log(\alpha)+\sum_{k=1}^n\log(xk^{-\alpha-1})\\
+&= n\log\alpha-(\alpha-1)\sum_{k=1}^n\log(xk)\\
 \frac{\delta L}{\delta\alpha} &= \frac{n}{\alpha}-\sum_{k=1}^n\log(x_k)\\
 \frac{\delta L}{\delta\alpha} = 0 &\Leftrightarrow \frac{n}{\alpha}-\sum_{k=1}^n\log(x_k)\\
 &\Leftrightarrow \alpha=\frac{n}{\sum_{k=1}^n\log(x_k)}\\
 &\Leftrightarrow \alpha=\frac{1}{\frac{1}{n}\sum_{k=1}^n\log(x_k)}\\
-\frac{\alpha^2L}{\delta\alpha}&=-\frac{n}{\alpha^2}\lt0\\
+\frac{\delta^2L}{\delta^2\alpha}&=-\frac{n}{\alpha^2}\lt0\\
 \hat\alpha &= \frac{1}{\frac{1}{n}\sum_{k=1}^n\log(x_k)} \Rightarrow\text{ EMV}
 \end{aligned}
 $$
