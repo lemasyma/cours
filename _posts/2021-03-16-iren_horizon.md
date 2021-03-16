@@ -3,7 +3,7 @@ title:          "IREN: Tour d'horizon"
 date:           2021-03-16 10:00
 categories:     [Image S8, IREN]
 tags:           [Image, Sante, IREN, S8]
-description: Implementation
+description: Tour d'horizon
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkZAGl0Xu)
 
