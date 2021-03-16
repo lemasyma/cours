@@ -96,7 +96,7 @@ L(x_1,...,x_n,\alpha)&=\Pi_{k=1}^nf(x_k,\alpha)\\
 \log(L(x_1,...,x_n,\alpha)) &= n\log(\alpha)+\sum_{k=1}^n\log(xk^{-\alpha-1})\\
 &= n\log\alpha-(\alpha-1)\sum_{k=1}^n\log(xk)\\
 \frac{\delta L}{\delta\alpha} &= \frac{n}{\alpha}-\sum_{k=1}^n\log(x_k)\\
-\frac{\delta L}{\delta\alpha} = 0 &\Leftrightarrow \frac{n}{\alpha}-\sum_{k=1}^n\log(x_k)\\
+\frac{\delta L}{\delta\alpha} = 0 &\Leftrightarrow \frac{n}{\alpha}-\sum_{k=1}^n\log(x_k)=0\\
 &\Leftrightarrow \alpha=\frac{n}{\sum_{k=1}^n\log(x_k)}\\
 &\Leftrightarrow \alpha=\frac{1}{\frac{1}{n}\sum_{k=1}^n\log(x_k)}\\
 \frac{\delta^2L}{\delta\alpha^2}&=-\frac{n}{\alpha^2}\lt0\\
