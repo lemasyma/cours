@@ -141,7 +141,7 @@ Si $L$ est de classe $\mathcal C^2$ (i.e. deux fois  derivable par rapport $\the
 $$
 \begin{cases}
     \frac{\delta L}{\delta \theta} &= 0\\
-    \frac{\delta^2 L}{\delta \theta^2} &lt 0\\
+    \frac{\delta^2 L}{\delta \theta^2} &\lt 0\\
 \end{cases} (1)
 $$
 </div>
@@ -156,7 +156,7 @@ Ainsi $\hat\theta$ est solution du systeme:
 $$
 \begin{cases}
     \frac{\delta \log L}{\delta \theta} &= 0\\
-    \frac{\delta^2 \log L}{\delta \theta^2} &lt 0\\
+    \frac{\delta^2 \log L}{\delta \theta^2} &\lt 0\\
 \end{cases} (1)
 $$
 </div>
