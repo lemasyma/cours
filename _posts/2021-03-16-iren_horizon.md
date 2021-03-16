@@ -145,7 +145,7 @@ Lie aux jeux videos
 ### Points clefs du renforcement
 - Pas de superviseur qui connait la solution, seulement une note
 - Le retour d'information est decale (pas immediat)
-- Laa notion de temps est importante $\rightarrow$ Systeme dynamique
+- La notion de temps est importante $\rightarrow$ Systeme dynamique
 - L'agent qui note a un impact sur la suite des donnees qu'on va recevoir
 
 ![](https://i.imgur.com/mM2eGBi.png)
