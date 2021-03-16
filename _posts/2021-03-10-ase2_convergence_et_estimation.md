@@ -172,7 +172,8 @@ $$
 
 Déterminer la fonction caractéristique de $X$
 
-</div>spoiler Solution
+<details markdown="1">
+<summary>Solution</summary>
 
 $$
 \begin{aligned}
@@ -184,12 +185,14 @@ $$
 Car $-e^{-(1-it)x}=e^{-x}e^{itx}\to0$ lorsque $x\to+\infty$.
 
 Puisque $e^{itx}$ est bornée de module 1 et $e^{-x}\to0$ quand $x\to+\infty$
-</div>
+</details>
 
 ### Exemple 2
 Déterminer la fonction caractéristique de la loi de Bernoulli de paramètre $p$
 
-</div>spoiler Solution
+
+<details markdown="1">
+<summary>Solution</summary>
 
 Soit $X$ une variable de Bernoulli 
 
@@ -209,7 +212,7 @@ $$
 \end{aligned}
 $$
 
-</div>
+</details>
 
 # Convergences des suites de variables aléatoires
 
