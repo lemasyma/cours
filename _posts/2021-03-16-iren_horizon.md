@@ -106,7 +106,7 @@ On recoit un nouveau mail et le reseau de neurones determine si c'est un spam ou
 |Regression|Classification|
 |-|-|
 |Moindres carres|SVM|
-|Regression polynomiale|Regression logistique, arbre de deisions|
+|Regression polynomiale|Regression logistique, arbre de decisions|
 |Reseau neuronal|Reseau neuronal|
 
 La revolution vient des reseaux neuronaux:
