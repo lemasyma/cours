@@ -157,7 +157,7 @@ $$
 \begin{cases}
     \frac{\delta \log L}{\delta \theta} &= 0\\
     \frac{\delta^2 \log L}{\delta \theta^2} &\lt 0\\
-\end{cases} (1)
+\end{cases} (2)
 $$
 </div>
 - La condition 1 est **nécessaire** et la condition 2 est **sufisante**.
