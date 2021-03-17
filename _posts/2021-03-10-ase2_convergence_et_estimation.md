@@ -320,7 +320,7 @@ $$
 fonction caractéristique de la loi normale $\mathcal N(0,1)$
 </div>
 
-Conclusion $\frac{X_n-np}{{\sqrt{npq}}}\to^L\mathcal N(0,1)$
+Conclusion $\frac{X_n-np}{\sqrt{npq}}\to^L\mathcal N(0,1)$
 
 ### Remarque
 lorsque n est assez grand on peut donc approximer la loi Binomiale par la loi normale. On donne généralement comme condition $np$ et $nq\gt5$.
