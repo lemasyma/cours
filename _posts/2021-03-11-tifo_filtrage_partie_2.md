@@ -2,7 +2,7 @@
 title:          "TIFO: Filtrage, partie 2"
 date:           2021-03-11 15:00
 categories:     [Image S8, TIFO]
-tags:           [Image, TIFO, S8]
+tags:           [Image, TIFO, S8, signal, Fourier, convolution]
 description: Filtrage, partie 2
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJHpPmYm_)

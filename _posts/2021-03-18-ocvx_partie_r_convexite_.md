@@ -1,9 +1,9 @@
 ---
-title:          "OCVX: parties de $\mathbb R$ et convexite"
+title:          "OCVX: Parties de $\mathbb R$ et convexite"
 date:           2021-03-18 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
-description:     parties de $\mathbb R$ et convexite
+description:    Parties de $\mathbb R$ et convexite
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1Q325eE_)
 

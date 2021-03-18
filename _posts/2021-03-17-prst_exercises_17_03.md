@@ -2,7 +2,7 @@
 title:          "PRST: Exercices de cours du 17/03"
 date:           2021-03-17 14:30
 categories:     [Image S8, PRST]
-tags:           [Image, SCIA, PRST, S8]
+tags:           [Image, SCIA, PRST, S8, Fisher, EMV]
 description: Exercices de cours du 17/03
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJ2yA214O)

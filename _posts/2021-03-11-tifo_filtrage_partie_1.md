@@ -2,7 +2,7 @@
 title:          "TIFO: Filtrage, partie 1"
 date:           2021-03-11 14:00
 categories:     [Image S8, TIFO]
-tags:           [Image, TIFO, S8]
+tags:           [Image, TIFO, S8, lissage, debruitage, laplacien, convolution, bords]
 description: Filtrage, partie 1
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H13CJ2vm_)
@@ -399,7 +399,7 @@ Evaluation de la qualite de detection de contours:
 
 > Cf filtre de Canny/Deriche
 
-# Detection de points d'interest
+# Detection de points d'interet
 - Detection de coins
     - Comment se caracterise un coin ?
     - Comment trouver les coins ?

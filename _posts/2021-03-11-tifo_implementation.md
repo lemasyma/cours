@@ -2,7 +2,7 @@
 title:          "TIFO: Implementation"
 date:           2021-03-11 17:00
 categories:     [Image S8, TIFO]
-tags:           [Image, TIFO, S8]
+tags:           [Image, TIFO, S8, max tree, FFT]
 description: Implementation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1lhhfqXO)
