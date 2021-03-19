@@ -154,23 +154,23 @@ Closely related to PCoA, but operates on the covariance matrix $X_c^T X_c$ PCA s
 
 $$
 X=\begin{bmatrix}
-\overbrace{x_11}^{u_1=\text{moyenne}} & \overbrace{x_12}^{u_2}\\
+\overbrace{x_{11}}^{u_1=\text{moyenne}} & \overbrace{x_{12}}^{u_2}\\
 \vdots & \vdots\\
-x_n1&x_n2
+x_{n1}&x_{n2}
 \end{bmatrix} \Rightarrow \text{centrage des donnees}
 $$
 
 $$
 X_c=\begin{bmatrix}
-x_11-u_1 & x_12-u_2\\
+x_{11}-u_1 & x_{12}-u_2\\
 \vdots & \vdots\\
-x_n1-u_1&x_n2-u_2
+x_{n1}-u_1&x_{n2}-u_2
 \end{bmatrix}
 $$
 
 1. Center the data $X_c = C_nX$
     1.b (opt) Reduce the data
-2. Compute covariance matrix $\sum=X_c^TX_c$
+2. Compute covariance matrix $\sum=\frac{1}{n-1}X_c^TX_c$
 3. Perform eigendecomposition $(E,\Delta)$ of $\sum$
 4. Project on the first $M$ principal axes $Y=XE_M$
 
