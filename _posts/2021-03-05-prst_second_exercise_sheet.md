@@ -2,7 +2,7 @@
 title:          "PRST: Feuille 2 - Exercice"
 date:           2021-03-05 15:30
 categories:     [Image S8, PRST]
-tags:           [Image, SCIA, PRST, S8]
+tags:           [Image, SCIA, PRST, S8, brenoulli, binomial, loi, partiel]
 description: Feuille 2 - Exercice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJH0y8-X_)

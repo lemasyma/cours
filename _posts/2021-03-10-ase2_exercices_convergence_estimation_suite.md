@@ -2,7 +2,7 @@
 title:          "ASE2: Convergence et estimation - Exercices, suite (encore)"
 date:           2021-03-10 9:00
 categories:     [tronc commun S8, ASE2]
-tags:           [tronc commun, ASE2, S8]
+tags:           [tronc commun, ASE2, S8, convergence, normale, loi]
 description: Suite des exercices sur la convergence et estimation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SyaGAgUm_)

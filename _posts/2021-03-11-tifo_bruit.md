@@ -2,7 +2,7 @@
 title:          "TIFO: Le bruit"
 date:           2021-03-11 16:00
 categories:     [Image S8, TIFO]
-tags:           [Image, TIFO, S8]
+tags:           [Image, TIFO, S8, bruit]
 description: Le bruit
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1A2futQO)

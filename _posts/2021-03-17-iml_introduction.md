@@ -1,5 +1,5 @@
 ---
-title:          "IML:Introduction"
+title:          "IML: Introduction"
 date:           2021-03-17 11:00
 categories:     [Image S8, IML]
 tags:           [Image, SCIA, IML, S8]

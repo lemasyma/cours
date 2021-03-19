@@ -2,7 +2,7 @@
 title:          "ISIM: Les textures"
 date:           2021-03-08 11:00
 categories:     [Image S8, ISIM]
-tags:           [Image, ISIM, S8]
+tags:           [Image, ISIM, S8, texture, couleur, mapping, volume, transparent]
 description: Les textures
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJT3ierQ_)

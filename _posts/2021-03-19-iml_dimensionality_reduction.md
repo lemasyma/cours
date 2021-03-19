@@ -2,7 +2,7 @@
 title:          "IML: Dimensionality reduction"
 date:           2021-03-19 13:00
 categories:     [Image S8, IML]
-tags:           [Image, SCIA, IML, S8]
+tags:           [Image, SCIA, IML, S8, principal component analysis]
 description:    Dimensionality reduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1ZhGffNO)
@@ -164,7 +164,7 @@ $$
 X_c=\begin{bmatrix}
 x_{11}-u_1 & x_{12}-u_2\\
 \vdots & \vdots\\
-x_{n1}-u_1&x_{n2}-u_2
+x_{n1}1-u_1&x_{n2}-u_2
 \end{bmatrix}
 $$
 

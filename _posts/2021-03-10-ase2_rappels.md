@@ -2,7 +2,7 @@
 title:          "ASE2: Rappels sur les lois"
 date:           2021-03-10 9:00
 categories:     [tronc commun S8, ASE2]
-tags:           [tronc commun, ASE2, S8]
+tags:           [tronc commun, ASE2, S8, loi, normale, poisson, exponentielle, geometrique]
 description: Rappels sur les lois
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJ7bOb8mO)

@@ -2,7 +2,7 @@
 title:          "PRST: Feuille 1 - Exercice"
 date:           2021-03-05 14:45
 categories:     [Image S8, PRST]
-tags:           [Image, SCIA, PRST, S8]
+tags:           [Image, SCIA, PRST, S8, loi, exponentielle, bernoulli, binomial]
 description: Feuille 1 - Exercice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJ6TZxemd)
@@ -13,7 +13,7 @@ L'ordre des exos dans le cours est 3 $\to$ 9 $\to$ 15 $\to$ 16 $\to$ 13
 
 # Exercice 3
 1. Déterminer la fonction caractéristique de la loi de Bernoulli de paramètre $p$.
-2. Déterminer la fonction caract´eristique de la loi exponentielle de paramètre $\lambda$.
+2. Déterminer la fonction caractéristique de la loi exponentielle de paramètre $\lambda$.
 
 <details markdown="1">
 <summary>Solution</summary>

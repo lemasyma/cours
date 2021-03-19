@@ -2,7 +2,7 @@
 title:          "ASE2: Convergence et estimation"
 date:           2021-03-10 9:30
 categories:     [tronc commun S8, ASE2]
-tags:           [tronc commun, ASE2, S8]
+tags:           [tronc commun, ASE2, S8, convergence, normale, gamma, poisson, loi, Mac-Laurin, Moivre-Laplace, central limite]
 description: Convergence et estimation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJjhGXImd)
@@ -274,7 +274,7 @@ Si la suite des fonctions caractéristiques $\phi_{X_n}(t)$ converge vers $\phi_
 </div>
 
 # Applications: Convergence en loi de la binomiale vers la loi Normale
-## Théorème (Moivre-laplace)
+## Théorème (Moivre-Laplace)
 <div class="alert alert-danger" role="alert" markdown="1">
 Soit $(X_n)$ une suite de variables binomiales $\mathcal B(n,p)$ alors
 

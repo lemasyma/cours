@@ -2,12 +2,10 @@
 title:          "IREN: Introduction aux réseaux neuronnaux "
 date:           2021-03-16 11:00
 categories:     [Image S8, IREN]
-tags:           [Image, Sante, IREN, S8]
+tags:           [Image, Sante, IREN, S8, réseaux neuronnaux]
 description: Introduction aux réseaux neuronnaux
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1k6jb07d)
-
-# IREN - Introduction aux réseaux neuronnaux 
 
 # Un neurone
 
