@@ -104,7 +104,7 @@ Somehow trying to find a low-dimensional subspace in which the projected data wo
 It’s not because you *can* that you *will*
 
 <div class="alert alert-danger" role="alert" markdown="1">
-Let $0\lt\varepsilon\lt1$ and let $x_1,...,x_n$ b $n$ points in $\mathbb R^N$. Then there exists a linear map $f:\mathbb R^N\to\mathbb R^M$ such that for every points $x_i$ and $x_j$
+Let $0\lt\varepsilon\lt1$ and let $x_1,...,x_n$ be $n$ points in $\mathbb R^N$. Then there exists a linear map $f:\mathbb R^N\to\mathbb R^M$ such that for every points $x_i$ and $x_j$
 
 $$
 (1-\varepsilon)\Vert x_i-x_j \Vert^2\le \Vert f(x_i)-f(x_j) \Vert^2\le(1+\varepsilon)\Vert x_i-x_j \Vert^2
