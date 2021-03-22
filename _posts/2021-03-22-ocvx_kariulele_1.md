@@ -13,14 +13,17 @@ Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci 
 > $f'(x) = 2ax +b$
 >  $x^* \qquad tq f'(x^*) = 0$
 > $2ax^* + b = 0$
-> $x^* = -\frac {-b} {2a}$
+> $x^* = -\frac {-b}{2a}$
 >
->\begin{aligned}
-f^* &= f(x^*)\\
-&= a \left(-\frac{b} {2a}\right)^2 + b\left(-\frac{b}{2a}\right) + c\\
-&= \frac{b^2}{4a}- \frac{b^2}{2a} +c\\
-&= -\frac{b^2}{4a} + c
-\end{aligned}
+> 
+> $$
+> \begin{aligned}
+> f^* &= f(x^*)\\
+> &= a \left(-\frac{b} {2a}\right)^2 + b\left(-\frac{b}{2a}\right) + c\\
+> &= \frac{b^2}{4a}- \frac{b^2}{2a} +c\\
+> &= -\frac{b^2}{4a} + c
+> \end{aligned}
+> $$
 
 $f: \mathbb R \longrightarrow \mathbb R$
 f est dérivable en $x_0$ : $\underset{h \rightarrow 0}{lim} \frac{f(x+h) - f(x)}{h}$ est finie.
@@ -90,9 +93,18 @@ t &\longmapsto f(x_0 + th)
 \end{aligned}$$
 </div>
 
-$\frac{\partial f}{\partial x}(x_0) \equiv$ derivee de $\varphi :\begin{aligned}\mathbb R & \longrightarrow \mathbb R\\
-t &\longmapsto \underbrace{f(x_{01} +, \dots, x_{0k+t}, \dots, x_{0n})}_{\begin{pmatrix}x_{01} \\ \vdots\\ x_{0n}\end{pmatrix} + t\begin{pmatrix}0 \\ \vdots \\ 1 \rightarrow  k^e\\ \vdots \\ 0\end{pmatrix}}
-\end{aligned}$
+$\frac{\partial f}{\partial x}(x_0) \equiv$ derivee de 
+
+$$\carphi :\begin{aligned}\mathbb R & \rightarrow \mathbb R\\
+t &\longmapsto \underbrace{f(x_{01} +, \dots, x_{0k+t}, \dots, x_{0n})}_{\begin{pmatrix}x_{01} \\ 
+\vdots\\ 
+x_{0n}\end{pmatrix} + t\begin{pmatrix}0 \\ 
+\vdots \\ 
+1 \rightarrow  k^e\\ 
+\vdots \\ 
+0\end{pmatrix}}
+\end{aligned}
+$$
 
 
 $f: \mathbb R^2 \longrightarrow R \qquad \space \qquad x_0=(1,2)$
@@ -103,7 +115,7 @@ $(x,y) \longmapsto x^2 - y^2 \qquad h=(3,5)$
 $\varphi : \mathbb R \longrightarrow \mathbb R$
 $t \longmapsto f(x_0 + th)$
 
-$\varphi(t) = f\left(\begin{pmatrix}1 \\2 \end{pmatrix} + t \begin{pmatrix}3 \\5\end{pmatrix}\right)$
+$\varphi(t) = f\left(\begin{pmatrix}1 \\ 2 \end{pmatrix} + t \begin{pmatrix}3 \\ 5\end{pmatrix}\right)$
 $= f(1+3t, 2+ 5t)$
 $= (1 +3t)^2 - (2 + 5t)^2$
 $= 1 + 6t + 9t^2 -(4 - 20t + 25t^2)$
@@ -341,13 +353,16 @@ $$g(t) = f((1-t)x + ty)$$
 
 
 La definition de convexite de f :
-\begin{eqnarray}
+
+$$
+\begin{matrix}
                 & f((1-t) x  + t(y))    & \leqslant & (1-t)f(x) + tf(y)\\
 \Leftrightarrow & g(t)                  & \leqslant & (1-t)g(0) + g(1)\\
 \Leftrightarrow & g(t) - g(0)           & \leqslant & t(g(1) - g(0))\\
 \Leftrightarrow & \frac{g(t) - g(0)}{t} & \leqslant & g(1) - g(0)\\
 \Rightarrow     & g(0)                  & \leqslant & f(y) - f(x)
-\end{eqnarray}
+\end{matrix}
+$$
 
 Or $g(0) \nabla f(x)^T(y -x)$
 D'ou $\color{green}{\boxed{\nabla f(x)'(y-x) \leqslant f(y) - f(x)}}$
@@ -359,12 +374,12 @@ D'ou $\color{green}{\boxed{\nabla f(x)'(y-x) \leqslant f(y) - f(x)}}$
 Soient $x,y \in U \qquad z_t = (1 - t)x + ty$
 
 $$
-\begin{eqnarray}
+\begin{aligned}
 t \times [f(y)- f(z_t)] &\geqslant& \nabla f(z_t)^\top(y -z_t)\\
 (1-t) \times [f(x) - f(z_t) &\geqslant& \nabla f(z_t)(x-z_t)]\\
 tf(y) + (1-t)f(x) + tf(z_t) - (1 -t)f(z_t)
 &\geqslant& \nabla f(z_t)(t(y -z_t) + (1-t)(x - z_t)) \color{orange}{(D)}
-\end{eqnarray}
+\end{aligned}
 $$
 
 $\color{orange}{(D)}$ :
@@ -624,7 +639,7 @@ alors $(P)$ et $(\check{P})$ sont en dualité forte:
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition :**
-On dit qu'un couple $(\lambda, \nu)$ est de $t$ dual admissible si $\lambda \geqslant 0$ et $g(\lambda, \nu) \gt -\infty$. Les points $(\lambda^*,\nu^*)$ optimaux pour $\check{\mathcal P}$ sont parfois appelés multiplicateurs de Lagrange.
+On dit qu'un couple $(\lambda, \nu)$ est de $t$ dual admissible si $\lambda \geqslant 0$ et $g(\lambda, \nu) \gt -\infty$. Les points $(\lambda^{*},\nu^{*})$ optimaux pour $\check{\mathcal P}$ sont parfois appelés multiplicateurs de Lagrange.
 </div>
 
 ### Les conditions KKT _(Karush-Kuhn-Tucker)_
@@ -633,6 +648,7 @@ Supposons que les valeurs optimales, primale et duale, soient atteintes et egale
 
 
 On a :
+$$
 \begin{aligned}
 f_0(x^*)&=g(\lambda^*, \nu^*)\\
 &=\inf(\mathcal L_p (x, \lambda^*, \nu^*))\\
@@ -640,11 +656,12 @@ f_0(x^*)&=g(\lambda^*, \nu^*)\\
 &=f_0(x^*) + \sum_{i=1}^m \lambda_i^* f_i(x^*) + \sum_{j=1}^p \nu_j^* h_j(x^*)\\
 &\leq f_0(x^*)
 \end{aligned}
+$$
 
 
 
 Toutes les inégalités qui apparaissent précédemment sont donc des égalités. On en déduit :
-1) $x^*$ minimise $\mathcal L_p(x, \lambda^*,\nu^*)$
+1) $x^{*}$ minimise $\mathcal L_p(x, \lambda^*,\nu^*)$
 2) $\displaystyle \sum_{i=1}^m \underbrace{ \lambda_i^* f_i(x^*)}_{\le 0} = 0$
 $\Rightarrow \forall i \in \{1,...,m\}; \lambda_i^*f_i(x^*) = 0$
 
