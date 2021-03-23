@@ -7,13 +7,9 @@ description: Optimisation Convexe 2
 ---
 Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci a elle!)
 
-# Optimisation convexe 2
-
 Graphe de de $f: \mathbb R \rightarrow \mathbb R$
 
 ![](https://i.imgur.com/AJrg3pZ.png)
-
-
 
 ## Calculer le pas
 ### Calcul du pas optimal
@@ -25,7 +21,7 @@ $= f(x) + t\nabla f(x)^T \Delta x$
 
 On s'arrete des qu'on trouve:
 $t^*$ tq
-$f(x + t^*\Delta x) \le f(x) + \alpha t^* \nabla f(x)^T \Delta x$
+$f(x + t^{\*}\Delta x) \le f(x) + \alpha t^{\*} \nabla f(x)^T \Delta x$
 
 ![](https://i.imgur.com/Ta1uJGz.jpg)
 ![](https://i.imgur.com/OHdzhaL.jpg)
@@ -53,14 +49,14 @@ Dire que $a \mapsto \nabla^2f(a)$ est majoree sur un lieu $S$ de son domaine de 
 $f(x + v) = f(x) + \nabla f(x)^T v + o(v)$
 
 - On remplace $f(x+v)$ par son approximation au 1er ordre; cad $f(x) + \nabla f(x)^T v$
-- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^* = \operatorname{argmin} \left\{\nabla f(x)^T v | \|v\|_2 = 1\right\}$
+- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^{\*} = argmin\{\nabla f(x)^T v | \|v\|_2 = 1\}$
 
 
-Rq: Si $v^*$ minimise $\nabla f(x)^Tv$ ssi $-v^*$ maximise $\nabla f(x)^Tv$ pour $\|v\|_2 = 1$
+Rq: Si $v^{\*}$ minimise $\nabla f(x)^Tv$ ssi $-v^{\*}$ maximise $\nabla f(x)^Tv$ pour $\|v\|_2 = 1$
 
-Rappel: Cauchy Schwarz : $|\nabla f(x)^Tv| \le \|\nabla f(x)\|_2 \|v\|_2$
+Rappel: Cauchy Schwarz : $\vert\nabla f(x)^Tv\vert \le \Vert\nabla f(x)\Vert_2 \Vert v\Vert_2$
 
-$|\nabla f(x)^Tv| \le \|\nabla f(x)\|_2$
+$\vert\nabla f(x)^Tv\vert \le \Vert \nabla f(x)\Vert_2$
 
 En prenant $v = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}$ (hyp denominateur != 0)
 $$
@@ -69,8 +65,8 @@ $$
 = \|\nabla f(x)\|_2
 $$
 
-Donc pour que $v^*$ maximise $\nabla f(x)^Tv^*$ pour $\|v\|_2 = 1$
-Ainsi $\frac{-\nabla f(x)}{\|\nabla f(x)\|_2}$ minimise $\nabla f(x)^Tv$ pour $\|v\|_2 = 1$
+Donc pour que $v^{\*}$ maximise $\nabla f(x)^Tv^{\*}$ pour $\|v\|_2 = 1$
+Ainsi $\frac{-\nabla f(x)}{\|\nabla f(x)\|_2}$ minimise $\nabla f(x)^Tv$ pour $\Vert v\Vert_2 = 1$
 
 Au lieu d'utiliser une direction normalisee, pour la mise a jour, on regarde plutot $\Delta_{x_{sd}} = \|\nabla f(x)\|_2$
 
@@ -80,17 +76,17 @@ nsd => normalized steepest descent
 
 
 Pour la norme 1 on s'interesse au calcul de:
-$\operatorname{argmin} \left\{  \nabla f(x)^Tv \, \mid \, \|v\|_1 = 1\right\}$
+$argmin\{\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 = 1\}$
 
 
-$\operatorname{argmin} \left\{  \nabla f(x)^Tv \, \mid \, \|v\|_1 \le 1\right\}$
+$argmin\{\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\}$
 
 Ceci est  un programme lineaire, ces points optimaux sont  des points  extremaux du lieu admissible
 
 Ces points extremaux sont les points:
 $\mathcal F_{e_i}$ pour $i \in \{1,...,n\}$
 
-$\operatorname{argmin} \left\{  \nabla f(x)^Tv \, \mid \, \|v\|_1 \le 1\right\} = I e_i$ pour un certain $i \in \{1,...,n\}$
+$argmin\{\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\} = I e_i$ pour un certain $i \in \{1,...,n\}$
 
 $\nabla f(x)^T e_i$ est la projection de $\nabla f(x)$ sur $e_i$ cad $\frac{\partial f(x)}{\partial x_i}$ Le $e_i$ qui realise l'argmin.
 

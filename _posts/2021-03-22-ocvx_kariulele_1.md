@@ -11,14 +11,14 @@ Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci 
 > 
 > $f(x) = ax^2 + bx +c \qquad a > 0$
 > $f'(x) = 2ax +b$
-> $x^* \qquad tq f'(x^{\*}) = 0$
+> $x^{\*} \qquad tq f'(x^{\*}) = 0$
 > $2ax^{\*} + b = 0$
-> $x^* = -\frac {-b}{2a}$
+> $x^{\*} = -\frac {-b}{2a}$
 >
 > 
 > $$
 > \begin{aligned}
-> f^* &= f(x^*)\\
+> f^{*} &= f(x^{*})\\
 > &= a \left(-\frac{b} {2a}\right)^2 + b\left(-\frac{b}{2a}\right) + c\\
 > &= \frac{b^2}{4a}- \frac{b^2}{2a} +c\\
 > &= -\frac{b^2}{4a} + c
@@ -426,11 +426,11 @@ A x &= b
 $$
 où $\mathcal A \in M_{p,n}(\mathbb R); b \in M_{p,1}(\mathbb R)$
 
-On dit qu'un point $x$ est admissible s'il satisfait les contraintes définies par $(P)$. Le lieu admissible $\mathcal A$ de $(P)$ correspond aux  points  admissibles de $(P)$. On fait remarquer que sous nos hypotheses, $\mathcal A$ est convexe. On note $p^*$ la valeur optimale de  $(P)$:
-$$p^* = \underset{x \in \mathcal A}{inf}\{f_0(x)\}$$
+On dit qu'un point $x$ est admissible s'il satisfait les contraintes définies par $(P)$. Le lieu admissible $\mathcal A$ de $(P)$ correspond aux  points  admissibles de $(P)$. On fait remarquer que sous nos hypotheses, $\mathcal A$ est convexe. On note $p^{\*}$ la valeur optimale de  $(P)$:
+$$p^{*} = \underset{x \in \mathcal A}{inf}\{f_0(x)\}$$
 
-Par convention  si $\mathcal A = \emptyset; p^* = +\infty$. Dans le cas sur $p^* = - \infty$  on dit que ($P$) est non borné.
-On appelle enfin point optimal $x^{\*}$ de $(P)$ tout point tq $f_0(x^{\*}) = p^{\*}$. Un tel point n'existe pas toujours; par exemple c'est le cas $\underset{x \in \mathbb{R}_+^*}{min} \frac{1}{x}$. De plus, il n'existe pas en général qu'un seul point optimal (quand il y en a); prendre par exemple le problème:
+Par convention  si $\mathcal A = \emptyset; p^{\*} = +\infty$. Dans le cas sur $p^{\*} = - \infty$  on dit que ($P$) est non borné.
+On appelle enfin point optimal $x^{\*}$ de $(P)$ tout point tq $f_0(x^{\*}) = p^{\*}$. Un tel point n'existe pas toujours; par exemple c'est le cas $\underset{x \in \mathbb{R}_+^{\*}}{min} \frac{1}{x}$. De plus, il n'existe pas en général qu'un seul point optimal (quand il y en a); prendre par exemple le problème:
 $$\underset{x \in \mathbb{R}}{min} 10$$
 
 L'écriture de ($P$) dans la définition est appelée standard d'un problème d'optimisation. Il existe une notion théorique d'équivalence de problème d'optimisation, On ne rentrera pas dans le détail, sachez qu'elle consiste à réexprimer un problème d'optimisation de façon à le résoudre plus facilement.
@@ -490,7 +490,7 @@ Si on est dans la situation suivante
 Un point $x \in \mathcal A$ est optimal si:
 
 $$
-\nabla f(x^* )^\top(y.x) \geqslant 0
+\nabla f(x^{*} )^\top(y.x) \geqslant 0
 $$
 
 > $-\nabla f_0(x^{\*})^\top(y-x) \leqslant 0$
@@ -499,14 +499,14 @@ $$
 </div>
 
 > **Preuve :**
-> Supposons $x^*$ satisfait $(op)$.
+> Supposons $x^{\*}$ satisfait $(op)$.
 > D'après les inégalités de convexité sur $f_0$ on a:
 > $$
-> \forall y \in \mathcal A; \nabla f_0(x^*)^\top(y-x^*) \leqslant f(y) - f(x)
+> \forall y \in \mathcal A; \nabla f_0(x^{*})^\top(y-x^{*}) \leqslant f(y) - f(x)
 > $$
 > D'après $(op)$:
 > $$
-> f(y) - f(x^*) \geqslant 0 \Leftrightarrow f(y) \geqslant f(x^*)
+> f(y) - f(x^{*}) \geqslant 0 \Leftrightarrow f(y) \geqslant f(x^{*})
 > $$
 
 La réciproque se fait par contraposition. On la laisse de côté pour cette fois.
@@ -525,7 +525,7 @@ avec $f_0$ différentiable
 <div class="alert alert-info" role="alert" markdown="1">
 **Propriété :**
 Si $x^{\*}$ est un point optimal de $f_0$ alors:
-$$\nabla f_0(x^*) = \underline{0}$$
+$$\nabla f_0(x^{*}) = \underline{0}$$
 </div>
 
 > **Preuve :**
@@ -535,13 +535,13 @@ $$\nabla f_0(x^*) = \underline{0}$$
 > 
 > $$
 > \begin{aligned}
-> &f_0(x^* + h) -f_0(x^*) &\geqslant 0\\
-> \Rightarrow &\nabla f_0(x^*)^T h + \theta_0 &\geqslant 0
+> &f_0(x^{*} + h) -f_0(x^{*}) &\geqslant 0\\
+> \Rightarrow &\nabla f_0(x^{*})^T h + \theta_0 &\geqslant 0
 > \end{aligned}
 > $$
 > Ainsi $\forall h \in \mathcal{B}(\underline{0}, \eta)$ pour $\eta > 0$
 > 
-> $$\nabla f_0(x^*)^T \geqslant 0$$
+> $$\nabla f_0(x^{*})^T \geqslant 0$$
 > La seule application linéaire qui est possible sur un voisinage $\mathcal B(\underline{0}, \eta)$ est l'application nulle.
 
 Dans le cas $f_0$ convexe, l'annulation du gradient en un point va nous limiter à un sous-lieu de points optimaux à étudier. En réalité, on a en général la situation suivante:
@@ -606,7 +606,7 @@ Donc $(\check{P})$ est toujours un problème convexe.
 <div class="alert alert-success" role="alert" markdown="1">
 
 **Propriété :**
-$$\forall \lambda \geqslant 0 \text{; on a : } g(\lambda, \nu) \leqslant p^*$$
+$$\forall \lambda \geqslant 0 \text{; on a : } g(\lambda, \nu) \leqslant p^{*}$$
 </div>
 
 > **Preuve :**
@@ -622,12 +622,12 @@ $$\forall \lambda \geqslant 0 \text{; on a : } g(\lambda, \nu) \leqslant p^*$$
 > &\leqslant& f_0(x)\\
 > \Rightarrow &\underset{x}{inf} \mathcal{L}(x, \lambda, \nu)
 > &=& g(\lambda, \nu) &\leqslant& f_0(x)\\
-> \Rightarrow &g(\lambda, \nu) &\leqslant& p^*
+> \Rightarrow &g(\lambda, \nu) &\leqslant& p^{*}
 > \end{aligned}
 > $$
 
 **Corollaire :**
-Si on note $d^*$ la valeur optimale du dual on a : $d^*  \leqslant p^*$
+Si on note $d^{\*}$ la valeur optimale du dual on a : $d^{\*}  \leqslant p^{\*}$
 
 **Question :** Est ce qu'on a l'égalité ?
 Dans la situation d'égalité on dit qu'on a une dualité forte entre (P) et $(\check{P})$
@@ -642,44 +642,44 @@ alors $(P)$ et $(\check{P})$ sont en dualité forte:
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition :**
-On dit qu'un couple $(\lambda, \nu)$ est de $t$ dual admissible si $\lambda \geqslant 0$ et $g(\lambda, \nu) \gt -\infty$. Les points $(\lambda^{*},\nu^{*})$ optimaux pour $\check{\mathcal P}$ sont parfois appelés multiplicateurs de Lagrange.
+On dit qu'un couple $(\lambda, \nu)$ est de $t$ dual admissible si $\lambda \geqslant 0$ et $g(\lambda, \nu) \gt -\infty$. Les points $(\lambda^{\*},\nu^{\*})$ optimaux pour $\check{\mathcal P}$ sont parfois appelés multiplicateurs de Lagrange.
 </div>
 
 ### Les conditions KKT _(Karush-Kuhn-Tucker)_
 
-Supposons que les valeurs optimales, primale et duale, soient atteintes et egales, en particulier on a une dualite forte. On designe par $x^*$ (respectivement $(\lambda^*,\nu^*)$) un point optimal de $\mathcal P$ (respectivement $\check{\mathcal P}$)
+Supposons que les valeurs optimales, primale et duale, soient atteintes et egales, en particulier on a une dualite forte. On designe par $x^{\*}$ (respectivement $(\lambda^{\*},\nu^{\*})$) un point optimal de $\mathcal P$ (respectivement $\check{\mathcal P}$)
 
 
 On a :
 $$
 \begin{aligned}
-f_0(x^*)&=g(\lambda^*, \nu^*)\\
-&=\inf(\mathcal L_p (x, \lambda^*, \nu^*))\\
-&\leq \mathcal L_p(x^*, \lambda^*, \nu^*)\\
-&=f_0(x^*) + \sum_{i=1}^m \lambda_i^* f_i(x^*) + \sum_{j=1}^p \nu_j^* h_j(x^*)\\
-&\leq f_0(x^*)
+f_0(x^{*})&=g(\lambda^{*}, \nu^{*})\\
+&=\inf(\mathcal L_p (x, \lambda^{*}, \nu^{*}))\\
+&\leq \mathcal L_p(x^{*}, \lambda^{*}, \nu^{*})\\
+&=f_0(x^{*}) + \sum_{i=1}^m \lambda_i^{*} f_i(x^{*}) + \sum_{j=1}^p \nu_j^{*} h_j(x^{*})\\
+&\leq f_0(x^{*})
 \end{aligned}
 $$
 
 
 
 Toutes les inégalités qui apparaissent précédemment sont donc des égalités. On en déduit :
-1) $x^{*}$ minimise $\mathcal L_p(x, \lambda^*,\nu^*)$
-2) $\displaystyle \sum_{i=1}^m \underbrace{ \lambda_i^* f_i(x^*)}_{\le 0} = 0$
-$\Rightarrow \forall i \in \{1,...,m\}; \lambda_i^*f_i(x^*) = 0$
+1) $x^{\*}$ minimise $\mathcal L_p(x, \lambda^{\*},\nu^{\*})$
+2) $\displaystyle \sum_{i=1}^m \underbrace{ \lambda_i^{\*} f_i(x^{\*})}_{\le 0} = 0$
+$\Rightarrow \forall i \in \{1,...,m\}; \lambda_i^{\*}f_i(x^{\*}) = 0$
 
-La fonction $x \longmapsto \mathcal L_p(x, \lambda^*, \nu^*)$ est convexe des que $(P)$ l'est. Dire que $x^*$ minimise $x \longmapsto \mathcal L_p(x, \lambda^*, \nu^*)$ est equivalent a dire que
+La fonction $x \longmapsto \mathcal L_p(x, \lambda^{\*}, \nu^{\*})$ est convexe des que $(P)$ l'est. Dire que $x^{\*}$ minimise $x \longmapsto \mathcal L_p(x, \lambda^{\*}, \nu^{\*})$ est equivalent a dire que
 
-$\nabla_x \mathcal L_p (x^*,\lambda^*,\nu^*) = 0$
-$\Leftrightarrow \nabla f_0(x^*) + \displaystyle \sum_{i=1}^m \lambda_i^* \nabla f_i(x^*) + \displaystyle \sum_{j = 1}^{p} \nabla j^* \nabla hj(x^*) = 0$
+$\nabla_x \mathcal L_p (x^{\*},\lambda^{\*},\nu^{\*}) = 0$
+$\Leftrightarrow \nabla f_0(x^{\*}) + \displaystyle \sum_{i=1}^m \lambda_i^{\*} \nabla f_i(x^{\*}) + \displaystyle \sum_{j = 1}^{p} \nabla j^{\*} \nabla hj(x^{\*}) = 0$
 
-Pour resumer $(x^*,\lambda^*, \nu^*)$ verifient les contraintes :
-$f_i(x^*) \leqslant 0 \qquad \forall i \in \{1,...,m\}$
-$h_j(x^*) = 0 \qquad \forall j \in \{1,...,p\}$
-$\lambda_i^* \geqslant 0 \qquad \forall i \in \{1,...,m\}$ (KKT)
-$\lambda_i^* f_i(x^*) = 0 \qquad \forall i \in \{1,...,m\}$
+Pour resumer $(x^{\*},\lambda^{\*}, \nu^{\*})$ verifient les contraintes :
+$f_i(x^{\*}) \leqslant 0 \qquad \forall i \in \{1,...,m\}$
+$h_j(x^{\*}) = 0 \qquad \forall j \in \{1,...,p\}$
+$\lambda_i^{\*} \geqslant 0 \qquad \forall i \in \{1,...,m\}$ (KKT)
+$\lambda_i^{\*} f_i(x^{\*}) = 0 \qquad \forall i \in \{1,...,m\}$
 
-$\nabla f_0(x^*) + \displaystyle \sum_{i =1}^m \lambda_i^* \nabla f_i(x^*) + \displaystyle \sum_{j = 1}^{p} \nu_j^* \nabla h_j(x^*) = 0$
+$\nabla f_0(x^{\*}) + \displaystyle \sum_{i =1}^m \lambda_i^{\*} \nabla f_i(x^{\*}) + \displaystyle \sum_{j = 1}^{p} \nu_j^{\*} \nabla h_j(x^{\*}) = 0$
 
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -702,10 +702,10 @@ $$min_{x \in \mathbb R^2} \quad \frac{1}{2}({x_1}^2 + {x_2}^2) \qquad tq \quad x
 > $$
 > 
 > Pour que:
-> $(x_1^*, x_2^*)$ soit optimal, il faut que:
+> $(x_1^{\*}, x_2^{\*})$ soit optimal, il faut que:
 > $$
 > \begin{aligned}
-> &\nabla_x \mathcal L(x^*, \lambda) = 0 \\
+> &\nabla_x \mathcal L(x^{*}, \lambda) = 0 \\
 > &\nabla_x \mathcal L(x, \lambda) = 0 \Leftrightarrow 
 > \begin{cases} 
 > \frac{\partial \mathcal L}{\partial x_1} = 0 \\
@@ -739,28 +739,25 @@ $$min_{x \in \mathbb R^2} \quad \frac{1}{2}({x_1}^2 + {x_2}^2) \qquad tq \quad x
 > On cherche $\underset{\lambda \geqslant 0}{max}(\underbrace{-\frac{5}{2}\lambda^2 + 2\lambda}_{g(\lambda)})$
 > On cherche 
 > $$
-> \lambda^* \quad tq \quad 
+> \lambda^{*} \quad tq \quad 
 > \begin{cases}
-> \nabla g(\lambda^*) &= 0\\
-> \lambda^* &\geqslant 0
+> \nabla g(\lambda^{*}) &= 0\\
+> \lambda^{*} &\geqslant 0
 > \end{cases}
 > $$
 > 2)
 > $$
 > \begin{aligned}
 > &\nabla g(\lambda) &=& -5\lambda + 2\\
-> &\nabla g(\lambda^*) &=& 0 \\
-> \Leftrightarrow& -5\lambda^* + 2 &=& 0\\
-> \Leftrightarrow& \lambda^* &=& \frac{2}{5} \geqslant 0
+> &\nabla g(\lambda^{*}) &=& 0 \\
+> \Leftrightarrow& -5\lambda^{*} + 2 &=& 0\\
+> \Leftrightarrow& \lambda^{*} &=& \frac{2}{5} \geqslant 0
 > \end{aligned}
 > $$
-> et $\displaystyle x^* = (x_1^*, x_2^*) = \left(-\frac{2}{5}, \frac{4}{5}\right)$
+> et $\displaystyle x^{*} = (x_1^{*}, x_2^{*}) = \left(-\frac{2}{5}, \frac{4}{5}\right)$
 
 *2 ... Apres avoir mis sous forme matricielle*
 $$min_{x \in \mathbb R^3} \quad \frac{1}{2}(x_1^2 + x_2^2 + x_3^2) \qquad tq \quad \begin{aligned} x_1 + x_2 + 2x_3 = 1 \\ x_1 + 4x_2 + 2x_3 = 3 \end{aligned}$$
 
 > **Correction :**
 > //FIXME
-
-
-## [Suite Ici](https://hackmd.io/GiWgSaP7RrOeMOnqCgVrag)
