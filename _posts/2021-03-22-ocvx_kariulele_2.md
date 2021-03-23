@@ -49,7 +49,7 @@ Dire que $a \mapsto \nabla^2f(a)$ est majoree sur un lieu $S$ de son domaine de 
 $f(x + v) = f(x) + \nabla f(x)^T v + o(v)$
 
 - On remplace $f(x+v)$ par son approximation au 1er ordre; cad $f(x) + \nabla f(x)^T v$
-- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^{\*} = argmin(\{\nabla f(x)^T v | \Vert v\Vert_2 = 1\})$
+- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^{\*} = argmin(\{\nabla f(x)^T v \vert \Vert v\Vert_2 = 1\})$
 
 
 Rq: Si $v^{\*}$ minimise $\nabla f(x)^Tv$ ssi $-v^{\*}$ maximise $\nabla f(x)^Tv$ pour $\|v\|_2 = 1$
