@@ -11,8 +11,8 @@ Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci 
 > 
 > $f(x) = ax^2 + bx +c \qquad a > 0$
 > $f'(x) = 2ax +b$
->  $x^* \qquad tq f'(x^*) = 0$
-> $2ax^* + b = 0$
+> $x^* \qquad tq f'(x^{\*}) = 0$
+> $2ax^{\*} + b = 0$
 > $x^* = -\frac {-b}{2a}$
 >
 > 
@@ -95,7 +95,7 @@ t &\longmapsto f(x_0 + th)
 
 $\frac{\partial f}{\partial x}(x_0) \equiv$ derivee de 
 
-$$\carphi :\begin{aligned}\mathbb R & \rightarrow \mathbb R\\
+$$\varphi :\begin{aligned}\mathbb R & \rightarrow \mathbb R\\
 t &\longmapsto \underbrace{f(x_{01} +, \dots, x_{0k+t}, \dots, x_{0n})}_{\begin{pmatrix}x_{01} \\ 
 \vdots\\ 
 x_{0n}\end{pmatrix} + t\begin{pmatrix}0 \\ 
@@ -240,8 +240,8 @@ On appelle jacobienne de $f$ en $x_0 = (u_1, \ldots, u_n)\begin{pmatrix}v_1 \\ \
 $$
 \mathcal J_{x_0}f = \left[\frac{\partial f_i}{\partial x_j}(x_0)\right]_{\begin{aligned}i &= 1, \ldots, p\\ j &= 1, \ldots, n\end{aligned}}
 $$
-Telle que $\underbrace{f(x_0 + h)}_{\in \mathbb R^p} = \underbrace{f(x_0)}_{\in \mathbb R^p} + \underbrace{\underbrace{\mathcal J_{x_0}f}_{\in \mathbb M_{p,n}(\mathbb R)} \times
-\underbrace{h}_{\in \mathbb R^p}}_{\in \mathbb R^p} + o_0(h)$
+Telle que $$\underbrace{f(x_0 + h)}_{\in \mathbb R^p} =  \underbrace{(x_0)}_{\in \mathbb R^p} + \underbrace{\underbrace{\mathcal J_ {x_0}f}_ {\in \mathbb M_{p,n}(\mathbb R)} \times
+\underbrace{h}_ {\in \mathbb R^p}}_{\in \mathbb R^p} + o_0(h)$$
 
 $d_{x_0}f: h \longmapsto \mathcal J_{x_0}f \times h$ est bien linéaire
 
@@ -339,7 +339,7 @@ En supposant cette caracterisation VRAIE :
 Soit $y \in \mathcal C_{\le r}(f);$ on veut montrer $\nabla f(x)^T(y -x) \le 0$
 
 Or comme f est convexe on a :
-$\nabla f(x)^T(y-x) \leqslant \underbrace{f(y)}_{\le r}\underbrace{(fx)}_{=r}$
+$$\nabla f(x)^T(y-x) \leqslant \underbrace{f(y)}_{\le r}\underbrace{(fx)}_{=r}$$
 d' ou $\nabla f(x)^T (y-x) \leqslant 0$
 
 #### Preuve de la caractérisation de convexité
@@ -430,7 +430,7 @@ On dit qu'un point $x$ est admissible s'il satisfait les contraintes définies p
 $$p^* = \underset{x \in \mathcal A}{inf}\{f_0(x)\}$$
 
 Par convention  si $\mathcal A = \emptyset; p^* = +\infty$. Dans le cas sur $p^* = - \infty$  on dit que ($P$) est non borné.
-On appelle enfin point optimal $x^*$ de $(P)$ tout point tq $f_0(x^*) = p^*$. Un tel point n'existe pas toujours; par exemple c'est le cas $\underset{x \in \mathbb{R}_+^*}{min} \frac{1}{x}$. De plus, il n'existe pas en général qu'un seul point optimal (quand il y en a); prendre par exemple le problème:
+On appelle enfin point optimal $x^{\*}$ de $(P)$ tout point tq $f_0(x^{\*}) = p^{\*}$. Un tel point n'existe pas toujours; par exemple c'est le cas $\underset{x \in \mathbb{R}_+^*}{min} \frac{1}{x}$. De plus, il n'existe pas en général qu'un seul point optimal (quand il y en a); prendre par exemple le problème:
 $$\underset{x \in \mathbb{R}}{min} 10$$
 
 L'écriture de ($P$) dans la définition est appelée standard d'un problème d'optimisation. Il existe une notion théorique d'équivalence de problème d'optimisation, On ne rentrera pas dans le détail, sachez qu'elle consiste à réexprimer un problème d'optimisation de façon à le résoudre plus facilement.
@@ -488,11 +488,14 @@ Si on est dans la situation suivante
 <div class="alert alert-success" role="alert" markdown="1">
 **Propriété :**
 Un point $x \in \mathcal A$ est optimal si:
+
 $$
 \nabla f(x^* )^\top(y.x) \geqslant 0
 $$
-> $-\nabla f_0(x^*)^\top(y-x) \leqslant 0$
-> $-\nabla f_0(x^*)$ définit un hyperplan d'appui en $x^*$ à $\mathcal A$.
+
+> $-\nabla f_0(x^{\*})^\top(y-x) \leqslant 0$
+> $-\nabla f_0(x^{\*})$ définit un hyperplan d'appui en $x^{\*}$ à $\mathcal A$.
+
 </div>
 
 > **Preuve :**
@@ -521,12 +524,12 @@ avec $f_0$ différentiable
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Propriété :**
-Si $x^*$ est un point optimal de $f_0$ alors:
+Si $x^{\*}$ est un point optimal de $f_0$ alors:
 $$\nabla f_0(x^*) = \underline{0}$$
 </div>
 
 > **Preuve :**
-> On se place sur un voisinage $\mathcal B(x^*, \varepsilon)$ pour  $\varepsilon \gt 0$ où $\forall y \in \mathcal B(x^*, \varepsilon); f_0(y) \geqslant f_0 (x^*)$
+> On se place sur un voisinage $\mathcal B(x^{\*}, \varepsilon)$ pour  $\varepsilon \gt 0$ où $\forall y \in \mathcal B(x^{\*}, \varepsilon); f_0(y) \geqslant f_0 (x^{\*})$
 >
 > En particulier pour le h assez proche de 0:
 > 
