@@ -51,7 +51,7 @@ $$
 Grace a l'inegalite $(*)$ et en remplacant $\varepsilon$ par $x$, on obtient $\forall x\gt0$:
 
 $$
-\int_0^xe^{-\frac{t^2}{2}}=\frac{\sqrt{2\pi}}{2}(2F(x) - 1)\ge\frac{{2\pi}}{2}(1-\frac{1}{x^2})
+\int_0^xe^{-\frac{t^2}{2}}=\frac{\sqrt{2\pi}}{2}(2F(x) - 1)\ge\frac{\sqrt{2\pi}}{2}(1-\frac{1}{x^2})
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
