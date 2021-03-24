@@ -17,9 +17,7 @@ guillaume.tochon@lrde.epita.fr
 À voir :
 * [Descente de gradient](https://www.youtube.com/watch?v=IHZwWFHWa-w)
 
-# Analyse convexe et programmation mathématique
-
-## Introduction
+# Introduction
 
 En rentrant dans l'ère industrielle, il a fallu optimiser les coûts, minimiser les risques, etc.
 Des mathematiciens ont commencé à se poser des questions.
@@ -35,9 +33,9 @@ ex: gestion d'un stock, optimiser la construction de produits en usine.
 > 3. Identifier des images d'IRM qui correspondent à des malformations du cerveau.
 > 4. Chercher des patterns dans la population d'étudiants intégrants EPITA.
 
-### Problèmes d'optimisation
+## Problèmes d'optimisation
 
-#### Définition formelle
+### Définition formelle
 
 Minimiser $f_0(x)$
 sujet à :
@@ -51,7 +49,7 @@ Un problème d'optimisation du type de $(P)$ :
 * **non-contraint** s'il n'a aucune contrainte d'inégalités ou d'égalités.
 * **convexe** si l'ensemble des fonctions en jeu sont convexes, les contraintes d'égalités étant de plus affines.
 
-#### Lexique
+### Lexique
 
 Étant donnée un problème d'optimisation $(P)$ on appelle :
 * **point admissible** de $(P)$ tout point de $\mathbb{R}^n$ satisfaisant toutes les contraintes. L'ensemble de tous les points admissibles est appelé **lieu admissible** de $(P)$.
@@ -59,16 +57,16 @@ Un problème d'optimisation du type de $(P)$ :
 * **valeur optimale** de $(P)$ la meilleure borne inférieure sur la fonction objectif.
 * **point optimale** de $(P)$ tout point admissible dont la valeur objectif est la valeur optimale.
 
-#### Premières remarques qualitatives
+### Premières remarques qualitatives
 
 * Y a-t-il au moins une solution ?
 * S'il y a au moins une solution, combien ?
 * Peut-on toujours décrire l'ensemble des solutions?
 * Y a-t-il moyen d'approcher des solutions?
 
-### ML
+## ML
 
-#### Map fitting
+### Map fitting
 
 Problème d'optimisation dit de *map fitting*
 
@@ -79,10 +77,10 @@ Une famille différentiable d'applications $f_\alpha:\mathbb{R}^n\longmapsto\mat
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Map Fitting :**
-On considère un ensemble de couples $(X_i, y_i)\in\mathbb{R}^n\times\mathbb{R}$ pour $i \in \{ 1,...,p \}$ et une famille différentiable d'applications $\{ f_\alpha \}_{\alpha\in\mathbb{R}^k}$. Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^*$ tels que $f_{\alpha^*}$ approche au mieux les $(X_i, y_i)$. 
+On considère un ensemble de couples $(X_i, y_i)\in\mathbb{R}^n\times\mathbb{R}$ pour $i \in \{ 1,...,p \}$ et une famille différentiable d'applications $$\{ f_\alpha \}_{\alpha\in\mathbb{R}^k}$$. Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^{\*}$ tels que $f_{\alpha^{\*}}$ approche au mieux les $(X_i, y_i)$. 
 </div>
 
-#### Régression linéaire
+### Régression linéaire
 
 Le plus simple des problèmes de *map fitting* est celui de la régression linéaire.
 
@@ -92,7 +90,7 @@ $$\mathcal{E}(\alpha)=\sum_{i=1}^p\frac{1}{p}(f_\alpha (X_j)-y_i)^2$$
 
 Le but est de trouver un paramètre $\alpha = (\alpha_0,\alpha_1)$ tel que $\mathscr{E}(\alpha)$ est minimal, autrement dit de réoudre le problème d'optimisation sans contraintes
 
-### Contour du cours
+## Contour du cours
 
 * La première partie est noté par un TD et un partiel
 * La seconde partie est noté par une analyse à faire (projet?)
@@ -106,37 +104,39 @@ Le but est de trouver un paramètre $\alpha = (\alpha_0,\alpha_1)$ tel que $\mat
 > On fait un trait...
 
 
-### Produit scalaire
+## Produit scalaire
 
 $x = \begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix} \qquad y = \begin{pmatrix}y_1 \\ \vdots \\ y_n\end{pmatrix}$
 
-$\begin{align}
+$$
+\begin{aligned}
 \langle:\rangle : \mathbb{R}^n &\longrightarrow \mathbb{R}\\
-                 (x,y) &\longmapsto \langle x,y \rangle
-\end{align}$
+(x,y) &\longmapsto \langle x,y \rangle
+\end{aligned}
+$$
 
 $\langle x,y \rangle =\displaystyle\sum_{i=1}^{n}x_iy_i$
 
-$||x|| =\sqrt{\langle x,x \rangle}$
+$\Vert x\Vert  =\sqrt{\langle x,x \rangle}$
 
 On veut :
-* $x_1, x_2$ en fonction de $||x||$ et $\varphi$
-* $y_1, y_2$ en fonction de $||y||$ et $\psi$
+* $x_1, x_2$ en fonction de $\Vert x\Vert $ et $\varphi$
+* $y_1, y_2$ en fonction de $\Vert y\Vert $ et $\psi$
 
 
-* $x_1 = ||x|| \cos{\varphi} \qquad x_2 = ||x|| \sin{\varphi}$
-* $y_1 = ||y|| \cos{\psi} \qquad y_2 = ||y|| \sin{\psi}$
+* $x_1 = \Vert x\Vert  \cos{\varphi} \qquad x_2 = \Vert x\Vert  \sin{\varphi}$
+* $y_1 = \Vert y\Vert  \cos{\psi} \qquad y_2 = \Vert y\Vert  \sin{\psi}$
 
-* $\langle \vec{x}, \vec{y}\rangle = x_1 y_1 + x_2 y_2 = ||x||.||y||.(\underbrace{\cos{\varphi}\cos{\psi} + \sin{\varphi}\sin{\psi}}_{\cos{(\psi - \varphi)} = \cos{\theta}}) =||x||.||y||.\cos{\theta}$ 
+* $\langle \vec{x}, \vec{y}\rangle = x_1 y_1 + x_2 y_2 = \Vert x\Vert .\Vert y\Vert .(\underbrace{\cos{\varphi}\cos{\psi} + \sin{\varphi}\sin{\psi}}_{\cos{(\psi - \varphi)} = \cos{\theta}}) =\Vert x\Vert .\Vert y\Vert .\cos{\theta}$ 
 
 <div class="alert alert-info" role="alert" markdown="1">
 **En dimension n :**
-$$\theta(x,y)=arccos\left(\frac{\langle x,y \rangle}{||x||.||y||}\right)$$
+$$\theta(x,y)=arccos\left(\frac{\langle x,y \rangle}{\Vert x\Vert .\Vert y\Vert }\right)$$
 </div>
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Formules usuelles trigonometriques :**
-\begin{align}
+$$
 \sin \left(s+t\right)=\sin \left(s\right)\cos \left(t\right)+\cos \left(s\right)\sin \left(t\right)\\
 \sin \left(s-t\right)=\sin \left(s\right)\cos \left(t\right)-\cos \left(s\right)\sin \left(t\right)\\
 \cos \left(s+t\right)=\cos \left(s\right)\cos \left(t\right)-\sin \left(s\right)\sin \left(t\right)\\
@@ -145,7 +145,7 @@ $$\theta(x,y)=arccos\left(\frac{\langle x,y \rangle}{||x||.||y||}\right)$$
 \sin \left(s\right)\sin \left(t\right)=\frac{\cos \left(s-t\right)-\cos \left(s+t\right)}{2}\\
 \sin \left(s\right)\cos \left(t\right)=\frac{\sin \left(s+t\right)+\sin \left(s-t\right)}{2}\\
 \cos \left(s\right)\sin \left(t\right)=\frac{\sin \left(s+t\right)-\sin \left(s-t\right)}{2}\\
-\end{align}
+$$
 </div>
 
 On peut représenter une droite avec :
@@ -156,8 +156,8 @@ $x=\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \in D \Leftrightarrow \langle \vec{O
 $\rightarrow$ Equation d'un hyperplan de vecteur normal $\vec{n}$
 
 Soit une droite $ax_1 +bx_2 + c = 0$ :
-* Son **vecteur normal** : $\vec{n} = \begin{pmatrix}a\\b\end{pmatrix}$
-* Son **vecteur directeur** : $\vec{u} = \begin{pmatrix}-b\\a\end{pmatrix}$
+* Son **vecteur normal** : $\vec{n} = \begin{pmatrix}a\\ b\end{pmatrix}$
+* Son **vecteur directeur** : $\vec{u} = \begin{pmatrix}-b\\ a\end{pmatrix}$
 
 
 > **Exercice :**
@@ -167,32 +167,32 @@ Soit une droite $ax_1 +bx_2 + c = 0$ :
 > -1 & 1
 > \end{pmatrix}
 > \begin{pmatrix}
->  x_1\\x_2
+>  x_1\\ x_2
 > \end{pmatrix} \leq \begin{pmatrix}0\\0\end{pmatrix}$$
 >
 > $x_1 + 2x_2 \leq 0$
 > $-x_1 + x_2 \leq 0$
 > 
 > On remplace l'inégalité par une égalité :
-> $x_1 + 2x_2 = 0 \qquad \vec{n_1} = \begin{pmatrix}1\\2\end{pmatrix} \qquad \vec{u_1} = \begin{pmatrix}-2\\1\end{pmatrix}$
-> $-x_1 + x_2 = 0 \qquad \vec{n_2} = \begin{pmatrix}-1\\1\end{pmatrix} \qquad \vec{u_2} = \begin{pmatrix}-1\\-1\end{pmatrix}$
+> $x_1 + 2x_2 = 0 \qquad \vec{n_1} = \begin{pmatrix}1\\ 2\end{pmatrix} \qquad \vec{u_1} = \begin{pmatrix}-2\\ 1\end{pmatrix}$
+> $-x_1 + x_2 = 0 \qquad \vec{n_2} = \begin{pmatrix}-1\\ 1\end{pmatrix} \qquad \vec{u_2} = \begin{pmatrix}-1\\ -1\end{pmatrix}$
 >
 > On a les vecteurs normaux on peut donc représenter graphiquement le lieu.
 > ![](https://i.imgur.com/M8Y0xkz.png)
 
 
 > **Exercice :**
-> Trouver le lieu de $\mathbb{R}^3$ tq $\underbrace{x_1 + x_2 + x_3}_{(1 1 1)\begin{pmatrix}x1\\x_2\\x_3\end{pmatrix}} \geq 0$
+> Trouver le lieu de $\mathbb{R}^3$ tq $\underbrace{x_1 + x_2 + x_3}_{(1 1 1)\begin{pmatrix}x1\\ x_2\\ x_3\end{pmatrix}} \geq 0$
 > 
-> $\vec{n} = \begin{pmatrix}1\\1\\1\end{pmatrix}$
+> $\vec{n} = \begin{pmatrix}1\\ 1\\ 1\end{pmatrix}$
 > $\langle n, x \rangle \geq 0$
 >
 > ![](https://i.imgur.com/kcXCXJE.png)
 
 
-### Espace affine
+## Espace affine
 
-$A = {(1,t) \in \mathbb{R}^2 | t \in \mathbb{R}} = (1, 0) + \underbrace{\{(0,t) \in \mathbb{R}^2 | t \in \mathbb{R}\}}_{F}$
+$A = {(1,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}} = (1, 0) + \underbrace{\{(0,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}\}}_{F}$
 
 <div class="alert alert-info" role="alert" markdown="1">
 On note qu'on pouvait utiliser un autre point $(1,42)$ au lieu de $(1,0)$ donne le même résultat.
@@ -201,8 +201,8 @@ On note qu'on pouvait utiliser un autre point $(1,42)$ au lieu de $(1,0)$ donne 
 
 $P=\{(t, 3t + u, -u) \setminus (t, u) \in \mathbb{R}^2\}$
 * $O \in P$
-* $A = \begin{pmatrix}1\\3\\0\end{pmatrix} \in P$
-* $B = \begin{pmatrix}0\\1\\-1\end{pmatrix} \in P$
+* $A = \begin{pmatrix}1\\ 3\\ 0\end{pmatrix} \in P$
+* $B = \begin{pmatrix}0\\ 1\\ -1\end{pmatrix} \in P$
 $\vec{n} = \vec{OA} \times \vec{OB}$
 
 <div class="alert alert-info" role="alert" markdown="1">
@@ -210,15 +210,15 @@ $\vec{n} = \vec{OA} \times \vec{OB}$
 </div>
 
 > **Exercice :**
-> Ecrire **paramétriquement** la droite $D$ de $\mathbb{R}^2$ de vecteur directeur $\vec{u}=\begin{pmatrix}1\\-1\end{pmatrix}$ et passant par $(2,3)$
+> Ecrire **paramétriquement** la droite $D$ de $\mathbb{R}^2$ de vecteur directeur $\vec{u}=\begin{pmatrix}1\\ -1\end{pmatrix}$ et passant par $(2,3)$
 >
 > Soit $M \in D \Leftrightarrow \exists ~\alpha \in \mathbb{R}$ tq 
 > $$\vec{AM} = \alpha \vec{u} \\ 
-> \Leftrightarrow \begin{pmatrix}x_1 - 2\\ x_2 - 3\end{pmatrix} = \alpha \begin{pmatrix}1\\-1\end{pmatrix}\\
+> \Leftrightarrow \begin{pmatrix}x_1 - 2\\ x_2 - 3\end{pmatrix} = \alpha \begin{pmatrix}1\\ -1\end{pmatrix}\\
 > \Leftrightarrow \begin{cases} x_1 -2 = \alpha \\ x_2 - 3 = -\alpha\end{cases} \\
-> \Leftrightarrow \begin{cases}x_1 = \alpha + 2\\x_2 = 3 - \alpha\end{cases}$$
+> \Leftrightarrow \begin{cases}x_1 = \alpha + 2\\ x_2 = 3 - \alpha\end{cases}$$
 >
-> Donc $(D) = \{(\alpha +2, 3-\alpha) | \alpha \in \mathbb{R}\}$
+> Donc $(D) = \{(\alpha +2, 3-\alpha) \vert \alpha \in \mathbb{R}\}$
 
 > **Exercice :**
 > Dessiner le lien de $\mathbb{R}^2$ decrit par les contraintes :
@@ -236,12 +236,15 @@ $\vec{n} = \vec{OA} \times \vec{OB}$
 
 ---
 
-$\underbrace{Ax = r}_{\text{écriture implicite}} \qquad \text{ avec } \begin{cases}\text{A matrice } m \times n\\A = [a_{i,j}]_{mn}\\x \in \mathbb R^n ~ r \in \mathbb R^m \end{cases}$
+$$\underbrace{Ax = r}_{\text{écriture implicite}} \qquad \text{ avec } \begin{cases}\text{A matrice } m \times n\\A = [a_{i,j}]_{mn}\\x \in \mathbb R^n ~ r \in \mathbb R^m \end{cases}$$
+
+$$
 \begin{cases}
 a_{11} x_1 + a_{12} x_2 + \dots + a_{1n}xn = r_1\\
 \vdots \\
 a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = r_m
 \end{cases}
+$$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Hyperplan**: Un plan de dimension $n-1$.
@@ -293,7 +296,7 @@ $$\bigg(\frac xa\bigg)^2 + \bigg(\frac yb\bigg)^2=1$$
 <div class="alert alert-info" role="alert" markdown="1">
 Epigraphe d'une fonction $f.\mathbb R^n \rightarrow \mathbb R$
 
-$Epi(f) = \{(x,t) ~|~ f(x) \leq t\}$
+$Epi(f) = \{(x,t) ~\vert~ f(x) \leq t\}$
 
 ![Représentation épigraphe](https://i.stack.imgur.com/y98sx.png)
 </div>
@@ -334,13 +337,13 @@ $f$ **convexe** $\Leftrightarrow f(tx+(1-t)y) \leq tf(x)+ (1-t)f(y)$
 </div>
 
 
-#### Exemple de fonctions convexes : 
+### Exemple de fonctions convexes : 
 * $f(x) = ax^2 +bx +c , a \ge 0$
 * $f(x) = bx+ c$
 * $e^{ax} \quad \forall a$
 * $f(x) = -\log(x)$
 * $f(x) = \sqrt(x)$
-* $f(x) = |x|$
+* $f(x) = \vert x\vert$
 * $f(x) = x^{2p}, p \in \mathbb{N}^*$
 
 > **Exercice :**
@@ -348,13 +351,13 @@ $f$ **convexe** $\Leftrightarrow f(tx+(1-t)y) \leq tf(x)+ (1-t)f(y)$
 > 
 > $f = \sum_{i=1}^{N}w_if_i$ la somme de fonctions convexes
 >
-> $$\begin{align}
+> $$\begin{aligned}
 > f(tx + (1-tg)) &= \sum_{i=1}^N f_i (tx+(1-t)y) \\
 >                &\leq tf_i(x)+(1-t)f_i(y) \\
 >                &\leq \sum_{i=1}^N w_i(tf_i(x)+(1-t)f_i(y)) \\
 >                &\leq \sum_{i=1}^N tw_if_i(x) + \sum_{i=1}^N(1-t)w_if_i(y) \\
 >                &\leq t\underbrace{\sum_{i=1}^N w_if_i(x)}_{f(x)} + (1-t) \underbrace{\sum_{i=1}^N w_if_i(y)}_{f(y)}
-> \end{align}$$
+> \end{aligned}$$
 > Donc c'est bien convexe !
 
 
@@ -367,7 +370,7 @@ $$H(x,y) = \begin{pmatrix}\frac{\partial^2f(x,y)}{\partial x^2}
 \end{pmatrix} $$
 
 
-## Programme linéaire
+# Programme linéaire
 
 > **Exercice 1:**
 > 
@@ -378,71 +381,77 @@ $$H(x,y) = \begin{pmatrix}\frac{\partial^2f(x,y)}{\partial x^2}
 > 
 > $\mathcal A_b = \mathcal A_u \cup \{(x,y) \in \mathbb R^2, x-3y \leq 6\}$
 > 
-> * $(D_1)$: $-x + 2y + 1 = 0 \qquad (0, -\frac 12) \in (D_1) \qquad \vec{n_1}\begin{pmatrix}-1\\2\end{pmatrix} \qquad \vec{u_1}\begin{pmatrix}-2\\-1\end{pmatrix}$
+> * $(D_1)$: $-x + 2y + 1 = 0 \qquad (0, -\frac 12) \in (D_1) \qquad \vec{n_1}\begin{pmatrix}-1\\ 2\end{pmatrix} \qquad \vec{u_1}\begin{pmatrix}-2\\ -1\end{pmatrix}$
 > 
 > * $(D_2)$: $x + y  - 1 = 0 \qquad (0,1) \in (D_2) \qquad \overrightarrow{n_2}\begin{pmatrix} 1 \\ 1\end{pmatrix}\qquad \overrightarrow{u_2}\begin{pmatrix} -1 \\ 1\end{pmatrix}$
 > 
 > * $(D_3)$: $x - 3y  - 6 = 0 \qquad (0,-2) \in (D_3) \qquad \overrightarrow{n_3}\begin{pmatrix} 1 \\ -3\end{pmatrix}\qquad \overrightarrow{u_3}\begin{pmatrix} 3 \\ 1\end{pmatrix}$
 > 
-> $\underbrace{\min f_0(x,y) = y = -\infty}_{(x,y) \in \mathcal{A}_u}$
-> $\underbrace{\min f_0(x,y) = -y = 0}_{(x,y) \in \mathcal{A}_u}$
+> $$\underbrace{\min f_0(x,y) = y = -\infty}_{(x,y) \in \mathcal{A}_u}$$
+> $$\underbrace{\min f_0(x,y) = -y = 0}_{(x,y) \in \mathcal{A}_u}$$
 
 
 > **Exercice 2:**
 >
 > $f(x,y) = 3x^2 + y^2$
-> $\mathcal{C}_2(f)\mathcal{C}_4(f)$?
-> $\mathcal{C}_{\le 4}(f)$?
-> $\min f_0(x,y) = 2x + y$
+> $$\mathcal{C}_2(f)\mathcal{C}_4(f)$$?
+> $$\mathcal{C}_{\le 4}(f)$$?
+> $$\min f_0(x,y) = 2x + y$$
 > sujet à $3x^2 +y^2 \le 4$
 > 
-> \begin{align}
+> $$
+> \begin{aligned}
 > \mathcal{C}_2(f) : &  3x^2 + y^2 = 2 \\
 > \Leftrightarrow &\frac{3}{2}x^2 \frac{1}{2}y^2  = 1\\
 > \Leftrightarrow &\begin{pmatrix}\frac{x}{\frac{\sqrt{2}}{\sqrt{3}}}\end{pmatrix}^2 + \begin{pmatrix}\frac{y}{\sqrt{2}}\end{pmatrix}^2\\
-> \end{align}
+> \end{aligned}
 > 
-> \begin{align}
+> \begin{aligned}
 > \mathcal{C}_4(f) : &  3x^2 + y^2 = 4 \\
 > \Leftrightarrow &\frac{3}{4}x^2 \frac{1}{4}y^2  = 1\\
 > \Leftrightarrow &\begin{pmatrix}\frac{x}{\frac{2}{\sqrt{3}}}\end{pmatrix}^2 + \begin{pmatrix}\frac{y}{2}\end{pmatrix}^2\\
-> \end{align}
+> \end{aligned}
 > 
-> \begin{align}
+> \begin{aligned}
 > \mathcal{C}_0(f_0) : &  2x + y = 0 \\
 > & (0,0) \in \mathcal{C}_0(f_0)\\
 > & \overrightarrow{n}\begin{pmatrix} 2\\ 1\end{pmatrix} \overrightarrow{u}\begin{pmatrix} -1\\ 2\end{pmatrix}
-> \end{align}
+> \end{aligned}
+> $$
 > 
-> $\min(f_0(xy)) = f_0^*$ pour $(x,y) = (x^*,y^*)$
-> $3x^{*2} +y^{*2} = 4$ $(x^*,y^*) \in \mathcal{C}_4(f)$
-> $2x^{*} + y^* = f_0^*$ $(x^*,y^*) \in \mathcal{C}_{f_0^*}(f_0)$
+> $$\min(f_0(xy)) = f_0^*$ pour $(x,y) = (x^*,y^*)$$
+> $$3x^{*2} +y^{*2} = 4$ $(x^*,y^*) \in \mathcal{C}_4(f)$$
+> $$2x^{*} + y^* = f_0^*$ $(x^*,y^*) \in \mathcal{C}_{f_0^*}(f_0)$$
 > 
 > <div class="alert alert-info" role="alert" markdown="1">
-> \begin{align}
+> $$
+> \begin{aligned}
 > \Delta f(x^*, y^*) = \begin{pmatrix} 6x^* \\ 2y^*\end{pmatrix}\\
 > \langle \Delta f(x^*,y^*), \overrightarrow{u} \rangle = 0\\
 > \begin{pmatrix} 6x^* & 2y^* \end{pmatrix} \begin{pmatrix} -1 \\ 2 \end{pmatrix} = 0 
-> \end{align}
+> \end{aligned}
+> $$
 > </div>
 > 
-> \begin{align}
+> $$
+> \begin{aligned}
 > 3x^{*2} + y^{*2} &= 4\\
 > -6x^* + 4y^* &= 0 \rightarrow y^* &= \frac{6}{4} x^*\\
 > & & = \frac{3}{2}x^*\\
 > & &= \frac{6}{\sqrt{21}}
-> \end{align}
+> \end{aligned}
+> $$
 > $y^* = \frac{6}{\sqrt{21}}$
 > 
-> $3x^{*2} + (\frac{3}{2}x^{*})^2 = 4$
-> $3x^{*2}  + \frac{9}{4}x^{*2} = 4$
-> $\frac{21}{4}x^{*2} = 4$
-> $x^{*2} = \frac{16}{21}$
-> $x^* = \frac{4}{\sqrt{21}}$ ou $-\frac{4}{\sqrt{21}}$
+> $$3x^{*2} + (\frac{3}{2}x^{\*})^2 = 4$$
+> $$3x^{*2}  + \frac{9}{4}x^{\*2} = 4$$
+> $$\frac{21}{4}x^{\*2} = 4$$
+> $$x^{*2} = \frac{16}{21}$$
+> $$x^* = \frac{4}{\sqrt{21}}$ ou $-\frac{4}{\sqrt{21}}$$
 > ![](https://i.imgur.com/MfE89nI.jpg)
 > 
 
-## Géometrie différentielle pour les petits
+# Géometrie différentielle pour les petits
 
 Avec ce qu'on a vu à ce jour on peut chercher à résoudre un problème d'optimisation de la forme suivante
 $$
@@ -487,30 +496,30 @@ La courbe de niveau de la fonction objectif au point optimal isole le lieu admis
 Quand on cherche à minimiser une fonction objectif affine contrainte par un lieu admissible qui est une ellipse de $\mathbb R^2$, on se retrouve à rechercher des hyperplans d'appui de celui-ci .
 Cette notion nous ramene à l'étude des dérivées de fonction numériques dont les graphes décrivent des morceaux du bord  du lieu admissible. Pour généraliser cette approche, on a besoin de généraliser la notion de dérivée sur plusieurs variables.
 
-### Normes sur $\mathbb R^2$
+## Normes sur $\mathbb R^2$
 
 Une norme sur $\mathbb R-ev$ est une manière de mesurer la longueur d'un vecteur, tout en préservant un minimum la structure d'ev. Elle permet en particulier de mesurer la distance entre deux points pour la longueur du vecteur qui les relie.
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition :**
-Une norme sur $\mathbb R^n$ est une application $||\cdot||: \mathbb{R}^n \longmapsto \mathbb{R}$ telle que
+Une norme sur $\mathbb R^n$ est une application $\Vert \cdot\Vert : \mathbb{R}^n \longmapsto \mathbb{R}$ telle que
 
-1) $||x|| = 0 \Longleftrightarrow x = 0$
-2) $\forall \lambda \in \mathbb R , \forall x \in \mathbb R^n: ||\lambda x|| = |\lambda|\cdot||x|| \qquad \quad$ (relation d'homogéinité)
-3) $\forall x, y \in \mathbb{R}^n$, $||x+y||\leqslant ||x|| + ||y|| \qquad \qquad$ (inégalité triangulaire)
+1) $\Vert x\Vert  = 0 \Longleftrightarrow x = 0$
+2) $\forall \lambda \in \mathbb R , \forall x \in \mathbb R^n: \Vert \lambda x\Vert  = |\lambda|\cdot\Vert x\Vert  \qquad \quad$ (relation d'homogéinité)
+3) $\forall x, y \in \mathbb{R}^n$, $\Vert x+y\Vert \leqslant \Vert x\Vert  + \Vert y\Vert  \qquad \qquad$ (inégalité triangulaire)
 </div>
 
 > **Exercice :** sur $\mathbb R^n$
 > 
-> 1. $||x||_1 = \displaystyle\sum_{i=1}^{n}|x_i|$
-> 2. $||x||_2 = \bigg(\displaystyle\sum_{i=1}^{n}(x_i)^2\bigg)^{\frac 1 2}=\sqrt{x^Tx}$
-> 3. $||x||_\infty = \underset{i\in \{1,\dots,n\}}{\max}\{|x_i|\}$
+> 1. $$\Vert x\Vert _1 = \displaystyle\sum_{i=1}^{n}\vert x_i\vert $$
+> 2. $$\Vert x\Vert _2 = \bigg(\displaystyle\sum_{i=1}^{n}(x_i)^2\bigg)^{\frac 1 2}=\sqrt{x^Tx}$$
+> 3. $\Vert x\Vert _\infty = \underset{i\in \{1,\dots,n\}}{\max}\{\vert x_i\vert \}$
 > 4. Pour $p \geqslant 1$,
-    > $||x||_p = \bigg(\displaystyle\sum_{i=1}^{n}|x_i|^p\bigg)^{\frac 1 p} \qquad \qquad$ (la norme p) ($p \ge 1$)
+    > $$\Vert x\Vert _p = \bigg(\displaystyle\sum_{i=1}^{n}\vert x_i\vert ^p\bigg)^{\frac 1 p} \qquad \qquad$$ (la norme p) ($p \ge 1$)
 
 À partir d'une norme sur $\mathbb R^n$, on va pouvoir définir :
 
-1. Une distance : $\forall x, y \in \mathbb R^n, d(x, y) = ||x-y||$
+1. Une distance : $\forall x, y \in \mathbb R^n, d(x, y) = \Vert x-y\Vert $
 
 ![](https://i.imgur.com/IqsTRki.png)
 
@@ -521,17 +530,17 @@ Une norme sur $\mathbb R^n$ est une application $||\cdot||: \mathbb{R}^n \longma
    
 
 La notion de norme sur $\mathbb R^n$ permet de généraliser cette notion à toute dimension. Par exemple si $(u_n)_{n \in \mathbb{N}}$ une suite à valeurs dans $\mathbb R^n$ et $l = (l_1, .., l_n) \in \mathbb{R}^n$.
-On dit que (u_n) converge vers l au sens de la norme $||.||$ si :
-$$(E) \qquad \forall \varepsilon > 0, \exists N \in \mathbb{N}, n \ge N \Longrightarrow ||u_n - l|| < \varepsilon$$
+On dit que (u_n) converge vers l au sens de la norme $\Vert .\Vert $ si :
+$$(E) \qquad \forall \varepsilon > 0, \exists N \in \mathbb{N}, n \ge N \Longrightarrow \Vert u_n - l\Vert  < \varepsilon$$
 
 On note
-$\begin{aligned}B_{||\cdot||}(l,\varepsilon)=\{x\in \mathbb{R}^n | ||x-l||<\varepsilon\} \\ \bar{B}_{||\cdot||}(l,\varepsilon)=\{x\in \mathbb{R}^n | ||x-l||<\varepsilon\} \end{aligned}$
+$\begin{aligned}B_{\Vert \cdot\Vert }(l,\varepsilon)=\{x\in \mathbb{R}^n | \Vert x-l\Vert <\varepsilon\} \\ \bar{B}_{\Vert \cdot\Vert }(l,\varepsilon)=\{x\in \mathbb{R}^n | \Vert x-\Vert |<\varepsilon\} \end{aligned}$
 
 
 Dans ce cas, $(E)$ s'écrit : 
-$$\forall \varepsilon > 0, \exists N \in \mathbb N , b \ge N \Rightarrow \mathcal U_n \in B_{||.||}(l,\varepsilon)$$
+$$\forall \varepsilon > 0, \exists N \in \mathbb N , b \ge N \Rightarrow \mathcal U_n \in B_{\Vert .\Vert }(l,\varepsilon)$$
 
-Dans le cas de $\mathbb R^2$ on represente $\overline{B_{||\cdot||}}(\underbrace{\underline{0}}_{\text{l'origine}},1)$
+Dans le cas de $\mathbb R^2$ on represente $\overline{B_{\Vert \cdot\Vert }}(\underbrace{\underline{0}}_{\text{l'origine}},1)$
 
 ![](https://i.imgur.com/vxTQU9I.png)
 ![](https://i.imgur.com/WB5lwF8.png)
@@ -546,27 +555,27 @@ Remarque: les boules d'une norme sont convexes.
 Comme on a pu le voir pour la cas de la convergence d'une suite se donner une norme sur $\mathbb{R}^n$ va nous permettre de transposer les notons de continuité d'une fonction ou de comparaison de fonctions en un point $(o, \theta, \text{~} )$
 
 > **Exercice :**
-> On se donne une norme $||.||$ sur$\mathbb R^n$.
-> continuite): Soit $f:(E, ||.||_E)\rightarrow (F, ||.||_F)$
+> On se donne une norme $\Vert .\Vert $ sur$\mathbb R^n$.
+> continuite): Soit $f:(E, \Vert .\Vert _E)\rightarrow (F, \Vert .\Vert _F)$
 > on dit que f est continue en $a \in E$ si 
 > * $f$ est défini au voisinage de $a$ 
 > $$
 > \forall \varepsilon > 0, \exists \mu > 0 tq
-> ||x-a|| < \mu \Rightarrow ||f(x) - f(a)|| < \varepsilon
+> \Vert x-a\Vert  < \mu \Rightarrow \Vert f(x) - f(a)\Vert  < \varepsilon
 > $$
 >
-> $(\theta)$ Une fonction f est un $\theta_1(g)$ en a $\in$ E s'il existe $\varepsilon$ :(E,$||\cdot||_E$) $\rightarrow \mathbb R$ telle que
+> $(\theta)$ Une fonction f est un $\theta_1(g)$ en a $\in$ E s'il existe $\varepsilon$ :(E,$\Vert \cdot\Vert _E$) $\rightarrow \mathbb R$ telle que
 > * $f=\varepsilon g$
 > * $\varepsilon \xrightarrow[a]{} 0$
 > 
-> Quand g n'est pas identiquement nulle au voisinage de a, la condition précédente est équivalente à $\frac{||f||_F}{||g||_F} \xrightarrow[a]{} 0$
+> Quand g n'est pas identiquement nulle au voisinage de a, la condition précédente est équivalente à $\frac{\Vert f\Vert _F}{\Vert g\Vert _F} \xrightarrow[a]{} 0$
 
 Il semble à ce stade que la définition de continuité ou celle de convergence dépende de la norme choisie.
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition :**
-Les normes $||\cdot||_\alpha$ et $||\cdot||_\beta$ sur $\mathbb{R}^n$ sont dites équivalentes s'il existe $c, C \in \mathbb{R}_+^*$ telle que
-$$\forall x \in \mathbb{R}^n, c||x||_\alpha \leqslant ||x||_\beta \leqslant C||x||_\alpha$$
+Les normes $\Vert \cdot\Vert_\alpha$ et $\Vert \cdot\Vert_\beta$ sur $\mathbb{R}^n$ sont dites équivalentes s'il existe $c, C \in \mathbb{R}_+^{\*}$ telle que
+$$\forall x \in \mathbb{R}^n, c\Vert x\Vert _\alpha \leqslant \Vert x\Vert _\beta \leqslant C\Vert x\Vert _\alpha$$
 Si 2 normes sont équivalentes alors elles définissent les mêmes fonctions continues, les mêmes o, $\theta$, ~ ou encore les mêmes suites convergentes.
 </div>
 
@@ -576,26 +585,26 @@ Sur $\mathbb R^n$ toutes les normes sont équivalentes.
 </div>
 
 
-### Normes sur $\mathbb R^n$
+## Normes sur $\mathbb R^n$
 
 <div class="alert alert-info" role="alert" markdown="1">
 Les normes usuelles:
-1. $||.||_2 : \forall x \in \mathbb R^n ; ||x||_2 = (\sum_{x=1}^n x_i^2)^{\frac 12}=\sqrt{x^Tx}$
-2. $||.||_1: \forall x \in \mathbb R^n ; ||x||_1 = \sum_{i=1}^n|x_i|$
-3. $||.||_\infty: \forall x \in \mathbb R^n ; ||x||_\infty = \underset{i \in \{1,\dots,n\}}{max} |X_i|$
+1. $$\Vert .\Vert _2 : \forall x \in \mathbb R^n ; \Vert x\Vert _2 = (\sum_{x=1}^n x_i^2)^{\frac 12}=\sqrt{x^Tx}$$
+2. $$\Vert .\Vert _1: \forall x \in \mathbb R^n ; \Vert x\Vert _1 = \sum_{i=1}^n\vert x_i\vert $$
+3. $$\Vert .\Vert _\infty: \forall x \in \mathbb R^n ; \Vert x\Vert _\infty = \underset{i \in \{1,\dots,n\}}{max} \vert X_i\vert $$
 
 **Propriété**:
 $$\forall p \geq 1:\\
-\forall x \in \mathbb R^n ; ||x||_p = (\sum(x_i)^p)^{\frac 1p}$$
+\forall x \in \mathbb R^n ; \Vert x\Vert _p = (\sum(x_i)^p)^{\frac 1p}$$
 </div>
 
 À partir d'une norme, on définit :
-* Une distance : $d_{||.||}$(x,y) = ||x-y||$
+* Une distance : $d_{\Vert .\Vert }$(x,y) = \Vert x-y\Vert $
 * Des boules :
-    * Ouvertes : $B_{||.||}(x, \varepsilon) = \{y|d_{||.||}(x,y) < \varepsilon\}$ 
-    * Fermées : $\bar{B}_{||.||}(x, \varepsilon) = \{y|d_{||.||}(x,y) \leq \varepsilon\}$ 
+    * Ouvertes : $B_{\Vert .\Vert }(x, \varepsilon) = \{y\vert d_{\Vert .\Vert }(x,y) < \varepsilon\}$ 
+    * Fermées : $$\bar{B}_{\Vert .\Vert }(x, \varepsilon) = \{y\vert d_{\Vert .\Vert }(x,y) \leq \varepsilon\}$$
 
-**Objectif** : Montrer que les boules ouvertes pour une  norme $||.||$ sur $\mathbb R^n$ sont convexes.
+**Objectif** : Montrer que les boules ouvertes pour une  norme $\Vert .\Vert $ sur $\mathbb R^n$ sont convexes.
 
 ![](https://i.imgur.comcskBRG.png)
 
@@ -612,11 +621,11 @@ L'inégalité de convexité se traduit géométriquement par le fait que les sec
 
 
 <div class="alert alert-info" role="alert" markdown="1">
-Soient $f: (\mathbb R^2, ||.||) \rightarrow (\mathbb R, ||.||)$ et $(0,0) \in \mathbb R^2$ 
-* $f$ est continue en $(0,0) \in \mathbb R^2$ si $\forall \varepsilon > 0, \exists ~ q > 0, \quad ||(x,y)|| < q \implies ||f(x,y)-f(0,0)|| < \varepsilon$
+Soient $f: (\mathbb R^2, \Vert .\Vert ) \rightarrow (\mathbb R, \Vert .\Vert )$ et $(0,0) \in \mathbb R^2$ 
+* $f$ est continue en $(0,0) \in \mathbb R^2$ si $\forall \varepsilon > 0, \exists ~ q > 0, \quad \Vert (x,y)\Vert  < q \implies \Vert f(x,y)-f(0,0)\Vert  < \varepsilon$
 </div>
 
-## Différentiabilité et différentielle
+# Différentiabilité et différentielle
 
 
 Pour rappel on avait conclu à la séance précédente qu'il nous fallait étendre la notion de dérivée d'une fonction numérique au cas des fonctions à plusieurs variables.
@@ -639,7 +648,7 @@ Si $f$ est derivable en $a$:
 $f(a +h) = \boxed{f(a)} + \underbrace{f'(a)h}_{*} + \boxed{o_0(h)}$
 
 
-$*$ Est la partie linéaire de l'approximation affine de $f$ en a; \begin{align}&h \mapsto  f'(a).h\\ & \mathbb R \rightarrow \mathbb R \end{align}
+$*$ Est la partie linéaire de l'approximation affine de $f$ en a; $$\begin{aligned}&h \mapsto  f'(a).h\\ & \mathbb R \rightarrow \mathbb R \end{aligned}$$
 
 
 <div class="alert alert-info" role="alert" markdown="1">
@@ -661,26 +670,28 @@ Si $\mathcal L$ est un [**endomorphisme**](https://fr.wikipedia.org/wiki/Endomor
 
 On regarde pour h assez proche de 0, $h \neq 0$
 
-\begin{align}
+$$
+\begin{aligned}
 \frac {f(a+h) - f(a)}{h} &= \frac{\lambda_n(h) + o_0(h)}{h}\\
 &= \frac 1h \lambda_n(h) + \frac 1h o_0(h)\\
 \frac {f(a+h) - f(a)}{h} &= \lambda_a(1) + o_0 (1)\\
 \Rightarrow \underset{h \rightarrow 0\\ h \neq 0}{lim}\frac {f(a+h) - f(a)}{h} &= \lambda_a(1) \in \mathbb R
-\end{align}
+\end{aligned}
+$$
 
 Donc $f$ est derivable en a et $f'(a)=\lambda_a(1)$
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition de la différentiabilité**:
 
-On suppose $\mathbb R^n, \mathbb R^m$ munies de normes qu'on note indifférentiablement $||\cdot||$. Dans la suite les énoncés qu'on fait ne dépendent pas des normes choisies.
+On suppose $\mathbb R^n, \mathbb R^m$ munies de normes qu'on note indifférentiablement $\Vert \cdot\Vert $. Dans la suite les énoncés qu'on fait ne dépendent pas des normes choisies.
 </div>
 
-On appelle ouvert de $\mathbb{R}^n$ pour $||\cdot||$ toute partie de $\mathbb{R}^n$ qui contient des voisinages de chacun de ses points.
+On appelle ouvert de $\mathbb{R}^n$ pour $\Vert \cdot\Vert $ toute partie de $\mathbb{R}^n$ qui contient des voisinages de chacun de ses points.
 
 Ex: 
 * $]a,b[ \subset \mathbb R$
-* $B_{||\cdot||}(x,R); R > 0$
+* $B_{\Vert \cdot\Vert }(x,R); R > 0$
 
 **Définition:** Soit $f : u \subset \mathbb R^n \rightarrow \mathbb R^n$ une fonction définie en $a \in u$, $f$ est différentiable en $a$ s'il existe $\lambda_u \in \mathcal L(\mathbb R^n, \mathbb R^n)$ telle que
 $\forall h$ assez proche de $\underline{0}$:
@@ -722,7 +733,7 @@ $Df(a)$ est appelée dans le ce cas la diffééérentielle de $f$ en $a$.
 </div>
 
 <div class="alert alert-info" role="alert" markdown="1">
-**Propriétés**: Soient $f,g$ 2 fonctions $\begin{align}&u \\ &\mathbb R^n \rightarrow \mathbb R\end{align}$ différentiables en $a \in u$ alors
+**Propriétés**: Soient $f,g$ 2 fonctions $$\begin{aligned}&u \\ &\mathbb R^n \rightarrow \mathbb R\end{aligned}$$ différentiables en $a \in u$ alors
 
 1. $\forall \lambda \in \mathbb R, \lambda f$ est différentiables en a et $D(\lambda f(a)) = \lambda Df(a)$
 
@@ -750,40 +761,40 @@ $\mathbb R^n \overset{Df(a)}{\longmapsto}\mathbb R^m \overset{dg(f(a))}{\longmap
 > $= (X^T +h^T)(X +h)$
 > $f(X) = X^TX + h^TX + X^Th + h^Th$
 > $\mu_q h^Th = \theta_\underline{0}(h)$
-> $h \ne 0, \frac{|h^Th|}{||h||_2} = \frac{|h^Th|}{\sqrt{h^Th}}$
-> $= \sqrt{hTh} = ||h||_2 \rightarrow 0; h \rightarrow \underline{0}$ 
+> $h \ne 0, \frac{|h^Th|}{\Vert h\Vert _2} = \frac{|h^Th|}{\sqrt{h^Th}}$
+> $= \sqrt{hTh} = \Vert h\Vert _2 \rightarrow 0; h \rightarrow \underline{0}$ 
 
 ---
 
 
 <div class="alert alert-info" role="alert" markdown="1">
 Rappel normes, voir plus haut.
-$||x||_0 =$ # d'elements non nuls de x. (ce n'est pas une norme)
-Inégalité triangulaire inversée: $|\: ||x|| -||y||\: | \le ||x - y||$
+$\Vert x\Vert _0 =$ # d'elements non nuls de x. (ce n'est pas une norme)
+Inégalité triangulaire inversée: $|\: \Vert x\Vert  -\Vert y\Vert \: | \le \Vert x - y\Vert $
 </div>
-A partir d'une norme ||.|| on définit la notion distance: $d: E \times E \rightarrow \mathbb R^+$
+A partir d'une norme \Vert .\Vert  on définit la notion distance: $d: E \times E \rightarrow \mathbb R^+$
 $(x,y) \rightarrow \langle x,y \rangle$
 alors $\sqrt{ \langle x,x \rangle}$ est une norme pour x.
 
-#### Voisinage de a
+### Voisinage de a
 
 Boule centrée en a et de rayon r.
 $\rightarrow$"Tout ce qui se passe à une $\underbrace{\text{distance}}_{\text{besoin d'une norme}} r$ de $a \in \mathbb R^n$
 
-$\rightarrow B_{||.||}(a,r) = \{x \in \mathbb R, d(x,a) \lt r\}$
+$\rightarrow B_{\Vert .\Vert }(a,r) = \{x \in \mathbb R, d(x,a) \lt r\}$
 Ceci est une boule ouverte
 
 
-$B_{||.||}(a,r) = \{x \in \mathbb R^n, d(x,a) \le r\}$
+$B_{\Vert .\Vert }(a,r) = \{x \in \mathbb R^n, d(x,a) \le r\}$
 Ceci est une boule fermée
 
-$\overline{B_{||.||}} = B_{||.||} \cup B_{||.||}$
+$\overline{B_{\Vert .\Vert }} = B_{\Vert .\Vert } \cup B_{\Vert .\Vert }$
 
 
 Les fonctions norme sont des fonctions convexes.
 
-$p = \frac 12 \qquad x = \begin{pmatrix} x_1 \\ x_2\end{pmatrix} \qquad ||x||_{\frac12} = (\sqrt{|x_1|} + \sqrt{|x_2|})^2$
-$B_{||.||\frac12}(0,1) = \{(x_1,x_2) \in \mathbb R^2, (\sqrt{|x_1|} + \sqrt{|x_2|} \le 1\}$
+$$p = \frac 12 \qquad x = \begin{pmatrix} x_1 \\ x_2\end{pmatrix} \qquad \Vert x\Vert _{\frac12} = (\sqrt{\vert x_1\vert } + \sqrt{\vert x_2\vert })^2$$
+$$B_{\Vert .\Vert \frac12}(0,1) = \{(x_1,x_2) \in \mathbb R^2, (\sqrt{\vert x_1\vert } + \sqrt{\vert x_2\vert } \le 1\}$$
 
 Dans le cadre ou $x_1 \ge 0, x_2 \ge 0$
 
@@ -791,32 +802,32 @@ $(\sqrt{x_1} + \sqrt{x_2})^2 < 1$
 $\sqrt{x_1} + \sqrt{x_2} <1$
 $x_2 < (1 - \sqrt{x_1})^2$
 
-$f:(\mathbb R^n, ||.||_{\alpha} \rightarrow (\mathbb R^p, ||.||_p)$
+$f:(\mathbb R^n, \Vert .\Vert _{\alpha} \rightarrow (\mathbb R^p, \Vert .\Vert _p)$
 $x = (x_1, ..., x_n) \rightarrow (f_1(x_1,...,x_n),...f_p(x_1,...,x_n))$
 $a \in \mathbb R^n f$ est continue en $a \in \mathbb R^n$
-$\forall \varepsilon > 0, \exists \mu > 0, \forall x \in \mathbb R^n, ||x - a||_{\alpha} < \mu \Rightarrow ||f(x) - f(a)||_{\beta} < \varepsilon$
+$\forall \varepsilon > 0, \exists \mu > 0, \forall x \in \mathbb R^n, \Vert x - a\Vert _{\alpha} < \mu \Rightarrow \Vert f(x) - f(a)\Vert _{\beta} < \varepsilon$
 
-Deux normes $||.||_\alpha$ et $||.||_{\beta}$ sont equivalentes ssi  
-$\exists c \ge 0, C \ge 0, \forall x \in E, c||x||_\beta \le ||x||_\alpha \le C||x||_\beta$
+Deux normes $\Vert .\Vert _\alpha$ et $\Vert .\Vert _{\beta}$ sont equivalentes ssi  
+$\exists c \ge 0, C \ge 0, \forall x \in E, c\Vert x\Vert _\beta \le \Vert x\Vert _\alpha \le C\Vert x\Vert _\beta$
 dans un espace vectoriel de dimension finie, toutes les normes sont équivalentes.
 
-$x \in \mathbb R^n, x = \begin{pmatrix} x_1 \\.\\.\\.\\x_n\end{pmatrix}$
-$||x||_1 = \sum_{i = 1}^n |x_i| \qquad ||x||_\infty = max_{i = 1,...,n}|x_i|$
+$x \in \mathbb R^n, x = \begin{pmatrix} x_1 \\ .\\ .\\ .\\ x_n\end{pmatrix}$
+$$\Vert x\Vert_1 = \sum_{i = 1}^n \vert x_i\vert  \qquad \Vert x\Vert _\infty = max_{i = 1,...,n}\vert x_i\vert $$
 
 ...
 
-## Fonction Lipschitzienne
+# Fonction Lipschitzienne
 
-Une fonction est dite Lipschitzienne ssi: $\exists K > 0$ tq $||f(x) - f(y)|| \le K ||x - y||$
+Une fonction est dite Lipschitzienne ssi: $\exists K > 0$ tq $\Vert f(x) - f(y)\Vert  \le K \Vert x - y\Vert $
 $\forall x,y \in D_y$
 Si f est Lipschitzienne, f est continue.
 
 > $f: \mathbb R^2 \rightarrow \mathbb R$
 > $(x_1,x_2) \rightarrow x_1 + x_2$
 > $x = \begin{pmatrix}x_1\\ x_2\end{pmatrix} y = \begin{pmatrix}y_1\\ y_2\end{pmatrix}$
-> $||x - y|| = ||  \begin{pmatrix}x_1 - y_1\\ x_2 - y_2\end{pmatrix}||_1 = |x_1-y_1| + |x_2 - y_2|$
-> $||f(x) - f(y)||_1 = ||x_1 + x_2 - (y_1 +y_2)||_1$
-> $= ||(x_1 - y_1)+ (x_2 -y_2)||_1$
+> $\Vert x - y\Vert  = \Vert   \begin{pmatrix}x_1 - y_1\\ x_2 - y_2\end{pmatrix}\Vert _1 = |x_1-y_1| + |x_2 - y_2|$
+> $\Vert f(x) - f(y)\Vert _1 = \Vert x_1 + x_2 - (y_1 +y_2)\Vert _1$
+> $= \Vert (x_1 - y_1)+ (x_2 -y_2)\Vert _1$
 > $= |(x_1 - y_1) + (x_2 - y_2)|$
 > $\le|x_1 - y_1| + |x_2 - y_2|$
 > 
@@ -843,10 +854,10 @@ Donc $f \circ g$ n'est pas continue.
 
 > **Exercice**:
 > 1)
-> $\mathbb R \overset{f}\longmapsto \mathbb R\\X \longmapsto X^T X$
+> $\mathbb R \overset{f}\longmapsto \mathbb R\\ X \longmapsto X^T X$
 > On cherche à determiner la diffierenciablité de $f$ en tout point $a \in \mathbb{R}^n$
-> \begin{align}f(a+h)&=(a+h)^T(a+h) \\ &=a^Ta+h^Ta+a^Th+h^Th \\ &=f(a)+\underbrace{2a^Th}_{h \rightarrow 2a^Th \\\text{ est linéaire}}+h^Th\end{align}
-> $||h||_2^2=||h||_2||h||_2=||h||\varepsilon(h)$
+> $$\begin{aligned}f(a+h)&=(a+h)^T(a+h) \\ &=a^Ta+h^Ta+a^Th+h^Th \\ &=f(a)+\underbrace{2a^Th}_{h \rightarrow 2a^Th \\\text{ est linéaire}}+h^Th\end{aligned}$$
+> $\Vert h\Vert _2^2=\Vert h\Vert _2\Vert h\Vert _2=\Vert h\Vert \varepsilon(h)$
 > On a $f(a+h)=f(a)+\text{ lim en h }+o_0(h)$. $f$ est différentiable en a et $\Delta f(a)h=2a^Th$
 > 2)
 > $\mathbb R^n$ $\overset{g}{\rightarrow} \mathbb R$
@@ -856,17 +867,17 @@ Donc $f \circ g$ n'est pas continue.
 > On s'intéresse à la différenciabilité de g en $a\in\mathbb{R}^n$. La fonction g est composée de fonctions différentiables, elle est donc différentiable en tout point.
 > En $a \in \mathbb{R}^n, \Delta g(a')h=\Delta \exp (a^Ta)(\Delta f(a)f(h))$
 > Dans le cours: $\Delta g(a)=\Delta(exp\circ f)(a)=\Delta \exp (f(a))\circ \Delta f(a)$
-> $\forall h \in \mathbb{R}^n, \Delta g(a)(h)=\Delta \exp (a^Ta)(\underbrace{\Delta f(a)f(h)}_{\in \mathbb{R}})$
+> $$\forall h \in \mathbb{R}^n, \Delta g(a)(h)=\Delta \exp (a^Ta)(\underbrace{\Delta f(a)f(h)}_{\in \mathbb{R}})$$
 > * $\Delta f(a)(h)=2aTh \qquad h \in \mathbb R$
 > * $\Delta exp(y)(k) = exp'(y)\cdot k = e^yk$
 > $\implies \Delta g(a)(h) = e^{a^Ta} \times 2a^Th \qquad h \in \mathbb R^n\space a^T \in \mathbb R^n, e^{a^Ta} \in \mathbb R$
 
 
-## Gradient et dérivées partielles 
+# Gradient et dérivées partielles 
 
 Soit $f:U \underline{\subset} \mathbb R^n \rightarrow \mathbb{R}^m$ une application différentiable en $a \in U$. On peut donc écrire, pour h assez proche de 0:
 $f(a+ h) = f(a) + Df(a)(h) + \underset{l \rightarrow 0}{o_0(h)}$
-$(f(a+h) = f(a) + \Delta f(a)f(h) + ||h|| \varepsilon(h))$
+$(f(a+h) = f(a) + \Delta f(a)f(h) + \Vert h\Vert  \varepsilon(h))$
 L'application $\Delta f(a)\in \mathscr{L}(\mathbb{R}^n, \mathbb{R}^m)$ où $\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$ est l'ensemble des applications linéaires de $\mathbb{R}^n$ dans $\mathbb{R}^m$, est caractérisée par sa matrice dans des bases données.
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -880,7 +891,7 @@ On a $f(a+ h) = f(a) + \mathcal J_f(a) \cdot h + o_0(h)$
 
 On se pose en premier temps la question de savoir comment déterminer les lignes, puis en un second temps, les colonnes.
 
-### $\color{purple}{\text{Pour les lignes}}$
+## $\color{purple}{\text{Pour les lignes}}$
 
 On écrit $f = (f_1, -, f_m)$
 où $f_i:u \rightarrow \mathbb R$ est la composante de $f$ suivant la $i_{eme}$ coordonnée.
@@ -897,12 +908,14 @@ $f_4\bigg(\overset{x}{\underset{z}{y}}\bigg) = z$
 
 on a $f = (f_1, f_2, f_3, f_4)$
 En $a \in U$, on a pour chaque $f$:
-$f_1(a+h) = f_i(a) + \mathcal J_{f_i}(a)h + ||h||\varepsilon(h)$
+$f_1(a+h) = f_i(a) + \mathcal J_{f_i}(a)h + \Vert h\Vert \varepsilon(h)$
 On peut donc écrire:
 
-\begin{align}f(a+h) &= \begin{pmatrix} f_1(a+h) \\ \vdots \\ f_m(a+h) \end{pmatrix} \\ &=\begin{pmatrix} f_1(a) + \mathcal J_{f_1}(a)h + ||h||\varepsilon (h)\\ \vdots \\ f_m(a) + \mathcal J_{f_m}(a)h + ||h||\varepsilon (h) \end{pmatrix} \\ 
-&= \begin{pmatrix} f_1(a) \\ \vdots \\f_m(a)\end{pmatrix} + \begin{pmatrix} \mathcal J_{f_1}(a)h \\ \vdots \\\mathcal J_{f_m}(a)h\end{pmatrix} + ||h||\varepsilon(h) \\
-&= f(a) + \begin{pmatrix} \mathcal J_{f_1}(n) \\ \vdots \\ \mathcal J_{f_m}(n)\end{pmatrix}h + ||h||\varepsilon(h)\end{align}
+$$
+\begin{aligned}f(a+h) &= \begin{pmatrix} f_1(a+h) \\ \vdots \\ f_m(a+h) \end{pmatrix} \\ &=\begin{pmatrix} f_1(a) + \mathcal J_{f_1}(a)h + \Vert h\Vert \varepsilon (h)\\ \vdots \\ f_m(a) + \mathcal J_{f_m}(a)h + \Vert h\Vert \varepsilon (h) \end{pmatrix} \\ 
+&= \begin{pmatrix} f_1(a) \\ \vdots \\f_m(a)\end{pmatrix} + \begin{pmatrix} \mathcal J_{f_1}(a)h \\ \vdots \\\mathcal J_{f_m}(a)h\end{pmatrix} + \Vert |\varepsilon(h) \\
+&= f(a) + \begin{pmatrix} \mathcal J_{f_1}(n) \\ \vdots \\ \mathcal J_{f_m}(n)\end{pmatrix}h + \Vert h\Vert \varepsilon(h)\end{aligned}
+$$
 
 $(\mathcal J_{f_i}(n) \in \mathbb M_{m,n}(\mathbb R))$
 
@@ -911,19 +924,19 @@ $(\mathcal J_{f_i}(n) \in \mathbb M_{m,n}(\mathbb R))$
 Par unicité de la différentielle, on a : $\mathcal J_f(a) = \begin{pmatrix} \mathcal J_{f_1}(a) \\ \vdots \\ \mathcal J_{f_m}(a)\end{pmatrix}$
 Autrement dit, $\mathcal{J}_f(a)$ est la concaténation des $\mathcal{J}_{f_i}(a)$ verticalement (en colonnes).
 
-### $\color{purple}{\text{Pour les colonnes}}$
+## $\color{purple}{\text{Pour les colonnes}}$
 
 Il nous reste à comprendre comment constuire la jacobienne en un point d'une fonction de $\mathbb{R}^n$ dans $\mathbb{R}$.
 Soit $g:U\subset\mathbb{R}^n\longmapsto \mathbb{R}$ une fonction différentiable en $a\in U$.
 Pour h assez proche de $\underline{0}$, 
-$g(a+h)+g(a)+\mathcal{\mathcal  J}_{g}h+||h||\varepsilon(h)$
+$g(a+h)+g(a)+\mathcal{\mathcal  J}_{g}h+\Vert h\Vert \varepsilon(h)$
 
-Soit $v\in \mathbb{R}^n$ et $t\in \mathbb{R}$, pour t assez proche de 0, $g(a+tv)=g(a)+\mathcal{J}_g(a)tv+||tv||\varepsilon(tv)$
-$g(a+tv)=g(a)+t\mathcal{J}_g(a)v+||tv||\varepsilon(tv)$
+Soit $v\in \mathbb{R}^n$ et $t\in \mathbb{R}$, pour t assez proche de 0, $$g(a+tv)=g(a)+\mathcal{J}_g(a)tv+\Vert tv\Vert \varepsilon(tv)$$
+$$g(a+tv)=g(a)+t\mathcal{J}_g(a)v+\Vert tv\Vert \varepsilon(tv)$$
 Si $t \neq 0$:
-$\frac{g(a+tv)-g(a)}{t}=\mathcal{J}_g(a)v+\varepsilon(tv)$
+$$\frac{g(a+tv)-g(a)}{t}=\mathcal{J}_g(a)v+\varepsilon(tv)$$
 Quand $t\longmapsto 0$ on a
-$\mathcal{J}_g(a)v=\displaystyle\lim_{t\rightarrow0}\frac{g(a+tv)-g(a)}{t}$
+$$\mathcal{J}_g(a)v=\displaystyle\lim_{t\rightarrow0}\frac{g(a+tv)-g(a)}{t}$$
 La valeur de la $\mathcal{J}_g(a)$ en un vecteur v est décrite par la dérivée de la direction de g à la droite a+tv.
 $g_v:t \rightarrow g(a +tv)$
 $\mathbb R : \frac{g(a + tv)-g(a)}{t} = \frac{g_v(t) - g_v(0)}{t}$
@@ -959,11 +972,11 @@ Si les dérivées partielles de g sont des fonctions continues alors g est diff�
 </div>
 
 Désormais si g est différentiable en un point a alors
-$\mathcal Jg(a) = (\underbrace{\frac{\delta g(a)}{\delta x_1}}_{\mathcal Jg(a)e_1} \dots \underbrace{\frac{\delta g(a)}{\delta x_n}}_{\mathcal Jg(a)e_n})$
+$$\mathcal Jg(a) = (\underbrace{\frac{\delta g(a)}{\delta x_1}}_{\mathcal Jg(a)e_1} \dots \underbrace{\frac{\delta g(a)}{\delta x_n}}_{\mathcal Jg(a)e_n})$$
 
 
 Pour h assez proche de 0
-$g(a+h) = g(a) + \underbrace{\mathcal J_g(a)h}_{\mathcal M_{1,n}(\mathbb R)} + ||h||\varepsilon(h)$
+$$g(a+h) = g(a) + \underbrace{\mathcal J_g(a)h}_{\mathcal M_{1,n}(\mathbb R)} + \Vert h\Vert \varepsilon(h)$$
 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition:** [gradient]
