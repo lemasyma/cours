@@ -13,20 +13,25 @@ Considerons une variable aleatoire $X$ suivant une loi de Poisson de parametre $
 1. Calculer $P(X = 4)$.
 2. Calculer $E(X)$ et $V(X)$.
 
-</div>spoiler Solution
+<details markdown="1">
+<summary>Solution</summary>
 
 $P(X=4) e^{-0,2}\frac{0,2^4}{4!}=5,45\times10^{-5}$
 $E(X)=0,2$
 $V(X)=0,2$
-</div>
+
+</details>
 
 # Exercice 2
 La variable aleatoire $U$ suit une loi uniforme sur l’intervalle $[2; 7]$. Calculer $P(U \in [3; 5])$ puis $E(U)$.
 
-</div>spoiler Solution
+<details markdown="1">
+<summary>Solution</summary>
+
 $P(U\in[3,5])=\frac{5-3}{7-2}=\frac{2}{5}$
 $E(U)=\frac{a+b}{2}=\frac{2+7}{2}=4,5$
-</div>
+
+</details>
 
 # Exercice 3
 
@@ -39,7 +44,8 @@ Par definition, la variable aleatoire $X := N_1 − N_2$ suit une loi de Skellam
 1. Montrer que $E(X) = \lambda_1 − \lambda_2$ et $V(X) = \lambda_1 + \lambda_2$
 2. Consid´erons un echantillon $(X_1, . . . , X_n)$ de la loi de $X$. Determiner, a l’aide de la methode des moments, des estimateurs des parametres $\lambda_1$ et $\lambda_2$.
 
-</div>spoiler Solution
+<details markdown="1">
+<summary>Solution</summary>
 
 $$
 \begin{aligned}
@@ -83,5 +89,5 @@ $$
 \hat\lambda_1=\frac{S^2-\bar X}{2}\\
 \end{cases}
 $$
-</div>
 
+</details>

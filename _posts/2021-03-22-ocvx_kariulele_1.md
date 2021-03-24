@@ -1,9 +1,9 @@
 ---
-title:          "OCVX: Optimisation Convexe 1"
+title:          "OCVX: Optimisation Convexe 1, suite"
 date:           2021-03-22 21:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
-description: Optimisation Convexe 1
+description: Optimisation Convexe 1, suite
 ---
 Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci a elle!)
 
