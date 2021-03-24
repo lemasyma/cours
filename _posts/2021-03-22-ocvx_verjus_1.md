@@ -5,7 +5,7 @@ categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
 description: Optimisation Convexe 1
 ---
-Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci a elle!)
+Notes de ce cours par [Kariulele](https://github.com/kariulele) et Bjorn (Un grand merci a eux!)
 
 [Bashar's Github](https://github.com/bashardudin/Epita-SCIA-OCVX)
 
