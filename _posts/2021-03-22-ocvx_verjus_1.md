@@ -988,6 +988,3 @@ $$\nabla g(a)=\mathcal{J}_g(a)^T$$
 >
 > 2)
 > $\mathcal Jf(x, y)= \begin{pmatrix}y & x \\ ycos(xy) & xcos(xy)\end{pmatrix}$ 
-
-
-## [Suite du cours ici ](https://hackmd.io/thliiIX3Rm-SjdEiUc-nUw#)
