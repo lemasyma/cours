@@ -17,7 +17,9 @@ Considerons une variable aleatoire $X$ suivant une loi de Poisson de parametre $
 <summary>Solution</summary>
 
 $P(X=4) e^{-0,2}\frac{0,2^4}{4!}=5,45\times10^{-5}$
+
 $E(X)=0,2$
+
 $V(X)=0,2$
 
 </details>
@@ -29,6 +31,7 @@ La variable aleatoire $U$ suit une loi uniforme sur l’intervalle $[2; 7]$. Cal
 <summary>Solution</summary>
 
 $P(U\in[3,5])=\frac{5-3}{7-2}=\frac{2}{5}$
+
 $E(U)=\frac{a+b}{2}=\frac{2+7}{2}=4,5$
 
 </details>
