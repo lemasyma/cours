@@ -7,7 +7,6 @@ description: Convergence et estimation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByHzIFXfO)
 
-# ASE2 : Convergence et estimation
 # Introduction
 <div class="alert alert-info" role="alert" markdown="1">
 L'estimation: on va considerer une population qui obeit a une loi de probabilite avec un parametre $\theta$ inconnu.
