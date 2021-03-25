@@ -1,11 +1,11 @@
 ---
 title:          "OCVX: Optimisation Convexe 2"
-date:           2021-03-22 21:00
+date:           2021-03-22 21:20
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
 description: Optimisation Convexe 2
 ---
-Notes de ce cours par [Kariulele](https://github.com/kariulele) (Un grand merci a elle!)
+Notes de ce cours par [Kariulele](https://github.com/kariulele) et Bjorn (Un grand merci a eux!)
 
 Graphe de de $f: \mathbb R \rightarrow \mathbb R$
 
