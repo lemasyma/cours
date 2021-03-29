@@ -1,6 +1,6 @@
 ---
 title:          "PRST: Feuille de revisions"
-date:           2021-03-24 10:00
+date:           2021-03-29 10:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
 description: Feuille de revisions
