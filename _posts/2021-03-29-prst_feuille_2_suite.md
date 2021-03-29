@@ -1,6 +1,6 @@
 ---
 title:          "PRST: Feuille 2, suite"
-date:           2021-03-24 9:00
+date:           2021-03-29 9:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
 description: Feuille 2, suite
