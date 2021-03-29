@@ -206,8 +206,8 @@ Resolution d'equation:
 $$
 \begin{aligned}
 1-\alpha^n&=0,95\\
-\alpha^n=0,05\\
-\alpha=\sqrt[n]{0,05}
+\alpha^n&=0,05\\
+\alpha&=\sqrt[n]{0,05}
 \end{aligned}\\
 $$
 
