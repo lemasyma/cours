@@ -9,6 +9,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkZAGl0Xu)
 
 Note: projet en binome
 
+[Index du cours](http://www.ricou.eu.org/iren/notes_rn.html)
 # Cas d'utilisation
 - Pub ciblee
 - Recommendations (Netflix)

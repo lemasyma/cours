@@ -7,7 +7,7 @@ description: Retropropagation du gradient
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkbsAQDN_)
 
-[Index du cours](http://www.ricou.eu.org/irenotes_rn.html)
+[Index du cours](http://www.ricou.eu.org/iren/notes_rn.html)
 
 # Rétropropagation du gradient
 
