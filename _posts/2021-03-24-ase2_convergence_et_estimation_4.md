@@ -16,8 +16,8 @@ On considère un échantillon $(X_1, X_2,...,X_n)$ d'une variable de Poisson de 
 La vraisemblance de cet echantillon est:
 
 $$
-L(x-1,x_2,...,x_n,\theta)=\Pi_{i=1}^nP(X_i=x_i)\\
-L(x-1,x_2,...,x_n,\theta)=\Pi_{i=1}^ne^{-\theta}\frac{\theta^{x_i}}{x_i!}=\frac{e^{-n\theta}\theta^{\sum_{i=1}^nx_i}}{\Pi_{i=1}^nx_i!}
+L(x_1,x_2,...,x_n,\theta)=\Pi_{i=1}^nP(X_i=x_i)\\
+L(x_1,x_2,...,x_n,\theta)=\Pi_{i=1}^ne^{-\theta}\frac{\theta^{x_i}}{x_i!}=\frac{e^{-n\theta}\theta^{\sum_{i=1}^nx_i}}{\Pi_{i=1}^nx_i!}
 $$
 
 <div class="alert alert-info" role="alert" markdown="1">
