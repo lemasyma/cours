@@ -127,7 +127,7 @@ $$
 
 Nos formes s'emboitent:
 
-![](https://i.imgur.com/x7KzRqA.png)
+![](https://i.imgur.com/UE3hqbO.png)
 
 *$0\lt p\lt 1?$*
 $\Vert.\Vert_p$ est une **quasi norme** $\rightarrow$ inegalite triangulaire
