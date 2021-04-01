@@ -172,7 +172,7 @@ Erosion:
 - deconnecte les objets
 - "augment le noir"
 
-Erosion: 
+Dilatation: 
 - rempli les trous 
 - connecte les objets
 - "augment le blanc"
