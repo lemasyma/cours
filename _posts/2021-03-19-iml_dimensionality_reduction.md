@@ -7,8 +7,6 @@ description:    Dimensionality reduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1ZhGffNO)
 
-# IML : Dimensionality reduction
-
 # Why do we care ?
 We have at hand $n$ points $x1,..., xn$ lying in some N-dimensional space, $x_i \in\mathbb R^n , \forall i = 1, . . . , n,$ compactly written as a $n × N$ matrix $X$
 - One row of $X$ = one sample
