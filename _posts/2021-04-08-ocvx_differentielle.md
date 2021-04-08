@@ -278,7 +278,7 @@ $$
 $$
 </div>
 
-Pour $f:\mathbb R\to\mathbb R$, $f$ derivable en $x_0$ $\Leftrightarrow$ $f(x_0+h)=f(x_0) + \underbrace{hf'(x_0)}_{d_{x_0}f\text{ avec } d_{x_0}f:h\to hf'(X_0)} + h\varepsilon(h)$
+Pour $f:\mathbb R\to\mathbb R$, $f$ derivable en $x_0$ $\Leftrightarrow$ $$f(x_0+h)=f(x_0) + \underbrace{hf'(x_0)}_{d_{x_0}f\text{ avec } d_{x_0}f:h\to hf'(X_0)} + h\varepsilon(h)$$
 
 <div class="alert alert-success" role="alert" markdown="1">
 $d_{x_0}f$ s'appelle la differentielle de $f$ en $x_0$
@@ -423,8 +423,8 @@ $$
 Pour une fonction $f:\mathbb R^n\to\mathbb R^p$, on appelle **matrice jacobienne** en $x_0$, et on note $Jac_{x_0}f$, la matrice des derivees partielles $[Jac_{x_0}f]_{ij}=\frac{\delta f_i}{\delta x_j}$ 
 </div>
 
-$$\color{red}{d_{x_0}f(h) = Jac_{x_0}f\times h}$$  La differentielle de $f:\mathbb R^n\to\mathbb R^p$ en $x_0$ est l'applicatio lineaire $d_{x_0}f:h\mapsto Jac_{x_0}f\times h$
-$f$ differentielle en $x_0$, $f(x_0+h)=f(x_0)+\underbrace{d_{x_0}}_{d_{x_0}f\text{ application lineaire}}+\theta_a(\Vert h\Vert)$
+$$\color{red}{d_{x_0}f(h) = Jac_{x_0}f\times h}$$  La differentielle de $f:\mathbb R^n\to\mathbb R^p$ en $x_0$ est l'application lineaire $d_{x_0}f:h\mapsto Jac_{x_0}f\times h$
+$f$ differentielle en $x_0$, $$f(x_0+h)=f(x_0)+\underbrace{d_{x_0}}_{d_{x_0}f\text{ application lineaire}}+\theta_a(\Vert h\Vert)$$
 
 1. $$\begin{aligned} f:\mathbb R&\rightarrow \mathbb R^3\\ d_{x_0}f:h&\mapsto hf'(x_0) \end{aligned} $$
 2. $$\begin{aligned} f:\mathbb R^n&\rightarrow \mathbb R\\ d_{x_0}f:h&\mapsto <\nabla_{x_0}f, h>=\nabla_{x_0}f^Th \end{aligned}$$
