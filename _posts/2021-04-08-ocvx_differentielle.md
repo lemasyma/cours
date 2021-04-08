@@ -32,11 +32,13 @@ f'(x^*) = 0 = 2ax^*+b
 $$
 
 Point optimal:
+
 $$
 x^*=-\frac{b}{2a}
 $$
 
 Valeur optimale:
+
 $$
 \begin{aligned}
 f^*=f(x^*)&=a(-\frac{b}{2a})^2+b(-\frac{b}{2a})+c\\
@@ -69,13 +71,16 @@ $f'(x_0)\equiv$ pente de la tangente au point $(x_0,f(x_0))$.
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Equation de la tangente:** Elle passe par le point $(x_0,f(x_0))$ et $\vec u=(1,f(x_0))$ est un vecteur directeur
+
 $$
 \rightarrow y=f(x_0)+(x-x_0)f'(x_0)
 $$
+
 </div>
 
 <div class="alert alert-success" role="alert" markdown="1">
 *Si $f$ est convexe* $\rightarrow$ le graphe de $f$ est toujours au dessus de la tangente, quelque soit le point ou on trace la tangente
+
 $$
 \forall x_0\in\mathbb R,\quad f(x)\ge f(x_0)+(x-x_0)f'(x_0)
 $$
@@ -99,11 +104,13 @@ h\varepsilon(h)
 &\Leftrightarrow\underbrace{\color{red}{f(x_0+h)=f(x_0)+\overbrace{hf'(x_0)}^{h\to hf'(x_0)\text{ lineaire en }h}+h\varepsilon(x)}}_{\text{DL a l'ordre 1 en 0}}
 \end{aligned}
 $$
+
 </div>
 
 # *Comment generaliser la notion de derivee pour $f:\mathbb R^n\to\mathbb R$ ?*
 
 *En quoi c'est faux ?*
+
 $$
 \lim_{x\to x_0}\frac{f(x)-f(x_0)}{\underbrace{x-x_0}_{\in\mathbb R^n}} = \lim_{h\to 0}\frac{f(x)-f(x_0)}{\underbrace{x-x_0}_{\in\mathbb R^n}}
 $$
@@ -149,6 +156,7 @@ $$
 On va regarder $$\begin{aligned}\phi_x:t&\to f((0,0)+t(1,0)) \\ \phi_x(t)&=f(t,0)=0\forall t \\ &\rightarrow\phi_x'(0)=0\frac{\delta f}{\delta x}(0,0)\end{aligned}$$
 
 Idem pour $y$
+
 $$
 \begin{aligned}
 \phi_y:t&\to f((0,0)+t(0,1)) = f(0,t)=0\forall t\\
@@ -170,6 +178,7 @@ $\rightarrow$ On dit que $f$ est derivable en $x_0$ selon un vecteur $v\in\mathb
 $$
 \frac{\delta f}{\delta x_i}(x_0)=D_{e_i}f(x_0)
 $$
+
 </div>
 
 ## Exemple
@@ -262,6 +271,7 @@ f\circ\psi(t)=f(\psi(t)) = f(t^2,t)=\begin{cases}
 0 &t=0
 \end{cases}
 $$
+
 $\rightarrow$ $f\circ\psi$ n'est **pas** continue en $0$
 $\rightarrow$ $f$ n'est **pas** continue en 0
 
@@ -294,6 +304,7 @@ differentielle = application lineaire = fonction $\neq$ $f'(x_0)$ = valeur
 </div>
 
 ## Exemple
+
 $$
 \begin{aligned}
 f:\mathbb R&\to\mathbb R\\
@@ -354,6 +365,7 @@ $$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Definition**: On appelle vecteur gradient de $f$ en $x_0$ 
+
 $$
 \nabla_{x_0}f=\nabla f(x_0)=\begin{pmatrix}
 \frac{\delta f}{\delta x_i}(x_0)\\
@@ -361,6 +373,7 @@ $$
 \frac{\delta f}{\delta x_n}(x_0)
 \end{pmatrix}
 $$
+
 </div>
 
 $$
