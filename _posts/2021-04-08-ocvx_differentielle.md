@@ -7,12 +7,6 @@ description: Norme
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1ZRdN3S_)
 
----
-lang: fr
----
-
-# OCVX : Différentiabilité et différentielle en un point
-
 Bienvenue dans le merveilleux monde de la differentielle <3
 
 <div class="alert alert-danger" role="alert" markdown="1">
