@@ -1,9 +1,9 @@
 ---
-title:          "OCVX: Norme"
+title:          "OCVX: Differentielles"
 date:           2021-04-08 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
-description: Norme
+description: Differentielles
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1ZRdN3S_)
 
