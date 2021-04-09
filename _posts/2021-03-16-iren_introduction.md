@@ -7,6 +7,7 @@ description: Introduction aux réseaux neuronnaux
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1k6jb07d)
 
+[Index du cours](http://www.ricou.eu.org/iren/notes_rn.html)
 # Un neurone
 
 ![](https://i.imgur.com/9EFBuRe.png)
