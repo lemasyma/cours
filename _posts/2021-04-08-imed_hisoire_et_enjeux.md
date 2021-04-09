@@ -7,8 +7,6 @@ description: Histoire et enjeux
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkmgY_2Su)
 
-# IMED: Histoire et enjeux
-
 1. Histoire de l'imagerie medicale
 2. Formats, problemes et interet
 
