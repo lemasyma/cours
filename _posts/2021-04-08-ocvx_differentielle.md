@@ -24,7 +24,7 @@ $$
 <div class="alert alert-success" role="alert" markdown="1">
 On derive $f$, $f'(x)=2ax+b$
 
-On cherche $x^*$ tel que $f'(x^*)=0$
+On cherche $x^{\*}$ tel que $f'(x^*)=0$
 </div>
 
 $$
