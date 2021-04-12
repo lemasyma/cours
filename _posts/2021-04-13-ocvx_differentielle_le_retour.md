@@ -5,6 +5,7 @@ categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
 description: Differentielles (le retour)
 ---
+
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryJGRObI_)
 
 # La differentielle en TOP-DOWN
