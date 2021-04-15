@@ -1,6 +1,6 @@
 ---
 title:          "IML: Supervised learning"
-date:           2021-04-19 14:00
+date:           2021-04-14 14:00
 categories:     [Image S8, IML]
 tags:           [Image, SCIA, IML, S8]
 description:    Supervised learning
