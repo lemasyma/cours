@@ -1,6 +1,6 @@
 ---
 title:          "Conference Google: Construire des solutions plus intelligentes sans expertise en machine learning"
-date:           2021-04-19 14:00
+date:           2021-04-20 14:00
 categories:     [Image S8, conference]
 tags:           [Image, conference, S8]
 description:    Construire des solutions plus intelligentes sans expertise en machine learning
