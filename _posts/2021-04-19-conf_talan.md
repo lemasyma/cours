@@ -7,8 +7,6 @@ description:    Conference Talan
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJm6fBnI_)
 
-# Conference TALAN
-
 ![](https://i.imgur.com/J3BMOu9.png)
 
 # Animateur

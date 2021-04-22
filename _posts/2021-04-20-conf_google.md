@@ -7,8 +7,6 @@ description:    Construire des solutions plus intelligentes sans expertise en ma
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJm6fBnI_)
 
-# Conference Google: Construire des solutions plus intelligentes sans expertise en machine learning
-
 <div class="alert alert-danger" role="alert" markdown="1">
 Sans expertise en ML != Sans ML
 </div>
