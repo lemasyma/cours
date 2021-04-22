@@ -35,7 +35,7 @@ $$
 &= \sum^n_{k=0}e^{itk}\binom{n}{k}p^k(1-p)^{n-k} \\
 &= \sum^n_{k=0}\binom{n}{k}(pe^{it})^k(a-p)^{n-k}\\
 &= (1-p+pe^{it})^n \text{ (Netwon)}\\
-&= (q+pe^{it})
+&= (q+pe^{it})^n
 \end{aligned}
 $$
 

@@ -31,7 +31,7 @@ La relation individuelle de travail est un contrat, du coup la théorie généra
 - On applique aussi le code du travail (thanks Sherlock). 
 - On va aussi appliquer les conventions collectives. En gros, c'est une convention, un contrat, qui est négocié au niveau des branches d'activités au niveau national entre des représentations syndicales et des représentations des entreprises qui viennent préciser le droit du travail sur un secteur spécifique. À quelques exceptions près, ces conventions doivent apporter des dispositions qui sont plus favorables aux salariés que la Loi.
 
-</div>	warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Cela s'applique sur un secteur pas un métier
 </div>
 
@@ -170,7 +170,7 @@ Il faut essayer autant que l'on peut de se pré-constituer des preuves. Donc il 
 
 Une bonne preuve permet souvent de ne pas aller aux prud'hommes.
 
-</div>	warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Attention à ne pas se constituer des preuves contre soi.
 Si vous voulez insulter quelqu'un, dites-lui mais ne l'écrivez pas.
 Ne laissez pas de messages débiles sur un répondeur téléphonique, n'envoyez pas des SMS ou des e-mails injurieux, etc.
@@ -186,7 +186,7 @@ Les modes de preuve (ordre hiérarchique d'importance / pertinence) :
 * **Le témoignage** : pour les faits où on n'a pas pu se constituer une preuve.
 * **Aveu extra-judiciaire** : quasiment aucune valeur.
 
-</div> warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Attention, en signant un contrat le pire piège est de signer un contrat sans avoir la signature de l'autre.
 Pour le demander de manière pas trop frontale, on peut le demander pour la bonne forme.
 </div>
@@ -341,7 +341,7 @@ Une clause de confidentialité est utile en tant que rappel à la loi, bien que 
 Cette clause est juridiquement surabondante mais utile pour rappeler cette loi qui n'est toujours pas très bien connue par les employés.
 Mais le rappel de ces règles ne doit pas empêcher le salarié de travailler pour la concurrence.
 
-</div>	info
+<div class="alert alert-info" role="alert" markdown="1">
 La plupart du temps, les clauses de confidentialité sont plus dans le B to B.
 </div>
 

@@ -60,7 +60,7 @@ $$
 Donc $V(X) = r(r + 1) - r^2 = r$
 
 ## Loi Normale de parametre $(m, \sigma)$
-On dit qu'une variable aleatoire $X$ suit la loi normale notee $N(m, \sigma)$ si sa densite est $f(x)=\frac{1}{\sigma\sqrt{1\pi}}\exp(-\frac{1}{2}(\frac{x-m}{\sigma})^2)$
+On dit qu'une variable aleatoire $X$ suit la loi normale notee $N(m, \sigma)$ si sa densite est $f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{1}{2}(\frac{x-m}{\sigma})^2)$
 ou:
 - $m=E(X)$
 - $\sigma=\sqrt{V(X)}$ (ecart-type)
