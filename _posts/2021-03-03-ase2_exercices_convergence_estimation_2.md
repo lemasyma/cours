@@ -11,7 +11,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJqkMkTM_)
 Soit $X$ une VA de densite $f(x) = e^{-x-e^{-x}}$ $\forall x\in\mathbb R$.
 
 1. Determiner la fonction de repartition de $X$
-2. Soit $Y=e^{-x}$, determiner la fonction de repartition de $Y$, puis sa densite
+2. Soit $Y=e^{-X}$, determiner la fonction de repartition de $Y$, puis sa densite
 3. Calculer $E(Y)$, $V(Y)$
 4. Soit $(Y_1,..., Y_n)$ un echantillon de $Y$, cad $(Y_i), 1\le i\le n$ sont alors des VA independantes et de meme loi que $Y$. On pose $\overline{Y_{n}} = \frac{1}{n}\sum_{i=1}^kY_i$
     1. Montrer que $\overline{Y_n}\to_{n\to+\infty}^P1$
