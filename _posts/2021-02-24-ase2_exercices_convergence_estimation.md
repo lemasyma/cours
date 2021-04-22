@@ -110,7 +110,7 @@ Donc:
 
 $$
 \begin{aligned}
-\phi_X(t) &= \sum_{k=0}^{+\infty}\frac{(-\frac{t^2}{2})^2}{k!} \\
+\phi_X(t) &= \sum_{k=0}^{+\infty}\frac{(-\frac{t^2}{2})^k}{k!} \\
 &= e^{-\frac{t^2}{2}}
 \end{aligned}
 $$
