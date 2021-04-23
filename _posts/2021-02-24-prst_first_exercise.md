@@ -14,8 +14,8 @@ Demontrer les proprietes suivantes dans le cas discret: Soient $X$ et $Y$ deux v
 <details markdown="1">
 <summary>Solution</summary>
 
-Soit $\omega_1,...,\omega_n$ les issues i.e.
-$\Omega = \{\omega_1;...;\omega_n\}$
+Soit $\omega_1,...,\omega_n$ les issues i.e. $\Omega = \{\omega_1;...;\omega_n\}$
+
 $$
 \begin{aligned}
 E(X\times Y) &= \sum_{\omega\in\Omega}(X(\omega) + Y(\omega))\\
