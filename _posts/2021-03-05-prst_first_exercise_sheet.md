@@ -23,8 +23,8 @@ L'ordre des exos dans le cours est 3 $\to$ 9 $\to$ 15 $\to$ 16 $\to$ 13
 $$
 \begin{aligned}
 \phi(t) = E(e^{itX}) &= \int_0^{+\infty}e^{itx}\lambda e^{-\lambda x}dx\\
-&= \lambda\int_0^te^{(it-X)x}dx\\
-\text{Soit } A\gt0: \int_0^Ae^{(it-X)x}dx &= \biggr[\frac{1}{it-\lambda}e^{(it-\lambda)x}\biggr]_0^A\\
+&= \lambda\int_0^te^{(it-\lambda)x}dx\\
+\text{Soit } A\gt0: \int_0^Ae^{(it-\lambda)x}dx &= \biggr[\frac{1}{it-\lambda}e^{(it-\lambda)x}\biggr]_0^A\\
 &= \frac{1}{it-\lambda}e^{(it-\lambda)A} - \frac{1}{it-\lambda}\times1\\
 e^{(it-\lambda)A} &= \underbrace{e^{itA}}_{\le1 \text{ car bornee}}\times e^{-\lambda A}\\
 \end{aligned}\\
@@ -187,7 +187,7 @@ $$
 $$
 P(2400-2\times300\le X\le2400+2\times300) = P(1800\le X\le3000)\simeq0,95\\
 Y=\frac{X-2400}{300}\sim\mathcal N(0,1)\\
-P(X\gt3000)=P(\frac{X-2400}{300}\gt2)\Rightarrow1-P(Y\le2)\simeq1-0,997=0,023 \text{ le jeu des arrondis}
+P(X\gt3000)=P(\frac{X-2400}{300}\gt2)\Rightarrow1-P(Y\le2)\simeq1-0,977=0,023 \text{ le jeu des arrondis}
 $$
 
 </details>

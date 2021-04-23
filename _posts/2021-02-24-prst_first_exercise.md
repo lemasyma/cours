@@ -8,6 +8,10 @@ description: Les differentes lois - Exercice
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1o44y4Md)
 
 # Exercice 4
+
+<details markdown="1">
+<summary>Solution</summary>
+
 Soit $\omega_1,...,\omega_n$ les issues i.e.
 $\Omega = \{\omega_1;...;\omega_n\}$
 $$
@@ -17,6 +21,7 @@ E(X\times Y) &= \sum_{\omega\in\Omega}(X(\omega) + Y(\omega))\\
 &= E(X) + E(Y)
 \end{aligned}
 $$
+
 $$
 \begin{aligned}
 E(\lambda X) &= \sum_{\omega\in\Omega}p(\omega)\lambda X(\omega)\\
@@ -25,9 +30,25 @@ E(\lambda X) &= \sum_{\omega\in\Omega}p(\omega)\lambda X(\omega)\\
 \end{aligned}
 $$
 
+</details>
+
 # Exercice 3
-- $P(X = x_1) = \frac{8}{27}$
-- $P(X = x_2) = \frac{4}{9}$
+
+Determiner la loi $\mathcal B(3, \frac{1}{3})$
+
+<details markdown="1">
+<summary>Solution</summary>
+
+- $P(X = x_1) = \binom{3}{0}\times\frac{1}{3}^0\times\frac{2}{3}^3 = \frac{8}{27}$
+- $P(X = x_2) = \binom{3}{1}\times\frac{1}{3}^1\times\frac{2}{3}^2  = \frac{4}{9}$
+- $P(X = x_3) = \binom{3}{2}\times\frac{1}{3}^2\times\frac{2}{3}^1  = \frac{2}{9}$
+- $P(X = x_4) = \binom{3}{3}\times\frac{1}{3}^3\times\frac{2}{3}^0  = \frac{1}{27}$
+
+|$P(X)$|$\frac{8}{27}$|$\frac{4}{9}$|$\frac{2}{9}$|$\frac{1}{27}$|
+|-|-|-|-|-|
+|$X$|$x_1$|$x_2$|$x_3$|$x_4$|
+
+</details>
 
 # Exercice 14
 Soit $X$ une variable aleatoire suivant une loi geometrique. Montrer que $P(X\gt n+k\vert X\gt k) = P(X\gt n)$ pour tous entiers naturels $k$ et $n$.
@@ -91,8 +112,3 @@ Calculer $P(U)\in[2;3]$ et $E(U)$
 <summary>Solution</summary>
 $P(U) = \frac{1}{3}$
 </details>
-
-# Exercice 10
-Dans un atelier, le nombre d'accidents au cours d'une annee peut etre modelise par une loi de Poisson de parametre 5. Calculer la probabilite:
-1. qu'il y ait 5 accidents au cours d'une annee
-2. 
