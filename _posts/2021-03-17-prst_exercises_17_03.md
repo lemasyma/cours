@@ -22,7 +22,7 @@ Les exos sont fait dans le meme ordre que pendant le cours
 $$
 \begin{aligned}
 L(x_1,...,x_n)&=\Pi_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{(x_i+m)^2}{2}}\\
-&= \biggr(\frac{1}{\sqrt{2\pi}}\biggr)e^{-\sum_{i=1}^n\frac{(x_i-m)}{2}}
+&= \biggr(\frac{1}{\sqrt{2\pi}}\biggr)^ne^{-\sum_{i=1}^n\frac{(x_i-m)}{2}}
 \end{aligned}
 $$
 
