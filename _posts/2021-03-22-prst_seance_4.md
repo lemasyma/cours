@@ -21,8 +21,8 @@ Deux resultats probabilistes:
 ## Point de depart
 - $(X_1,..., X_n)$ echantillon i.i.d de taille $n$
 - $(x_1,...,x_n)$ réalisations de cet échantillon
-- $\bar x_n = \frac{1}{n}\sum_{i=1}^nx_i$ estimation ponctuelle de la moyenne (espérance) $m$
-- $S_n^2=\frac{1}{1-n}\sum_{i=1}^n(X_i\bar X_n)$ estimation ponctuelle de la variance $\sigma^2$
+- $\barxX_n = \frac{1}{n}\sum_{i=1}^nx_i$ estimation ponctuelle de la moyenne (espérance) $m$
+- $S_n^2=\frac{1}{1-n}\sum_{i=1}^n(x_i-\bar x_n)^2$ estimation ponctuelle de la variance $\sigma^2$
 
 <div class="alert alert-info" role="alert" markdown="1">
 Dans la majorite des cas, on ne connait pas la loi de probabilite d'un experience aleatoire
