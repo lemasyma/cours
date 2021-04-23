@@ -132,8 +132,8 @@ Déterminer l'information de Fisher pour la loi de Poisson de paramètre $\lambd
 <summary>Solution</summary>
 
 $$
-\log f(x,\delta)=-\delta+x\log(\lambda)-\log(x!)\\
-\frac{\delta\log f(x,\lambda)}{\delta\lambda} = -n+\frac{x}{\lambda}\\
+\log f(x,\lambda)=-\lambda+x\log(\lambda)-\log(x!)\\
+\frac{\delta\log f(x,\lambda)}{\delta\lambda} = -1+\frac{x}{\lambda}\\
 \frac{\delta^2\log f(x,\lambda)}{\delta\lambda^2}=-\frac{x}{\lambda^2}\\
 \begin{aligned}
 E_n\biggr(\frac{\delta^2\log f(X,\lambda)}
