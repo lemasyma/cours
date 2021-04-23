@@ -52,7 +52,7 @@ $$
 - $\bar X_n$ est un estimateur sans biais de $m$
 - $S_n^2:=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X_n)^2$
 - $\frac{(n-1)S_n^2}{\sigma^2}$ suit une loi $\mathcal X^2(n-1)$
-- $P(\mathcal X^2_{\frac{\alpha}{2}} \le \frac{nS_n^{2*}}{\sigma^2} \le\mathcal X^2_{1-\frac{\alpha}{2}}) = 1 - \alpha$
+- $$P(\mathcal X^2_{\frac{\alpha}{2}} \le \frac{nS_n^{2*}}{\sigma^2} \le\mathcal X^2_{1-\frac{\alpha}{2}}) = 1 - \alpha$$
 
 <div class="alert alert-info" role="alert" markdown="1">
 *L'intervalle de confiance* au niveau $1-\alpha$ pour la variance $\sigma^2$ est:
