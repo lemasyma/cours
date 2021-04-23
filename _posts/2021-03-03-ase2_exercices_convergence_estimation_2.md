@@ -20,7 +20,7 @@ Soit $X$ une VA de densite $f(x) = e^{-x-e^{-x}}$ $\forall x\in\mathbb R$.
 <details markdown="1">
 <summary>Solution</summary>
 
-1. $F(x) = P(X\lt x) = \int_{-\infty}^xf(t)dt$ $\forall x\in\mathbb R$
+1.$F(x) = P(X\lt x) = \int_{-\infty}^xf(t)dt$ $\forall x\in\mathbb R$
 
 $$
 \begin{aligned}
@@ -30,7 +30,7 @@ F(x) &= \int_{-\infty}^xe^{-t}\times e^{-e^{-t}}\\
 \end{aligned}
 $$
 
-2. $Y = e^{-X}$, Soit $G(y)$ la fonction de repartition de $Y$. $Y$ etant positive donc $G(y) = P(Y\lt y) = 0$ pour $y\le 0$.
+2.$Y = e^{-X}$, Soit $G(y)$ la fonction de repartition de $Y$. $Y$ etant positive donc $G(y) = P(Y\lt y) = 0$ pour $y\le 0$.
 
 Pour $y\gt 0$:
 
@@ -57,7 +57,7 @@ g(y) = G'(y) =
 \end{cases}
 $$
 
-3. $E(Y) = \int_{\mathbb R}yg(y)dy = \int_{-\infty}^{+\infty}ye^{-y}dy$
+3.$E(Y) = \int_{\mathbb R}yg(y)dy = \int_{-\infty}^{+\infty}ye^{-y}dy$
 
 On integre par parties:
 $$
@@ -83,7 +83,7 @@ E(Y^2) &=\int_0^{+\infty}Y^2e^{-y}dy = \underbrace{\biggr[-y^2e^{-y}\biggr]_0^{+
 \end{aligned}
 $$
 
-4. 1. $\overline{Y_n}=\frac{1}{n}\sum_{i=1}^{n}Y_i$, $(Y_i)_{1\le i\le n}$ idependantes et de meme loi que $Y$.
+4.1.$\overline{Y_n}=\frac{1}{n}\sum_{i=1}^{n}Y_i$, $(Y_i)_{1\le i\le n}$ idependantes et de meme loi que $Y$.
 
 $$
 \begin{aligned}
@@ -101,7 +101,7 @@ $$
 \end{aligned}
 $$
 
-4. 2. Montrons que $\overline{Y_n}\to_{n\to+\infty}^{m.q}1$
+4.2.Montrons que $\overline{Y_n}\to_{n\to+\infty}^{m.q}1$
 
 $$
 \begin{aligned}
@@ -122,7 +122,7 @@ Soit $X$ une VA de loi $\gamma_p$, $(p\in\mathbb N^*)$
 <details markdown="1">
 <summary>Solution</summary>
 
-1. $X$ suit la  loi $\gamma_p$ (gamma). Sa densite est $f(x) = \frac{1}{\Gamma(p)}e^{-x}x^{p-1}$
+1.$X$ suit la  loi $\gamma_p$ (gamma). Sa densite est $f(x) = \frac{1}{\Gamma(p)}e^{-x}x^{p-1}$
 
 Donc:
 
@@ -164,7 +164,7 @@ I_{p-1} &= \frac{(-1)^{p-1}(p-1)!}{(it-1)^p}I_0\\
 \end{aligned}
 $$
 
-2. On veut la fonction caracteristique de $\frac{X-p}{\sqrt{p}}$. Or, d'apres le cours:
+2.On veut la fonction caracteristique de $\frac{X-p}{\sqrt{p}}$. Or, d'apres le cours:
 
 $$
 \phi_{\frac{X-m}{\delta}}(t) = e^{\frac{itm}{\delta}}\phi_X(\frac{t}{\delta})
@@ -181,7 +181,7 @@ $$
 \end{aligned}
 $$
 
-3. Montrons que $\frac{X-p}{\sqrt{p}}\to_{p\to+\infty}^LN(0,1)$
+3.Montrons que $\frac{X-p}{\sqrt{p}}\to_{p\to+\infty}^LN(0,1)$
 
 $$
 \ln(\phi_{\frac{X-p}{\sqrt{p}}}) = -\frac{itp}{\sqrt{p}}-p\ln(1-\frac{it}{\sqrt{p}})
