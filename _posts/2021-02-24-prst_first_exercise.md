@@ -9,6 +9,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1o44y4Md)
 
 # Exercice 4
 
+Demontrer les proprietes suivantes dans le cas discret: Soient $X$ et $Y$ deux variables aleatoires definies sur un meme espace $\Omega$ et $\lambda$ un nombre reel.
+
 <details markdown="1">
 <summary>Solution</summary>
 
