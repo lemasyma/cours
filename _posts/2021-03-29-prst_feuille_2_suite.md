@@ -1,9 +1,9 @@
 ---
-title:          "PRST: Feuille 2, suite"
+title:          "PRST: Feuille 2, suite - Exercices"
 date:           2021-03-29 9:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
-description: Feuille 2, suite
+description: Feuille 2, suite - Exercices
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Skw48_1rO)
 

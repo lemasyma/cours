@@ -1,9 +1,9 @@
 ---
-title:          "PRST: Feuille 1 - Exercice"
+title:          "PRST: Feuille 1 - Exercice, suite"
 date:           2021-03-05 14:45
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8, loi, exponentielle, bernoulli, binomial]
-description: Feuille 1 - Exercice
+description: Feuille 1 - Exercice, suite
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJ6TZxemd)
 
