@@ -114,7 +114,7 @@ $$
 <div class="alert alert-success" role="alert" markdown="1">
 
 $$
-\frac{\delta^2\log(L(x_1,...,x_n,p))}{\delta p^2}=-\frac{n}{p}-\frac{\sum_{i=1}^n(x_i-1)}{(1-p)^2}\lt0
+\frac{\delta^2\log(L(x_1,...,x_n,p))}{\delta p^2}=-\frac{n}{p^2}-\frac{\sum_{i=1}^n(x_i-1)}{(1-p)^2}\lt0
 $$
 
 Donc la condition suffisante est verifiee.
