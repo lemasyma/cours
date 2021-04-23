@@ -1,9 +1,9 @@
 ---
-title:          "PRST: Seance 5"
+title:          "PRST: Seance 5 - Intervalle de confiance, suite"
 date:           2021-03-24 14:30
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
-description: Seance 5
+description: Seance 5 - Intervalle de confiance, suite
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1G7eT_Vu)
 
