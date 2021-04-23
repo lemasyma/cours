@@ -117,7 +117,7 @@ $$
 L'*intervalle de confiance asymptotique* au niveau $1-\alpha$ pour la proportion $p$ est:
 
 $$
-\biggr[\hat p - z_{1-\frac{\alpha}{2}}\frac{\sqrt{\hat p(1-\hat p)}}{\sqrt n}\biggr]
+\biggr[\hat p - z_{1-\frac{\alpha}{2}}\frac{\sqrt{\hat p(1-\hat p)}}{\sqrt n}; \hat p + z_{1-\frac{\alpha}{2}}\frac{\sqrt{\hat p(1-\hat p)}}{\sqrt n}\biggr]
 $$
 
 </div>
