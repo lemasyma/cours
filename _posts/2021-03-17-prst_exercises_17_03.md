@@ -102,7 +102,7 @@ $$
 <div class="alert alert-danger" role="alert" markdown="1">
 
 $$
-(\frac{1}{u})' = \frac{u'}{u}
+(\frac{1}{u})' = -\frac{u'}{u^2}
 $$
 
 </div>
