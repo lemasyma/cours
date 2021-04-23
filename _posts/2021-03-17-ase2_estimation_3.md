@@ -1,9 +1,9 @@
 ---
-title:          "ASE2: Convergence et estimation, suite"
+title:          "ASE2: Convergence et estimation - 3"
 date:           2021-03-17 9:00
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8, loi, estimation]
-description: Convergence et estimation, suite
+description: Convergence et estimation - 3
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByGBD4kNd)
 

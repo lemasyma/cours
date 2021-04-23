@@ -1,9 +1,9 @@
 ---
-title:          "ASE2: Convergence et estimation - Exercices"
+title:          "ASE2: TD 1"
 date:           2021-02-24 10:00
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8]
-description: Exercices sur la convergence et estimation
+description: TD 1
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkBV8jmMO)
 

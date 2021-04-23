@@ -1,5 +1,5 @@
 ---
-title:          "ASE2: Convergence et estimation - Exercices, suite"
+title:          "ASE2: TD 1, suite"
 date:           2021-03-03 9:00
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8]
