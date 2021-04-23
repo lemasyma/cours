@@ -78,7 +78,7 @@ E(Y^2) = \int_0^{+\infty}y^2e^{-y}dy\\
 \end{cases}\\
 \begin{aligned}
 E(Y^2) &=\int_0^{+\infty}Y^2e^{-y}dy = \underbrace{\biggr[-y^2e^{-y}\biggr]_0^{+\infty}}_{_{y\to+\infty}\to0}-\int_0^{+\infty}2y(-e^{-y})dy\\
-&= 2\int_0^{+\infty}ye^{-y}dy = 2E(Y) = 1\\
+&= 2\int_0^{+\infty}ye^{-y}dy = 2E(Y) = 2\\
 \text{Donc: } V(Y) &= 2 - 1 = 1
 \end{aligned}
 $$
