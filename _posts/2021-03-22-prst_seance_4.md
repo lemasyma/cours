@@ -89,6 +89,7 @@ La forme generale de l'intervalle de confiance *asymptotique* general pour $1-\a
 $$
 \biggr[\bar X_n-z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt n};\bar X_n+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt n}\biggr]
 $$
+
 Avec:
 - $z_{1-\frac{\alpha}{2}}$: fractile d'ordre $1-\frac{\alpha}{2}$ de la loi $\mathcal N(0,1)$
 
