@@ -29,6 +29,7 @@ Dans la majorite des cas, on ne connait pas la loi de probabilite d'un experienc
 </div>
 
 Dans le modele de Bernoulli avec un echantillon i.i.d de la $\mathcal B$, un intervalle de confiance au niveau $0,95$ est:
+
 $$
 [f-\frac{1}{\sqrt{n}};f+\frac{1}{\sqrt{n}}]
 $$
