@@ -120,7 +120,7 @@ Deux types de v.a.: discrete et continue
 Y n'est pas continue car la probabilite d'etre egale a un certain nombre et toujours egal a $0$. On cherche pas un nombre mais un intervalle.
 </div>
 
-- Si $X+Y$ etait gaussienne $P(X+Y=0)=0$
+- Si $X+Y$ etait gaussienne $P(X+Y=0)=0$ car dans le cas continue la probabilité d'un événement en particulier vaut toujours 0.
 - D'apres la question precedente, $P(X+Y=0)=\frac{1}{2}$
 - la combinaison lineaire $X+Y$ n'est pas guassienne donc le vecteur n'est pas gaussien
 
