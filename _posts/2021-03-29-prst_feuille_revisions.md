@@ -216,7 +216,7 @@ $$
 $T=\max\frac{x_i}{\theta}$, $M=\max x_i$, donc $T=\frac{M}{\theta}$ (car $\theta\gt0$)
 
 $$
-P(\sqrt[n]{0,05}\le T\le1)=095\Rightarrow P(\sqrt[n]{0,05}\le\frac{M}{\theta})=0,95\\
+P(\sqrt[n]{0,05}\le T\le1)=095\Rightarrow P(\sqrt[n]{0,05}\le\frac{M}{\theta}\le 1)=0,95\\
 P(1\le\frac{\theta}{M}\le(0,05)^{-\frac{1}{n}})=0,95\Leftrightarrow P(M\le\theta\le M(0,05)^{-\frac{1}{n}})=0,95
 $$
 
