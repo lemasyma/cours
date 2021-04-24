@@ -120,8 +120,9 @@ $$
 
 ## Proprietes
 1. $\phi_{\lambda X} = \phi_X(\lambda t)$ $\forall \lambda$ un scalaire
-2. $\phi_{X+a}(t) = \exp(ita)\pi_X(t)$
+2. $\phi_{X+a}(t) = \exp(ita)\phi_X(t)$
 3. Si $X$ est une variable aleatoire d'esperance et d'ecrat-type $\sigma$ et $U = \frac{X-m}{\sigma}$
+
 $$
 \phi_{\frac{X-m}{\sigma}}(t) = \phi_U(T) = \exp(-\frac{itm}{\sigma})\phi_X(\frac{1}{\sigma})
 $$
@@ -129,9 +130,11 @@ $$
 ## Remarque
 la fonction caractéristique se prête bien aux additions de variables aléatoires indépendantes :
 Si $X$ et $Y$ sont deux variables aléatoires indépendantes alors 
+
 $$
 \phi_{X+Y}(t)=\phi_X(t)\phi_Y(t)
 $$
+
 En effet $\phi_{X+Y}(t) = E(\exp(it(X+Y))) = E(\exp(itX)\exp(itY))$
 Or $X$ et $Y$ sont indépendantes $E(\exp(itX)\exp(itY)) = E(\exp(itX))E(\exp(itY))$
 Donc $\phi_{X+Y}(t) = \phi_X(t)\phi_Y(t)$
@@ -140,7 +143,7 @@ Donc $\phi_{X+Y}(t) = \phi_X(t)\phi_Y(t)$
 Soit $X$ une variable aléatoire de fonction de répartition $\phi_X(t)$.
 On a:
 - $\phi_X(0) = 1$
-- $\frac{d^k\phi_X}{dt^k}(0) = \phi_X^{(k)}(0) = t^kE(X^k)$
+- $\frac{d^k\phi_X}{dt^k}(0) = \phi_X^{(k)}(0) = i^kE(X^k)$
 
 ### Demo
 Supposons que $X$ est une variable continue de densité $f$
@@ -212,9 +215,11 @@ Une suite $X_n$ de variables aléatoires étant une suite de fonctions il existe
 <div class="alert alert-info" role="alert" markdown="1">
 La suite $X_n$ converge en probabilité vers une variable aléatoire $X$
 Si $\forall\varepsilon\gt0, \eta\gt 0$ ( arbitrairement petits) il existe un entier $n_0$ tel que
+
 $$
 \forall n\gt n_o \Rightarrow P(\vert X_n-X\vert\gt\varepsilon)\lt\eta
 $$
+
 C’est-à-dire $P(\vert X_n-X\vert\gt\varepsilon)\to_{n\to+\infty}0$
 </div>
 <div class="alert alert-warning" role="alert" markdown="1">
@@ -223,6 +228,7 @@ On notera $(X_n)\to^PX$
 
 <div class="alert alert-danger" role="alert" markdown="1">
 Inégalité de Bienaymé-Tchebychev:
+
 $$
 P(\vert X - E(X)\vert\gt\varepsilon)\lt\frac{V(X)}{\varepsilon^2} \text{ , } \forall\varepsilon\gt 0
 $$
@@ -232,10 +238,12 @@ $$
 Lorsque $E(X_n)\to_{n\to+\infty}0$, il suffit de montrer que $V(X_n)\to_{n\to+\infty} 0$ pour établir la convergence en probabilité de la suite $(X_n)$ vers a.
 
 En effet d’après Tchebychev:
+
 $$
 P(\vert X_n-E(X_n)\vert\gt\varepsilon)\lt\frac{V(X_n)}{\varepsilon^2}\to 0
 $$
 Donc en passant a la limite:
+
 $$
 \lim_{n\to+\infty}P(\vert X_n - a\vert\gt\varepsilon) = 0\\ \forall\varepsilon\gt0
 $$
@@ -246,9 +254,11 @@ On suppose que $E(\vert X_n-X\vert^2)$ existe.
 ### Definition
 <div class="alert alert-info" role="alert" markdown="1">
 On dit qu’une suite de variables aléatoires $(X_n)$ converge en moyenne quadratique vers une variable X si 
+
 $$
-E(\vert X_n-X\vert^2)\to_{n\to+\infty}
+E(\vert X_n-X\vert^2)\to_{n\to+\infty}0
 $$
+
 </div>
 <div class="alert alert-warning" role="alert" markdown="1">
 On notera $(X_n)\to^{m.q}X$
@@ -265,6 +275,7 @@ On noter $X_n\to^LX$
 
 ### Remarque
 Pour les variables discrètes, la convergence en loi est équivalente à
+
 $$
 \lim_{n\to+\infty}P(X_n=k) = P(X=k)
 $$
@@ -281,6 +292,7 @@ Alors $\frac{X_n - np}{\sqrt{npq}}\to^LN(0,1)$ lorsque $n\to+\infty$
 
 ## Demonstration
 La fonction caractéristique de la loi $B(n,p)$ est:
+
 $$
 \begin{aligned}
     \phi_{X_n}(t) &= (p\exp(it)+1-p)^n \text{ donc celle de } Y_n=\frac{X_n-np}{\sqrt{npq}} \text{ est:}\\
@@ -288,22 +300,29 @@ $$
     Ln(\phi_{Y_n}(t)) &= nLn(p(\exp(\frac{it}{\sqrt{npq}})-1)+1) - \frac{itnp}{\sqrt{npq}}
 \end{aligned}
 $$
+
 On rappelle le développement limité de l’exponentielle à l’ordre 2: $\exp(x) \approx 1+x+\frac{x^2}{2}$ (au voisinage de 0)
+
 $$
 Ln(\phi_{Y_n}(t)) \approx nLn(p(\frac{it}{\sqrt{npq}} - \frac{t^2}{2npq})+1)-\frac{itnp}{\sqrt{npq}}
 $$
+
 On rappelle $Ln(1+x)\approx x - \frac{x^2}{2}$ (au voisinage de 0)
 Donc:
+
 $$
 \begin{aligned}
 Ln(\phi_{Y_n}(t))&\approx n[\frac{pit}{\sqrt{npq}}-\frac{pt^2}{2npq}+\frac{p^2t^2}{2npq}]-\frac{itnp}{\sqrt{npq}}\\
 &\approx -\frac{t^2}{2q} + \frac{pt^2}{2q} = \frac{t^2}{2q}(p-1)=-\frac{t^2}{2}
 \end{aligned}
 $$
+
 En composant par l’exponentielle:
+
 $$
 Ln(\phi_{Y_n}(t))\approx\exp(-\frac{t^2}{2}) \text{ caractéristique de la loi normale } N(0,1)
 $$
+
 Conclusion: $\frac{X_n-np}{\sqrt{npq}}\to^LN(0,1)$
 
 ## Remarque
@@ -311,7 +330,9 @@ Conclusion: $\frac{X_n-np}{\sqrt{npq}}\to^LN(0,1)$
 Lorsque $n$ est assez grand on peut donc approximer la loi Binomiale par la loi normale. On donne généralement comme  condition $np$ et $nq\gt5$
 </div>
 Il convient cependant d’effectuer la correction de continuité : on obtient donc une valeur approchée de $P(X=x)$ par la surface sous la courbe de densité de la loi normale $N(np,\sqrt{npq})$ comprise entre les droites d’abscisse $x-\frac{1}{2}$ et $x+\frac{1}{2}$
+
 $$
 P(X=x)\approx P(x-\frac{1}{2}\lt X\lt x+\frac{1}{2}) = P(\frac{x-\frac{1}{2}-np}{\sqrt{npq}}\lt\frac{X-np}{\sqrt{npq}}\lt\frac{x+\frac{1}{2}-np}{\sqrt{npq}})
 $$
+
 Et $P(X\le x)\approx P(\frac{X-np}{\sqrt{npq}}\lt\frac{x+\frac{1}{2}-np}{\sqrt{npq}})$
