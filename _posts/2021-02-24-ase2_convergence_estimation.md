@@ -232,6 +232,7 @@ Inégalité de Bienaymé-Tchebychev:
 $$
 P(\vert X - E(X)\vert\gt\varepsilon)\lt\frac{V(X)}{\varepsilon^2} \text{ , } \forall\varepsilon\gt 0
 $$
+
 </div>
 
 ### Remarque
