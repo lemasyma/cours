@@ -45,7 +45,7 @@ Soient $N_1$ et $N_2$ des variables aleatoires **independantes** suivant respect
 Par definition, la variable aleatoire $X := N_1 − N_2$ suit une loi de Skellam de parametres $\lambda_1$ et $\lambda_2$
 
 1. Montrer que $E(X) = \lambda_1 − \lambda_2$ et $V(X) = \lambda_1 + \lambda_2$
-2. Consid´erons un echantillon $(X_1, . . . , X_n)$ de la loi de $X$. Determiner, a l’aide de la methode des moments, des estimateurs des parametres $\lambda_1$ et $\lambda_2$.
+2. Considérons un echantillon $(X_1, . . . , X_n)$ de la loi de $X$. Determiner, a l’aide de la methode des moments, des estimateurs des parametres $\lambda_1$ et $\lambda_2$.
 
 <details markdown="1">
 <summary>Solution</summary>
