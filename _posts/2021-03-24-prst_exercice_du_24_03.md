@@ -89,7 +89,7 @@ D'ou, par la methode des moments:
 $$
 \begin{cases}
 \hat\lambda_1=\frac{\bar X+S^2}{2}\\
-\hat\lambda_1=\frac{S^2-\bar X}{2}\\
+\hat\lambda_2=\frac{S^2-\bar X}{2}\\
 \end{cases}
 $$
 
