@@ -82,7 +82,7 @@ Les v.a. $\varepsilon$ et $X$ sont independnates donc $\varepsilon$ et $X^2$ aus
 
 $$
 Cov(X,Y)=E(\varepsilon)E(X^2)\\
-E(\varepsilon)=\frac{1}{1}\times-1+\frac{1}{1}\times1 =0
+E(\varepsilon)=\frac{1}{2}\times-1+\frac{1}{2}\times1 =0
 $$
 
 3.
