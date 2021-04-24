@@ -117,7 +117,7 @@ Donc elles ne sont **pas** independantes.
 # Exercice 5
 La variable aleatoire $X$ suit une loi uniforme sur $[0;\theta]$ avec $\theta$ inconnu.
 
-Sa densite est par definition donnee par $f(x,\theta)=\frac{1}{\theta}𝟙_{[0;\theta]}(x)$ i.e. $f(x,\theta)=1$ si $0\le x\le\theta$ sinon.
+Sa densite est par definition donnee par $f(x,\theta)=\frac{1}{\theta}𝟙_{[0;\theta]}(x)$ i.e. $f(x,\theta)=1$ si $0\le x\le\theta$ sinon 0.
 
 1. Montrer que sa densite peut etre ecrite $f(x,\theta)=\frac{1}{\theta}𝟙_{[0;1]}(\frac{x}{\theta})$
 2. En deduire que la fonction de vraisemblance definie sur $[0;+\infty[\times]0;+\infty[$ s'ecrit:$$L(x_1,...,x_n,\theta)=\begin{cases}\frac{1}{\theta^n}&\text{si} \max x_i\le\theta \\ 0&\text{sinon}\end{cases}$$ ou encore $$L(x_1,...,x_n,\theta)=\frac{1}{\theta^n}𝟙_{[\max 1\le i\le n;+\infty]}(\theta)$$
