@@ -75,12 +75,8 @@ On obtient $[3,023;5,09]$
 
 $$
 E(X) = \frac{\phi'(0)}{i} \text{(cf chapitre 1 complement)}\\
-\begin{aligned}
-\phi_{U_n}'(t)&=\frac{ni(1-2it)^{\frac{n}{2}-1}}{(1-2it)^n}\\
-&= \frac{ni}{(1-2it)^{\frac{n}{2}+0}}\\
-\end{aligned}\\
+\phi_{U_n}'(t)= \frac{ni}{(1-2it)^{\frac{n}{2}+1}}\\
 E(X) = \frac{\phi_{U_n}'}{i}=n\\
-\phi_{U_n}''(t)=\frac{-(\frac{n}{2})nit^{-2i}}{(1-2it)^{\frac{n}{2}+2}}
 $$
 
 <div class="alert alert-danger" role="alert" markdown="1">
