@@ -97,7 +97,7 @@ $$
 \begin{aligned}
 \phi_{X+Y}&=\phi_X(t)\phi_Y(t)\\
 &= \frac{1}{(1-2it)^{\frac{m}{2}}}\times\frac{1}{(1-2it)^{\frac{n}{2}}}\\
-&=\frac{1}{(1-2it)}^{\frac{m+n}{2}} \text{ , cqfd.}
+&=\frac{1}{(1-2it)^{\frac{m+n}{2}}} \text{ , cqfd.}
 \end{aligned}
 $$
 
