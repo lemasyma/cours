@@ -24,11 +24,13 @@ $$
 </div>
 
 ### Proposition
+
 $$
 S^2 = \frac{1}{n}\sum_{i=1}^nX_i^2-(\bar X)^2
 $$
 
 ### Demo
+
 $$
 \begin{aligned}
 S^2&=\frac{1}{n}\sum_{i=1}^n(X_i-\bar X) = \frac{1}{n}\sum_{i=1}^n(X_i^2 - X_i\bar X+\bar X^2)\\
@@ -40,8 +42,8 @@ $$
 Montrons que $S^2\to^P\sigma^2$ lorsque $n\to+\infty$
 
 D’après la loi des grands nombres, on a:
-$\bar X\frac{1}{n}\sum_{i=1}^nX_i\to^Pm=E(X)$ quand $n\to+\infty$
-et $\frac{1}{n}\sum_{i=1}^n\to^PE(X^2)$ quand $n\to+\infty$
+$\bar X=\frac{1}{n}\sum_{i=1}^nX_i\to^Pm=E(X)$ quand $n\to+\infty$
+et $\frac{1}{n}\sum_{i=1}^nX_i^2\to^PE(X^2)$ quand $n\to+\infty$
 Donc $S^2=\frac{1}{n}\sum_{i=1}^nX_i^2-(\bar X)^2\to^PE(X^2)-E^2(X)=\sigma^2=V(X)$
 
 <div class="alert alert-warning" role="alert" markdown="1">
