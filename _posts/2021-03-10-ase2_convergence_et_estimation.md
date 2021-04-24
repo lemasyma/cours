@@ -98,17 +98,21 @@ $$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Definition**: la fonction caractéristique d’une variable aléatoire réelle $X$ est la transformée de Fourier de sa loi de probabilité. Elle est notée $\phi_X(t)$ et on a:
+
 $$
 \phi_X(t)=E(e^{itX}) \text{ (} i \text{ complexe)}
 $$
+
 </div>
 
 Si $X$ est une variable à densité ($X$ est une v.a continue de densité $f$) alors : 
+
 $$
 \phi_X(t) = \int_{\mathbb R}e^{itx}f(x)dx
 $$
 
 Si $X$ est une variable discrète alors sa fonction caractéristique est : 
+
 $$
 \phi_X(t)=\sum_ke^{itk}P(X=k)
 $$
@@ -136,7 +140,7 @@ $$
 ## Proposition
 Soit $X$ une variable aléatoire de fonction de répartition $\phi_X(t)$.
 
-On a $\phi_x(0)=1$ et $\frac{d^k\phi_X}{dt^k}(0)=\phi_X^{(k)}(0)=t^kE(X^k)$
+On a $\phi_x(0)=1$ et $\frac{d^k\phi_X}{dt^k}(0)=\phi_X^{(k)}(0)=i^kE(X^k)$
 
 ### Démo
 Supposons que $X$ est une variable continue de densité $f$
