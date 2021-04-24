@@ -105,7 +105,7 @@ Donc $u_{2p}=1.3.5.....(2p-1) = \frac{(2p)!}{2^pp!}$
 # Fonctions caracteristiques
 ## Definition
 <div class="alert alert-info" role="alert" markdown="1">
-la fonction caractéristique d’une variable aléatoire réelle $X$ est la transformée de Fourier de sa loi de probabilité. elle est notée $\phi_x(t)$ et on a $\phi_xE(\exp(itX))$ ($i$ complexe)
+la fonction caractéristique d’une variable aléatoire réelle $X$ est la transformée de Fourier de sa loi de probabilité. elle est notée $\phi_x(t)$ et on a $\phi_x=E(\exp(itX))$ ($i$ complexe)
 </div>
 Si $X$ est une variable a densite ($X$ est une VA continue de densite $f$) alors:
 $$
