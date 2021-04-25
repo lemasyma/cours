@@ -63,7 +63,7 @@ On integre par parties:
 $$
 \begin{cases}
     v = y &v'=1\\
-    u' = e^{-y} &u = e^{-y}
+    u' = e^{-y} &u = -e^{-y}
 \end{cases}\\
 \begin{aligned}
 E(Y) = \underbrace{\biggr[-ye^{-y}\biggr]_0^{+\infty}}_{_{y\to+\infty}\to0} - \int_0^{+\infty}(-e^{-y})dy &= \int_0^{+\infty}e^{-y}dy\\
