@@ -125,7 +125,7 @@ $$
 
 $$
 (\vert X-\frac{1}{\lambda}\vert\ge\varepsilon) = (X-\frac{1}{\lambda}\ge\varepsilon)\cup(X-\frac{1}{\lambda}\le-\varepsilon)\\
-\text{or: } A\in A\cup B
+\text{or: } A\in A\cup B\\
 \text{donc: } (X-\frac{1}{\lambda}\ge\varepsilon)\in(\vert X-\frac{1}{\lambda}\vert\ge\varepsilon \vert)
 $$
 
