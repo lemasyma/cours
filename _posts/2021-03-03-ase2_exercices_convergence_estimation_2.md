@@ -168,10 +168,10 @@ $$
 2.On veut la fonction caracteristique de $\frac{X-p}{\sqrt{p}}$. Or, d'apres le cours:
 
 $$
-\phi_{\frac{X-m}{\delta}}(t) = e^{\frac{itm}{\delta}}\phi_X(\frac{t}{\delta})
+\phi_{\frac{X-m}{\sigma}}(t) = e^{\frac{itm}{\sigma}}\phi_X(\frac{t}{\sigma})
 $$
 
-Ici $m=p$ et $\delta=\sqrt{p}$
+Ici $m=p$ et $\sigma=\sqrt{p}$
 
 Donc:
 
