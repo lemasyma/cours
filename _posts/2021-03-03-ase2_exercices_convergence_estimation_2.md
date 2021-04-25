@@ -93,6 +93,7 @@ V(\overline{Y_n}) &= \frac{1}{n^2}\sum_{i=1}^nV(Y_i)= \frac{n}{n^2} = \frac{1}{n
 $$
 
 En utilisant Tchebychev:
+
 $$
 \begin{aligned}
 \forall\varepsilon\gt0, &P(\vert\overline{Y_n}-E(\overline{Y_n})\vert \gt\varepsilon)\lt\frac{V(\overline{Y_n})}{\varepsilon^2}\\
