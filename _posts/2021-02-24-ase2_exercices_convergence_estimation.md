@@ -60,7 +60,7 @@ Donc:
 
 $$
 \begin{aligned}
-phi_X(t) &= e^{-\lambda}\exp(\lambda e^{it})\\
+\phi_X(t) &= e^{-\lambda}\exp(\lambda e^{it})\\
 &= \exp(-\lambda+\lambda e^{it})
 \end{aligned}
 $$
