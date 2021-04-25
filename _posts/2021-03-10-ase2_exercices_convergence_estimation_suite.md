@@ -172,9 +172,9 @@ $$
 \forall x\le0, P(Y_n\le x) = P(X_n\le nx) = 0 \text{ car } nx\le0
 $$
 
-Remarque: donc $\forall x\le 0$, $\lim_{n\to+\infty}P(Y_n\le x) = 0$, $\forall x\gt 0$ (reel strictement positif).
+Remarque: donc $\forall x\le 0$, $\lim_{n\to+\infty}P(Y_n\le x) = 0$.
 
-Des que $n$ est assez grand, $nx\ge 1$.
+$\forall x\gt 0$ (reel strictement positif). Des que $n$ est assez grand, $nx\ge 1$.
 
 $$
 \begin{aligned}
