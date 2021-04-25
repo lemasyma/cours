@@ -181,7 +181,7 @@ $$
 P(Y_n\le x) &= P(X_n\le nx) = \sum_{k=1}^{[nx]}P(X_n=k) \text{ }([nx] \text{participation entiere de } nx)\\
 \forall x\gt0, P(Y_n\le x) &= \sum_{k=1}^{[nx]}(1-\frac{1}{n})^{k-1}\frac{1}{n}\\
 &= \frac{1}{n}\sum_{k=1}^{[nx]}(1-\frac{1}{n}^){k-1} = \frac{1}{n}\biggr(\frac{1-(1-\frac{1}{n})^{[nx]}}{1-(1-\frac{1}{n})}\biggr)\\
-&= P(Y_n\le x) = 1 - (1-\frac{1}{n})^{[nk]}
+&= P(Y_n\le x) = 1 - (1-\frac{1}{n})^{[nx]}
 \end{aligned}
 $$
 
