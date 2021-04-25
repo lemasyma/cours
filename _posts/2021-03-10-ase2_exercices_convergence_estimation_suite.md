@@ -78,14 +78,19 @@ $(X_n), n\in\mathbb N^*$ suit  la loi de Poisson $\mathcal P(\frac{1}{n})$.
 Rappel: 
 
 $$
-P(X_n=k) = e^{-\lambda}\frac{\lambda^k}{k!} \text{ (avec } \lambda = \frac{1}{n}\text{)}\\
+P(X_n=k) = e^{-\lambda}\frac{\lambda^k}{k!} \text{ (avec } \lambda = \frac{1}{n}\text{)}
+$$
+
+</div>
+
+$$
 P(X_n = k)= e^{-\frac{1}{n}}\frac{1}{n^kk!}, \forall k\in\mathbb N
 $$
 
 - Si $k=0$, $P(X_n = 0) = e^{-\frac{1}{n}}\to_{n\to+\infty}1$
 - Si $k\ge1$, $P(X_n=k)=\frac{1}{n^kk!}e^{-\frac{1}{n}}\to_{n\to+\infty}0$ car $\frac{1}{n^k}\to_{n\to+\infty}0$
 
-</div>
+
 
 Conclusion: on a montre que
 
