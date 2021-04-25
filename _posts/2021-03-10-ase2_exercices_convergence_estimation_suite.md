@@ -148,7 +148,7 @@ En choisissant $\varepsilon=\frac{2}{\lambda}\gt0$, on obtient $P(X\ge\frac{3}{\
 $(X_n)$ une suite de v.a. telle que $\forall n\in\mathbb N^*$: $X_n$ suit la loi geometrique $G(\frac{1}{n})$ (de parametre $\frac{1}{n}$).
 On pose $Y_n=\frac{X_n}{n}$.
 1. Determiner la fonction de repartition de la suite $Y_n:P(Y_n\le x), \forall x\in\mathbb R$
-2. Montrere que $Y_n\to_{n\to+\infty}^LY$ avec $Y$ suit la loi exponentielle $(\lambda = 1)$
+2. Montrer que $Y_n\to_{n\to+\infty}^LY$ avec $Y$ suit la loi exponentielle $(\lambda = 1)$
 
 <details markdown="1">
 <summary>Solution</summary>
