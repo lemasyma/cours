@@ -204,6 +204,7 @@ $$
 $$
 
 Par definition de la partie entiere:
+
 $$
 \begin{aligned}
 &[nx]\le nx\lt[nx] + 1\\
