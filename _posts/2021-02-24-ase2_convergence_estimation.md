@@ -124,7 +124,7 @@ $$
 3. Si $X$ est une variable aleatoire d'esperance et d'ecrat-type $\sigma$ et $U = \frac{X-m}{\sigma}$
 
 $$
-\phi_{\frac{X-m}{\sigma}}(t) = \phi_U(T) = \exp(-\frac{itm}{\sigma})\phi_X(\frac{1}{\sigma})
+\phi_{\frac{X-m}{\sigma}}(t) = \phi_U(T) = \exp(-\frac{itm}{\sigma})\phi_X(\frac{t}{\sigma})
 $$
 
 ## Remarque
