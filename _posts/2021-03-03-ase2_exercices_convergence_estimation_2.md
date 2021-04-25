@@ -144,13 +144,13 @@ I_{p-1} &= \int_0^{+\infty}e^{(it-1)x}x^{p-1}dx\\
 \begin{aligned}
 I_{p-1}&=\underbrace{\biggr[\frac{e^{(it-1)x}}{it-1}x^{p-1}\biggr]_0^{+\infty}}_{\to_{x\to+\infty}0} - \frac{p-1}{it-1}\int_0^{+\infty}e^{(it-1)x}x^{p-2}dx\\
 \text{Car: } \underbrace{e^{itx}}_{\text{bornee}, \vert e^{itx}\vert = 1}&e^{-x}x^{p-1}\to_{x\to+\infty}0\\
-I_{p_1} &= -\frac{p-1}{it-1}I_{p-2}\text{ } \forall p\ge 2\\
+I_{p-1} &= -\frac{p-1}{it-1}I_{p-2}\text{ } \forall p\ge 2\\
 I_{p-2} &= -\frac{p-2}{it-1}I_{p-3}\\
 &.\\
 &.\\
 &.\\
 I_2 &= -\frac{2}{it-1}I_1\\
-I_2 &= -\frac{2}{it-1}I_1\\
+I_1 &= -\frac{2}{it-1}I_1\\
 \end{aligned}
 $$
 
