@@ -1,6 +1,6 @@
 ---
 title:          "OCVX: espaces tangents"
-date:           2021-04-15 9:00
+date:           2021-05-12 9:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
 description: Espaces tangents
