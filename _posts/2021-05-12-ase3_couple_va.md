@@ -337,7 +337,9 @@ $$
 On appelle coefficient de correlation lineaire
 
 <div class="alert alert-danger" role="alert" markdown="1">
-\mathcal C(X,Y)=\frac{Cov(X,Y)}{\sigma_x\simga_y}
+$$
+\mathcal C(X,Y)=\frac{Cov(X,Y)}{\sigma_x\sigma_y}
+$$
 </div>
 
 - $\sigma_x=\sqrt{V(X)}$
