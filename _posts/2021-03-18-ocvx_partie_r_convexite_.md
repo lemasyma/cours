@@ -352,7 +352,7 @@ Une partie est convexe ssi on peut definir un hyperplan d'appui en tout point de
 Une fonction $f:\mathbb R^n\to\mathbb R$ est convexe ssi:
 - $Dom f$ est convexe
 - $\forall x,y\in Dom f$, $\forall t\in[0;1]$
-    - $f(tx+(1-t)y\le tf(x)+(1-t)f(y))$
+    - $f(tx+(1-t)y)\le tf(x)+(1-t)f(y)$
 
 ![](https://i.imgur.com/DgMArOq.png)
 
