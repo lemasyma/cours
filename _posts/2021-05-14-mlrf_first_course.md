@@ -2,7 +2,7 @@
 title:          "MLRF: Lecture 01"
 date:           2021-05-14 10:00
 categories:     [Image S8, MLRF]
-tags:           [Image, SCIA, MLRF, S8, couple]
+tags:           [Image, SCIA, MLRF, S8]
 description: Lecture 01
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1nCkhs_O)

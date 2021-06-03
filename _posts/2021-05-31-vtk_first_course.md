@@ -1,8 +1,8 @@
 ---
 title:          "VTK-ITK: Traitement d'Image avec ITK"
 date:           2021-05-31 10:00
-categories:     [Image S8, MLRF]
-tags:           [Image, MLRF, S8, couple]
+categories:     [Image S8, VTK]
+tags:           [Image, VTK, S8]
 description: Traitement d'Image avec ITK
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Sk30HGfqd)
