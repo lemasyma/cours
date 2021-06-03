@@ -38,31 +38,33 @@ Si $I = [[1, r]]$ et $J = [[1,s]]$ (ensemble discret, ensemble des indices). Les
 
 |$X /Y$|$y_1$|$\dots$|$y_j$|$\dots$|$y_s$|
 |-|-|-|-|-|-|
-|$X_1$|$P_{1,1}$|$\dots$|$P_{1,j}$|\dots|$P_{1,s}$|
+|$X_1$|$P_{1,1}$|$\dots$|$P_{1,j}$|$\dots$|$P_{1,s}$|
 |$\vdots$|$\vdots$||$\vdots$||$\vdots$|
 |$X_i$|$P_{i,1}$|$\dots$|$P_{i,j}$|$\dots$|$P_{1,s}$|
 |$\vdots$|$\vdots$||$\vdots$||$\vdots$|
 |$X_r$|$P_{r,1}$|$\dots$|$P_{r,j}$|$\dots$|$P_{r,j}$|
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
 P_{i,j} \gt 0 \quad\text{et}\quad\sum_{i\in I\\ j\in J}P_{ij} = 1
 $$
+
 </div>
 
 ## Lois marginales
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Definition**
-Les v.a $X$ et $Y$ sont appeles variables marginales du couple $(X,Y)$. La loi de $X$ (resp. de $Y$) est appelee loi marginale de $X$ (resp. de $Y$)
+Les v.a $X$ et $Y$ sont appelees variables marginales du couple $(X,Y)$. La loi de $X$ (resp. de $Y$) est appelee loi marginale de $X$ (resp. de $Y$)
 </div>
 
 **Notation**: 
 
 $$
-\forall i\in I, \mathcal P(X=x_i)=P_{i\circ} \text{ et } \mathcal P(X=y_j)=P_{\circ j} \\
-P_{i\circ} = \mathcal P(X=x_i) = \sum_{j\in J}\mathcal P((X=x_i)\cap(Y=y_j)) = \sum_{j\in J}P_{ij}\\
-\forall j\in J\quad P_{\circ j}=\sum_{i\in I}\mathcal P((X=x_i)\cap(Y=y_j)) = \sum_{i\in I}P_{ij}
+\forall i\in I, P(X=x_i)=P_{i\circ} \text{ et } P(X=y_j)=P_{\circ j} \\
+P_{i\circ} = P(X=x_i) = \sum_{j\in J}P((X=x_i)\cap(Y=y_j)) = \sum_{j\in J}P_{ij}\\
+\forall j\in J\quad P_{\circ j}=\sum_{i\in I}P((X=x_i)\cap(Y=y_j)) = \sum_{i\in I}P_{ij}
 $$
 
 ### Exemple
@@ -92,9 +94,11 @@ $$
 La loi conditionnelle de $X$ sachant $A = \{(x_i, P_A(X=x_i)), i\in I\}$
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
 P_A(X=x_i) = \frac{P((X=x_i)\cap A)}{P(A)}
 $$
+
 </div>
 
 </div>
@@ -106,9 +110,11 @@ P_{(Y=y_i)}(X=x_i)=\frac{P((X=x_i)\cap(Y=y_i))}{P(Y=y_j)}=\frac{P_{i,j}}{P_{\cir
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
+
 $$
 P_{(Y=y_j)}(X=x_i) = \frac{P_{i,j}}{P_{\circ j}}
 $$
+
 </div>
 
 ### Exemple
@@ -128,11 +134,14 @@ $$
 $X$ et $Y$ sont 2 v.a. independantes ssi
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
-P((X=x)\cap(Y=y)) = P(X=x)P(Y=y)\quad]forall x\in X(\omega), \forall y\in Y(\omega)\\
+P((X=x)\cap(Y=y)) = P(X=x)P(Y=y)\quad\forall x\in X(\omega), \forall y\in Y(\omega)\\
 \Leftrightarrow P_{ij} = P_{i\circ} \circ P_{\circ j}
 $$
+
 </div>
+
 </div>
 
 Soit g une fonction de $\mathbb R^2\to\mathbb R$, definie sur l'ensemble des valeurs prises par $(X,Y)$
@@ -167,7 +176,10 @@ $(X,Y)$ couple defini par
 
 Determiner la loi de $Z=X+Y$
 
-$Z=\{2,3,4,5,6,7,8\}$
+<details markdown="1">
+<summary>Solution</summary>
+
+$$Z=\{2,3,4,5,6,7,8\}$$
 
 |$Z_k$     |2|3|4|5|6|7|8|
 |-         |-|-|-|-|-|-|-|
@@ -181,9 +193,14 @@ P(Z=5) &= P(X+Y=5)\\
 \end{aligned}
 $$
 
+</details>
+
 Determiner la loi de $Z=X.Y$
 
-$Z(\Omega)$ = \{1,2,3,4,6,8,9,12,16\}
+<details markdown="1">
+<summary>Solution</summary>
+
+$$Z(\Omega) = \{1,2,3,4,6,8,9,12,16\}$$
 
 |$Z_k$|1|2|3|4|6|8|9|12|16|
 |-----|-|-|-|-|-|-|-|--|--|
@@ -195,6 +212,9 @@ P(Z=4) &= P((X=1)\cap(Y=4)) + P((X=2)\cap(Y=2)) + P((X=4)\cap(Y=1))\\
 &= \frac{1}{16} + \frac{2}{16} + 0 = \color{red}{\frac{3}{16}}
 \end{aligned}
 $$
+
+
+</details>
 
 ## Esperance d'une fonction de 2 v.a.r discretes
 
@@ -208,21 +228,25 @@ E(Z) = E(g(X,Y)) = \sum_{i,j}g(x_i,y_j)\mathcal P((X=x_i)\cap(Y=y_i))
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
+
 $$
 E(Z) = \sum_{i,j}g(x_i,y_j)P_{i,j}
 $$
+
 </div>
 
 ### Exemple
 $g(X,Y) = X,Y$
 
 <div class="alert alert-success" role="alert" markdown="1">
+
 $$
 \begin{aligned}
 E(X.Y) &= \sum_{i,j}x_iy_j\mathcal P((X=x_i)\cap(Y=y_j)) \\
 &= \sum_{i,j}x_iy_jP_{i,j}
 \end{aligned}
 $$
+
 </div>
 
 ## Proposition
@@ -231,10 +255,13 @@ $$
 Si $X$ et $Y$ sont 2 v.a. independantes alors
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
 E(X.Y) = E(X)E(Y)
 $$
+
 </div>
+
 </div>
 
 ### Demonstration
@@ -254,9 +281,11 @@ E(X.Y) &=\sum_{i=1}^r\sum_{j=1}^sx_iy_jP_{i\circ}P_{\circ j}\\
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
+
 $$
 E(X.Y) = E(X)E(Y)
 $$
+
 </div>
 
 <div class="alert alert-warning" role="alert" markdown="1">
@@ -298,9 +327,11 @@ $X$ et $Y$ 2 v.a. discretes.
 On appelle covariance de $(X,Y)$ le nombre reel
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
 Cov(X,Y)=E((X-E(X)(Y-E(Y))))
 $$
+
 </div>
 </div>
 
@@ -310,6 +341,7 @@ $$
 $$
 Cov(X,Y)=E(X.Y) - E(X)E(Y)
 $$
+
 </div>
 
 ### Demonstration
@@ -325,9 +357,11 @@ $$
 Cat $E$ est lineaire
 
 <div class="alert alert-success" role="alert" markdown="1">
+
 $$
 Cov(X,Y) = E(XY) - E(X)E(Y)
 $$
+
 </div>
 
 **Remarque**: Si $X$ et $Y$ sont independantes alors $Cov(X,Y)=0$
@@ -337,9 +371,11 @@ $$
 On appelle coefficient de correlation lineaire
 
 <div class="alert alert-danger" role="alert" markdown="1">
+
 $$
 \mathcal C(X,Y)=\frac{Cov(X,Y)}{\sigma_x\sigma_y}
 $$
+
 </div>
 
 - $\sigma_x=\sqrt{V(X)}$
