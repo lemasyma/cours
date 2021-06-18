@@ -1,6 +1,6 @@
 ---
 title:          "MLRF: Lecture 05"
-date:           2021-06-018 10:00
+date:           2021-06-18 10:00
 categories:     [Image S8, MLRF]
 tags:           [Image, SCIA, MLRF, S8]
 description: Lecture 05
