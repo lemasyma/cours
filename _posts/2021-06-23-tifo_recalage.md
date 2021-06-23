@@ -1,6 +1,6 @@
 ---
 title:          "TIFO: Cours recalage"
-date:           2021-06-23 9:00
+date:           2021-06-23 10:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, recalage]
 description: Recalage d'images
