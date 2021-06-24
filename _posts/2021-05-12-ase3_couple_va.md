@@ -188,7 +188,7 @@ $$Z=\{2,3,4,5,6,7,8\}$$
 $$
 \begin{aligned}
 P(Z=5) &= P(X+Y=5)\\
-&= P((X=1)\cap(Y=4)) P((X=2)\cap(Y=3)) + P((X=3)\cap(Y=3)) + P((X=4)\cap(Y=1))\\
+&= P((X=1)\cap(Y=4)) P((X=2)\cap(Y=3)) + P((X=3)\cap(Y=2)) + P((X=4)\cap(Y=1))\\
 &= \frac{1}{16} + \frac{1}{16} + 0 + 0 =\frac{2}{16} = \frac{1}{8}
 \end{aligned}
 $$
