@@ -7,8 +7,6 @@ description: Lecture 06
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Hy2LfRFju)
 
-# MLRF: Lecture 06
-
 # Practice 5: Take home messages
 
 <div class="alert alert-danger" role="alert" markdown="1">
