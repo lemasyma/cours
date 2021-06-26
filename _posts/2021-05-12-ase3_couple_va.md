@@ -85,7 +85,7 @@ $(X,Y)$ un couple de v.a. dont la loi conjointe est donnee par le tableau:
 <div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 
-Soit $X$ un v.a reelle sur $(\Omega, \mathcal C, P)$
+Soit $X$ une v.a reelle sur $(\Omega, \mathcal C, P)$
 
 $$
 X(\Omega) = \{x_i\vert i\in I\}, \text{soit } A\text{ un evenement }/P(A)\neq 0
@@ -148,19 +148,19 @@ Soit g une fonction de $\mathbb R^2\to\mathbb R$, definie sur l'ensemble des val
 Soit $Z=g(X,Y)$, $Z_h=g(x_i,y_j)\in Z(\Omega)$
 
 $$
-(Z=Z_k) = \cup_{(i,j) \\ Z_k = g(x_i,y_j)}((X=x_i)\cap(Y=y_j))\Rightarrow\color{red}{\mathcal P(Z=Z_k)=\sum_{(i,j) \\ Z_k = g(x_i,y_j)}P((X=x_i)\cap(Y=y_i))}
+(Z=Z_k) = \cup_{(i,j) \\ Z_k = g(x_i,y_j)}((X=x_i)\cap(Y=y_j))\Rightarrow\color{red}{P(Z=Z_k)=\sum_{(i,j) \\ Z_k = g(x_i,y_j)}P((X=x_i)\cap(Y=y_i))}
 $$
 
 En particulier $Z=X+Y=g(X,Y)$
 
 $$
-P(Z=z) = \sum_{(x,y) \\ x+y=z}\mathcal P((X=x)\cap(Y=y))
+P(Z=z) = \sum_{(x,y) \\ x+y=z}P((X=x)\cap(Y=y))
 $$
 
 Si $Z=X.Y=g(X,Y)$
 
 $$
-P(X.Y=z) = \sum_{(x,y) \\ x.y=z}\mathcal P((X=x)\cap(Y=y))
+P(X.Y=z) = \sum_{(x,y) \\ x.y=z}P((X=x)\cap(Y=y))
 $$
 
 ### Exemple
@@ -183,7 +183,7 @@ $$Z=\{2,3,4,5,6,7,8\}$$
 
 |$Z_k$     |2|3|4|5|6|7|8|
 |-         |-|-|-|-|-|-|-|
-|$P(Z=Z_k)$| | | | | | | |
+|$P(Z=Z_k)$|$\frac{1}{16}$|$\frac{1}{16}$|$\frac{3}{16}$|$\frac{2}{16}$|$\frac{4}{16}$|$\frac{1}{16}$|$\frac{4}{16}$|
 
 $$
 \begin{aligned}
@@ -224,7 +224,7 @@ X(\omega)=\{x_1,...,x_i\}\\
 Y(\omega)=\{y_1,...,y_j\}
 \end{aligned}
 \biggr\}Z=g(X,Y)\\
-E(Z) = E(g(X,Y)) = \sum_{i,j}g(x_i,y_j)\mathcal P((X=x_i)\cap(Y=y_i))
+E(Z) = E(g(X,Y)) = \sum_{i,j}g(x_i,y_j)P((X=x_i)\cap(Y=y_i))
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -242,7 +242,7 @@ $g(X,Y) = X,Y$
 
 $$
 \begin{aligned}
-E(X.Y) &= \sum_{i,j}x_iy_j\mathcal P((X=x_i)\cap(Y=y_j)) \\
+E(X.Y) &= \sum_{i,j}x_iy_jP((X=x_i)\cap(Y=y_j)) \\
 &= \sum_{i,j}x_iy_jP_{i,j}
 \end{aligned}
 $$
@@ -294,7 +294,7 @@ La reciproque est fausse
 
 ### Contre-exemple
 
-$(X,Y)$ couple de loi conjoite
+$(X,Y)$ couple de loi conjointe
 
 |$X / Y$|0|1|2|$P_{i\circ}$ (Loi de $X$)|
 |-------|-|-|-|-------------------------|
