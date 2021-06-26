@@ -38,11 +38,11 @@ Si $I = [[1, r]]$ et $J = [[1,s]]$ (ensemble discret, ensemble des indices). Les
 
 |$X /Y$|$y_1$|$\dots$|$y_j$|$\dots$|$y_s$|
 |-|-|-|-|-|-|
-|$X_1$|$P_{1,1}$|$\dots$|$P_{1,j}$|$\dots$|$P_{1,s}$|
+|$x_1$|$P_{1,1}$|$\dots$|$P_{1,j}$|$\dots$|$P_{1,s}$|
 |$\vdots$|$\vdots$||$\vdots$||$\vdots$|
-|$X_i$|$P_{i,1}$|$\dots$|$P_{i,j}$|$\dots$|$P_{1,s}$|
+|$x_i$|$P_{i,1}$|$\dots$|$P_{i,j}$|$\dots$|$P_{1,s}$|
 |$\vdots$|$\vdots$||$\vdots$||$\vdots$|
-|$X_r$|$P_{r,1}$|$\dots$|$P_{r,j}$|$\dots$|$P_{r,j}$|
+|$x_r$|$P_{r,1}$|$\dots$|$P_{r,j}$|$\dots$|$P_{r,j}$|
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
