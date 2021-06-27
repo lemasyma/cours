@@ -51,7 +51,7 @@ $$
 $$
 
 <div class="alert alert-danger" role="alert" markdown="1">
-Le tableau des donnees centrees et la matrice Y telle que 
+Le tableau des donnees centrees est la matrice Y telle que 
 
 $$
 y_i^{(j)}=X_i^{(j)}-\bar X^{(j)}\quad\forall j\in[1,p], \forall i\in[1, n]
