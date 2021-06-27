@@ -156,7 +156,7 @@ On appelle inertie totale du nuage de points la moyenne ponderee des carres des 
 $$
 \begin{aligned}
 I_g&=\sum_{i=1}^np_i(e_i-g)^TM(e_i-g)\\
-&=\sum_{i=1}^np_i\Vert e_i-g\Vert^3
+&=\sum_{i=1}^np_i\Vert e_i-g\Vert^2
 \end{aligned}
 $$
 
@@ -212,7 +212,7 @@ On mesure l'angle entre 2 variables $X^{(j)}$ et $X^{(k)}$ (centrees):
 
 $$
 \cos(\theta_{jk})=\frac{<X^{(j)}, X^{(k)}>}{\Vert X^{(j)}\Vert\Vert X^{(k)}\Vert}\quad\text{similarite cosinus}\\
-\color{red}{\boxed{\cos(O_{jk}) = \frac{Cov(X^{(j)}, X^{(k)})}{S_jS_k} = p_{jk}}}
+\color{red}{\boxed{\cos(\theta_{jk}) = \frac{Cov(X^{(j)}, X^{(k)})}{S_jS_k} = p_{jk}}}
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -237,7 +237,7 @@ $$
 La liste des coordonnees $c_i$ des individus sur $\triangle$ forme une nouvelle variable artificielle $C$
 
 $$
-C=\begin{pmatrix}C_1 \\ C_2 \\ \vdots \\ C_n\end{pmatrix}=X\underbrace{Ma}_{=u}=Xu
+C=\begin{pmatrix}c_1 \\ c_2 \\ \vdots \\ c_n\end{pmatrix}=X\underbrace{Ma}_{=u}=Xu
 $$
 
 On pose $u=Ma$: facteur
@@ -273,7 +273,7 @@ $$
 > \begin{aligned}
 > V(C) &=c^TDc\\
 > &= (Xu)^TDXu=u^T\underbrace{X^TDX}_{V}u\\
-> &\Rightarrow V(C)u^TVu
+> &\Rightarrow V(C)=u^TVu
 > \end{aligned}
 > $$
 
@@ -285,7 +285,7 @@ Ceci s'effectue par projection
 
 Il faut deformer le moins possible les distances en projection, ce qui signifie que l'inertie du nuage projete sur le s.e.v. $F_k$ soit maximale.
 
-Soit $P$: la projetction $M$-orthogonale sur le s.e.v. $F_k$
+Soit $P$: la projection $M$-orthogonale sur le s.e.v. $F_k$
 
 $$
 Pe_i=f_i\\
