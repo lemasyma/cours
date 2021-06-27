@@ -85,7 +85,7 @@ D_{\frac{1}{S}} = \begin{pmatrix}
 $$
 
 ou:
-- $S_j=\sqrt{V(X^{(j)})}=\sqrt{\sum_{i=1}^np_i(X_i^{(j)}-\bar X^{j})^2}$
+- $S_j=\sqrt{V(X^{(j)})}=\sqrt{\sum_{i=1}^np_i(X_i^{(j)}-\bar X^{(j)})^2}$
 - $V(X^{(j)})$: variance de $X^{(j)}$
 - $S_j$: ecart-type de $X^{(j)}$
 

@@ -469,7 +469,7 @@ Les exceptions énumérées par le présent article ne peuvent porter atteinte �
 
 <div class="alert alert-info" role="alert" markdown="1">
 [Article L122-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278919)
-[Modifié par Loi n°94-361 du 10 mai 1994 - art. 4 () JORF 11 mai 1994](legifrance.gouv.fr/loda/id/LEGIARTI000006281526/1994-05-11/)
+[Modifié par Loi n°94-361 du 10 mai 1994 - art. 4 () JORF 11 mai 1994](https://www.legifrance.gouv.fr/loda/id/LEGIARTI000006281526/1994-05-11/)
 
 Sous réserve des dispositions de l'article L. 122-6-1, le droit d'exploitation appartenant à l'auteur d'un logiciel comprend le droit d'effectuer et d'autoriser :
 
