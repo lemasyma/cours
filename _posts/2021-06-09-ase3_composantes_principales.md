@@ -47,14 +47,14 @@ Si $p_i=\frac{1}{n}\Rightarrow D=\frac{1}{n}I_n$ ou $I_n$ matrice identite $$\be
 La vecteur $g$ des moyennes arithmetiques de chaque variable $X^{(j)}$ est definie par $g=(\bar X^{(1)},\bar X^{(2)},\dots,\bar X^{(p)})$
 
 $$
-\bar X^{(j)}=\sum_{i=j}^nP_iX_i^{(j)}\quad\text{moyenne de } X^{(j)}\quad\forall j\in [1,p]
+\bar X^{(j)}=\sum_{i=1}^np_iX_i^{(j)}\quad\text{moyenne de } X^{(j)}\quad\forall j\in [1,p]
 $$
 
 <div class="alert alert-danger" role="alert" markdown="1">
 Le tableau des donnees centrees et la matrice Y telle que 
 
 $$
-Y_i^{(j)}=X_i^{(j)}-\bar X^{(j)}\quad\forall j\in[1,p], \forall i\in[1, n]
+y_i^{(j)}=X_i^{(j)}-\bar X^{(j)}\quad\forall j\in[1,p], \forall i\in[1, n]
 $$
 
 </div>
@@ -85,7 +85,7 @@ D_{\frac{1}{S}} = \begin{pmatrix}
 $$
 
 ou:
-- $s_j=\sqrt{V(X^{(j)})}=(\sum_{i=1}^np_i(X_i^{(j)}-\bar X^{j})^2)$
+- $S_j=\sqrt{V(X^{(j)})}=\sqrt{\sum_{i=1}^np_i(X_i^{(j)}-\bar X^{j})^2}$
 - $V(X^{(j)})$: variance de $X^{(j)}$
 - $S_j$: ecart-type de $X^{(j)}$
 
@@ -145,7 +145,7 @@ ou: $M$ est une matrice symetrique et definie positive (S.D.P)
 
 **Remarque:** si $M=I$ (matrice identite), on se retrouve avec le produit scalaire usuel.
 
-Si $$M=D_{\frac{1}{S^2}}=\begin{pmatrix}\frac{1}{S_1^2}&\dots&0 \\ &\vdots &\ddots &\vdots \\ 0 &\dots &\frac{1}{S_p^2}  \end{pmatrix}$$ cela revient a diviser chaque caractere par son ecart-type.
+Si $$M=D_{\frac{1}{S^2}}=\begin{pmatrix}\frac{1}{S_1^2}&\dots&0 \\ \vdots &\ddots &\vdots \\ 0 &\dots &\frac{1}{S_p^2}  \end{pmatrix}$$ cela revient a diviser chaque caractere par son ecart-type.
 
 ## Inertie
 
@@ -202,7 +202,7 @@ La norme de $X^{(j)}$ (variable centree)
 
 $$
 \begin{aligned}
-\Vert X^{(j)}\Vert^2&=<X_n^{(j)}, X^{(j)}>\\
+\Vert X^{(j)}\Vert^2&=<X^{(j)}, X^{(j)}>\\
 &=\sum_{i=1}^np_i(X_i^{(j)})^2=S_j^2\\
 \Rightarrow\Vert X^{(j)}\Vert&=S_j\quad\text{ecart-type}
 \end{aligned}
@@ -211,7 +211,7 @@ $$
 On mesure l'angle entre 2 variables $X^{(j)}$ et $X^{(k)}$ (centrees):
 
 $$
-\cos(O_{jk})=\frac{<X^{(j)}, X^{(k)}>}{\Vert X^{(j)}\Vert\Vert X^{(k)}\Vert}\quad\text{similarite cosinus}\\
+\cos(\theta_{jk})=\frac{<X^{(j)}, X^{(k)}>}{\Vert X^{(j)}\Vert\Vert X^{(k)}\Vert}\quad\text{similarite cosinus}\\
 \color{red}{\boxed{\cos(O_{jk}) = \frac{Cov(X^{(j)}, X^{(k)})}{S_jS_k} = p_{jk}}}
 $$
 
@@ -221,7 +221,7 @@ On retrouve le coefficient de correlation lineaire.
 
 # Variables engendree par un tableau des donnees
 
-$A$ une variable $X^{(j)}$, on peut associer un axe de l'espace des individus $F$ et un vecteur de l'espace des variable et on peut egalement deduire $X^{(1)}, X^{(2)},\dots,X^{(j)}, \dots, X^{(p)}$ de nouvelles variables par combinaison lineaire.
+A une variable $X^{(j)}$, on peut associer un axe de l'espace des individus $F$ et un vecteur de l'espace des variable et on peut egalement deduire $X^{(1)}, X^{(2)},\dots,X^{(j)}, \dots, X^{(p)}$ de nouvelles variables par combinaison lineaire.
 
 Soit $\triangle$ un axe de $F$. $\triangle$ est engendre par un vecteur unitaire $a$ $$(a^T\underbrace{M}_{\text{metriques}}a=1)$$ et projetons les individus sur $\triangle$ (projection $M$-orthogonale)
 
@@ -328,7 +328,7 @@ Le probleme est donc de trouver $P$: projection $M-$orthogonale de rang $k$ maxi
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Theoreme**:
-Soit $F_k$ un s.e.v. portant l'inertie maximale, alors le s.e.v. de dimension $k+1$ portant l'inertie maximale est la somme directe de $F_k$ et du s.e.v. de dimension 1 $M$-orthognal a $F_k$ portant l'inertie maximale.
+Soit $F_k$ un s.e.v. portant l'inertie maximale, alors le s.e.v. de dimension $k+1$ portant l'inertie maximale est la somme directe de $F_k$ et du s.e.v. de dimension $1$ $M$-orthognal a $F_k$ portant l'inertie maximale.
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
@@ -396,7 +396,7 @@ Donc $a$ est un vecteur propre de $VM$ associe a $\lambda$ (valeur propre).
 Il faut que $\lambda$ soit maximale.
 </div>
 
-Donc le s.e.v. $F_k$ de dimension $k$ est engendre par les $k$ vecteurs propres de $VM associes aux $k$ plus grandes valeurs propres.
+Donc le s.e.v. $F_k$ de dimension $k$ est engendre par les $k$ vecteurs propres de $VM$ associes aux $k$ plus grandes valeurs propres.
 
 <div class="alert alert-info" role="alert" markdown="1">
 On appelle composantes principales:
@@ -423,7 +423,7 @@ $$
 
 # Qualites des representations sur les plans principaux
 
-Le put de l'A.C.P. etant d'obtenir une representation des individus dans un espace de dimension plus faible que $p$.
+Le but de l'A.C.P. etant d'obtenir une representation des individus dans un espace de dimension plus faible que $p$.
 
 <div class="alert alert-info" role="alert" markdown="1">
 
@@ -451,7 +451,7 @@ Si par exemple $\frac{\lambda_1+\lambda_2}{I_{tot}}=90\%$, on concoit qu'une rep
 La methode la plus naturelle pour donner une signification a une composante principale $C^{(i)}$ est de la relier aux variables $X^{(j)}$ (variables intiales) en calculant les coefficients de correlation lineaire
 
 $$
-p(X^{(j)}, C^{(i)})
+\rho(X^{(j)}, C^{(i)})
 $$
 
 et en s'interessant aux plus forts coefficients en valeur absolue
@@ -459,7 +459,7 @@ et en s'interessant aux plus forts coefficients en valeur absolue
 <div class="alert alert-danger" role="alert" markdown="1">
 
 $$
-p(X^{(j)}, C^{(i)})=\frac{Cov(X^{(j)}, C^{(i)})}{\sigma_{X^{(j)}}\sigma_{C^{(i)}}}
+\rho(X^{(j)}, C^{(i)})=\frac{Cov(X^{(j)}, C^{(i)})}{\sigma_{X^{(j)}}\sigma_{C^{(i)}}}
 $$
 
 </div>
