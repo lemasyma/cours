@@ -1,9 +1,9 @@
 ---
-title:          "DBRE: Mastercalss V2"
+title:          "DBRE: Masterclass V2"
 date:           2021-06-27 20:00
 categories:     [tronc commun S8, DBRE]
 tags:           [tronc commun, DBRE, S8]
-description: Mastercalss V2
+description: Masterclass V2
 ---
 
 # Introduction
