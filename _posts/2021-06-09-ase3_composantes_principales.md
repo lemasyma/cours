@@ -11,7 +11,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJwkEJC9u)
 
 ## Tableau des donnees
 
-Les observations de $p$ variables sur $n$ individus sont regroupes en une matrice $X$ a $n$ ligned et $p$ colonnes
+Les observations de $p$ variables sur $n$ individus sont regroupes en une matrice $X$ a $n$ lignes et $p$ colonnes
 
 $$
 X=\begin{matrix}te_1 \\ \vdots \\ te_i \\ \vdots \\te_n\end{matrix}\begin{pmatrix}
@@ -29,7 +29,7 @@ $$X_i^{(j)}$$ est la valeur prise par la variable $X$ sur le ieme individu.
 
 ## Matrice des poids
 
-On associe a chaque indvidu un poids $p_i\ge0$ (probabilite de choisir l'individu)
+On associe a chaque individu un poids $p_i\ge0$ (probabilite de choisir l'individu)
 
 $$
 \sum_{i=1}^np_i=1, D=
