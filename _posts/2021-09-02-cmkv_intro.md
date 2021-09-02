@@ -49,7 +49,7 @@ L'aleatoire provient de l'entree
 
 Il existe des programmes *stochastisques* **et** *deterministes*.
 
-![](https://i.imgur.comdpLLoZ.gif)
+![](https://i.imgur.com/ndpLLoZ.gif)
 
 *`rand()` est-il deterministe ?*
 > Oui. C'est dingue, hein ?
