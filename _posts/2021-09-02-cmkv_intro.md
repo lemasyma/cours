@@ -441,7 +441,7 @@ $$
 
 $$
 \color{red}{
-P_{\color{pink}{T}}(X=x)=\frac{1}{Z}e^{\frac{-U(x)}{{\color{pink}{T}}}}\quad(z=\sum_xe^{-U(x)})
+P_{\color{pink}{T}}(X=x)=\frac{1}{Z}e^{\frac{-U(x)}{\color{pink}{T}}}\quad(z=\sum_xe^{-U(x)})
 }\\
 \color{green}{
 P_{\color{pink}{T}}(X=x_{\text{sol}})\gt P_{\color{pink}{T}}(X=x)\quad\forall x\neq x_{\text{sol}}
