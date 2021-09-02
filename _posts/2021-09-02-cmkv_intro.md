@@ -36,7 +36,7 @@ Si la couleur d'une case est aleatoire, l'algo n'est plus deterministe.
 **Definition**
 Un algo est stochastique si **a l'interieur** il y a de l'aleatoire
 
-```python=
+```python
 # algo
 rand()
 #algo
