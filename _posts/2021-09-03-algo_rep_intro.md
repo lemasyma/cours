@@ -35,25 +35,25 @@ L'utilite:
 - Probleme de matos
     - Google ne peut pas tout stoquer sur un ordi
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 - **Si une machine apprend quelque chose, on peut la transmettre**
     - Si le prof meurt mais nous a transmis ses infos, on peut continuer son cours
-:::
+</div>
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 C'est la **replication**
-:::
+</div>
 
 # What is a distributed system ?
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 A distributed system is:
 - A collection of autonomous computer
 - connected through a network
 - which enables computers to coordinate their activities
 - so that users perceive the system as a single one
-:::
+</div>
 
 ## Exemple
 
@@ -148,17 +148,17 @@ On va se donner un graphe
 
 ## Various Timing models
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 Synchronising processes is one of the most difficult part of distributed system
-:::
+</div>
 
 ### Asynchronous model
 
 ![](https://i.imgur.com/o37gaJr.png)
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 No timing assumption about processes and channels, i.e. no physical assumptions about delays.
-:::
+</div>
 
 - Each process have local view of time called logical time
 - Any time an event occurs (local or global) at process p, its logical clock is updated:
@@ -181,21 +181,21 @@ Au moment du tick:
 *Est-ce que c'est realiste ?*
 > D'apres la majorite de la classe, non
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 On est capable de simuler ce tick
-:::
+</div>
 
 #### Complexity in Synchronous Model
 
 *Qu'est-ce qui nous ralentit ?*
 > On peut avoir un algo en tete qui marche hyper bien mais une fois implemente pas du tout, juste a cause de l'envoie de messages
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 Un tick s'appelle un round (espace entre 2 pointilles rouges)
 
 ![](https://i.imgur.com/qZU2iil.png)
-:::
+</div>
 Pour determiner le tick:
 - Utiliser l'horloge interne
 - Avoir le meme temps envoye aux machines
@@ -210,24 +210,24 @@ Pour determiner le tick:
 
 Quand on effectue une tache, on sait par avance le temps qu'elle prend.
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 Ca nous permet de faire de la detection de fautes (programme qui a crash, etc.)
-:::
+</div>
 
 # Process Failures Model
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 **Process Failures**: Until it fails, a process is supposed to execute the algorithm assigned to it
 
 ![](https://i.imgur.com/CnWtJGu.png)
 
-:::
+</div>
 
 On a une hierarchie de problemes.
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Quand on parle de tolerance aux fautes, on dit qu'on est tolerable jusqu'a $n$ fautes.
-:::
+</div>
 
 - **Arbitrary fault (Byzantines)**
     - Je peux supporter n'importe quel type de faute, meme les actes de malveillance
@@ -243,17 +243,17 @@ Quand on parle de tolerance aux fautes, on dit qu'on est tolerable jusqu'a $n$ f
 
 ## Link failure
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Crash, Loss, Duplicate can be addressed by some lower level protocol, for instance TCP
-:::
+</div>
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 As long as the network remains connected, link crashes may be masked by routing
-:::
+</div>
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Link Crashes reveal a lot of impossibility results (see later lectures)
-:::
+</div>
 
 ## Link Abstraction
 
@@ -272,7 +272,7 @@ Link Crashes reveal a lot of impossibility results (see later lectures)
 # Abstracting Properties
 ## Basic properties of Distributed Systems
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 
 - Safety
     - states that the algorithm should not do anything wrong
@@ -280,11 +280,11 @@ Link Crashes reveal a lot of impossibility results (see later lectures)
     - On sait qu'on va finir par obtenir une certaine ressource
     - states that eventually something good happens
 
-:::
+</div>
 
 # Conclusion
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 L'unique facon de faire des systemes distribues est d'utiliser des **abstractions**
-:::
+</div>
 
