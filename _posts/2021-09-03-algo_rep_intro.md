@@ -2,10 +2,12 @@
 title:          "ALGOREP: Introduction"
 date:           2021-09-03 14:00
 categories:     [Image S9, ALGOREP]
-tags:           [Image, S9, AlGOREP]
+tags:           [Image, SCIA, S9, AlGOREP]
 description: Introduction.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1F8g5JfF)
+
+[Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
 
 # Introduction to Distributed Algorithms
 
