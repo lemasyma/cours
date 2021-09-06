@@ -9,11 +9,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByqOGjJfY)
 
 [Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
 
-# ALGOREP : Leader Election
-
-[Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
-
 # Leader Election in a Synchronous Ring
+
 ## Problem statement
 
 - The netwok digraph is a ring with $n$ nodes
