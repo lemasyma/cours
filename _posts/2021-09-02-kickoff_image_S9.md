@@ -47,8 +47,7 @@ Mais le semestre est celui ou on a le plus marre (recherche de stage, fatigue...
 
 # Presentation du S9
 
-![](https://i.imgur.com/9RBcyup.jpg)
-> Deso a ceux sur la photo
+![](https://i.imgur.com/WgNSu6n.png)
 
 <div class="alert alert-info" role="alert" markdown="1">
 Le PFEE compte pour $2.5$ ECTS
