@@ -52,6 +52,7 @@ The global state of a distributed system is a collection of the local states of 
 
 *Qu'est-ce qu'on pense de cette cut ?*
 > Le probleme est qu'il ne faut pas qu'on soit dans des moment ou il y a un envoie et un evenement qui risque de ne pas etre retrouve
+> Elle est mauvaise parce que la coupe se fait avant l'envoie $e_2$ mais aussi après la réception de $g_4$
 
 ## Consistent Global state
 
