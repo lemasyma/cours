@@ -1,11 +1,15 @@
 ---
 title:          "ALGOREP: Leader Election"
-date:           2021-09-03 15:30
+date:           2021-09-06 9:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
 description: Leader Election.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByqOGjJfY)
+
+[Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
+
+# ALGOREP : Leader Election
 
 [Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
 
@@ -184,3 +188,90 @@ We want to build the directed spanning tree for the network
 ## Leader Election
 
 ![](https://i.imgur.com/6j0I6sk.png)
+
+# Minimum Spanning Trees
+
+*Comment est-ce qu'on construit un arbre courant en sequentiel ?*
+> "On enfile des noeuds" (mais c'est un BFS ca)
+
+## Problem Statement
+
+*How to find the minimum/maximum spanning tree ?*
+
+<div class="alert alert-danger" role="alert" markdown="1">
+A minimum-weight spanning tree minimizes the total cost for any source process to communicate with all the other process in the network
+</div>
+
+$\color{red}{\text{Let us assume that } n \text{ is known}}$
+
+*Est-ce qu'on a besoin d'un leader ?*
+> Minorite de oui: on aurait besoin de quelqu'un qui synchro tou, mais c'est trop sequentiel
+> Majorite de non
+
+<div class="alert alert-success" role="alert" markdown="1">
+On peut **synchroniser avec les process avec les rounds**
+</div>
+
+> Imaginons que Mael est un process, qu'il a un lien avec Etienne et tout le monde
+> Imaginons qu'on peut ponderer les liens (Etienne$\leftrightarrow$Mael $=$ fibre, les autres wifi)
+> Imaginons que quelqu'un a une connexion encore plus rapide avec Mael
+> *Comment est-ce qu'on se met d'accord ?*
+> $1^{ere}$ suggestion: tableau de booleens pour savoir qui se co a qui $\Rightarrow$ **Mais qui stock le tableau ?**
+> $2^{eme}$ suggestion: tout le monde a le tableau de boolens $\Rightarrow$ **infernal de synchro tout le monde**
+
+> Reprenons naivement:
+> 2 process s'envoient des messages mutuellement, **le composant est cree**
+> Maintenant il faut elire un chef
+> Si tous les process sont synchro par 2, maintenant on peut synchroniser 2 paires
+> On continue jusqu'a synchro tous les composants
+
+<div class="alert alert-warning" role="alert" markdown="1">
+Avec cette strategie, on aura un temps de propagation plus long pour un message (2 messages au lieu de 1)
+</div>
+
+2 interets:
+1. Le BFS est complique a faire, on lancais $n$ BFS
+    - Beaucoup de messages sequentiels en parallele
+2. Maximiser le fait qu'on soit en distribue
+
+*Qu'est-ce qu'on va faire apparaitre avec cette methode ?*
+> Du $\log$ car on divise par 2 a chaque fois
+
+*Comment faire pour savoir les liens d'un composant avec le reste du monde ?*
+> Quand on creer une paire, les process peuvent echanger leurs listes de voisins
+> On peut faire une phase de flooding dans le composant
+
+*Comment ca genere un arbre courant ?*
+> 2 process creent un arbre courant entre eux
+> On rajoute une paire, on a un arbre courant a 4
+> etc.
+
+*Ou est-ce que l'arbre courant va etre stocke ?*
+> Chacun va avoir une *vision locale*
+
+*Si jamais un composant a 2 voisins avec le meme degre minimal, comment faire ?*
+> Si ce composant ne repond pas a un des 2 voisins dans le temps imparti, c'est qu'il s'est mis avec l'autre
+
+<div class="alert alert-warning" role="alert" markdown="1">
+Avec cette methode, on perd les performance de notre systeme
+</div>
+
+> On a un composant qui peut faire des aggregations simultanees pour avoir des performances resonnables
+
+## Complexity
+
+- Time: $O(n\log n)$
+- Communication: $O((n+\vert E\vert)\times\log(n))$
+    - $O(n)$ messages sent per level
+
+## Remarks
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Non-unique edge weight**
+We can define a lexicographic order using UID of processes
+</div>
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Leader election**
+When building the MST a leader is elected naturally !
+</div>
