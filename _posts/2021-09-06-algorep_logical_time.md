@@ -9,8 +9,6 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B19VSrQzK)
 
 [Les slides du cours](https://www.lrde.epita.fr/~renault/teaching/algorep/)
 
-# ALGOREP : Logical Time
-
 # Problem statement
 *Dans la classe, qui s'est reveille avant qui ?*
 > $1^{ere}$ proposition: on demande l'heure du reveil de tout le monde
