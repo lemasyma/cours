@@ -7,8 +7,6 @@ description: Champs de Markov - Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1wT64CbF)
 
-# Introduction
-
 <div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 Statistiques: comptage et representation de donnees
