@@ -116,8 +116,9 @@ P(\text{couvert}) = 0.2 &\color{red}{2}
 \end{cases} \leftarrow P(T=t)\quad t\in{\text{\{beau}}, \text{pourri}, \text{couvert\}}
 $$
 
-|$\varnothing\dots\varnothing$|$1\vert\color{red}{1}\dots1$|$2\dots2$|
+|$0||`RANDMAX`|
 |-|-|-|
+|$\varnothing\dots\varnothing$|$1\vert\color{red}{1}\dots1$|$2\dots2$|
 
 <div class="alert alert-danger" role="alert" markdown="1">
 C'est pareil pour le sudoku: **tout depend de tout**
@@ -194,14 +195,14 @@ $$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Initialisation:**
-1. $x^{0}$ tire aleatoirement avec loi uniforme
+1. $x^{(0)}$ tire aleatoirement avec loi uniforme
 2. $t\leftarrow\varnothing$
 3. Repeter jusqu'a l'infini (un algo... a l'infini)
 
 ![](https://i.imgur.com/YMmYgR5.png)
 > On fait juste un tres grand nombre d'iterations
 
-**Repeter jusqu'a l'infini:*
+**Repeter jusqu'a l'infini:**
 - $$x_{\text{rand}}$$ tire avec loi uniforme
 - $$P_{\text{trans}} = \frac{P(X=x_{\text{candidat}})}{P(X=x^{(t)})}$$
 - Si $$P_{\text{trans}}\gt 1\color{red}{\Leftrightarrow P(X=x_{\text{candidat}})\gt P(X=x^{(t)})}$$
@@ -228,8 +229,9 @@ C'est un optimiseur **hyper sous-efficace**
 
 ![](https://i.imgur.com/W8GTSO6.png)
 
-$0$|$1\dots\color{green}{\boxed{1}}1$|$0\dots0$|`RANDMAX`
-|-|-|-|-|
+$0$|`RANDMAX`|
+|-|-|
+$1\dots\color{green}{\boxed{1}}1$|$0\dots0$|
 
 $$
 i_{\text{trans}} = 0.8 \times \text{RANDMAX}
