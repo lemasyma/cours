@@ -2,7 +2,7 @@
 title:          "CMKV: Metropolis-Hastings et recuit simule"
 date:           2021-09-08 14:00
 categories:     [Image S9, CMKV]
-tags:           [Image, S9, CMKV, sudoku, pastis]
+tags:           [Image, SCIA, S9, CMKV, sudoku, pastis]
 description: Champs de Markov - Metropolis-Hastings et recuit simule
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SyseY7IfF)

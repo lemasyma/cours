@@ -2,7 +2,7 @@
 title:          "CMKV: Introduction"
 date:           2021-09-02 14:00
 categories:     [Image S9, CMKV]
-tags:           [Image, S9, CMKV, sudoku, pastis]
+tags:           [Image, SCIA, S9, CMKV, sudoku, pastis]
 description: Champs de Markov - Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1wT64CbF)
