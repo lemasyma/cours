@@ -242,7 +242,7 @@ Prevents light from going back to the retina $\to$ keeps the sharpness and contr
 Nocturnal animals exchange image quality for image power. Their cells reflects the light back $\to$ the photoreceptors have a second chance to absorb energy
 
 <div class="alert alert-warning" role="alert" markdown="1">
-:warning: Different than having red eyes !
+<i class="bi bi-exclamation-circle-fill"></i> Different than having red eyes !
 </div>
 
 ### Structural color: Iridiscence
