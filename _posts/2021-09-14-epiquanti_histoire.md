@@ -5,8 +5,8 @@ categories:     [tronc commun S9, EPIQUANTI]
 tags:           [tronc commun, EPIQUANTI, S9]
 description: Histoire et fondamentaux de la physique quantique
 ---
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJLHdapGt)
 
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJLHdapGt)
 # Agenda
 
 1. Histoire et fondamentaux de la physique quantique
