@@ -55,7 +55,7 @@ au sens de la convergence p.s. où $\bar X_n := \frac{X_1+...+X_n}{n}$
 ## Modele statistique
 - $\theta\in\mathbb R^d$
 - $\Theta\subset\mathbb R^d$ ensemble des parametres
-- $\mathcal P:=\text{{}\mathbb P_{\theta}\vert\theta\in\Theta\text{}}$ famille de lois indexees par $\Theta$
+- $\mathcal P:=\{\mathbb P_{\theta}\vert\theta\in\Theta\}$ famille de lois indexees par $\Theta$
 - **But:** estimer la valeur $\theta_0$ ou de $g(\theta_0)$
 
 1. **Estimateur**: fonction (mesurable) $\hat\theta:\mathcal H^n\to\mathbb R^d$
@@ -74,7 +74,7 @@ au sens de la convergence p.s. où $\bar X_n := \frac{X_1+...+X_n}{n}$
 2. dans l'exemple: $\hat\lambda_n$ est *sans biais*
 
 *Pourquoi l'estimateur est-il sans biais ?*
-Pour tout $i\in\text{{}1,...,n\text{}}$, $X_i\sim\mathcal P(\lambda)$.
+Pour tout $i\in\{1,...,n\}$, $X_i\sim\mathcal P(\lambda)$.
 
 $$
 \begin{aligned}

@@ -27,8 +27,8 @@ On écrit en général un problème d’optimisation $(P)$ sous la forme standar
 $$
 \begin{aligned}
 &\text{minimiser} &f_0(x) &\\
-&\text{sujet a } &f_i(x)\le0, &\forall i\in\text{{}1,...,p\text{}}\\
-& &h_j(x)=0, &\forall i\in\text{{}1,...,m\text{}}
+&\text{sujet a } &f_i(x)\le0, &\forall i\in\{1,...,p\}\\
+& &h_j(x)=0, &\forall i\in\{1,...,m\}
 \end{aligned}
 $$
 
@@ -91,7 +91,7 @@ Une famille différentiable d’applications $f_{\alpha} : \mathbb R^n \to \math
 </div>
 
 <div class="alert alert-danger" role="alert" markdown="1">
-On considère un ensemble de couples $(X_i, y_i) \in\mathbb R^n \times\mathbb R$ pour $i \in \text{{}1, . . . , p\text{}}$ et une famille différentiable d’applications $\text{{}f_{\alpha}\text{}},\alpha\in\mathbb R^k$ . Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^*$ tels que $f_{\alpha^*}$ approche au mieux *(pour une métrique pré-choisie)* a les $(X_i, y_i)$.
+On considère un ensemble de couples $(X_i, y_i) \in\mathbb R^n \times\mathbb R$ pour $i \in \{1, . . . , p\}$ et une famille différentiable d’applications $\{f_{\alpha}\},\alpha\in\mathbb R^k$ . Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^*$ tels que $f_{\alpha^*}$ approche au mieux *(pour une métrique pré-choisie)* a les $(X_i, y_i)$.
 
 </div>
 

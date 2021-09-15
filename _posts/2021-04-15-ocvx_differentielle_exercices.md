@@ -166,7 +166,7 @@ f(x+h)=A(x+h)+b=\underbrace{Ax+b}_{f(x)} + \underbrace{Ah}_{\text{lineaire en }h
 d_xf:h&\mapsto Ah\\
 d_xf(h)&=Jac_xf\times h
 \end{aligned}
-\biggr\text{}} Jac_xf=A
+\biggr\} Jac_xf=A
 $$
 
 2.

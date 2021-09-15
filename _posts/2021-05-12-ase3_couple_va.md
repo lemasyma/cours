@@ -88,10 +88,10 @@ $(X,Y)$ un couple de v.a. dont la loi conjointe est donnee par le tableau:
 Soit $X$ une v.a reelle sur $(\Omega, \mathcal C, P)$
 
 $$
-X(\Omega) = \text{{}x_i\vert i\in I\text{}}, \text{soit } A\text{ un evenement }/P(A)\neq 0
+X(\Omega) = \{x_i\vert i\in I\}, \text{soit } A\text{ un evenement }/P(A)\neq 0
 $$
 
-La loi conditionnelle de $X$ sachant $A = \text{{}(x_i, P_A(X=x_i)), i\in I\text{}}$
+La loi conditionnelle de $X$ sachant $A = \{(x_i, P_A(X=x_i)), i\in I\}$
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
@@ -179,7 +179,7 @@ Determiner la loi de $Z=X+Y$
 <details markdown="1">
 <summary>Solution</summary>
 
-$$Z=\text{{}2,3,4,5,6,7,8\text{}}$$
+$$Z=\{2,3,4,5,6,7,8\}$$
 
 |$Z_k$     |2|3|4|5|6|7|8|
 |-         |-|-|-|-|-|-|-|
@@ -200,7 +200,7 @@ Determiner la loi de $Z=X.Y$
 <details markdown="1">
 <summary>Solution</summary>
 
-$$Z(\Omega) = \text{{}1,2,3,4,6,8,9,12,16\text{}}$$
+$$Z(\Omega) = \{1,2,3,4,6,8,9,12,16\}$$
 
 |$Z_k$|1|2|3|4|6|8|9|12|16|
 |-----|-|-|-|-|-|-|-|--|--|
@@ -220,10 +220,10 @@ $$
 
 $$
 \begin{aligned}
-X(\omega)=\text{{}x_1,...,x_i\text{}}\\
-Y(\omega)=\text{{}y_1,...,y_j\text{}}
+X(\omega)=\{x_1,...,x_i\}\\
+Y(\omega)=\{y_1,...,y_j\}
 \end{aligned}
-\biggr\text{}}Z=g(X,Y)\\
+\biggr\}Z=g(X,Y)\\
 E(Z) = E(g(X,Y)) = \sum_{i,j}g(x_i,y_j)P((X=x_i)\cap(Y=y_i))
 $$
 

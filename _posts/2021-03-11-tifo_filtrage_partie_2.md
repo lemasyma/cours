@@ -206,13 +206,13 @@ On ne perde pas d'information lorsqu'on passe de l'un a l'autre.
 On considere jusqu'a present des signaux periodiques
 - On peut generaliser en prenant $T\to+\infty$
 
-On defini $TF\text{{}x(t)\text{}}$
+On defini $TF\{x(t)\}$
 
 $$
 X(f) = \int_{-\infty}^{+\infty}x(t)e^{-2j\pi ft}dt
 $$
 
-On defini $TF^{-1}\text{{}x(t)\text{}}$
+On defini $TF^{-1}\{x(t)\}$
 
 $$
 x(t)=\int_{-\infty}^{+\infty}X(f)e^{+2j\pi ft}df

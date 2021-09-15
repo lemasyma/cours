@@ -188,7 +188,7 @@ $$
 $$
 \begin{aligned}
 F_T(x)&=P(\max\frac{X_i}{\theta}\le x)\\
-&= P(\cap_{i=1}^n\text{{}X_i\le x\text{}})=\Pi_{i=1}^nP(\frac{X_i}{\theta}\le n) \text{ car les v.a. } x_i \text{ sont independantes}\\
+&= P(\cap_{i=1}^n\{X_i\le x\})=\Pi_{i=1}^nP(\frac{X_i}{\theta}\le n) \text{ car les v.a. } x_i \text{ sont independantes}\\
 &= P(\frac{X}{\theta}\le x)^n\text{ car les }\frac{x_i}{\theta}\text{ ont les memes lois}
 \end{aligned}\\
 F_T(x)=

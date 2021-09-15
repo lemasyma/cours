@@ -52,7 +52,7 @@ Cas pour quand le maillage n'est pas en triangle.
 </div>
 
 Diagramme de Voronoi
-- $vor(p) = \text{{}x\in E;\forall qd(x,p)\le d(x,q)\text{}}$
+- $vor(p) = \{x\in E;\forall qd(x,p)\le d(x,q)\}$
 
 ![](https://i.imgur.com/HU9lPVg.png)
 

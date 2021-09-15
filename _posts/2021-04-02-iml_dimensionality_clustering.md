@@ -47,7 +47,7 @@ How to assess the soundness of the resulting cluster? Is it relevant ?
 
 # $k-$means clustering
 
-Partition $n$ observations $x_1,...,x_n$ int $k$ clusters $C=\text{{}C_1,...,C_k\text{}}$ where each observations $x_i$ belongs to the cluster $C_{j\*}$ whose mean $\mu_{j\*}$ is the closest: $x_i\in S_{j\*}$ with $j^{\*}=argmin_j\Vert x_i-\mu_j \Vert_2$
+Partition $n$ observations $x_1,...,x_n$ int $k$ clusters $C=\{C_1,...,C_k\}$ where each observations $x_i$ belongs to the cluster $C_{j\*}$ whose mean $\mu_{j\*}$ is the closest: $x_i\in S_{j\*}$ with $j^{\*}=argmin_j\Vert x_i-\mu_j \Vert_2$
 
 ![](https://i.imgur.com/JvfTtlf.png)
 

@@ -172,7 +172,7 @@ $\frac{\delta f}{\delta x}$ et $\frac{\delta f}{\delta y}$ existent en $(0,0)$, 
 ## Derivee directionnelle
 <div class="alert alert-info" role="alert" markdown="1">
 On peut generaliser la notion de derivee en un vecteur
-$\rightarrow$ On dit que $f$ est derivable en $x_0$ selon un vecteur $v\in\mathbb R^n\setminus\text{{}0\text{}}$ si la fonction $\phi:t\mapsto f(x_0+tv)$ est derivable en $0$. On note $\phi'(0)=\lim_{t\to0}\frac{f(x_0+tv)-f(x_0)}{t} = \color{red}{D_vf(x_0)}$
+$\rightarrow$ On dit que $f$ est derivable en $x_0$ selon un vecteur $v\in\mathbb R^n\setminus\{0\}$ si la fonction $\phi:t\mapsto f(x_0+tv)$ est derivable en $0$. On note $\phi'(0)=\lim_{t\to0}\frac{f(x_0+tv)-f(x_0)}{t} = \color{red}{D_vf(x_0)}$
 
 
 $$
@@ -212,7 +212,7 @@ Si $\Vert v\Vert=1\rightarrow$ derivee en $x_0$ en vecteur $v$ $\equiv$ derivee 
 
 ## *Est-ce que les derivees directionnelles sont la solution ?*
 
-*Est-ce que l'existence des derivees directionnelles en $x_0$ selon tout vecteur $v\in\mathbb R^n\setminus\text{{}0\text{}}$ garantit la continuite ?*
+*Est-ce que l'existence des derivees directionnelles en $x_0$ selon tout vecteur $v\in\mathbb R^n\setminus\{0\}$ garantit la continuite ?*
 
 <div class="alert alert-warning" role="alert" markdown="1">
 Nope, toujours pas.
@@ -230,7 +230,7 @@ y &x=0
 \end{aligned}
 $$
 
-En $(0,0)$ selon $v=(v_1,v_2)\neq\text{{}(0,0)\text{}}$
+En $(0,0)$ selon $v=(v_1,v_2)\neq\{(0,0)\}$
 
 $$
 \begin{aligned}
@@ -251,12 +251,12 @@ v_2 &v_1=0
 \frac{v_2^2}{v_1} &v_1\neq0\\
 v_2 &v_1=0
 \end{cases}
-\rightarrow\text{ existe }\forall v\in\mathbb R^2\setminus\text{{}0\text{}}
+\rightarrow\text{ existe }\forall v\in\mathbb R^2\setminus\{0\}
 \end{aligned}
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
-$f$ admet une derivee en $0$ quelque soit le vecteur $v\in\mathbb R^2\setminus\text{{}0\text{}}$
+$f$ admet une derivee en $0$ quelque soit le vecteur $v\in\mathbb R^2\setminus\{0\}$
 </div>
 
 <div class="alert alert-danger" role="alert" markdown="1">
@@ -339,11 +339,11 @@ $$
 Et $2x_0^Th$ est lineaire $\color{red}{(2x_0^T(h_1+\lambda h_2))=2x_0^Th_1+2\lambda x_0^Th}$
 
 <div class="alert alert-info" role="alert" markdown="1">
-**Propriete**: Si $f$ differentielle en $x_0$, alors f admet des derivees selon tout vecteur $h\in\mathbb R^n\setminus\text{{}0\text{}}$ et $D_hf(x_0)=d_{x_0}f(h)$
+**Propriete**: Si $f$ differentielle en $x_0$, alors f admet des derivees selon tout vecteur $h\in\mathbb R^n\setminus\{0\}$ et $D_hf(x_0)=d_{x_0}f(h)$
 </div>
 
 ## Lien entre differentielle et vecteur gradient
-f differentielle en $x_0$, $f$ admet des derivees selon tout vecteur $h\in\mathbb R^n\setminus\text{{}0\text{}}$, en particulier selon les vecteurs de la base canonique $(e_1,...,e_n)$
+f differentielle en $x_0$, $f$ admet des derivees selon tout vecteur $h\in\mathbb R^n\setminus\{0\}$, en particulier selon les vecteurs de la base canonique $(e_1,...,e_n)$
 $\rightarrow$ toutes les derivees partielles $\frac{\delta f}{\delta x}(x_0)$ existent
 
 $$
