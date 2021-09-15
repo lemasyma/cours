@@ -121,7 +121,7 @@ We will focus on 2 widely used descriptors for their pedagogical interest
 # BRIEF
 
 General idea:
-1. Sample pairs of points $$\text{\{}p(x), p(y)\text{\}}$$ in the **smoothed** (very spiky otherwise, like derivatives) keypoints neighborhood
+1. Sample pairs of points $$\text{{}p(x), p(y)\text{}}$$ in the **smoothed** (very spiky otherwise, like derivatives) keypoints neighborhood
 2. Compute a simple **binary test**: $p(x)\lt p(y)$
 3. Accumulate the results of $n_d$ tests to form a **binary vector of $n_d$ bits** (256 in ref.)
 
@@ -317,7 +317,7 @@ Several techniques:
 
 ## Quantization
 - Discretization of some signal - **Lossy process!**
-- Vectorial formulation: $f:R^d\to F$, with $F=\text{\{}1,2,...,k\text{\}}$
+- Vectorial formulation: $f:R^d\to F$, with $F=\text{{}1,2,...,k\text{}}$
 - Defines a **Voronoi diagram**, ie a decomposition of a metric space determined by the distances to a discrete set of points
 
 ![](https://i.imgur.com/MwrAUQh.png)

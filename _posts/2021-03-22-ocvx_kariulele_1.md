@@ -127,7 +127,7 @@ $\varphi '(0) = -14 = D_h(x)$
 
 $h \leftrightarrow \alpha h$
 $D_{\alpha h}f(x_0) = \alpha D_hf(x_0)$
-On parle de dérivée directionnelle selon la direction de $h \in \mathbb R^n \verb+\+ \text{\{}0\text{\}}$ uniquement quand $h$ est unitaire (par opposition à la dérivée directionnelle selon le vecteur $h$).
+On parle de dérivée directionnelle selon la direction de $h \in \mathbb R^n \verb+\+ \text{{}0\text{}}$ uniquement quand $h$ est unitaire (par opposition à la dérivée directionnelle selon le vecteur $h$).
 
 Malheureusement, l'existence de derivees directionnelles en $Vn$ point selon tout vecteur n'implique pas la continuité en ce point.
 
@@ -176,14 +176,14 @@ $d_{x_0} f:h \mapsto d_{x_0}f(h) = h \times f'(x_0)$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Propriété** : Si $f$ est différentiable en $x_0$ alors $f$ est continue en $x_0$
-**Propriété** : Si $f$ est différentiable en $x_0$ alors $f$ admet des dérivées directionnelles selon tout vecteur $h \in \mathbb R^n \verb+\+ \text{\{}0\text{\}}$, et la dérivée directionnelle vaut $D_hf(x_0) = d_{x_0}f(h)$
+**Propriété** : Si $f$ est différentiable en $x_0$ alors $f$ admet des dérivées directionnelles selon tout vecteur $h \in \mathbb R^n \verb+\+ \text{{}0\text{}}$, et la dérivée directionnelle vaut $D_hf(x_0) = d_{x_0}f(h)$
 </div>
 
 
 Soit $f$ différentiable en $x_0$.
 Donc les dérivées partielles $\frac{\partial f}{\partial x_k}$ existent en $x_0$
 
-Soit $h \in \mathbb R^n \verb+\+ \text{\{}0\text{\}}$ et $(e_1, \dots , e_n)$ la base
+Soit $h \in \mathbb R^n \verb+\+ \text{{}0\text{}}$ et $(e_1, \dots , e_n)$ la base
 $h = \begin{pmatrix} h_1 \\ \vdots \\ h_n\end{pmatrix} = \sum_{i = 1}^{n} h_i e_i$
 
 $D_hf(x_0) = d_{x_0}f(h) = d_{x_0}f(\overset{n}{\underset{i=1}{\sum}} h_ie_i) = \overset{n}{\underset{i=1}{\sum}} h_i d_{x_0}f(e_i)=\overset{n}{\underset{i=1}{\sum}} h_i \frac{\partial f}{\partial x_i}x_0$
@@ -310,7 +310,7 @@ $$x=-\frac{1}{\sqrt{21}}, y=-2\sqrt{\frac{3}{7}}$$
 Avec les notations de la proposition on appelle espace tangeant à $\mathcal C_{r}(f)$ en a l'espace affine.
 \begin{aligned}
 T_a(f) &= a + \nabla f(a)^\bot\\
-&= a+ \text{\{}x | \nabla f(a)^\top x = 0\text{\}}\\
+&= a+ \text{{}x | \nabla f(a)^\top x = 0\text{}}\\
 \end{aligned}
 </div>
 
@@ -411,8 +411,8 @@ pour simplifier la notation on note $f : \mathbb R^n \longrightarrow \mathbb R$ 
 <div class="alert alert-success" role="alert" markdown="1">
 **Définition :**
 Un problème d'optimisation convexe est un problème qui s'exprime sous la forme $\min f_0(x)$, sujet à:
-$$f_i(x) \leqslant 0 \: \forall i \in \text{\{}1,\dots,m\text{\}}\\
-f_j(x) = 0 \: \forall j \in \text{\{}1,\dots, p\text{\}}$$
+$$f_i(x) \leqslant 0 \: \forall i \in \text{{}1,\dots,m\text{}}\\
+f_j(x) = 0 \: \forall j \in \text{{}1,\dots, p\text{}}$$
 
 Où $f_0, f_i, h_j : \mathbb R^n \longrightarrow \mathbb R$ sont convexes et de plus les $h_j$ sont affines.
 </div>
@@ -420,14 +420,14 @@ Où $f_0, f_i, h_j : \mathbb R^n \longrightarrow \mathbb R$ sont convexes et de 
 On peut en particulier réécrire $(P)$ sous la forme: $\min f_0(x)$ sujet à :
 $$
 \begin{aligned}
-f_i(x) &\leqslant 0 \: \forall i \in \text{\{}1,...,m\text{\}}\\
+f_i(x) &\leqslant 0 \: \forall i \in \text{{}1,...,m\text{}}\\
 A x &= b
 \end{aligned}
 $$
 où $\mathcal A \in M_{p,n}(\mathbb R); b \in M_{p,1}(\mathbb R)$
 
 On dit qu'un point $x$ est admissible s'il satisfait les contraintes définies par $(P)$. Le lieu admissible $\mathcal A$ de $(P)$ correspond aux  points  admissibles de $(P)$. On fait remarquer que sous nos hypotheses, $\mathcal A$ est convexe. On note $p^{\*}$ la valeur optimale de  $(P)$:
-$$p^{*} = \underset{x \in \mathcal A}{inf}\text{\{}f_0(x)\text{\}}$$
+$$p^{*} = \underset{x \in \mathcal A}{inf}\text{{}f_0(x)\text{}}$$
 
 Par convention  si $\mathcal A = \emptyset; p^{\*} = +\infty$. Dans le cas sur $p^{\*} = - \infty$  on dit que ($P$) est non borné.
 On appelle enfin point optimal $x^{\*}$ de $(P)$ tout point tq $f_0(x^{\*}) = p^{\*}$. Un tel point n'existe pas toujours; par exemple c'est le cas $\underset{x \in \mathbb{R}_+^{\*}}{min} \frac{1}{x}$. De plus, il n'existe pas en général qu'un seul point optimal (quand il y en a); prendre par exemple le problème:
@@ -464,7 +464,7 @@ Soit $f: \mathbb R^n \longrightarrow \mathbb R$ une fonction convexe, alors $f$ 
 Essayons de justifier le premier point. Supposons qu'il existe un voisinage $\mathcal{B}(x, \varepsilon)$ pour $\varepsilon >0$ tq :
 $$\forall y \in \mathcal{B}(x, \varepsilon), y \neq x f(y) < f(x)$$
 
-Soient $y_1,y_2 \in \mathcal{B}(x, \varepsilon) \backslash \text{\{}x\text{\}}$
+Soient $y_1,y_2 \in \mathcal{B}(x, \varepsilon) \backslash \text{{}x\text{}}$
 $\forall t \in [0,1]$
 (conv):$f(ty_1 + (1-t)y_2) \leqslant tf(y_1) + (1-t) f(y_2)$
 Donc  $tf(y_1) + (1 -t)f(y_2) \leqslant f(x)$
@@ -666,7 +666,7 @@ $$
 Toutes les inégalités qui apparaissent précédemment sont donc des égalités. On en déduit :
 1) $x^{\*}$ minimise $\mathcal L_p(x, \lambda^{\*},\nu^{\*})$
 2) $\displaystyle \sum_{i=1}^m \underbrace{ \lambda_i^{\*} f_i(x^{\*})}_{\le 0} = 0$
-$\Rightarrow \forall i \in \text{\{}1,...,m\text{\}}; \lambda_i^{\*}f_i(x^{\*}) = 0$
+$\Rightarrow \forall i \in \text{{}1,...,m\text{}}; \lambda_i^{\*}f_i(x^{\*}) = 0$
 
 La fonction $x \longmapsto \mathcal L_p(x, \lambda^{\*}, \nu^{\*})$ est convexe des que $(P)$ l'est. Dire que $x^{\*}$ minimise $x \longmapsto \mathcal L_p(x, \lambda^{\*}, \nu^{\*})$ est equivalent a dire que
 
@@ -674,10 +674,10 @@ $\nabla_x \mathcal L_p (x^{\*},\lambda^{\*},\nu^{\*}) = 0$
 $\Leftrightarrow \nabla f_0(x^{\*}) + \displaystyle \sum_{i=1}^m \lambda_i^{\*} \nabla f_i(x^{\*}) + \displaystyle \sum_{j = 1}^{p} \nabla j^{\*} \nabla hj(x^{\*}) = 0$
 
 Pour resumer $(x^{\*},\lambda^{\*}, \nu^{\*})$ verifient les contraintes :
-$f_i(x^{\*}) \leqslant 0 \qquad \forall i \in \text{\{}1,...,m\text{\}}$
-$h_j(x^{\*}) = 0 \qquad \forall j \in \text{\{}1,...,p\text{\}}$
-$\lambda_i^{\*} \geqslant 0 \qquad \forall i \in \text{\{}1,...,m\text{\}}$ (KKT)
-$\lambda_i^{\*} f_i(x^{\*}) = 0 \qquad \forall i \in \text{\{}1,...,m\text{\}}$
+$f_i(x^{\*}) \leqslant 0 \qquad \forall i \in \text{{}1,...,m\text{}}$
+$h_j(x^{\*}) = 0 \qquad \forall j \in \text{{}1,...,p\text{}}$
+$\lambda_i^{\*} \geqslant 0 \qquad \forall i \in \text{{}1,...,m\text{}}$ (KKT)
+$\lambda_i^{\*} f_i(x^{\*}) = 0 \qquad \forall i \in \text{{}1,...,m\text{}}$
 
 $\nabla f_0(x^{\*}) + \displaystyle \sum_{i =1}^m \lambda_i^{\*} \nabla f_i(x^{\*}) + \displaystyle \sum_{j = 1}^{p} \nu_j^{\*} \nabla h_j(x^{\*}) = 0$
 

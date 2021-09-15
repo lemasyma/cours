@@ -19,7 +19,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HknU58EIO)
 ![](https://i.imgur.com/Qldp6N6.png)
 
 
-Given some training data $\text{\{}x_i,y_i\text{\}}^n_{i=1}$, supervised learning aims at finding a model $f$ correctly mapping input data $x_i$ to their respective output
+Given some training data $\text{{}x_i,y_i\text{}}^n_{i=1}$, supervised learning aims at finding a model $f$ correctly mapping input data $x_i$ to their respective output
 - The model can predict new outputs
 - The learning mechanism is called *regression* or *classification*
 
@@ -61,7 +61,7 @@ Sometimes, there's no need for a complicated model...
 
 ## Anscombes' quartet
 
-For all 4 datasets $\text{\{}(x_1,y_1),(x_2,y_2),...,(x_{11},y_{11})\text{\}}$
+For all 4 datasets $\text{{}(x_1,y_1),(x_2,y_2),...,(x_{11},y_{11})\text{}}$
 
 ![](https://i.imgur.com/5GCBu59.png)
 
@@ -133,7 +133,7 @@ Use the k nearest neighbors (in terms of features only) and average to get predi
 
 # Support Vector Machine
 ## Linear SVM
-Training set: $$\text{\{}x_i,y_i\text{\}}_{i=1}^n$$ with $x_i\in\mathbb R^p$ and $y_i\in\text{\{}-1,+1\text{\}}$
+Training set: $$\text{{}x_i,y_i\text{}}_{i=1}^n$$ with $x_i\in\mathbb R^p$ and $y_i\in\text{{}-1,+1\text{}}$
 
 Goal: find hyperplane that best divide *positive* sample and *negative* samples
 

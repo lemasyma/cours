@@ -49,7 +49,7 @@ Dire que $a \mapsto \nabla^2f(a)$ est majoree sur un lieu $S$ de son domaine de 
 $f(x + v) = f(x) + \nabla f(x)^T v + o(v)$
 
 - On remplace $f(x+v)$ par son approximation au 1er ordre; cad $f(x) + \nabla f(x)^T v$
-- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^{\*} = argmin(\text{\{}\nabla f(x)^T v \vert \Vert v\Vert_2 = 1\text{\}})$
+- On cherche la direction (cad les vecteurs de norme 1 ($\|.\|_2)$) tq $f(x) + \nabla f(x)^T v$ est minimal. On cherche donc a calculer $v^{\*} = argmin(\text{{}\nabla f(x)^T v \vert \Vert v\Vert_2 = 1\text{}})$
 
 
 Rq: Si $v^{\*}$ minimise $\nabla f(x)^Tv$ ssi $-v^{\*}$ maximise $\nabla f(x)^Tv$ pour $\|v\|_2 = 1$
@@ -76,17 +76,17 @@ nsd => normalized steepest descent
 
 
 Pour la norme 1 on s'interesse au calcul de:
-$argmin(\text{\{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 = 1\text{\}})$
+$argmin(\text{{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 = 1\text{}})$
 
 
-$argmin(\text{\{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\text{\}})$
+$argmin(\text{{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\text{}})$
 
 Ceci est  un programme lineaire, ces points optimaux sont  des points  extremaux du lieu admissible
 
 Ces points extremaux sont les points:
-$\mathcal F_{e_i}$ pour $i \in \text{\{}1,...,n\text{\}}$
+$\mathcal F_{e_i}$ pour $i \in \text{{}1,...,n\text{}}$
 
-$argmin(\text{\{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\text{\}}) = I e_i$ pour un certain $i \in \text{\{}1,...,n\text{\}}$
+$argmin(\text{{}\nabla f(x)^Tv \, \mid \, \Vert v\Vert_1 \le 1\text{}}) = I e_i$ pour un certain $i \in \text{{}1,...,n\text{}}$
 
 $\nabla f(x)^T e_i$ est la projection de $\nabla f(x)$ sur $e_i$ cad $\frac{\partial f(x)}{\partial x_i}$ Le $e_i$ qui realise l'argmin.
 

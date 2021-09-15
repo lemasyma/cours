@@ -139,9 +139,9 @@ Pantone and other organizarions
 ![](https://i.imgur.com/J1HHL46.png)
 
 Amounts give a specification, not the resulting color
-- RGB value $\text{\{}100, 20,90\text{\}}$ in your screen $\neq$ RGB $\text{\{}100, 20,90\text{\}}$ in my screen
-- CMY value $\text{\{}90, 10,50\text{\}}$ in your printer $\neq$ CMY $\text{\{}90, 10,50\text{\}}$ on my printer
-- RGB value $\text{\{}100, 20,90\text{\}}$ in my screen $\neq$ CMY $\text{\{}90, 10,50\text{\}}$ on my printer
+- RGB value $\text{{}100, 20,90\text{}}$ in your screen $\neq$ RGB $\text{{}100, 20,90\text{}}$ in my screen
+- CMY value $\text{{}90, 10,50\text{}}$ in your printer $\neq$ CMY $\text{{}90, 10,50\text{}}$ on my printer
+- RGB value $\text{{}100, 20,90\text{}}$ in my screen $\neq$ CMY $\text{{}90, 10,50\text{}}$ on my printer
 
 ## HSV/HSL Spaces
 

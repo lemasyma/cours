@@ -39,8 +39,8 @@ ex: gestion d'un stock, optimiser la construction de produits en usine.
 
 Minimiser $f_0(x)$
 sujet à :
-* $f_i(x) \leq 0, \forall i \in \text{\{}1,\dots,p\text{\}}$
-* $h_j(x) \leq 0, \forall j \in \text{\{}1,\dots,m\text{\}}$
+* $f_i(x) \leq 0, \forall i \in \text{{}1,\dots,p\text{}}$
+* $h_j(x) \leq 0, \forall j \in \text{{}1,\dots,m\text{}}$
 
 où $f_0$, les $f_i$ et les $h_i$ sont des applications de $\mathbb{R}^n$ vers $\mathbb{R}$. La fonction $f_0$ est dite **fonction objectif**; suivant le contexte ce sera une fonction de **coût** ou d'**erreur**.
 
@@ -77,7 +77,7 @@ Une famille différentiable d'applications $f_\alpha:\mathbb{R}^n\longmapsto\mat
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Map Fitting :**
-On considère un ensemble de couples $(X_i, y_i)\in\mathbb{R}^n\times\mathbb{R}$ pour $i \in \text{\{} 1,...,p \text{\}}$ et une famille différentiable d'applications $$\text{\{} f_\alpha \text{\}}_{\alpha\in\mathbb{R}^k}$$. Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^{\*}$ tels que $f_{\alpha^{\*}}$ approche au mieux les $(X_i, y_i)$. 
+On considère un ensemble de couples $(X_i, y_i)\in\mathbb{R}^n\times\mathbb{R}$ pour $i \in \text{{} 1,...,p \text{}}$ et une famille différentiable d'applications $$\text{{} f_\alpha \text{}}_{\alpha\in\mathbb{R}^k}$$. Le problème de *map fitting* relatif aux données précédentes consiste à trouver les meilleurs paramètres $\alpha^{\*}$ tels que $f_{\alpha^{\*}}$ approche au mieux les $(X_i, y_i)$. 
 </div>
 
 ### Régression linéaire
@@ -192,14 +192,14 @@ Soit une droite $ax_1 +bx_2 + c = 0$ :
 
 ## Espace affine
 
-$A = {(1,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}} = (1, 0) + \underbrace{\text{\{}(0,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}\text{\}}}_{F}$
+$A = {(1,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}} = (1, 0) + \underbrace{\text{{}(0,t) \in \mathbb{R}^2 \vert t \in \mathbb{R}\text{}}}_{F}$
 
 <div class="alert alert-info" role="alert" markdown="1">
 On note qu'on pouvait utiliser un autre point $(1,42)$ au lieu de $(1,0)$ donne le même résultat.
 </div>
 
 
-$P=\text{\{}(t, 3t + u, -u) \setminus (t, u) \in \mathbb{R}^2\text{\}}$
+$P=\text{{}(t, 3t + u, -u) \setminus (t, u) \in \mathbb{R}^2\text{}}$
 * $O \in P$
 * $A = \begin{pmatrix}1\\ 3\\ 0\end{pmatrix} \in P$
 * $B = \begin{pmatrix}0\\ 1\\ -1\end{pmatrix} \in P$
@@ -218,7 +218,7 @@ $\vec{n} = \vec{OA} \times \vec{OB}$
 > \Leftrightarrow \begin{cases} x_1 -2 = \alpha \\ x_2 - 3 = -\alpha\end{cases} \\
 > \Leftrightarrow \begin{cases}x_1 = \alpha + 2\\ x_2 = 3 - \alpha\end{cases}$$
 >
-> Donc $(D) = \text{\{}(\alpha +2, 3-\alpha) \vert \alpha \in \mathbb{R}\text{\}}$
+> Donc $(D) = \text{{}(\alpha +2, 3-\alpha) \vert \alpha \in \mathbb{R}\text{}}$
 
 > **Exercice :**
 > Dessiner le lien de $\mathbb{R}^2$ decrit par les contraintes :
@@ -228,7 +228,7 @@ $\vec{n} = \vec{OA} \times \vec{OB}$
 > $ax + by = 0$
 > $ax + by +c = 0$
 > $\overrightarrow{n} \begin{pmatrix}a \\ b  \end{pmatrix} \overrightarrow{u} \begin{pmatrix}-b \\ a  \end{pmatrix}$
-> $\text{\{} (x,y) \in \mathbb{R}^2 , -x + 2y \le -1 \text{ et } x+y \le 1 \text{\}}$
+> $\text{{} (x,y) \in \mathbb{R}^2 , -x + 2y \le -1 \text{ et } x+y \le 1 \text{}}$
 > $(D_1) = -x + 2y + 1 = 0$
 > $(0, \frac{-1}{2} \in D_1)$
 > $\overrightarrow{n_1} = \begin{pmatrix} -1 \\ 2\end{pmatrix}$
@@ -262,10 +262,10 @@ $\boxed{f(x,y) = x^2 + y^2 - r^2}$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Ligne / Courbe de niveau d'une fonction f :**
-$$\mathscr{C}_r=\text{\{}x\in \mathbb{R}^n | f(x)=r\text{\}}$$
+$$\mathscr{C}_r=\text{{}x\in \mathbb{R}^n | f(x)=r\text{}}$$
 
 **Lieu de sous niveau  d'une fonction f :**
-$$\mathscr{C}_{\leqslant r}=\text{\{} x\ \in \mathbb{R}^n \ f(x) \leqslant r \text{\}}$$
+$$\mathscr{C}_{\leqslant r}=\text{{} x\ \in \mathbb{R}^n \ f(x) \leqslant r \text{}}$$
 </div>
 
 <div class="alert alert-info" role="alert" markdown="1">
@@ -296,14 +296,14 @@ $$\bigg(\frac xa\bigg)^2 + \bigg(\frac yb\bigg)^2=1$$
 <div class="alert alert-info" role="alert" markdown="1">
 Epigraphe d'une fonction $f.\mathbb R^n \rightarrow \mathbb R$
 
-$Epi(f) = \text{\{}(x,t) ~\vert~ f(x) \leq t\text{\}}$
+$Epi(f) = \text{{}(x,t) ~\vert~ f(x) \leq t\text{}}$
 
 ![Représentation épigraphe](https://i.stack.imgur.com/y98sx.png)
 </div>
 
 > **Exercice :**
 > Dessiner l'intersection de l'épigraphe de $f(x)=-\sqrt{x}$ (sur $\mathbb R^+$)
-> avec la partie $\text{\{}(x, y) | y \leq \sqrt x\text{\}}$
+> avec la partie $\text{{}(x, y) | y \leq \sqrt x\text{}}$
 > ![](https://i.imgur.com/0R5DgRj.png)
 
 <div class="alert alert-success" role="alert" markdown="1">
@@ -317,7 +317,7 @@ $A \cup \partial{A}  = \underbrace{\bar{A}}_{adhérence}$
 
 > **Exemple :**
 > $A = [1,2[$
-> $\partial A = \text{\{}\text{\{}1\text{\}} \text{\{}2\text{\}}\text{\}}$
+> $\partial A = \text{{}\text{{}1\text{}} \text{{}2\text{}}\text{}}$
 > $\bar A = [1,2]$
 
 
@@ -379,7 +379,7 @@ $$H(x,y) = \begin{pmatrix}\frac{\partial^2f(x,y)}{\partial x^2}
 > x + y \leq 1
 > \end{cases}$
 > 
-> $\mathcal A_b = \mathcal A_u \cup \text{\{}(x,y) \in \mathbb R^2, x-3y \leq 6\text{\}}$
+> $\mathcal A_b = \mathcal A_u \cup \text{{}(x,y) \in \mathbb R^2, x-3y \leq 6\text{}}$
 > 
 > * $(D_1)$: $-x + 2y + 1 = 0 \qquad (0, -\frac 12) \in (D_1) \qquad \vec{n_1}\begin{pmatrix}-1\\ 2\end{pmatrix} \qquad \vec{u_1}\begin{pmatrix}-2\\ -1\end{pmatrix}$
 > 
@@ -513,7 +513,7 @@ Une norme sur $\mathbb R^n$ est une application $\Vert \cdot\Vert : \mathbb{R}^n
 > 
 > 1. $$\Vert x\Vert _1 = \displaystyle\sum_{i=1}^{n}\vert x_i\vert $$
 > 2. $$\Vert x\Vert _2 = \bigg(\displaystyle\sum_{i=1}^{n}(x_i)^2\bigg)^{\frac 1 2}=\sqrt{x^Tx}$$
-> 3. $\Vert x\Vert _\infty = \underset{i\in \text{\{}1,\dots,n\text{\}}}{\max}\text{\{}\vert x_i\vert \text{\}}$
+> 3. $\Vert x\Vert _\infty = \underset{i\in \text{{}1,\dots,n\text{}}}{\max}\text{{}\vert x_i\vert \text{}}$
 > 4. Pour $p \geqslant 1$,
     > $$\Vert x\Vert _p = \bigg(\displaystyle\sum_{i=1}^{n}\vert x_i\vert ^p\bigg)^{\frac 1 p} \qquad \qquad$$ (la norme p) ($p \ge 1$)
 
@@ -534,7 +534,7 @@ On dit que (u_n) converge vers l au sens de la norme $\Vert .\Vert $ si :
 $$(E) \qquad \forall \varepsilon > 0, \exists N \in \mathbb{N}, n \ge N \Longrightarrow \Vert u_n - l\Vert  < \varepsilon$$
 
 On note
-$\begin{aligned}B_{\Vert \cdot\Vert }(l,\varepsilon)=\text{\{}x\in \mathbb{R}^n | \Vert x-l\Vert <\varepsilon\text{\}} \\ \bar{B}_{\Vert \cdot\Vert }(l,\varepsilon)=\text{\{}x\in \mathbb{R}^n | \Vert x-\Vert |<\varepsilon\text{\}} \end{aligned}$
+$\begin{aligned}B_{\Vert \cdot\Vert }(l,\varepsilon)=\text{{}x\in \mathbb{R}^n | \Vert x-l\Vert <\varepsilon\text{}} \\ \bar{B}_{\Vert \cdot\Vert }(l,\varepsilon)=\text{{}x\in \mathbb{R}^n | \Vert x-\Vert |<\varepsilon\text{}} \end{aligned}$
 
 
 Dans ce cas, $(E)$ s'écrit : 
@@ -591,7 +591,7 @@ Sur $\mathbb R^n$ toutes les normes sont équivalentes.
 Les normes usuelles:
 1. $$\Vert .\Vert _2 : \forall x \in \mathbb R^n ; \Vert x\Vert _2 = (\sum_{x=1}^n x_i^2)^{\frac 12}=\sqrt{x^Tx}$$
 2. $$\Vert .\Vert _1: \forall x \in \mathbb R^n ; \Vert x\Vert _1 = \sum_{i=1}^n\vert x_i\vert $$
-3. $$\Vert .\Vert _\infty: \forall x \in \mathbb R^n ; \Vert x\Vert _\infty = \underset{i \in \text{\{}1,\dots,n\text{\}}}{max} \vert X_i\vert $$
+3. $$\Vert .\Vert _\infty: \forall x \in \mathbb R^n ; \Vert x\Vert _\infty = \underset{i \in \text{{}1,\dots,n\text{}}}{max} \vert X_i\vert $$
 
 **Propriété**:
 $$\forall p \geq 1:\\
@@ -601,8 +601,8 @@ $$\forall p \geq 1:\\
 À partir d'une norme, on définit :
 * Une distance : $d_{\Vert .\Vert }$(x,y) = \Vert x-y\Vert $
 * Des boules :
-    * Ouvertes : $B_{\Vert .\Vert }(x, \varepsilon) = \text{\{}y\vert d_{\Vert .\Vert }(x,y) < \varepsilon\text{\}}$ 
-    * Fermées : $$\bar{B}_{\Vert .\Vert }(x, \varepsilon) = \text{\{}y\vert d_{\Vert .\Vert }(x,y) \leq \varepsilon\text{\}}$$
+    * Ouvertes : $B_{\Vert .\Vert }(x, \varepsilon) = \text{{}y\vert d_{\Vert .\Vert }(x,y) < \varepsilon\text{}}$ 
+    * Fermées : $$\bar{B}_{\Vert .\Vert }(x, \varepsilon) = \text{{}y\vert d_{\Vert .\Vert }(x,y) \leq \varepsilon\text{}}$$
 
 **Objectif** : Montrer que les boules ouvertes pour une  norme $\Vert .\Vert $ sur $\mathbb R^n$ sont convexes.
 
@@ -715,7 +715,7 @@ $(\lambda_a - \mu_a)(h) = o_\underline{0}(h)$
 
 Soit $v_1, \ldots ,v_n$ une base de $\mathbb R^n$.
 Pour $t$ au voisinage de $0 \in \mathbb R; t \ne 0$
-$\forall i \in \text{\{}1,\ldots, n\text{\}}$
+$\forall i \in \text{{}1,\ldots, n\text{}}$
 $(\lambda_a - \mu_a)(tv_1) = o_\underline{0}(t\overbrace{n}^{\in \mathbb R^n})$
 D'ou $(\frac{\lambda_a - \mu_a)(tv_1)}{t} = o_\underline{0}(v)$
 $\Leftrightarrow (\lambda_a -\mu_a)(v_i) = o_\underline{0}(v)$
@@ -781,11 +781,11 @@ alors $\sqrt{ \langle x,x \rangle}$ est une norme pour x.
 Boule centrée en a et de rayon r.
 $\rightarrow$"Tout ce qui se passe à une $\underbrace{\text{distance}}_{\text{besoin d'une norme}} r$ de $a \in \mathbb R^n$
 
-$\rightarrow B_{\Vert .\Vert }(a,r) = \text{\{}x \in \mathbb R, d(x,a) \lt r\text{\}}$
+$\rightarrow B_{\Vert .\Vert }(a,r) = \text{{}x \in \mathbb R, d(x,a) \lt r\text{}}$
 Ceci est une boule ouverte
 
 
-$B_{\Vert .\Vert }(a,r) = \text{\{}x \in \mathbb R^n, d(x,a) \le r\text{\}}$
+$B_{\Vert .\Vert }(a,r) = \text{{}x \in \mathbb R^n, d(x,a) \le r\text{}}$
 Ceci est une boule fermée
 
 $\overline{B_{\Vert .\Vert }} = B_{\Vert .\Vert } \cup B_{\Vert .\Vert }$
@@ -794,7 +794,7 @@ $\overline{B_{\Vert .\Vert }} = B_{\Vert .\Vert } \cup B_{\Vert .\Vert }$
 Les fonctions norme sont des fonctions convexes.
 
 $$p = \frac 12 \qquad x = \begin{pmatrix} x_1 \\ x_2\end{pmatrix} \qquad \Vert x\Vert _{\frac12} = (\sqrt{\vert x_1\vert } + \sqrt{\vert x_2\vert })^2$$
-$$B_{\Vert .\Vert \frac12}(0,1) = \text{\{}(x_1,x_2) \in \mathbb R^2, (\sqrt{\vert x_1\vert } + \sqrt{\vert x_2\vert } \le 1\text{\}}$$
+$$B_{\Vert .\Vert \frac12}(0,1) = \text{{}(x_1,x_2) \in \mathbb R^2, (\sqrt{\vert x_1\vert } + \sqrt{\vert x_2\vert } \le 1\text{}}$$
 
 Dans le cadre ou $x_1 \ge 0, x_2 \ge 0$
 

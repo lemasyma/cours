@@ -130,7 +130,7 @@ $$
 $$
 
 Etant donne un vecteur $v\in\mathbb R^n$, $\Vert v\Vert=1$, $\psi(v)=0$.
-En particulier, $\forall i\in\text{\{}1,...,n\text{\}}$; $\psi(e_i)=0$
+En particulier, $\forall i\in\text{{}1,...,n\text{}}$; $\psi(e_i)=0$
 Donc la matrice de $\psi$ dans la base canonique est nulle, i.e. $\psi = 0$
 <div class="alert alert-success" role="alert" markdown="1">
 Donc $\lambda_a=\mu_a$
@@ -239,7 +239,7 @@ $$
 f(a+h)=f(a)+\nabla f(a)^Th+\Vert h\Vert \underbrace{\varepsilon(h)}_{\begin{aligned}\varepsilon(h)&\to0\\h&\mapsto0\end{aligned}}
 $$
 
-On est interesse par calculer $\nabla f(a)^Te_i$ $\forall i\in\text{\{}1,...,n\text{\}}$
+On est interesse par calculer $\nabla f(a)^Te_i$ $\forall i\in\text{{}1,...,n\text{}}$
 
 Soit $t\in\mathbb R$
 

@@ -81,11 +81,11 @@ $\rightarrow$ generalise la notion d'intervallle pour $\mathbb R^n$, $n\ge2$
 Boule ouverte centree sur un point $x_0$ de rayon $r$
 
 $$
-\mathcal B_{\Vert\Vert}(x_0,\varepsilon)=\text{\{}y\in\mathbb R^n\vert\Vert x_0-y\Vert\le \varepsilon\text{\}} \text{ boule ouverte}\\
+\mathcal B_{\Vert\Vert}(x_0,\varepsilon)=\text{{}y\in\mathbb R^n\vert\Vert x_0-y\Vert\le \varepsilon\text{}} \text{ boule ouverte}\\
 $$
 
 $$
-\bar{\mathcal B}_{\Vert\Vert}(x_0,\varepsilon)=\text{\{}y\in\mathbb R^n,\Vert x_0-y\Vert\le \varepsilon\text{\}} \text{ boule fermee}
+\bar{\mathcal B}_{\Vert\Vert}(x_0,\varepsilon)=\text{{}y\in\mathbb R^n,\Vert x_0-y\Vert\le \varepsilon\text{}} \text{ boule fermee}
 $$
 
 Voisinnage de $x_0$:
@@ -99,7 +99,7 @@ $$
 $$
 \mathcal{\bar B_2}(0,1):\\
 x\in(\delta\mathcal B_2(0,1))\\
-\text{\{}x\in\mathbb R^1,\underbrace{\Vert x\Vert_1=1\text{\}}}_{x_1^2+x_2^2=1}
+\text{{}x\in\mathbb R^1,\underbrace{\Vert x\Vert_1=1\text{}}}_{x_1^2+x_2^2=1}
 $$
 
 ![](https://i.imgur.com/VDKOS3j.png)
@@ -109,7 +109,7 @@ $$
 $$
 \mathcal{\bar B_1}(0,1):\\
 x\in\delta\mathcal B_1(0,1)\\
-\text{\{}x\in\mathbb R^2,\underbrace{\Vert x\Vert_2=1}_{\vert x_1\vert+\vert x_2\vert=1}\text{\}}
+\text{{}x\in\mathbb R^2,\underbrace{\Vert x\Vert_2=1}_{\vert x_1\vert+\vert x_2\vert=1}\text{}}
 $$
 
 Si $x_1\gt0$, $x_2\gt0$, $x_2=1-x_1$
@@ -120,7 +120,7 @@ Si $x_1\gt0$, $x_2\gt0$, $x_2=1-x_1$
 $$
 \mathcal{\bar B_{\infty}}:\\
 x\in\delta\mathcal B_{infty}(0,1)\\
-\text{\{}x\in\mathbb R^2, \max(\vert x_1\vert,\vert x_2\vert)=1\text{\}}
+\text{{}x\in\mathbb R^2, \max(\vert x_1\vert,\vert x_2\vert)=1\text{}}
 $$
 
 ![](https://i.imgur.com/x7KzRqA.png)

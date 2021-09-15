@@ -18,7 +18,7 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B12PIR7fu)
 
 ## Situation elementaire
 1. $n$ issues $\omega_1,..., \omega_n$
-2. univers $\Omega=\text{\{}\omega_1,..., \omega_n\text{\}}$
+2. univers $\Omega=\text{{}\omega_1,..., \omega_n\text{}}$
 3. Proba d'occurence associee $p_1,..., p_n$
 4. loi de proba: donnees des $p_i
 5. Les probas $p_i$ sont positives et verifient: $p_1+...+p_n = 1$
@@ -59,7 +59,7 @@ C'est une proba **a posteriori**, cad apres que l'experience ait eu lieu.
 # VA discrete
 1. VA $X :$ fonction definie sur $\Omega$ et a valeurs dans $\mathbb R$
 2. $X$ peut prendre les valeurs $x_1,..., x_n$
-3. $\Omega$ sera "oublie" et on se concentrera sur les probas $p_i := P(\text{\{}\omega\in\Omega\vert X(\omega) = x_i\text{\}}):= P(X=x_i)$
+3. $\Omega$ sera "oublie" et on se concentrera sur les probas $p_i := P(\text{{}\omega\in\Omega\vert X(\omega) = x_i\text{}}):= P(X=x_i)$
 4. Loi d'une variable aleatoire: donnee par des reels $P(X=x_i)$
 5. *exercice*: modeliser le gain a un jeu de Pile ou Face a l'aide d'une VA (gain de 100 euros si le "Pile" et perte de 80 euros si "Face")
     - valeurs: 100 et -80
@@ -103,7 +103,7 @@ Prenons Clara et Nizar en cobayent avec leurs numero prefere
 1. some de $n$ variables independantes suivant une loi $B(p)$
 2. Nombre de succes apres $n$ repetitions d'une experience de Bernouilli
 3. VA $X$ pouvant prendre les valeurs entieres comprises entre 0 et $n$
-4. $P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}$ pour $k\in\text{\{}0,...,n\text{\}}$
+4. $P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}$ pour $k\in\text{{}0,...,n\text{}}$
 5. Loi notee $B(n,p)$
 6. $\binom{n}{k}$: coefficient binomial
 7. $E(X) = np$ et $V(X) = np(1-p)$

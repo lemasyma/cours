@@ -15,7 +15,7 @@ Pour une fonction $$\begin{aligned}f:\mathbb R&\to\mathbb R \\ x&\mapsto f(x)\en
 ![](https://i.imgur.com/g8T7u3z.png)
 
 $$
-Gr(f) = \text{\{}(x,f(x)), x\in\mathbb R\text{\}} \subseteq \mathbb R^2
+Gr(f) = \text{{}(x,f(x)), x\in\mathbb R\text{}} \subseteq \mathbb R^2
 $$
 
 Une droite affine est un sous-espace de dimension 1
@@ -24,8 +24,8 @@ Une droite affine est un sous-espace de dimension 1
 
 $$
 \begin{aligned}
-\color{red}{\mathcal T_{Gr(f), p}} &= (a,f(a)) + \color{red}{\underbrace{\text{\{}\lambda(1,f'(a)),\lambda\in\mathbb R\text{\}}}_{vect((1,f'(a))) = span((1,f'(a)))}}\\
-&= \text{\{}((a+\lambda), f(a) + \lambda f'(a),\lambda\mathbb R)\text{\}}\quad\text{representation parametrique de } \mathcal T_{Gr(f), p}
+\color{red}{\mathcal T_{Gr(f), p}} &= (a,f(a)) + \color{red}{\underbrace{\text{{}\lambda(1,f'(a)),\lambda\in\mathbb R\text{}}}_{vect((1,f'(a))) = span((1,f'(a)))}}\\
+&= \text{{}((a+\lambda), f(a) + \lambda f'(a),\lambda\mathbb R)\text{}}\quad\text{representation parametrique de } \mathcal T_{Gr(f), p}
 \end{aligned}
 $$
 
@@ -34,7 +34,7 @@ $Gr(f)$ $\to$ courbe $y=f(x)\equiv$ courbe $$\underbrace{f(x)-y}_{g(x,y)}=0$$
 On va introduire $$\begin{aligned}g:\mathbb R^2&\to\mathbb R \\ (x,y)&\mapsto f(x)-y \end{aligned}$$
 
 
-$Gr(f)$ $\to$ courbe $y=f(x)\equiv$ coubre $$\underbrace{f(x)-y}_{g(x,y)}=0 \equiv\text{\{}(x,y)\in\mathbb R^2, g(x,y) = 0\text{\}}=\mathcal C_0(g)$$
+$Gr(f)$ $\to$ courbe $y=f(x)\equiv$ coubre $$\underbrace{f(x)-y}_{g(x,y)}=0 \equiv\text{{}(x,y)\in\mathbb R^2, g(x,y) = 0\text{}}=\mathcal C_0(g)$$
 
 <div class="alert alert-success" role="alert" markdown="1">
 On passe a la courbe de niveau 0
@@ -73,7 +73,7 @@ Dans le cas general $f:\mathbb R^n\to\mathbb R$
 Notre "bol" est:
 
 $$
-Gr(f) = \text{\{}(x,y,f(x,y)), (x,y)\in\mathbb R^2\text{\}} \subseteq\mathbb R^3
+Gr(f) = \text{{}(x,y,f(x,y)), (x,y)\in\mathbb R^2\text{}} \subseteq\mathbb R^3
 $$
 
 On veut calculer l'espace tangent dans un point donne de l'espace
@@ -96,7 +96,7 @@ $$
 \begin{aligned}
 \mathcal T_{Gr(f), p} &= p + vect\biggr(\underbrace{(\overbrace{1,0}^{e_x},\frac{\partial f}{\partial x}(x_0, y_0)}_{\in\mathbb R^3}), \underbrace{(\overbrace{0,1}^{e_y},\frac{\partial f}{\partial y}(x_0,y_0))}_{\in\mathbb R^3}\biggr)\\
 &= p + vect\underbrace{((e_x, \frac{\partial f}{\partial x}), (e_y, \frac{\partial f}{\partial y}))}\\
-&\text{\{}\lambda(e_x, \frac{\partial f}{\partial x}) + \mu(e_y, \frac{\partial f}{\partial y}),(\lambda,\mu\in\mathbb R^2)\text{\}}
+&\text{{}\lambda(e_x, \frac{\partial f}{\partial x}) + \mu(e_y, \frac{\partial f}{\partial y}),(\lambda,\mu\in\mathbb R^2)\text{}}
 \end{aligned}
 $$
 
@@ -106,13 +106,13 @@ Le vrai cas general $f:\mathbb R^n\to\mathbb R$
 
 $$
 \mathcal T_{Gr(f)} = vect\biggr((e,\frac{\partial f}{\partial x_1}),...,(e_n,\frac{\partial f}{\partial x_i})\biggr)\quad\text{sous espace de dim }n\text{ d'un espace de dimension }n+1\\
-T_{Gr(f),p}=\text{\{}\lambda(e_1,\frac{\partial f}{\partial x_1}) + ... + \lambda_n(e_n,\frac{\partial f}{\partial x_n}), (\lambda_1,...,\lambda_n)\in\mathbb R^n\text{\}}
+T_{Gr(f),p}=\text{{}\lambda(e_1,\frac{\partial f}{\partial x_1}) + ... + \lambda_n(e_n,\frac{\partial f}{\partial x_n}), (\lambda_1,...,\lambda_n)\in\mathbb R^n\text{}}
 $$
 
 $Gr(f)=$ surface $y=f(x_1,...,x_n)$
 
 $$
-f(x_1,...,x_n)-y=0 \equiv \text{\{}(x_1,...,x_n,y)\text{ tel que } \underbrace{f(x_1,...,x_n)-y}_{g(x_1,...,x_n,y)}=0\text{\}} = \mathcal C_0(g)\\
+f(x_1,...,x_n)-y=0 \equiv \text{{}(x_1,...,x_n,y)\text{ tel que } \underbrace{f(x_1,...,x_n)-y}_{g(x_1,...,x_n,y)}=0\text{}} = \mathcal C_0(g)\\
 \begin{aligned}
 g:\mathbb R^{n+1}&\to\mathbb R\\
 (x_1,...,x_n,y) &\mapsto f(x_1,...,x_n)-y
@@ -120,7 +120,7 @@ g:\mathbb R^{n+1}&\to\mathbb R\\
 \nabla g(x,y) = (\frac{\partial g}{\partial x_1},...,\frac{\partial g}{\partial x_n},\frac{\partial g}{\partial y}) = (\frac{\partial f}{\partial x_1},...,\frac{\partial f}{\partial x_n},-1)
 $$
 
-**Implicitement:** $$\mathcal T_{C_0(g),p} = \text{\{}x\in\mathbb R^{n+1}, \nabla g^T x = 0\text{\}}$$
+**Implicitement:** $$\mathcal T_{C_0(g),p} = \text{{}x\in\mathbb R^{n+1}, \nabla g^T x = 0\text{}}$$
 
 ## Exercice
 
@@ -140,11 +140,11 @@ Soit $$\begin{aligned} f:\mathbb R^2&\to\mathbb R \\ (x,y)&\mapsto ax^2+by^2 \qu
 $$
 \begin{aligned}
 \mathcal T_{Gr(f), p} = vect\biggr(&\underbrace{(1,0,2ax), (0,1,2by)}_{}\biggr) + p\\
-\text{\{}\lambda(1,0,2ax) &+ \mu(0,1,2by), (\lambda,\mu)\in\mathbb R^2\text{\}} = {(\lambda,\mu,2ax\lambda + 2by\mu), (\lambda, \mu)\in\mathbb R^2}
+\text{{}\lambda(1,0,2ax) &+ \mu(0,1,2by), (\lambda,\mu)\in\mathbb R^2\text{}} = {(\lambda,\mu,2ax\lambda + 2by\mu), (\lambda, \mu)\in\mathbb R^2}
 \end{aligned}
 $$
 
-2.$\mathcal C_1(f) = \text{\{}(x,y)\in\mathbb R^2, f(x,y)=ax^2+by^2=1\text{\}}$
+2.$\mathcal C_1(f) = \text{{}(x,y)\in\mathbb R^2, f(x,y)=ax^2+by^2=1\text{}}$
 
 ![](https://i.imgur.com/ER4rStq.png)
 
@@ -162,12 +162,12 @@ $$
 
 $$
 \begin{aligned}
-\mathcal T_{\mathcal C_1(f),p} = p + \text{\{}(x,y), \nabla f(x_0, y_0)^T\begin{pmatrix}x \\ y \end{pmatrix} &= 0\text{\}}\\
+\mathcal T_{\mathcal C_1(f),p} = p + \text{{}(x,y), \nabla f(x_0, y_0)^T\begin{pmatrix}x \\ y \end{pmatrix} &= 0\text{}}\\
 (2ax_0, 2by_0)\begin{pmatrix}x \\ y \end{pmatrix} &= 0\\
 2ax_0x + 2by_0y &= 0\\
 y&=-\frac{ax_0}{by_0}x
 \end{aligned}\\
-\mathcal T_{\mathcal C_1(f),p} = (x_0, y_0) + \text{\{}(x,y)\in\mathbb R^2, \underbrace{y = -\frac{ax_0}{by_0}x}_{\nabla f(x_0, y_0)^T\begin{pmatrix}x \\ y \end{pmatrix} = 0}\text{\}}
+\mathcal T_{\mathcal C_1(f),p} = (x_0, y_0) + \text{{}(x,y)\in\mathbb R^2, \underbrace{y = -\frac{ax_0}{by_0}x}_{\nabla f(x_0, y_0)^T\begin{pmatrix}x \\ y \end{pmatrix} = 0}\text{}}
 $$
 
 3.*Ou est le minimum de $f$ ? Quel point minimise $ax^2 + by^2$ ?*

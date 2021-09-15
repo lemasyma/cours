@@ -113,7 +113,7 @@ $$
 P(\text{beau}) = 0.5 &\color{red}{\varnothing}\\
 P(\text{pourri}) = 0.3 &\color{red}{1}\\
 P(\text{couvert}) = 0.2 &\color{red}{2}
-\end{cases} \leftarrow P(T=t)\quad t\in{\text{\text{\{}beau}}, \text{pourri}, \text{couvert\text{\}}}
+\end{cases} \leftarrow P(T=t)\quad t\in{\text{\text{{}beau}}, \text{pourri}, \text{couvert\text{}}}
 $$
 
 |$0||`RANDMAX`|

@@ -36,8 +36,8 @@ Soit $a$ et $b$ deux reels tels que $a\le b$
 
 $$
 \begin{aligned}
-P(Y\in[a;b]) &= P(\text{\{}Y\in[a;b]\text{\}}\cap\text{\{}\varepsilon=-1\text{\}}) + P(\text{\{}Y\in[a;b]\text{\}}\cap\text{\{}\varepsilon=1\text{\}})\\
-&= P(\text{\{}-X\in[a;b]\text{\}}\cap\text{\{}\varepsilon=-1\text{\}}) + P(\text{\{}X\in[a;b]\text{\}}\cap\text{\{}\varepsilon=1\text{\}})
+P(Y\in[a;b]) &= P(\text{{}Y\in[a;b]\text{}}\cap\text{{}\varepsilon=-1\text{}}) + P(\text{{}Y\in[a;b]\text{}}\cap\text{{}\varepsilon=1\text{}})\\
+&= P(\text{{}-X\in[a;b]\text{}}\cap\text{{}\varepsilon=-1\text{}}) + P(\text{{}X\in[a;b]\text{}}\cap\text{{}\varepsilon=1\text{}})
 \end{aligned}
 $$
 
@@ -130,8 +130,8 @@ On pose $Z=X+Y$.
 
 $$
 \begin{aligned}
-P(Z\le z)&= P(\text{\{}Z\le z\text{\}}\cap\text{\{}\varepsilon=-1\text{\}})+P(\text{\{}Z\le z\text{\}}\cap\text{\{}\varepsilon=1\text{\}})\\
-&= P(\text{\{}0\le z\text{\}}\cap\text{\{}\varepsilon=-1\text{\}})+P(\text{\{}2X\le z\text{\}}\cap\text{\{}\varepsilon=1\text{\}})\text{ les v.a. sont independantes}
+P(Z\le z)&= P(\text{{}Z\le z\text{}}\cap\text{{}\varepsilon=-1\text{}})+P(\text{{}Z\le z\text{}}\cap\text{{}\varepsilon=1\text{}})\\
+&= P(\text{{}0\le z\text{}}\cap\text{{}\varepsilon=-1\text{}})+P(\text{{}2X\le z\text{}}\cap\text{{}\varepsilon=1\text{}})\text{ les v.a. sont independantes}
 \end{aligned}
 $$
 
