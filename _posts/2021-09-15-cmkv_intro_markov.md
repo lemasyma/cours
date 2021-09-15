@@ -4,6 +4,7 @@ date:           2021-09-15 14:00
 categories:     [Image S9, CMKV]
 tags:           [Image, SCIA, S9, CMKV, sudoku, pastis]
 description: Champs de Markov - Introduction aux Chaines de Markov
+math:            true
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJ8UMD1XY)
 
