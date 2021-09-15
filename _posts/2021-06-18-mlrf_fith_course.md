@@ -340,9 +340,9 @@ $$
 # Generative Probabilistic Models
 ## Some classical Generative Probabilistic Models
 
-Training data $X=\{x-1,\dots,x_n\}$, $Y=\{y_1,\dots,x_n\}$. $X\times Y\in\mathcal X\times\mathcal Y$
+Training data $X=\text{\{}x-1,\dots,x_n\text{\}}$, $Y=\text{\{}y_1,\dots,x_n\text{\}}$. $X\times Y\in\mathcal X\times\mathcal Y$
 
-For each $y\in\mathcal Y$, build model for $p(x\vert y)$ of $X_y:=\{x_i\in X:y_i=y\}$
+For each $y\in\mathcal Y$, build model for $p(x\vert y)$ of $X_y:=\text{\{}x_i\in X:y_i=y\text{\}}$
 
 - Histogram: if $x$ can have only a few discrete values
 - Kernel Density Estimator ![](https://i.imgur.com/ZIJ8gxo.png)

@@ -24,8 +24,8 @@ Un sous-espace vectoriel **est** un sous-espace affine.
 
 $$
 \begin{aligned}
-(D) &= \{x\in\mathbb R^n, X_0+\lambda\vec u,\lambda\in\mathbb R\}\\
-&= X_0+\{\lambda\vec u,\lambda\in\mathbb R\}\rightarrow\text{description parametrique}
+(D) &= \text{\{}x\in\mathbb R^n, X_0+\lambda\vec u,\lambda\in\mathbb R\text{\}}\\
+&= X_0+\text{\{}\lambda\vec u,\lambda\in\mathbb R\text{\}}\rightarrow\text{description parametrique}
 \end{aligned}
 $$
 
@@ -47,12 +47,12 @@ $$
 
 ![](https://i.imgur.com/9QUWj1X.png)
 $$
-\{x\text{ tel que } <x,n>=b\}\\
+\text{\{}x\text{ tel que } <x,n>=b\text{\}}\\
 \text{si je sais que } x_0\in(D), <x_0,n>=b\\
 \begin{aligned}
-\{x \text{ tel que }<x,n>=b=<x_0,n>&\}\\
-<x,n>-<x_0,n>=0&\}\\
-<x-x_0,n> = 0&\}
+\text{\{}x \text{ tel que }<x,n>=b=<x_0,n>&\text{\}}\\
+<x,n>-<x_0,n>=0&\text{\}}\\
+<x-x_0,n> = 0&\text{\}}
 \end{aligned}
 $$
 
@@ -69,14 +69,14 @@ x_n
 \end{pmatrix}&\mapsto f(x)
 \end{aligned}\\
 \begin{aligned}
-&\mathcal C_0=\{x\in\mathbb R^n\vert f(x)=0\}\\
-&\mathcal C_x=\{x\in\mathbb R^n\vert \underbrace{f(x)=x}_{g(x)=f(x)-r, \mathcal C_r(f)=\mathcal C_0(g)}\}\text{ courbe de niveau }x
+&\mathcal C_0=\text{\{}x\in\mathbb R^n\vert f(x)=0\text{\}}\\
+&\mathcal C_x=\text{\{}x\in\mathbb R^n\vert \underbrace{f(x)=x}_{g(x)=f(x)-r, \mathcal C_r(f)=\mathcal C_0(g)}\text{\}}\text{ courbe de niveau }x
 \end{aligned}
 $$
 
 Lieu de sous niveau
 $$
-\mathcal C_{\le r}(f)=\{x\in\mathbb R^n\vert f(x)\le r\}
+\mathcal C_{\le r}(f)=\text{\{}x\in\mathbb R^n\vert f(x)\le r\text{\}}
 $$
 
 ## Exemple
@@ -96,8 +96,8 @@ f:\mathbb R^2&\to\mathbb R\\
 (x,y)&\mapsto x^2+y^2
 \end{aligned}\\
 \begin{aligned}
-\mathcal C_0(f)&=\{(0,0)\}\\
-\mathcal C_1(f)&=\{(x,y)\in\mathbb R^2 \text{ tel que } x^2+y^2=1\}\Rightarrow\text{ cercle de rayon } 1\\
+\mathcal C_0(f)&=\text{\{}(0,0)\text{\}}\\
+\mathcal C_1(f)&=\text{\{}(x,y)\in\mathbb R^2 \text{ tel que } x^2+y^2=1\text{\}}\Rightarrow\text{ cercle de rayon } 1\\
 \mathcal C_2(f)&=\text{ cercle de rayon }\sqrt{2}
 \end{aligned}
 $$
@@ -115,7 +115,7 @@ $$
 Equation d'une ellipse de demi grand axe $a$ et demi petit axe $b$
 
 $$
-\{(x,y)\in\mathbb R^2\text{ tel que } (\frac{x}{a})^2+(\frac{y}{b})^2=1\}
+\text{\{}(x,y)\in\mathbb R^2\text{ tel que } (\frac{x}{a})^2+(\frac{y}{b})^2=1\text{\}}
 $$
 ![](https://i.imgur.com/QxEQGvv.png)
 
@@ -129,8 +129,8 @@ $$
 
 $$
 \begin{aligned}
-\mathcal C_0(g)&=\{(0,0)\}\\
-\mathcal C_1(g)&=\{(x,y)\in\mathbb R^2 \text{ tel que } \underbrace{x^2+4y^2=1}_{(\frac{x}{1})^2+(\frac{y}{\frac{1}{2}})^2=1}\}\\
+\mathcal C_0(g)&=\text{\{}(0,0)\text{\}}\\
+\mathcal C_1(g)&=\text{\{}(x,y)\in\mathbb R^2 \text{ tel que } \underbrace{x^2+4y^2=1}_{(\frac{x}{1})^2+(\frac{y}{\frac{1}{2}})^2=1}\text{\}}\\
 \mathcal C_2(g)&=\text{ de meme que }\mathcal C_1
 \end{aligned}
 $$
@@ -142,7 +142,7 @@ Surface definie apr les 2 branches d'une hyperbole $y\mapsto\frac{1}{x}$
 ![](https://i.imgur.com/pNes7aG.png)
 
 $$
-\{(x,y)\in\mathbb R^2, \underbrace{y=\frac{1}{x}}_{xy=1}\}\\
+\text{\{}(x,y)\in\mathbb R^2, \underbrace{y=\frac{1}{x}}_{xy=1}\text{\}}\\
 \begin{aligned}
 g:\mathbb R^2&\to\mathbb R\\
 (x,y)&\mapsto xy
@@ -156,7 +156,7 @@ $$
 Donc pour la decrire:
 
 $$
-\{(x,y)\in\mathbb R^2, xy\le1\}=\mathcal C_{\le1}(g)
+\text{\{}(x,y)\in\mathbb R^2, xy\le1\text{\}}=\mathcal C_{\le1}(g)
 $$
 </div>
 
@@ -168,7 +168,7 @@ f:\mathbb R&\to\mathbb R\\
 t&\mapsto f(t)
 \end{aligned}\\
 graph(f)\subset\mathbb R^2\\
-\{(t,f(t)),t\in\mathbb R\}\rightarrow\text{ ecriture parametrique}
+\text{\{}(t,f(t)),t\in\mathbb R\text{\}}\rightarrow\text{ ecriture parametrique}
 $$
 
 ![](https://i.imgur.com/hmzVeR1.png)
@@ -178,7 +178,7 @@ $$
 f:\mathbb R^2&\to\mathbb R\\
 (x,y)&\mapsto x^2+y^2
 \end{aligned}\\
-graph(f)=\{(x,y),f(x,y)),(x,y)\in\mathbb R^2\}
+graph(f)=\text{\{}(x,y),f(x,y)),(x,y)\in\mathbb R^2\text{\}}
 $$
 
 ![](https://i.imgur.com/1SUMFS4.png)
@@ -191,7 +191,7 @@ $$
 f:\mathbb R^n&\to\mathbb R\\
 t&\mapsto f(t)
 \end{aligned}\\
-graph(f)=\{(t,f(t)),t\in\mathbb R^n\}
+graph(f)=\text{\{}(t,f(t)),t\in\mathbb R^n\text{\}}
 $$
 </div>
 
@@ -202,17 +202,17 @@ Avec une ecriture parametrique, on peut se ramener a une ecriture implicite
 
 $$
 y=f(x)\Leftrightarrow f(x)-y=0\\
-graph(f)=\{(x,f(t)),x\in\mathbb R\}\\
+graph(f)=\text{\{}(x,f(t)),x\in\mathbb R\text{\}}\\
 \begin{aligned}
-graph(f) &= \{(x,y),x\in\mathbb R,y=f(x)\}\\
-&= \{(x,y), x\in\mathbb R\,\underbrace{f(x)-y}_{g(x,y)}=0\}\\
-&=\{(x,y), g(x,y)=0\}=\mathcal C_0(g)
+graph(f) &= \text{\{}(x,y),x\in\mathbb R,y=f(x)\text{\}}\\
+&= \text{\{}(x,y), x\in\mathbb R\,\underbrace{f(x)-y}_{g(x,y)}=0\text{\}}\\
+&=\text{\{}(x,y), g(x,y)=0\text{\}}=\mathcal C_0(g)
 \end{aligned}
 $$
 
 ## Epigraphe (au-dessus du graphe) d'une fonction $f$
 $$
-Epi(f) = \{(x,t),t\ge f(x)\}
+Epi(f) = \text{\{}(x,t),t\ge f(x)\text{\}}
 $$
 
 ![](https://i.imgur.com/QRdLsKH.png)
@@ -291,7 +291,7 @@ On appelle:
 
 $$
 A=[0;1[\to\begin{cases}
-    \delta A = \{\{0\};\{1\}\}\\
+    \delta A = \text{\{}\text{\{}0\text{\}};\text{\{}1\text{\}}\text{\}}\\
     \bar A = [0;1]\\
     \dot A = ]0;1[
 \end{cases}

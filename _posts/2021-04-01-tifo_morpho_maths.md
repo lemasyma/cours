@@ -149,7 +149,7 @@ L'erosion va venir "grignoter" l'objet blanc!
 On considere un element structurant $B_z$, avec une origine $z$. L'erosion est definie par:
 
 $$
-\epsilon(X)_B=\{z/B_z\in X\}
+\epsilon(X)_B=\text{\{}z/B_z\in X\text{\}}
 $$
 
 Une [video](https://www.youtube.com/watch?v=b5lgnNEzGeU) pour mieux comprendre
@@ -159,7 +159,7 @@ Une [video](https://www.youtube.com/watch?v=b5lgnNEzGeU) pour mieux comprendre
 
 En prenant les memes notations et ca devient:
 $$
-\delta(X)_B=\{z/B_z\cap X\neq\emptyset \}
+\delta(X)_B=\text{\{}z/B_z\cap X\neq\emptyset \text{\}}
 $$
 
 Une [video](https://www.youtube.com/watch?v=3IJ8RFtlDLY) pour mieux comprendre

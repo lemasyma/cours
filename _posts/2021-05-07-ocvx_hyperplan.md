@@ -162,8 +162,8 @@ $$
 (x,y) &\mapsto f(x)-y
 \end{aligned}\\
 \begin{aligned}
-z(\phi) = \{(x,y)\vert f(x)-y=0\} &= \{(x,y)\vert f(x)=y\}\\
-&= \{(x,f(x))\vert x\in\mathbb R\}\\
+z(\phi) = \text{\{}(x,y)\vert f(x)-y=0\text{\}} &= \text{\{}(x,y)\vert f(x)=y\text{\}}\\
+&= \text{\{}(x,f(x))\vert x\in\mathbb R\text{\}}\\
 &= \Gamma_f
 \end{aligned}
 $$

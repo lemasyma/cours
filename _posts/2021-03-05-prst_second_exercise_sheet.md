@@ -17,7 +17,7 @@ Montrer que la somme de n variables aléatoires indépendantes suivant une loi d
 
 <details markdown="1">
 <summary>Solution</summary>
-$1^{ere}$ etape: Fonction caracteristique de $\mathcal B(n,p)$, Pour $k\in\{0,1,2,...,n\}$
+$1^{ere}$ etape: Fonction caracteristique de $\mathcal B(n,p)$, Pour $k\in\text{\{}0,1,2,...,n\text{\}}$
 
 <div class="alert alert-danger" role="alert" markdown="1">
 $$
@@ -77,7 +77,7 @@ Point de logique: si le minimum est plus grand que $x$ alors les 2 sont plus grn
 </div>
 
 $$
-R_Y(x) = P(\{X_1\gt x\}\cap\{X_2\gt x\})
+R_Y(x) = P(\text{\{}X_1\gt x\text{\}}\cap\text{\{}X_2\gt x\text{\}})
 $$
 
 $X_1$ et $X_2$ sont independantes donc:
@@ -236,8 +236,8 @@ On pose, pour tout entier $n \ge 1$, $M_n := max(U_1, . . . , U_n)$ et $X_n = n(
 
 $$
 \begin{aligned}
-P(M_n\le x) &= P(max(U_1, . . . , U_n)\le x) = P(\{U_1\le x\}\cap...\cap\{U_n\le x\})\\
-&= \Pi_{k=1}^n P(\{U_k\le x\}) = (P(U_1\le x))^n\\
+P(M_n\le x) &= P(max(U_1, . . . , U_n)\le x) = P(\text{\{}U_1\le x\text{\}}\cap...\cap\text{\{}U_n\le x\text{\}})\\
+&= \Pi_{k=1}^n P(\text{\{}U_k\le x\text{\}}) = (P(U_1\le x))^n\\
 &= (F(x))^n
 \end{aligned}
 $$

@@ -14,7 +14,7 @@ Demontrer les proprietes suivantes dans le cas discret: Soient $X$ et $Y$ deux v
 <details markdown="1">
 <summary>Solution</summary>
 
-Soit $\omega_1,...,\omega_n$ les issues i.e. $\Omega = \{\omega_1;...;\omega_n\}$
+Soit $\omega_1,...,\omega_n$ les issues i.e. $\Omega = \text{\{}\omega_1;...;\omega_n\text{\}}$
 
 $$
 \begin{aligned}
@@ -80,10 +80,10 @@ $$
 Ainsi:
 
 $$
-P(X\gt n+k\vert X\gt k) = \frac{P(\{X=n+k\}\cap\{x\gt k\})}{P(X\gt k)}
+P(X\gt n+k\vert X\gt k) = \frac{P(\text{\{}X=n+k\text{\}}\cap\text{\{}x\gt k\text{\}})}{P(X\gt k)}
 $$
 
-Or $\{X=n+k\}\cap\{x\gt k\} = \{X\gt n+k\}$
+Or $\text{\{}X=n+k\text{\}}\cap\text{\{}x\gt k\text{\}} = \text{\{}X\gt n+k\text{\}}$
 
 D'ou:
 

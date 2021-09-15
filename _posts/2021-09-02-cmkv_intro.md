@@ -53,7 +53,7 @@ Il existe des programmes *stochastisques* **et** *deterministes*.
 > Oui. C'est dingue, hein ?
 
 $$
-\Omega=\{A,B,C,D\}\\
+\Omega=\text{\{}A,B,C,D\text{\}}\\
 \begin{cases}
 P(A)\in[0,1], \text{idem pour } B,C\text{ et } D\\
 P(A)+P(B)+P(C)+P(D) = 1
@@ -74,7 +74,7 @@ $$
 Maintenant avec la meteo:
 
 $$
-\Omega=\{\text{beau},\text{pluie},\text{couvert}\}\\
+\Omega=\text{\{}\text{beau},\text{pluie},\text{couvert}\text{\}}\\
 \begin{cases}
 P(\text{beau}) = 0.51\\
 P(\text{pluie}) = 0.01\\
@@ -315,7 +315,7 @@ $$
 \begin{matrix}
 P(A&\cap&B)\\
 \text{beau} &&\text{Londres}\\
-\text{temps} = \{\text{pourri, ...}\} &&\text{lieu} = \{\text{Londres, Paris, ...}\}
+\text{temps} = \text{\{}\text{pourri, ...}\text{\}} &&\text{lieu} = \text{\{}\text{Londres, Paris, ...}\text{\}}
 \end{matrix}
 $$
 
@@ -331,8 +331,8 @@ $$
 $$
 P(T=t\color{red}{\underbrace{,}_{\text{et}}}L=l)\color{green}{\equiv f(t,l)\in]\varnothing,1]}
 \begin{cases}
-t\in\{\text{beau, pourri,}\dots\}\\
-l\in\{\text{Londres, Paris,}\dots\}
+t\in\text{\{}\text{beau, pourri,}\dots\text{\}}\\
+l\in\text{\{}\text{Londres, Paris,}\dots\text{\}}
 \end{cases}
 $$
 

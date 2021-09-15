@@ -67,7 +67,7 @@ C'est un algo de *recuit simulé*
 On cherche le **minimum energetique**
 </div>
 
-|$\color{red}{\{2,4\}}$|$\color{red}{\{2,3,4\}}$|||
+|$\color{red}{\text{\{}2,4\text{\}}}$|$\color{red}{\text{\{}2,3,4\text{\}}}$|||
 |-|-|-|-|
 ||$\boxed{1}$|$\boxed{2}$||
 |||||
@@ -134,7 +134,7 @@ U(\begin{matrix}
 \end{matrix})
 $$
 
-|$\{2, 4\}$||||
+|$\text{\{}2, 4\text{\}}$||||
 |-|-|-|-|
 ||$\boxed{1}$|$\boxed{2}$||
 |||||
@@ -350,14 +350,14 @@ On veut que notre graphe soit le plus **incomplet possible**
 > cad avoir le moins de variables possibles
 
 $$
-P(X_{t+1}=x_{t+1}\vert \{X_u=x_u\}_{u\le t})=-(\{X_u=x_u\}_{u\in[t-h,t]})\\
+P(X_{t+1}=x_{t+1}\vert \text{\{}X_u=x_u\text{\}}_{u\le t})=-(\text{\{}X_u=x_u\text{\}}_{u\in[t-h,t]})\\
 $$
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Propriete Markovienne**
 
 $$
-P(X_i=x_i\vert \{X_j=x_j\}_{[1,N]\setminus {i}}) = P(X_i=x_i\vert \{X_j=x_j\}_{\text{ ou } j\in V(i)})
+P(X_i=x_i\vert \text{\{}X_j=x_j\text{\}}_{[1,N]\setminus {i}}) = P(X_i=x_i\vert \text{\{}X_j=x_j\text{\}}_{\text{ ou } j\in V(i)})
 $$
 
 </div>
