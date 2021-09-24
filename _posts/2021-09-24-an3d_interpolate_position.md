@@ -254,7 +254,7 @@ $$
 Plane $\mathcal P$: parameterized using a point $a$ and its normal $n$
 
 $$
-\{p\in\mathbb R^3\in]mathcal P\Rightarrow (p-1)\cdot n =0\}
+\{p\in\mathbb R^3\in\mathcal P\Rightarrow (p-1)\cdot n =0\}
 $$
 - Sphere above plane: $(p_i-1)\cdot n\gt r_i$
 - Sphere in collision: $(p_i-a)\cdot n\le r_i$
