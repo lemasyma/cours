@@ -239,6 +239,7 @@ $$
 \{(x,y)\text{ tq } \sqrt{x}+y=0\}\\
 = \mathcal C_0(g)
 $$
+
 Avec:
 
 $$
