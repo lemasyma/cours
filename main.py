@@ -27,7 +27,7 @@ def parseLines(lines: list[str], result: list[str], specialTags: list[bool]):
                 result.append(f'<div class="alert alert-{words[0]}" role="alert" markdown="1">')
                 specialTags.append(False)
             elif words[0] == 'spoiler':
-                result.append(f'<details markdown=""><summary>{" ".join(words[1:])}</summary>')
+                result.append(f'<details markdown="1"><summary>{" ".join(words[1:])}</summary>')
                 specialTags.append(True)
             else:
                 raise Exception(f'Unrecognised tag `{words[0]}`')
