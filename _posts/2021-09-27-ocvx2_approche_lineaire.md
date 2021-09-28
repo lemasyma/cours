@@ -23,7 +23,8 @@ $$
 3. On s'interesse au probleme d'optimisation $(P)$ minimiser $f_0(x,y)=2x+y$ sujet a $3x^2+y^2\le4$. Representer la courbe de niveau de la fonction objectif qui correspond a la valeur optimale de $(P)$
 4. Comment trouver le point optimal correspondant a $(P)$? Faire le calcul
 
-<details markdown=""><summary>Solution</summary>
+<details markdown="">
+<summary>Solution</summary>
 
 1.
 
@@ -44,7 +45,11 @@ $$
 \biggr(\frac{x}{a}\biggr)^2+\biggr(\frac{y}{b}\biggr)^2 =1
 $$
 
+
+
 ![](https://i.imgur.com/tjUnZER.png)
+
+
 
 </div>
 
@@ -75,7 +80,12 @@ Ellipse de:
 - demi grand axe $2$ sur $O_y$
 - demi petit axe $\frac{2}{\sqrt{3}}$ sur $O_y$
 
+
+
 ![](https://i.imgur.com/Ata2jUJ.png)
+
+
+
 > Zoli dessin
 
 2.
@@ -97,15 +107,21 @@ $$
 \vec n=\binom{2}{1}
 $$
 
+
 ![](https://i.imgur.com/yaDunl1.png)
+
 
 <div class="alert alert-success" role="alert" markdown="1">
 Pour minimiser, on part dans le sens inverse du vecteur normal.
 </div>
 
+
+
 ![](https://i.imgur.com/aKkXOd5.png)
 
-Notre point optimal: $p^{\*} = (x^{\*}, y^{\*})$
+
+
+Notre point optimal: $p^{*} = (x^{*}, y^{*})$
 
 $$
 p*\in\mathcal C_4(f)\Leftrightarrow 3x^{*^2}+y^{*^2}=4\\
@@ -114,7 +130,9 @@ $$
 
 Le gradient d'une fonction en un point donne est orthogonal a la courbe de niveau qui passe par ce point la.
 
+
 ![](https://i.imgur.com/a2Hia0V.png)
+
 
 En $p^{*}$:
 
@@ -158,7 +176,8 @@ On considere le probleme d'optimisation $(P)$ minimiser $f_0(x,y)=x+y$ sujet a $
 2. Representer la courbe de niveau $f_0$ qui realise le minimum de $(P)$
 3. Calculer le point optimal ainsi que la valeur optimale de $(P)$
 
-<details markdown=""><summary>Solution</summary>
+<details markdown="">
+<summary>Solution</summary>
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Rappel: Epigraphe**
@@ -173,26 +192,36 @@ $$
 
 1.
 
+
 ![](https://i.imgur.com/jST1Su2.png)
+
 
 $$
 x+2y-3=0 \quad (D)\\
 (3,0)\in D \\ \vec u=\binom{-2}{1}\\\vec n =\binom{1}{2}
 $$
 
+
 ![](https://i.imgur.com/76C9bSf.png)
+
 
 Avec la courbe $\mathcal C_0$:
 
+
 ![](https://i.imgur.com/UyExZB4.png)
 
-Avec $p^{\*}=(x^{\*}, y^{\*})$:
+
+Avec $p^{*}=(x^{*}, y^{*})$:
+
 
 ![](https://i.imgur.com/KRqYVKD.png)
 
+
 2.
 
+
 ![](https://i.imgur.com/AaGgkeQ.png)
+
 
 Le vecteur normal au graphe va etre colineaire au vecteur normal de notre courbe de niveau.
 
@@ -221,7 +250,7 @@ $$
 
 </div>
 
-Condition d'optimalite: en $p^{\*}=(x^{\*}, y^{\*})$,
+Condition d'optimalite: en $p^{*}=(x^{*}, y^{*})$,
 
 $$
 \nabla g(p^*) = \lambda \vec n_0\\
@@ -231,7 +260,7 @@ $$
 \end{aligned}
 $$
 
-En $p^{\*}$:
+En $p^{*}$:
 
 $$
 \begin{aligned}
