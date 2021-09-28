@@ -23,7 +23,7 @@ $$
 3. On s'interesse au probleme d'optimisation $(P)$ minimiser $f_0(x,y)=2x+y$ sujet a $3x^2+y^2\le4$. Representer la courbe de niveau de la fonction objectif qui correspond a la valeur optimale de $(P)$
 4. Comment trouver le point optimal correspondant a $(P)$? Faire le calcul
 
-<details markdown="">
+<details markdown="1">
 <summary>Solution</summary>
 
 1.
@@ -176,7 +176,7 @@ On considere le probleme d'optimisation $(P)$ minimiser $f_0(x,y)=x+y$ sujet a $
 2. Representer la courbe de niveau $f_0$ qui realise le minimum de $(P)$
 3. Calculer le point optimal ainsi que la valeur optimale de $(P)$
 
-<details markdown="">
+<details markdown="1">
 <summary>Solution</summary>
 
 <div class="alert alert-info" role="alert" markdown="1">
