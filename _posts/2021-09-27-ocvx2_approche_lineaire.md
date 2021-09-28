@@ -121,7 +121,7 @@ Pour minimiser, on part dans le sens inverse du vecteur normal.
 
 
 
-Notre point optimal: $p^{*} = (x^{*}, y^{*})$
+Notre point optimal: $p^{\*} = (x^{\*}, y^{\*})$
 
 $$
 p*\in\mathcal C_4(f)\Leftrightarrow 3x^{*^2}+y^{*^2}=4\\
@@ -134,7 +134,7 @@ Le gradient d'une fonction en un point donne est orthogonal a la courbe de nivea
 ![](https://i.imgur.com/a2Hia0V.png)
 
 
-En $p^{*}$:
+En $p^{\*}$:
 
 $$
 \nabla \vec f(p^*) = \lambda\vec n\\
@@ -211,7 +211,7 @@ Avec la courbe $\mathcal C_0$:
 ![](https://i.imgur.com/UyExZB4.png)
 
 
-Avec $p^{*}=(x^{*}, y^{*})$:
+Avec $p^{\*}=(x^{\*}, y^{\*})$:
 
 
 ![](https://i.imgur.com/KRqYVKD.png)
@@ -251,7 +251,7 @@ $$
 
 </div>
 
-Condition d'optimalite: en $p^{*}=(x^{*}, y^{*})$,
+Condition d'optimalite: en $p^{\*}=(x^{\*}, y^{\*})$,
 
 $$
 \nabla g(p^*) = \lambda \vec n_0\\
@@ -261,7 +261,7 @@ $$
 \end{aligned}
 $$
 
-En $p^{*}$:
+En $p^{\*}$:
 
 $$
 \begin{aligned}
