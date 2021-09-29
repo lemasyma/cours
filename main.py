@@ -39,7 +39,7 @@ def parseFile(source: str):
     with open(source, 'r') as f:
         lines = f.readlines()
         parseLines(lines, result, [])
-    with open(source + '.txt', 'w') as f:
+    with open(source, 'w') as f:
         f.write('\n'.join(result))
 
 
