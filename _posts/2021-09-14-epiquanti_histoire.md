@@ -7,6 +7,9 @@ description: Histoire et fondamentaux de la physique quantique
 ---
 
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJLHdapGt)
+
+[Slides de cours](https://www.oezratty.net/Files/Work/Olivier%20Ezratty%20Quantique%20EPITA%201%20Sept2021.pdf)
+
 # Agenda
 
 1. Histoire et fondamentaux de la physique quantique

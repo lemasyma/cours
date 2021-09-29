@@ -1,0 +1,118 @@
+---
+title:          "PRSTA: TD 1"
+date:           2021-09-22 14:30
+categories:     [Image S9, PRSTA]
+tags:           [Image, S9, PRSTA]
+description: TD 1
+---
+
+# Exercice 1
+
+Une variable aleatoire suit une loi normale de moyenne $m$ et de variance inconnue. Nous voulons tester l'hypothtese $H_0:m=1$ contre $H_1:m\gt 1$. Determiner la region critique de ce test pour $\alpha=5\%$
+
+<details markdown="1"><summary>Solution</summary>
+
+Sous $(H_0)$:
+
+$$
+T_n = \frac{\sqrt{n}(\bar X_n-1s)}{\sqrt{S_n^2}}\sim \mathcal T_{n-1}
+$$
+
+La zone d'acceptation: on rejette uniquement a droite, on accepte lorsque $$\{T_n\le t_{0.95}\}$$
+
+Zone de rejet: $$\{T_n\gt t_{0,95}\}$$
+</details>
+
+# Exercice 6
+
+Une variable aleatoire suit une loi de moyenne $2$ et de variance inconnue. Nous voulons tester l'hypothese $H_0:\sigma^2=2$ contre $H_1:\sigma^2\lt2$. Pour ce faire, nous disposons des observations: $1.2$, $2.1$, $1.7$, $2$, $3$, $7$, $0$ et $1$. Determiner la $P_{valeur}$ puis decider avec un risque d'erreur de premiere espece de $1\%$?
+
+<details markdown="1"><summary>Solution</summary>
+On obtient
+
+$$
+\begin{aligned}
+S_{n}^{*} &= \frac{1}{n}\sum_{i=1}^n(X_i-m)^2\\
+&= \frac{1}{8}(-(0.8)^2 + (0.1)^2 + (-0.3)^2 + 0 +1^2+5^2+(-2)^2+(-1)^2)\\
+&=3.9675
+\end{aligned}
+$$
+
+Nous obtenons:
+
+$$
+nS_n^{*} = 31,74\\
+$$
+
+Donc:
+
+$$
+\frac{nS_n^*}{2} = 15,87\\
+$$
+
+On a donc $\frac{nS_n^{*}}{\sigma}\sim\chi^2_8$
+
+$$
+P(\frac{nS_n^*}{2}\lt 15,87)\simeq 0.96\gt 0.01
+$$
+
+<div class="alert alert-success" role="alert" markdown="1">
+Donc l'hypothese $(H_0)$ n'est **pas rejetee.**
+</div>
+
+</details>
+
+# Exercice 8
+
+La variable aleatoire $X$ suit une loi exponentielle de parametre $\lambda$. Determiner la region critique du test $H_0:\lambda=1$ contre $H_1:\lambda=2$ pour un risque de premier espece.
+
+<details markdown="1"><summary>Solution</summary>
+
+$$
+X\sim \varepsilon(\lambda)\\
+$$
+- $H_0:\lambda=1$
+- $H_1:\lambda=2$
+
+$$
+\begin{aligned}
+T&=\frac{L(X_n,\dots,X_m,1)}{L(X_1,\dots,X_m,2)}\\
+&=\frac{\Pi_{i=1}^n1e^{-1X_i}}{\Pi_{i=1}^n2e^{-2X_i}}\\
+\end{aligned}
+$$
+
+*Quelle formulle appliquons-nous ?*
+> Un $\log$
+
+$$
+\begin{aligned}
+T&=\frac{e^{-\sum X_i}}{2e^{-2ZX_i}}\\
+&=\frac{1}{2^n}e^{\sum}
+\end{aligned}
+$$
+
+<div class="alert alert-success" role="alert" markdown="1">
+Rejet de $(H_0)$: $\{T\gt9\alpha\}$
+</div>
+
+$$
+\begin{aligned}
+T&\gt9\alpha\\
+\log(T)&\gt\log(9\alpha)\\
+-n\log(2)+\sum_{i=2}^nX_i&\gt\log(9\alpha)\\
+\sum_{i=1}^nX_i&\gt n\underbrace{\log(2)+\log(9\alpha)}_{\color{green}{c_{\alpha}}}
+\end{aligned}
+$$
+
+On a en region critique:
+
+$$
+\color{green}{\{\sum_{i=1}^nX_i\gt c_{\alpha}\}}
+$$
+
+Or
+
+$$
+\sum_{i=1}^n X_i\sim\gamma(n,1)
+$$
+</details>
