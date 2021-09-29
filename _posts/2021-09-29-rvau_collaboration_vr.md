@@ -186,7 +186,7 @@ Exemples:
 
 ## Exemple
 
-{%youtube OdNKtVJmv_I %}
+[Video](https://youtu.be/OdNKtVJmv_I)
 
 ## Telepresence
 
@@ -206,6 +206,6 @@ Si une personne est face a nous, on veut qu'elle nous regarde et pas a cote
 
 ## RV sociale
 
-{%youtube idcNiVseXic %}
+[FaceDisplay](https://youtu.be/idcNiVseXic)
 
-{%youtube YuIgyKLPt3s %}
+[Facebook Social VR Demo](https://youtu.be/YuIgyKLPt3s)
