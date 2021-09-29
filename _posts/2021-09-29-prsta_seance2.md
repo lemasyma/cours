@@ -1,118 +1,131 @@
 ---
-title:          "PRSTA: TD 1"
+title:          "PRSTA: Seance 2"
 date:           2021-09-29 14:30
 categories:     [Image S9, PRSTA]
 tags:           [Image, S9, PRSTA]
-description: TD 1
+description: Seance 2
 ---
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BySfn0W4t)
 
-# Exercice 1
-
-Une variable aleatoire suit une loi normale de moyenne $m$ et de variance inconnue. Nous voulons tester l'hypothtese $H_0:m=1$ contre $H_1:m\gt 1$. Determiner la region critique de ce test pour $\alpha=5\%$
-
-<details markdown="1"><summary>Solution</summary>
-
-Sous $(H_0)$:
-
-$$
-T_n = \frac{\sqrt{n}(\bar X_n-1s)}{\sqrt{S_n^2}}\sim \mathcal T_{n-1}
-$$
-
-La zone d'acceptation: on rejette uniquement a droite, on accepte lorsque $$\{T_n\le t_{0.95}\}$$
-
-Zone de rejet: $$\{T_n\gt t_{0,95}\}$$
-</details>
-
-# Exercice 6
-
-Une variable aleatoire suit une loi de moyenne $2$ et de variance inconnue. Nous voulons tester l'hypothese $H_0:\sigma^2=2$ contre $H_1:\sigma^2\lt2$. Pour ce faire, nous disposons des observations: $1.2$, $2.1$, $1.7$, $2$, $3$, $7$, $0$ et $1$. Determiner la $P_{valeur}$ puis decider avec un risque d'erreur de premiere espece de $1\%$?
-
-<details markdown="1"><summary>Solution</summary>
-On obtient
-
-$$
-\begin{aligned}
-S_{n}^{*} &= \frac{1}{n}\sum_{i=1}^n(X_i-m)^2\\
-&= \frac{1}{8}(-(0.8)^2 + (0.1)^2 + (-0.3)^2 + 0 +1^2+5^2+(-2)^2+(-1)^2)\\
-&=3.9675
-\end{aligned}
-$$
-
-Nous obtenons:
-
-$$
-nS_n^{*} = 31,74\\
-$$
-
-Donc:
-
-$$
-\frac{nS_n^*}{2} = 15,87\\
-$$
-
-On a donc $\frac{nS_n^{*}}{\sigma}\sim\chi^2_8$
-
-$$
-P(\frac{nS_n^*}{2}\lt 15,87)\simeq 0.96\gt 0.01
-$$
-
-<div class="alert alert-success" role="alert" markdown="1">
-Donc l'hypothese $(H_0)$ n'est **pas rejetee.**
+<div class="alert alert-info" role="alert" markdown="1">
+**Regle d'echantillon**
+A partir de nos observations, on decide si on rejette l'hypothese nulle ou non
 </div>
 
-</details>
+Retour de la taille des epiteens: on rejette cette hypothese s'il y a un eleve qui fait plus de $1m70$.
 
-# Exercice 8
+<div class="alert alert-info" role="alert" markdown="1">
+**Risque de premiere espece**
+$H_0$ soit vrai
+</div>
 
-La variable aleatoire $X$ suit une loi exponentielle de parametre $\lambda$. Determiner la region critique du test $H_0:\lambda=1$ contre $H_1:\lambda=2$ pour un risque de premier espece.
+<div class="alert alert-info" role="alert" markdown="1">
+**Risque de second espece**
+$H_1$ soit vrai alors qu'on garde $H_0$
+</div>
 
-<details markdown="1"><summary>Solution</summary>
+# Types de test
+
+- test parametriqueon-parametrique
+- test d'adequation
+- test de comparaison
+
+<div class="alert alert-info" role="alert" markdown="1">
+Si l'hypothese nulle n'est pas rejetee:
+- Elle n'est pas demontree pour autant
+- Elle n'est pas contredite par les faits
+</div>
+
+## Test de comparaison d'une proportion
+
+- Meme principe pour $n$ grand
 
 $$
-X\sim \varepsilon(\lambda)\\
-$$
-- $H_0:\lambda=1$
-- $H_1:\lambda=2$
-
-$$
-\begin{aligned}
-T&=\frac{L(X_n,\dots,X_m,1)}{L(X_1,\dots,X_m,2)}\\
-&=\frac{\Pi_{i=1}^n1e^{-1X_i}}{\Pi_{i=1}^n2e^{-2X_i}}\\
-\end{aligned}
+\sqrt{n}\frac{\hat p-p_0}{\sqrt{p_0(1-p_0)}}
 $$
 
-*Quelle formulle appliquons-nous ?*
-> Un $\log$
+## Test du rapport de vraisemblance
+
+- $H_0:\theta=\theta_0$ contre $H_1:\theta=\theta_1$
+- $\theta_0\lt\theta_1$
+
+Test de vraissemblance qui est le plus puissant
 
 $$
-\begin{aligned}
-T&=\frac{e^{-\sum X_i}}{2e^{-2ZX_i}}\\
-&=\frac{1}{2^n}e^{\sum}
-\end{aligned}
+T=\frac{L(X_1,...,X_n, \theta_1)}{L(X_1,...,X_n, \theta_0)}
 $$
 
 <div class="alert alert-success" role="alert" markdown="1">
-Rejet de $(H_0)$: $\{T\gt9\alpha\}$
+Rejet de $(H_0)$ ssi $T\gt S_{\alpha}$, ou $S_{\alpha}$ est un seuil qui depend du niveau de confiance $\alpha$
+</div>
+
+## Example
+
+- $X_i$ Poisson de parametre $\lambda$
+- $H_0:\lambda=\lambda_0$ contre $H_1:\lambda=\lambda_1$
+- $\lambda_0\le\lambda_1$ 
+
+Rejet de $H_0$ si
+
+$$
+\frac{\Pi_{i=1}^ne^{-\lambda_1}\frac{\lambda_1^{X_i}}{X_i!}}{\Pi_{i=1}^ne^{-\lambda_0}\frac{\lambda_0^{X_i}}{X_i!}}\gt S_{\alpha}\\
+-n(\lambda_1-\lambda_0)+\sum_{i=1}^nX_i(\log(\lambda_1)-\log(\lambda_2))\gt\log S_{\alpha}\\
+\sum_{i=1}^nX_i(\log(\lambda_1)-\log(\lambda_0))\gt \log(S_{\alpha})+n(\lambda_1-\lambda_0)\\
+\sum_{i=1}^nX_i\gt\underbrace{\frac{\log(S_{\alpha})+n(\lambda_1-\lambda_0)}{(\log(\lambda_1)-\log(\lambda_0))}}_{\color{blue}{n\alpha}}
+$$
+
+Rejet de $H_0$ si $\sum_{i=1}^n{x_i} > \nu_{\alpha}$
+
+### Exemple:
+
+- $n=2$, $\lambda_1=1$, $\lambda_2=2$, $\alpha=0,05$
+- Sous $H_0$, $Y=X_1+X_2$ suit une loi $\mathcal P(2)$
+- Si $\mu_{\alpha}\in]0;1]$, $\mathbb P(X_1+X_2\gt\mu_{\alpha})=1-\mathbb P(Y=0)\simeq 0.865$
+
+### Suite de l'exemple precedent
+
+<div class="alert alert-info" role="alert" markdown="1">
+Rappel : 
+- **fonction caractérique** (SAVOIR FAIRE) d'une loi X est $\phi(t) = E(e^{itX})$ 
+- Pour une loi de Poisson, $P(X=k) = \frac{\lambda^k}{k!}e^{-\lambda}$
 </div>
 
 $$
 \begin{aligned}
-T&\gt9\alpha\\
-\log(T)&\gt\log(9\alpha)\\
--n\log(2)+\sum_{i=2}^nX_i&\gt\log(9\alpha)\\
-\sum_{i=1}^nX_i&\gt n\underbrace{\log(2)+\log(9\alpha)}_{\color{green}{c_{\alpha}}}
+\phi_x(t)&=\sum_{k\ge0}e^{itk}P(X=k)\\
+&= \sum_{k\ge 0}e^{itk}e^{-\lambda}\frac{\lambda^k}{k!}\\
+&= e^{-\lambda}\sum_{k\ge 0}\frac{(\lambda e^{it})^k}{k!}  \text{ : serie}\\
+&=e^{-\lambda}e^{\lambda e^{it}}
+\end{aligned}\\
+\color{red}{\boxed{\phi_x(t)=e^{\lambda (e^{it}-1)}}}
+$$
+
+*Loi de $X_1+X_2$ ?*
+
+$$
+\phi_{X_1+X_2}=\phi_{X_1}(t)\phi_{X_2}(t)
+$$
+
+car $X_1$ et $X_2$ sont independantes
+Or $X_1$ et $X_2$ même loi donc même fonction caractérique, donc:
+$$
+\begin{aligned}
+\phi_{X_1+X_2}&=\phi_{X_1}(t)^2\\
+&=e^{(e^{it}-1)^2}\\
+&= e^{2(e^{it}-1)}
 \end{aligned}
 $$
 
-On a en region critique:
+- Continuer jusqu'a la premiere valeur inferieure a $0.05$
+- Si $\mu_{\alpha}\in]3;4]$, $\mathbb P(X_1+X_2\gt\mu_{\alpha})=1-\mathbb P(Y\le 3)\simeq 0.0527$ donc $\alpha=0.0527$
+- Si $\mu_{\alpha}\in]4;5]$, $\mathbb P(X_1+X_2\gt\mu_{\alpha})=1-\mathbb P(Y\le 3)\simeq 0.0166$ donc $\alpha=0.0166$
+- Test le plus puissant de risque $\alpha \le 0.05$: rejet de $H_0$ si $x_1 + x_2 > 5$
 
-$$
-\color{green}{\{\sum_{i=1}^nX_i\gt c_{\alpha}\}}
-$$
+## Exemple
 
-Or
+1. $H_0:m=m_0$ contre $H_1:m=m_1$ ou $X$ suit une loi $\mathcal N(m,1)$ et $m_0\le m_1$
+2. A. N.: $m_0=1$ et $m_1=2$
+3. Calculer $\alpha$
+4. Calculer $\beta$
 
-$$
-\sum_{i=1}^n X_i\sim\gamma(n,1)
-$$
-</details>
+**A RENDRE 1er et 2eme EXO DE REFLEXION (moodle)**
