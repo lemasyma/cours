@@ -15,8 +15,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1LAUibEK)
 Le but: visualiser une maquette
 - Chaque personne a sa position autour de la table
 - Maquette tournante sur la table
-- Chaque utilisateur puisse le voir sous tout ses angles
-- Un pointeur par utilisateurs
+    - Chaque utilisateur puisse le voir sous tout ses angles
+    - Un pointeur par utilisateurs 
 
 ## Collaboration asymetrique
 
@@ -24,10 +24,10 @@ Le but: visualiser une maquette
 
 - Une personne imergee avec son casque
 - Une personne exterieure sur une tablette
-- Z-space: ecran stereo (3D)
-- Stylet permet d'interagir
-- Position
-- Orientation
+    - Z-space: ecran stereo (3D)
+    - Stylet permet d'interagir
+        - Position
+        - Orientation
 - La personne portant le casque peut voir ce qui est pointe par la personne sur la tablette
 
 # Indy: chasse au tresor virtuelle et collaborative dans un batiment reacteur
@@ -60,20 +60,20 @@ Deux roles parmis les apprenants:
 ![](https://i.imgur.com/poOVMu0.png)
 
 1. Le formateur cree la chasse
-- Interface pour selectionner le point de depart ![](https://i.imgur.com/CU3WyIV.png)
-- Type de chasse
-- Pointage d'un equipement (ex: trouver un equipement particulier)
-- Presence dans une zone (ex: trouver la sortie)
+    - Interface pour selectionner le point de depart ![](https://i.imgur.com/CU3WyIV.png)
+    - Type de chasse
+        - Pointage d'un equipement (ex: trouver un equipement particulier)
+        - Presence dans une zone (ex: trouver la sortie)
 2. Les stagiaires preparent la chasse
-- Ils se regroupent sur le PC du radio ![](https://i.imgur.com/aOQRNng.png)
+    - Ils se regroupent sur le PC du radio ![](https://i.imgur.com/aOQRNng.png)
 3. La chasse
-- chasseurs immerges et radio a cote ![](https://i.imgur.com/4dLy97v.png)
-- POV du radio
-- Plan 2D
-- Possibilite de passer dans la 3D ![](https://i.imgur.com/ZgIowsk.png)
-- Quand le radio est en 3D, il peut voir l'avatar des autres mais ne peut pas etre vu
-- Il doit etre capable de verbaliser les instructions
-- Le formateur voit les positions de toute le monde ![](https://i.imgur.com/SvJYbzk.png)
+    - chasseurs immerges et radio a cote ![](https://i.imgur.com/4dLy97v.png)
+    - POV du radio
+        - Plan 2D
+        - Possibilite de passer dans la 3D ![](https://i.imgur.com/ZgIowsk.png)
+    - Quand le radio est en 3D, il peut voir l'avatar des autres mais ne peut pas etre vu
+        - Il doit etre capable de verbaliser les instructions
+    - Le formateur voit les positions de toute le monde ![](https://i.imgur.com/SvJYbzk.png)
 4. Les chasseurs pointent l'objectif
 5. Fin de la chasse ![](https://i.imgur.com/UZVoRFa.png)
 6. Debriefing
@@ -87,9 +87,9 @@ Visualisation de la maquette:
 
 # La Smart Home en RV mobile
 
-<div class="alert alert-info" role="alert" markdown="1">
+:::info
 Affichage centralise et partage entre plusieur peersonnes dans le cadre de la Smart Home sur smartphone
-</div>
+:::
 
 Generalisable:
 - Creer, visualiser et partager des annotations contextualisees/geolocalisees comme des signes d'avertissement, communication, historique d'evenements...
