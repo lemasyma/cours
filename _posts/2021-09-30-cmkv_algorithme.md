@@ -20,8 +20,7 @@ Evaluation : projet
 
 On fait une marche aléatoire 
 ```
-T_
-∅ <- ?
+T_∅ <- ?
 loop i_cond <- ?
     tirage
 ```
