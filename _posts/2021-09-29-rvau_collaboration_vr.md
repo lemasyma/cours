@@ -209,3 +209,15 @@ Si une personne est face a nous, on veut qu'elle nous regarde et pas a cote
 [FaceDisplay](https://youtu.be/idcNiVseXic)
 
 [Facebook Social VR Demo](https://youtu.be/YuIgyKLPt3s)
+
+{% raw %}
+```liquid
+{%youtbe idcNiVseXic%}
+```
+{% endraw %}
+
+{% raw %}
+```liquid
+{%youtbe YuIgyKLPt3s%}
+```
+{% endraw %}
