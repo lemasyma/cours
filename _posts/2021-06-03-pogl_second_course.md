@@ -3,6 +3,7 @@ title:          "POGL: Second class"
 date:           2021-06-02 14:00
 categories:     [Image S8, POGL]
 tags:           [Image, POGL, S8]
+math: true
 description: Second class
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkKwUBU5O)

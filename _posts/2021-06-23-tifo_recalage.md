@@ -3,6 +3,7 @@ title:          "TIFO: Cours recalage"
 date:           2021-06-23 10:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, recalage]
+math: true
 description: Recalage d'images
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByK2KPghO)

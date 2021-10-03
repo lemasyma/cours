@@ -3,6 +3,7 @@ title:          "IRGPU: Patterns for massively parallel programming"
 date:           2021-05-05 14:00
 categories:     [Image S8, IRGPU]
 tags:           [Image, S8, IRGPU]
+math: true
 description: Patterns for massively parallel programming
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkmdFZed_)

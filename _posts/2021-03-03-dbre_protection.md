@@ -3,6 +3,7 @@ title:          "DBRE: Conditions de la protection"
 date:           2021-03-03 12:00
 categories:     [tronc commun S8, DBRE]
 tags:           [tronc commun, DBRE, S8]
+math: true
 description: Conditions de la protection
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJKX-y6Md)

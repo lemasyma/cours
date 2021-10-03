@@ -3,6 +3,7 @@ title:          "DBRE: Regime de droit"
 date:           2021-03-31 12:00
 categories:     [tronc commun S8, DBRE]
 tags:           [tronc commun, DBRE, S8]
+math: true
 description: Regime de droit
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJ68T3-SO)

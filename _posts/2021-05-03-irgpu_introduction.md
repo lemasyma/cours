@@ -3,6 +3,7 @@ title:          "IRGPU: Introduction"
 date:           2021-05-03 10:00
 categories:     [Image S8, IRGPU]
 tags:           [Image, S8, IRGPU]
+math: true
 description: Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryMz0maDu)

@@ -3,6 +3,7 @@ title:          "ISIM: Rendu temps reel"
 date:           2021-03-08 9:00
 categories:     [Image S8, ISIM]
 tags:           [Image, ISIM, S8, clipping, backface culling, polygone, eclairage]
+math: true
 description: Rendu temps reel
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Bkqe98XXd)

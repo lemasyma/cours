@@ -3,6 +3,7 @@ title:          "PRSTA: Seance 1"
 date:           2021-09-22 14:30
 categories:     [Image S9, PRSTA]
 tags:           [Image, S9, PRSTA]
+math: true
 description: Seance 1
 ---
 

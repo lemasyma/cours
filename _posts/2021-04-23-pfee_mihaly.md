@@ -3,6 +3,7 @@ title:          "PFEE - Sujet 1: Mihaly"
 date:           2021-04-23 11:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Mihaly
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByPAjWxPu)

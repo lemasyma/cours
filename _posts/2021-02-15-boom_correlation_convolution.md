@@ -3,6 +3,7 @@ title:          "BOOM: La correlation et la convolution"
 date:           2021-02-15 10:00
 categories:     [Image S8, BOOM]
 tags:           [Image, BOOM, S8]
+math: true
 description: La correlation et la convolution
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJkzI2wWu)

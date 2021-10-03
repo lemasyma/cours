@@ -3,6 +3,7 @@ title:          "PFEE : Presentation Sujet 4 Zeiss/EPITA"
 date:           2021-04-22 14:45
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Presentation Sujet 4 Zeiss/EPITA
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkL1DJJDu)

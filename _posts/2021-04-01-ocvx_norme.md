@@ -3,6 +3,7 @@ title:          "OCVX: Norme"
 date:           2021-04-01 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Norme
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1R87WmB_)

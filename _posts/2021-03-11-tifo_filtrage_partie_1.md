@@ -3,6 +3,7 @@ title:          "TIFO: Filtrage, partie 1"
 date:           2021-03-11 14:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, lissage, debruitage, laplacien, convolution, bords]
+math: true
 description: Filtrage, partie 1
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H13CJ2vm_)

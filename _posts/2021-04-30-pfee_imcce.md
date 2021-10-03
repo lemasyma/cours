@@ -3,6 +3,7 @@ title:          "PFEE - Sujet 2: IMCCE - Caviar"
 date:           2021-04-30 15:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Caviar
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJFWetKDO)

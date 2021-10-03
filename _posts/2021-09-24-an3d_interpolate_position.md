@@ -3,6 +3,7 @@ title:          "AN3D: Interpolate position"
 date:           2021-09-24 10:00
 categories:     [Image S9, AN3D]
 tags:           [Image, S9, AN3D]
+math: true
 description: Interpolate position
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkfLOWsmF)

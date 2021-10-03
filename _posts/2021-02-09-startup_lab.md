@@ -3,6 +3,7 @@ title:          "StartUp Lab"
 date:           2021-02-09 11:00
 categories:     [tronc commun S8, StartUp Lab]
 tags:           [tronc commun, StartUp Lab, S8]
+math: true
 description: Presentation du StartUp Lab
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1PUCRy-d)

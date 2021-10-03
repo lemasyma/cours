@@ -3,6 +3,7 @@ title:          "CAMA : ma02 Changement de repere"
 date:           2020-03-30 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Changement de repere
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B10HZBBhI)

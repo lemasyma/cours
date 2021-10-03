@@ -3,6 +3,7 @@ title:          "AN3D: Bases du rendu graphique"
 date:           2021-09-23 10:00
 categories:     [Image S9, AN3D]
 tags:           [Image, S9, AN3D]
+math: true
 description: Bases du rendu graphique
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1Tywht7t)

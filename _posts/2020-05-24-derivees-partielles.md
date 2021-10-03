@@ -3,6 +3,7 @@ title:          "CAMA : Derivees partielles"
 date:           2020-05-24 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Fiche sur les derivees partielles
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1n_qIMhU)

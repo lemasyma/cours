@@ -3,6 +3,7 @@ title:          "PFEE GE Healthcare 2"
 date:           2021-02-04 16:15
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Synthèse et recalage par deep learning d’images radiographiques de l’abdomen et du thorax.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByQTRFKg_)

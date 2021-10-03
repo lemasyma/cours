@@ -3,6 +3,7 @@ title:          "PBR: Real-time Implementation"
 date:           2021-09-17 10:00
 categories:     [Image S9, PBR]
 tags:           [Image, S9, PBR]
+math: true
 description: Real-time Implementation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BykhvaZXK)
@@ -173,6 +174,7 @@ $$
 $$
 f_d(p,\omega_0,\omega_i) = \frac{\rho}{\pi}
 $$
+
 - $\rho$: reflectance spectrum
 
 ![](https://i.imgur.com/D4TjB54.png)
@@ -192,6 +194,7 @@ $$
 D_{GGX}(n,h,a)=\frac{\alpha^2}{\pi((n\times h)^2(\alpha^2-1)+1)^2}\\
 \vec h=\frac{\vec v+\vec L}{\Vert\vec v+\vec L\Vert}
 $$
+
 - Normal distribution function $D(\omega_0, \omega_i)$
 - Estimates the area of microfacets aligned to give perfect specular
 - As usual, lots of different NDF equations...
@@ -208,6 +211,7 @@ $$
 G(n,v,l,k)=\underbrace{G_{SchlickGGX}(n,v,k)}_{Obstruction}\underbrace{G_{Schlik}(n,l,k)}_{Shadowing}\\
 G_{SchlickGGX}(n,v,k)=\frac{n\times v}{(n\times v)(1-k)+k}
 $$
+
 - On va approximer $k=\alpha$
 - Approximation de l'occlusion
 
@@ -236,6 +240,7 @@ F_{Schlik}(v,h,f_0,f_{90}) = f_0+(f_{90}-f_0)(1-v\times h)^5\\
 F_{Schlik}(v,h,f_0) = f_0+(1-f_0)(1-v\times h)^5\\
 F_0(ior)=\frac{(1-ior)^2}{(ior+1)^2}
 $$
+
 - $f_0$: base reflectivity at normal incidence
 - $f_{90}$: base reflectivity at grazing angle
     - Almost always 1 for conductors
@@ -337,7 +342,7 @@ $$
 
 $$
 L_0(p,n)=\int_{\Omega}\frac{\rho}{\pi}L_i(p,\omega_i)n\times\omega_id\omega_i\\
-L_0(p,n)=\frac{\rho}{\pi}\int_{\Omega}L_i(p,\omega_i)n\times\omega_id\omega_i\\
+L_0(p,n)=\frac{\rho}{\pi}\int_{\Omega}L_i(p,\omega_i)n\times\omega_id\omega_i
 $$
 
 Il faut faire une integration par angle solide, et c'est complique.
@@ -375,6 +380,7 @@ $$
 &+\int_{\Omega}f_r(p,\omega_0,\omega_i)(1-\omega_0\times h)^5n\times\omega_id\omega_i
 \end{aligned}
 $$
+
 > Obtained bu substituting Fresnel Shlick
 > Only 2 inputs left: roughness, viewing angle
 
@@ -423,9 +429,11 @@ HDR: High Dynamic Range
 </div>
 
 Reinhard Tonemapping:
+
 $$
 color_{final}=\frac{c}{c+1}
 $$
+
 - HDR has larger range of values
 - Units will create radiance color outside the $0\dots1$ range
 - Perform computation in HDR, tonemap to LDR is required

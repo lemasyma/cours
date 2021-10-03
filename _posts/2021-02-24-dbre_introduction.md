@@ -3,6 +3,7 @@ title:          "DBRE: Introduction"
 date:           2021-02-24 11:00
 categories:     [tronc commun S8, DBRE]
 tags:           [tronc commun, DBRE, S8]
+math: true
 description: Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkBV8jmMO)

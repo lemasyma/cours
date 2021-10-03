@@ -3,6 +3,7 @@ title:          "TIFO: Codage, partie 1 - couleurs et representations"
 date:           2021-02-19 9:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8]
+math: true
 description: Codage, partie 1 - couleurs et representations
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkY00xJM_)

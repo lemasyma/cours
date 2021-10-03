@@ -3,6 +3,7 @@ title:          "MLRF: Lecture 05"
 date:           2021-06-18 10:00
 categories:     [Image S8, MLRF]
 tags:           [Image, SCIA, MLRF, S8]
+math: true
 description: Lecture 05
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Hy2LfRFju)

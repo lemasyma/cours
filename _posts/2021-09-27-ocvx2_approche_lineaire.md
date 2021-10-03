@@ -3,6 +3,7 @@ title:          "OCVX2: Approche lineaire"
 date:           2021-09-27 14:00
 categories:     [Image S9, OCVX2]
 tags:           [Image, SCIA, S9, OCVX2]
+math: true
 description: Approche lineaire
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1x-NEyNY)

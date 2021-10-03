@@ -3,6 +3,7 @@ title:          "MLRF: Lecture 04"
 date:           2021-06-04 10:00
 categories:     [Image S8, MLRF]
 tags:           [Image, SCIA, MLRF, S8]
+math: true
 description: Lecture 04
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJj638vqd)

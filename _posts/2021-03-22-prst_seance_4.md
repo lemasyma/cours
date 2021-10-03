@@ -3,6 +3,7 @@ title:          "PRST: Seance 4 - Intervalle de confiance"
 date:           2021-03-22 10:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, Student, Khi-deux, intervalle, confiance]
+math: true
 description: Seance 4 - Intervalle de confiance
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJLY0RrEu)

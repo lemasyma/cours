@@ -3,6 +3,7 @@ title:          "CAMA : ma05 Vectors propres -- Applications"
 date:           2020-03-30 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Vectors propres -- Applications
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkKm0wR2L)

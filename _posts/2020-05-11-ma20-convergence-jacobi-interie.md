@@ -3,6 +3,7 @@ title:          "CAMA : ma20 Convergence de Jacobi avec inertie"
 date:           2020-05-11 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Convergence de Jacobi avec inertie
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rygt1_MT8)

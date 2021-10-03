@@ -3,6 +3,7 @@ title:          "ALGOREP: Global Snapshot"
 date:           2021-09-13 14:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
+math: true
 description: Global Snapshot.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJ5JePQMY)

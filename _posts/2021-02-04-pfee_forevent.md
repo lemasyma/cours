@@ -3,6 +3,7 @@ title:          "PFEE ForEvent"
 date:           2021-02-04 14:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Optimisation et développement de filtres graphiques avancés pour des team building et animations.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1oFydYgu)

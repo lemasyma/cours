@@ -3,6 +3,7 @@ title:          "Open Source: Comprendre, Contribuer"
 date:           2021-02-10 9:00
 categories:     [tronc commun S8, Open Source]
 tags:           [tronc commun, Open Source, S8]
+math: true
 description: Comprendre, Contribuer
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJxdQGZWO)

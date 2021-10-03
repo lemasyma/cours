@@ -3,6 +3,7 @@ title:          "OCVX: TD Differentielle"
 date:           2021-04-15 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: TD Differentielle
 ---
 

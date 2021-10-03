@@ -3,6 +3,7 @@ title:          "IMCO: Describing color"
 date:           2021-09-09 14:00
 categories:     [Image S9, IMCO]
 tags:           [Image, S9, IMCO]
+math: true
 description: Describing color
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByH7S8wGt)

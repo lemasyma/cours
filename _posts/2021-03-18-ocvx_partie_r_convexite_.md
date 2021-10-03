@@ -3,6 +3,7 @@ title:          "OCVX: Parties de R et convexite"
 date:           2021-03-18 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Parties de R et convexite
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1Q325eE_)

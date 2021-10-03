@@ -3,6 +3,7 @@ title:          "OCVX: Differentielles (le retour)"
 date:           2021-04-12 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Differentielles (le retour)
 ---
 

@@ -3,6 +3,7 @@ title:          "OCVX2: Optimisation sous contrainte par la methode des multipli
 date:           2021-09-27 16:00
 categories:     [Image S9, OCVX2]
 tags:           [Image, SCIA, S9, OCVX2]
+math: true
 description: Optimisation sous contrainte par la methode des multiplicateurs de Lagrangre et conditions KKT
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJVxl8kVt)

@@ -3,6 +3,7 @@ title:          "IMCO: Processing Color"
 date:           2021-09-16 14:00
 categories:     [Image S9, IMCO]
 tags:           [Image, S9, IMCO]
+math: true
 description: Processing Color
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkBS7nl7F)

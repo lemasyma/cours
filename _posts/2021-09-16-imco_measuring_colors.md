@@ -3,6 +3,7 @@ title:          "IMCO: Measuring Color"
 date:           2021-09-16 10:00
 categories:     [Image S9, IMCO]
 tags:           [Image, S9, IMCO]
+math: true
 description: Measuring Color
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1Bb5OxXt)

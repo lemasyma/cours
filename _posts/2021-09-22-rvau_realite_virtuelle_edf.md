@@ -3,6 +3,7 @@ title:          "RVAU: Realite virtuelle pour la maintenance industrielle"
 date:           2021-09-22 11:00
 categories:     [Image S9, RVAU]
 tags:           [Image, S9, RVAU]
+math: true
 description: Realite virtuelle pour la maintenance industrielle
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJrB4O_QF)

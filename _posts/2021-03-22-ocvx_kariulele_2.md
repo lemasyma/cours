@@ -3,6 +3,7 @@ title:          "OCVX: Optimisation Convexe 2"
 date:           2021-03-22 21:20
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Optimisation Convexe 2
 ---
 Notes de ce cours par [Kariulele](https://github.com/kariulele) et Bjorn (Un grand merci a eux!)

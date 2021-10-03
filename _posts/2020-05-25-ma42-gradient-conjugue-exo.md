@@ -3,6 +3,7 @@ title:          "CAMA : ma42 - Gradient conjugué"
 date:           2020-05-25 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Programmer le gradient conjugué
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkKafe6Jv)

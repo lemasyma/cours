@@ -3,6 +3,7 @@ title:          "TIFO: Introduction a la morphologie mathematique, partie 2"
 date:           2021-04-02 9:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, morphologie mathematique, niveau de gris, minima, maxima, watershed]
+math: true
 description: Introduction a la morphologie mathematique, partie 2
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkxBXHEHO)

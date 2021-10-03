@@ -3,6 +3,7 @@ title:          "IMED: Histoire et enjeux"
 date:           2021-04-08 14:30
 categories:     [Image S8, IMED]
 tags:           [Image, IMED, S8, histoire, imagerie medicale]
+math: true
 description: Histoire et enjeux
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BkmgY_2Su)

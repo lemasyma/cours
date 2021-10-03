@@ -3,6 +3,7 @@ title:          "ISIM: Rendu photorealiste 2"
 date:           2021-02-22 11:00
 categories:     [Image S8, ISIM]
 tags:           [Image, ISIM, S8]
+math: true
 description: Rendu photorealiste
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkloGbZzd)

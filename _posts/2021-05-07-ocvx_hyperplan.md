@@ -3,6 +3,7 @@ title:          "OCVX: Hyperplan d'appui"
 date:           2021-05-07 10:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Hyperplan d'appui
 ---
 

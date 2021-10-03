@@ -3,6 +3,7 @@ title:          "ISIM: La modelisation"
 date:           2021-03-11 9:00
 categories:     [Image S8, ISIM]
 tags:           [Image, ISIM, S8, maillage, surface, polygone, animation]
+math: true
 description: La modelisation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Sk1TyUPm_)

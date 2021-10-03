@@ -3,6 +3,7 @@ title:          "PRST: Feuille de revisions"
 date:           2021-03-29 10:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
+math: true
 description: Feuille de revisions
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1lvOYyHu)

@@ -3,6 +3,7 @@ title:          "OCVX2: Programme Lineaires"
 date:           2021-09-20 10:00
 categories:     [Image S9, OCVX2]
 tags:           [Image, SCIA, S9, OCVX2]
+math: true
 description: Programme Lineaires
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryqrFeUXF)

@@ -3,6 +3,7 @@ title:          "IREN: Retropropagation du gradient"
 date:           2021-03-23 11:00
 categories:     [Image S8, IREN]
 tags:           [Image, Sante, IREN, S8, réseaux neuronnaux]
+math: true
 description: Retropropagation du gradient
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkbsAQDN_)

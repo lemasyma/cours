@@ -3,6 +3,7 @@ title:          "ALGOREP: What is Model-Checking ? How to build a Model Checker 
 date:           2021-09-20 14:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
+math: true
 description: What is Model-Checking ? How to build a Model Checker ?
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryqrFeUXF)

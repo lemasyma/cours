@@ -3,6 +3,7 @@ title:          "ASE2: Convergence et estimation - 2"
 date:           2021-03-10 9:30
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8, convergence, normale, gamma, poisson, loi, Mac-Laurin, Moivre-Laplace, central limite]
+math: true
 description: Convergence et estimation - 2
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJjhGXImd)

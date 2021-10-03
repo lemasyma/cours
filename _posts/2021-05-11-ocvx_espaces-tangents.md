@@ -3,6 +3,7 @@ title:          "OCVX: Espaces tangents"
 date:           2021-05-11 9:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Espaces tangents
 ---
 

@@ -3,6 +3,7 @@ title:          "DBRE: Representation et reproduction"
 date:           2021-03-24 12:00
 categories:     [tronc commun S8, DBRE]
 tags:           [tronc commun, DBRE, S8]
+math: true
 description: Representation et reproduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HyL_l9dVO)

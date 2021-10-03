@@ -3,6 +3,7 @@ title:          "Reunion rentree"
 date:           2021-02-01 11:00
 categories:     [tronc commun S8, Rentree]
 tags:           [S8, tronc commun]
+math: true
 description: Reunion de rentree avec Joel Courtois, Christian Dujardin et Claire Lecoq
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkZtmUHxu)

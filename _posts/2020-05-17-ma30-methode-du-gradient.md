@@ -3,6 +3,7 @@ title:          "CAMA : ma30"
 date:           2020-05-17 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Optimisation - Méthode du gradient
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1XbIPb3U)

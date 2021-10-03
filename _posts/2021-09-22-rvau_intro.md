@@ -3,6 +3,7 @@ title:          "RVAU: Introduction a la Realite Virtuelle"
 date:           2021-09-22 10:00
 categories:     [Image S9, RVAU]
 tags:           [Image, S9, RVAU]
+math: true
 description: Introduction a la Realite Virtuelle
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rknFhLOQF)

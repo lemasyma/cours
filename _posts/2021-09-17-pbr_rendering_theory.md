@@ -3,6 +3,7 @@ title:          "PBR: Rendering Theory"
 date:           2021-09-17 09:00
 categories:     [Image S9, PBR]
 tags:           [Image, S9, PBR]
+math: true
 description: Rendering Theory
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1r4A2ZXF)
@@ -80,6 +81,7 @@ Interferences constructives: quand la lumiere va changer de milieu, il y a le pr
 $$
 Q=\frac{hc}{\lambda}
 $$
+
 - $h$: constant de Planck
 - $c$: speed of light
 - $\lambda$: wavelength
@@ -126,6 +128,7 @@ Area of a projected shape onto the Unit Sphere
 $$
 I=\frac{d\phi}{d\omega}
 $$
+
 - $\phi$: power
 - $\omega$: angle
 

@@ -3,6 +3,7 @@ title:          "TIFO: Introduction a la morphologie mathematique"
 date:           2021-04-01 14:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, morphologie mathematique, dilatation, erosion, ouverture, fermeture, composition, connexe]
+math: true
 description: Introduction a la morphologie mathematique
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryxvuEmr_)

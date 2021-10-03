@@ -3,6 +3,7 @@ title:          "TIFO: Codage, partie 2 - Histogramme"
 date:           2021-02-19 10:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8]
+math: true
 description: Codage, partie 2 - Histogramme
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJ8B9TJz_)

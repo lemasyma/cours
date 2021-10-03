@@ -3,6 +3,7 @@ title:          "CMKV: Implementation d'algorithme"
 date:           2021-09-30 09:00
 categories:     [Image S9, CMKV]
 tags:           [Image, SCIA, S9, CMKV, sudoku, pastis]
+math: true
 description: Implementation d'algorithme
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rytKW1QEF)
@@ -150,6 +151,7 @@ On a un tableau de valeurs $x_{candidat}$ de longueur $L$:
 
 | $\dots$ | $a_i$ | $\dots$ |
 | ------- | ----- |:-------:|
+|         |       |         |
 
 $L$ est tres grand et nombre premier
 
@@ -247,6 +249,7 @@ Un graphe complet que l'on reduit aux voisins permet de reduire la dependance de
 $$
 P(X=x)=\Pi_{\text{c clique}}\phi(x_c)
 $$
+
 - $\phi(x_c)$: fonction potentiel pour la clique $c$
 
 ![](https://i.imgur.com/D1HeI0H.png)
@@ -259,6 +262,7 @@ P(X=x)&=\frac{1}{Z}e^{-U(x)}\\
 &= \frac{1}{Z}e^{-\sum_{c}E_c(x_c)}
 \end{aligned}
 $$
+
 - Avec $U_c=\phi_c$ fonction potentielle pour la clique $c$
  
 Modele graphique qui est un champs de Gibbs ?
@@ -306,11 +310,13 @@ $$
 $$
 U_2(\underbrace{x_i,x_j}_{\text{ordre }2} = 1_{x_i\neq x_j})
 $$
+
 Avec $i$ et $j$:
 - voisins
 - independants
 
 Definissons $U_L$
+
 $$
 U_L(x_i,y_i) = \begin{cases}
 255-y_i&\text{si } x_i=\text{blanc et } j\text{ voisins et inde}\\

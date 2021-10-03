@@ -3,6 +3,7 @@ title:          "ISIM: Rappels"
 date:           2021-02-18 9:00
 categories:     [Image S8, ISIM]
 tags:           [Image, ISIM, S8]
+math: true
 description: Rappels
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkrIFCi-d)

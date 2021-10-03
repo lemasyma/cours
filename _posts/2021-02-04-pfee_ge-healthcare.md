@@ -3,6 +3,7 @@ title:          "PFEE GE Healthcare: Deep Learning Inpainting"
 date:           2021-02-04 15:30
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Complétion (inpainting) par deep learning dans les séquences d'images rayons X.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BksdVYKxO)

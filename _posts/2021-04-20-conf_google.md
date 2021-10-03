@@ -3,6 +3,7 @@ title:          "Conference Google: Construire des solutions plus intelligentes 
 date:           2021-04-20 14:00
 categories:     [Image S8, conference]
 tags:           [Image, conference, S8]
+math: true
 description:    Construire des solutions plus intelligentes sans expertise en machine learning
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJm6fBnI_)

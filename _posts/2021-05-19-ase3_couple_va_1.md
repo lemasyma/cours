@@ -3,6 +3,7 @@ title:          "ASE3: Couple de variables aleatoires discretes et analyse des d
 date:           2021-05-19 9:00
 categories:     [tronc commun S8, ASE3]
 tags:           [tronc commun, ASE3, S8, couple]
+math: true
 description: Couple de variables aleatoires discretes et analyse des donnees - 2
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJVEcNGFO)

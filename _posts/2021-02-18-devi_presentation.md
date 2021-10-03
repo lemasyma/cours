@@ -3,6 +3,7 @@ title:          "DEVI: Presentation"
 date:           2021-02-18 13:00
 categories:     [Image S8, DEVI]
 tags:           [Image, DEVI, S8]
+math: true
 description: Presentation
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkrIFCi-d)

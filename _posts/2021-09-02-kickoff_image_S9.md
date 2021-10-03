@@ -3,6 +3,7 @@ title:          "Kickoff Image"
 date:           2021-09-02 10:00
 categories:     [Image S9, Kickoff]
 tags:           [Image, S9]
+math: true
 description: Presentation de la majeure Image pour le nouveau semestre.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkGQvWC-Y)

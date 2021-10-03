@@ -3,6 +3,7 @@ title:          "PFEE - Sujet 7: DXOMARK - Custom QT Video Player"
 date:           2021-04-26 16:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Custom QT Video Player
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJFNvHNDu)

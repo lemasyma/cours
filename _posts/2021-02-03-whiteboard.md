@@ -3,6 +3,7 @@ title:          "Whiteboard in VR"
 date:           2021-02-03 10:15
 categories:     [Image S8, RVAU]
 tags:           [Image, S8, RVAU]
+math: true
 description: Projet de Realite Virtuelle et AUgmentee
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ry73wJ_lu)

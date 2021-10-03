@@ -3,6 +3,7 @@ title:          "Epee et fusee"
 date:           2021-02-03 12:15
 categories:     [Image S8, RVAU]
 tags:           [Image, S8, RVAU]
+math: true
 description: Projet de Realite Virtuelle et AUgmentee
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJQArWOl_)

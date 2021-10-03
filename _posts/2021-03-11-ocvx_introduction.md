@@ -3,6 +3,7 @@ title:          "OCVX: Introduction"
 date:           2021-03-11 13:00
 categories:     [Image S8, OCVX]
 tags:           [Image, SCIA, OCVX, S8]
+math: true
 description: Introduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SyU52FvX_)

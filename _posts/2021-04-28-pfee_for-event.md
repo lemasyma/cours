@@ -3,6 +3,7 @@ title:          "PFEE - Sujet 3: Projet for event"
 date:           2021-04-28 14:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Projet for event
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryqvCT8D_)

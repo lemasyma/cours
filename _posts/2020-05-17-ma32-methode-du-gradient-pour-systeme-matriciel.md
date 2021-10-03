@@ -3,6 +3,7 @@ title:          "CAMA : ma32 ma32 Méthode du gradiant pour système matriciel"
 date:           2020-05-17 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Méthode du gradiant pour système matriciel
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1p26Wl2U)

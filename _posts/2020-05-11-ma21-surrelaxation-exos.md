@@ -3,6 +3,7 @@ title:          "CAMA : ma21 - Exercice"
 date:           2020-05-11 11:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Exercice sur la surrelaxation pour Gauss-Seidel
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/S1lilka1D)

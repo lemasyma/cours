@@ -3,6 +3,7 @@ title:          "PRSTA: Seance 2"
 date:           2021-09-29 14:30
 categories:     [Image S9, PRSTA]
 tags:           [Image, S9, PRSTA]
+math: true
 description: Seance 2
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BySfn0W4t)

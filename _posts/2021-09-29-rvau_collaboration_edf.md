@@ -3,6 +3,7 @@ title:          "RVAU: Collaboration en RV chez EDF"
 date:           2021-09-29 11:00
 categories:     [Image S9, RVAU]
 tags:           [Image, S9, RVAU]
+math: true
 description: Collaboration en RV chez EDF
 ---
 

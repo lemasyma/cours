@@ -3,6 +3,7 @@ title:          "IML: Supervised learning"
 date:           2021-04-16 14:00
 categories:     [Image S8, IML]
 tags:           [Image, SCIA, IML, S8]
+math: true
 description:    Supervised learning
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HknU58EIO)

@@ -3,6 +3,7 @@ title:          "CAMA : ma01 Transformations isometriques"
 date:           2020-03-30 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Transformations isometriques
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rk6uMXBnL)

@@ -3,6 +3,7 @@ title:          "TIFO: Introduction a la morphologie mathematique, exemples"
 date:           2021-04-02 10:00
 categories:     [Image S8, TIFO]
 tags:           [Image, TIFO, S8, morphologie mathematique]
+math: true
 description: Introduction a la morphologie mathematique, exemples
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HyoakLVr_)

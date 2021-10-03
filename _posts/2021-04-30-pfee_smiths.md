@@ -3,6 +3,7 @@ title:          "PFEE - Sujet 6.1 et 6.2: Smiths group"
 date:           2021-04-30 15:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Smiths group
 ---
 Lien de la [1ere note Hackmd](https://hackmd.io/@lemasymasa/BkKNDSEw_)

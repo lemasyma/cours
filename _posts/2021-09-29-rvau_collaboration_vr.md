@@ -3,6 +3,7 @@ title:          "RVAU: Collaboration en Realite Virtuelle"
 date:           2021-09-29 09:00
 categories:     [Image S9, RVAU]
 tags:           [Image, S9, RVAU]
+math: true
 description: Collaboration en Realite Virtuelle
 ---
 

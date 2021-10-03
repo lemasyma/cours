@@ -3,6 +3,7 @@ title:          "ASE3: Analyse en composantes principales"
 date:           2021-06-09 09:00
 categories:     [tronc commun S8, ASE3]
 tags:           [tronc commun, ASE3, S8, ACP]
+math: true
 description:    Analyse en composantes principales
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJwkEJC9u)

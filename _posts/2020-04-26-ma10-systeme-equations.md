@@ -3,6 +3,7 @@ title:          "CAMA : ma10 Système d'équations"
 date:           2020-04-26 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description:  Système d'équations
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryhz1KA3U)

@@ -3,6 +3,7 @@ title:          "PRST: Feuille 4 - Exercices"
 date:           2021-03-22 11:00
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8,  loi, intervalle, confiance]
+math: true
 description: Feuille 4 - Exercices
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJekRCBEu)

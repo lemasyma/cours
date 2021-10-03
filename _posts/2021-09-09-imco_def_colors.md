@@ -3,6 +3,7 @@ title:          "IMCO: Defining colors"
 date:           2021-09-09 10:00
 categories:     [Image S9, IMCO]
 tags:           [Image, S9, IMCO]
+math: true
 description: Defining colors
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BysKxrvGY)

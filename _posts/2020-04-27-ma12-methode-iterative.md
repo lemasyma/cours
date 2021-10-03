@@ -3,6 +3,7 @@ title:          "CAMA : ma12 Méthodes itératives"
 date:           2020-04-27 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Méthodes itératives
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByMD5LGTL)

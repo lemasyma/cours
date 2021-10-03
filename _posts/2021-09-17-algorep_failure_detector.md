@@ -3,6 +3,7 @@ title:          "ALGOREP: How to build a Failure Detectors"
 date:           2021-09-13 14:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
+math: true
 description: How to build a Failure Detectorst.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Sy0dEWzmK)

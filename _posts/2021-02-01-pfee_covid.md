@@ -3,6 +3,7 @@ title:          "PFEE Vesselness Covid"
 date:           2021-02-01 16:00
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description:  Segmentation de vaisseaux sanguins pour diagnostic de coronavirus.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1t1q9Beu)

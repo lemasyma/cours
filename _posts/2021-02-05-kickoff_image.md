@@ -3,6 +3,7 @@ title:          "Kickoff Image"
 date:           2021-02-05 9:30
 categories:     [Image S8, Kickoff]
 tags:           [Image, S8]
+math: true
 description: Presentation de la majeure Image aux nouveaux arrivants.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJIxzY9ed)

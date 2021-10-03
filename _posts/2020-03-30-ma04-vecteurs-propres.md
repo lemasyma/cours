@@ -3,6 +3,7 @@ title:          "CAMA : ma04 Vecteurs propres"
 date:           2020-03-30 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Vecteurs propres
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HkSoByuhU)

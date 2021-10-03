@@ -3,6 +3,7 @@ title:          "PRST: Feuille 3 - Exercice"
 date:           2021-03-10 14:30
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8, loi, estimateur, poisson, normale, geometrique, pareto, uniforme]
+math: true
 description: Feuille 3 - Exercice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SygaNL8X_)

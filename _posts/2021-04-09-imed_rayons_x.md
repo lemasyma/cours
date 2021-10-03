@@ -3,6 +3,7 @@ title:          "IMED: Les Rayons X"
 date:           2021-04-09 10:00
 categories:     [Image S8, IMED]
 tags:           [Image, IMED, S8, histoire, imagerie medicale]
+math: true
 description: Les Rayons X
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1NGiYaBO)

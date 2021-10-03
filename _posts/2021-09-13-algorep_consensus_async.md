@@ -3,6 +3,7 @@ title:          "ALGOREP: Concensus for Asynchronous Systems"
 date:           2021-09-13 16:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
+math: true
 description: Concensus for Asynchronous Systems.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJtNyyTMt)

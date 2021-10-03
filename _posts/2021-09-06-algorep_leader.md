@@ -3,6 +3,7 @@ title:          "ALGOREP: Leader Election"
 date:           2021-09-06 9:00
 categories:     [Image S9, ALGOREP]
 tags:           [Image, SCIA, S9, AlGOREP]
+math: true
 description: Leader Election.
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByqOGjJfY)

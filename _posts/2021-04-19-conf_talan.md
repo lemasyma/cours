@@ -3,6 +3,7 @@ title:          "Conference Talan"
 date:           2021-04-19 14:00
 categories:     [Image S8, conference]
 tags:           [Image, conference, S8]
+math: true
 description:    Conference Talan
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJm6fBnI_)

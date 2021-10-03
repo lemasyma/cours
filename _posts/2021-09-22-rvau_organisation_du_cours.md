@@ -3,6 +3,7 @@ title:          "RVAU: Organisation du cours"
 date:           2021-09-22 09:00
 categories:     [Image S9, RVAU]
 tags:           [Image, S9, RVAU]
+math: true
 description: Organisation du cours
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HyFfUUuXF)

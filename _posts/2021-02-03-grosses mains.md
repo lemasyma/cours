@@ -3,6 +3,7 @@ title:          "Le Projet Grosses Mains"
 date:           2021-02-03 10:00
 categories:     [Image S8, RVAU]
 tags:           [Image, S8, RVAU]
+math: true
 description: Projet de Realite Virtuelle et AUgmentee
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ByzSVy_gd)

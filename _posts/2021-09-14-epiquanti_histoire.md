@@ -3,6 +3,7 @@ title:          "EPIQUANTI : Histoire et fondamentaux de la physique quantique"
 date:           2021-09-14 9:00
 categories:     [tronc commun S9, EPIQUANTI]
 tags:           [tronc commun, EPIQUANTI, S9]
+math: true
 description: Histoire et fondamentaux de la physique quantique
 ---
 

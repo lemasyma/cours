@@ -2,6 +2,7 @@
 layout: post
 title: "Partiels Shannon"
 date: 2020-06-30 00:05
+math: true
 description: Emploi du temps des partiels Shannon
 tags: [Shannon, partiels]
 ---

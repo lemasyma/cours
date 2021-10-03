@@ -3,6 +3,7 @@ title:          "CAMA : ma03 Matrice Camera"
 date:           2020-03-30 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Matrice Camera
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rJDGOYDhL)

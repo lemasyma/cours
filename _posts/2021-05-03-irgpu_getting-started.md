@@ -3,6 +3,7 @@ title:          "IRGPU:  Getting started with CUDA"
 date:           2021-05-03 14:00
 categories:     [Image S8, IRGPU]
 tags:           [Image, S8, IRGPU]
+math: true
 description:  Getting started with CUDA
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkfdcPavd)

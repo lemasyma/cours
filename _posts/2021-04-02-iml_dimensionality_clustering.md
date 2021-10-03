@@ -3,6 +3,7 @@ title:          "IML: Unsupervised clustering"
 date:           2021-04-02 13:00
 categories:     [Image S8, IML]
 tags:           [Image, SCIA, IML, S8, clustering]
+math: true
 description:    Unsupervised clustering
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HJmN9d4Su)

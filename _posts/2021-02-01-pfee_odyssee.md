@@ -3,6 +3,7 @@ title:          "PFEE RORPO"
 date:           2021-02-01 15:30
 categories:     [Image S8, PFEE]
 tags:           [Image, S8, PFEE]
+math: true
 description: Implémentation C++ et Python et intégration à une bibliothèque de traitement d'images
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkZNb5HgO)

@@ -3,6 +3,7 @@ title:          "CAMA : ma33 - Gradient pour résoudre Ax = b -- Exercice"
 date:           2020-05-17 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: La méthode du gradient pour résoudre A x = b
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1XUcypyD)

@@ -3,6 +3,7 @@ title:          "CAMA : ma11 Conditionnement d'une matrice"
 date:           2020-04-27 10:00
 categories:     [S6, Shannon, CAMA]
 tags:           [S6, CAMA, Shannon]
+math: true
 description: Conditionnement d'une matrice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/HyLZWmfa8)

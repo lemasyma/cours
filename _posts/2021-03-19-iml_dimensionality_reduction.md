@@ -3,6 +3,7 @@ title:          "IML: Dimensionality reduction"
 date:           2021-03-19 13:00
 categories:     [Image S8, IML]
 tags:           [Image, SCIA, IML, S8, principal component analysis]
+math: true
 description:    Dimensionality reduction
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1ZhGffNO)

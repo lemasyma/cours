@@ -3,6 +3,7 @@ title:          "ASE2: Convergence et estimation - 4"
 date:           2021-03-24 9:00
 categories:     [tronc commun S8, ASE2]
 tags:           [tronc commun, ASE2, S8, loi, binomial, poisson, normale]
+math: true
 description: Convergence et estimation - 4
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1rOQcdEu)

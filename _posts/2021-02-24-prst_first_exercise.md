@@ -3,6 +3,7 @@ title:          "PRST: Feuille 1 - Exercice"
 date:           2021-02-24 15:30
 categories:     [Image S8, PRST]
 tags:           [Image, SCIA, PRST, S8]
+math: true
 description: Feuille 1 - Exercice
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1o44y4Md)
