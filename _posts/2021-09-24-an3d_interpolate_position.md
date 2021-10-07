@@ -8,6 +8,8 @@ description: Interpolate position
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/rkfLOWsmF)
 
+[Site du prof](https://imagecomputing.net/damien.rohmer/teaching/epita-ani3d/)
+
 # Animation in Computer Graphics
 
 2 main ways to describe animation

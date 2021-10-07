@@ -8,6 +8,7 @@ description: Bases du rendu graphique
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1Tywht7t)
 
+[Site du prof](https://imagecomputing.net/damien.rohmer/teaching/epita-ani3d/)
 # Contexte
 
 On a l'habitude de voir des models 3D virtuels
