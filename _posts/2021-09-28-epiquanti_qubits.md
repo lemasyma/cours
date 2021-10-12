@@ -11,6 +11,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SkrIHYx4t)
 
 Lien du [livre du prof](https://www.oezratty.net/wordpress/2021/understanding-quantum-technologies-2021/)
 
+[Slide du cours](https://www.oezratty.net/Files/Work/Olivier%20Ezratty%20Quantique%20EPITA%202%20Sept2021.pdf)
+
 # Grotrian diagram
 
 ![](https://i.imgur.com/WAzXA3j.png)

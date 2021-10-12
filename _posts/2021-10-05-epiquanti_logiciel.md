@@ -11,6 +11,8 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJRoAnFEt)
 
 Lien du [livre du prof](https://www.oezratty.net/wordpress/2021/understanding-quantum-technologies-2021/)
 
+[Slide du cours](https://www.oezratty.net/Files/Work/Olivier%20Ezratty%20Quantique%20EPITA%203%20Sept2021.pdf)
+
 # Registers 
  
 | **n bits register**                      | **n qubits register**                         |
