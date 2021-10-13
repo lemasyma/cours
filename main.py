@@ -8,9 +8,10 @@ def parseLines(lines: list[str], result: list[str], specialTags: list[bool]):
             raise Exception('Found non-ending tag(s) !')
         return
 
-    line = lines.pop(0).strip()
+    rawLine = lines.pop(0)
+    line = rawLine.strip()
     if line[0:3] != ':::':
-        result.append(line)
+        result.append(rawLine)
     else:
         line = line[3:].strip()
         words = [word for word in line.split(' ') if word]
