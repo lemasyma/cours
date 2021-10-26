@@ -20,15 +20,15 @@ def parseLines(lines: list[str], result: list[str], specialTags: list[bool]):
                 raise Exception("Found no matching closing separator !")
             specialTag = specialTags.pop()
             if not specialTag:
-                result.append('</div>')
+                result.append('</div>\n')
             else:
-                result.append('</details>')
+                result.append('</details>\n')
         else:
             if words[0] in {'info', 'warning', 'danger', 'success' }:
-                result.append(f'<div class="alert alert-{words[0]}" role="alert" markdown="1">')
+                result.append(f'<div class="alert alert-{words[0]}" role="alert" markdown="1">\n')
                 specialTags.append(False)
             elif words[0] == 'spoiler':
-                result.append(f'<details markdown="1"><summary>{" ".join(words[1:])}</summary>')
+                result.append(f'<details markdown="1"><summary>{" ".join(words[1:])}</summary>\n')
                 specialTags.append(True)
             else:
                 raise Exception(f'Unrecognised tag `{words[0]}`')
@@ -41,7 +41,7 @@ def parseFile(source: str):
         lines = f.readlines()
         parseLines(lines, result, [])
     with open(source, 'w') as f:
-        f.write('\n'.join(result))
+        f.write(''.join(result))
 
 
 if __name__ == '__main__':

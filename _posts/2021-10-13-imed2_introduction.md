@@ -1,731 +1,331 @@
 ---
-
-title:          "TVID: 2D Motion Estimation"
-
-date:           2021-10-25 10:00
-
-categories:     [Image S9, TVID]
-
-tags:           [Image, S9, TVID]
-
+title:          "IMED2: Introduction"
+date:           2021-10-13 16:00
+categories:     [Image S9, IMED2]
+tags:           [Image, S9, IMED2]
 math: true
-
 ---
 
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/H1FoSk4UK)
+# Agenda
+
+1. Introduction to Medical Imaging
+    - What is medical imaging ?
+    - Roles, Players, Modalities
+    - Anatomical vs Functional Imaging
+    - Ionizing vs Non-ionizing Radiation
+3. Nuclear medicine
+    - Basic concepts
+
+# Tomorrow
+1. X-ray Physics
+    - Basic concepts
+    - X-ray production
+    - X-ray interaction with matter
+    - X-ray detectors
+3. Diagnostic Radiology
+
+# GE Healthcare
+
++1800 employees
+- R&D ($35\%$)
+- Production ($22\%$)
+- European Center for Maintenance ($16\%$)
+- Support Functions & Other ($27\%$)
+
+![](https://i.imgur.com/pGHOGOh.png)
+
+# Introduction
+## A recent history
+
+- 1895: discory of X-rays, first applications
+- 1958: First gamma camera, Nuclear Medicine
+- 1962: First UV of fetus
+- 1967: First CET head scanner
+- 1972: First head MR scanner
+- 1990: first PET scanner
+
+![](https://i.imgur.com/waIYHCb.png)
+
+- 2000's-2010's: Digital Age
+    - IA
+
+# What is medical imaging ?
+
+## Process
+![](https://i.imgur.com/UCgOLoA.png)
+
+## Roles
+![](https://i.imgur.com/kq2vis2.png)
+
+## Players
+
+*Who are diagnostic imaging customers ?*
+- Healthcar systemes, hospitals, and clinics
+- Governmnent officials
+- Pharmaceutical firms
+- Genetics & Bio-science researchers
+
+## Modalities overview
+
+![](https://i.imgur.com/193JGg9.png)
+
+## Ionizing vs non-ionizing radiation
+
+![](https://i.imgur.com/Rmk0X7P.png)
+
+# Anatomix vs Functional Imaging ?
+
+## Contrast Agents
+
+<div class="alert alert-info" role="alert" markdown="1">
+Contrast agents are substances used  to enhance visibility of internal structures in X-ray or MR-based imaging techniques
+</div>
+
+- Iodine-based
+    - Injected in the bloodstream to highlight blode vessels
+- Gaolinium-based
+    - Vascular ferromagnetic contrast agent visible in MRI
+- Baarium-based
+    - orally to help imaging digestive system, including esophagus, stomach and GI tracks
+
+## Radioisotope Contrast Agents
+
+<div class="alert alert-info" role="alert" markdown="1">
+Radioisotope contrast agents are based on atmos with excess nuclear energy, making it unstable. They emit the excess energy to highlight body functions
+</div>
+
+- Tc-99m
+    - Injected in the bloodstream to study brain, myocardium, thyroid, lungs, liver, gallblader
+- $^{18}$F-FDg
+    - Mark the glucose metabolism
+
+![](https://i.imgur.com/d1AqGJC.png)
+
+# Nulcear imaging
+
+# Key components
+
+![](https://i.imgur.com/xcqhsCE.png)
+
+# Nuclear Medicine
+
+## Anatomical vs Functional Imaging
+
+![](https://i.imgur.com/2KRe4Lw.png)
+
+![](https://i.imgur.com/hLsHvQW.png)
+
+# Gamma-rays Physics
+
+## Basics Concepts 
+
+### Quanta
+
+![](https://i.imgur.com/4VJtf3T.png)
+
+### Atomic Model
+
+![](https://i.imgur.com/HXOc2d5.png)
+
+![](https://i.imgur.com/kzCXZBQ.png)
+
+### Characteristic Radiation
+
+![](https://i.imgur.com/x219yk9.png)
 
 
+Product of electron transistions between 2 electric shells:
 
-# Scalable video recording
+Two steps:
+1. Electrons (or photons) collid with a shell electron, which is removed from orbit
+2. Electrons from higher energy shell fills the vacancy and an X-ray photon is emitted
 
+### Exponential Behavior
+
+![](https://i.imgur.com/w0UYTx7.png)
+
+Exponential decay/growth:
+
+$$
+\frac{\Delta N}{\Delta t}=\pm\lambda N\\
+\text{provided: }\lambda\Delta t\lt\lt1\\
+\text{then: } N=N_0e^{\pm\lambda\Delta t}
+$$
+
+![](https://i.imgur.com/JyJEFDz.png)
+
+
+### Attenuation
+
+![](https://i.imgur.com/1f5FRK1.png)
+
+Z-ray photon life span:
+1. Photon is transmitted through the matter
+2. Photon is absorbed (end of life)
+3. Photon is scattered ($E_{new}\le E$)
+
+If $E_{new}\gt0$, then more A, B or C
+
+Transmitted photons:
+
+$$
+I(E)=I_0(E)\cdot e^{-\mu(E)\cdot t}\quad\text{Berr-Lambert lawa}
+$$
+
+### Isotopes Decay
+
+Glossary:
+- IsotoPes = atoms with the same number of protons (Z)
+- IsotoNes = atoms with the same number of neutrons
+- Nuclides = nuclei with differing numbers of protons and neutrons are called nuclei
+- Radioisotopes = atoms with unstable nuclei
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Isomeric Transition**
+
+Nucleus in an excited state returns to the more stable state release of a photon (gamma, $\sim88\%$)
+
+</div>
+
+- Sometimes the nucleus energy may eject an electron (ionized radiation $\sim12\%$) which deposes radiation dose to the patient
+
+Example: $^{99m}_{43}Tc\to^{99}_{43}Tc+\gamma$
+
+![](https://i.imgur.com/ix5jw14.png)
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Beta-plus decay**
+Proton converted to a neutron by releasing positron $(\beta)+$ and a neutrino
+</div>
+- Since positron is an antimatter analog
 
 
 <div class="alert alert-info" role="alert" markdown="1">
-**Scalability** referes to the capacity of recovering physically meaningful image or video information from deconding only partial compressed bitstreams
-
-</div>
-- Quality scalability: 
-
-    - finer to finer quantizations
-
-- Spatial scalability: 
-
-    - different spatial resolutions (Laplacian, Pyramid, ...)
-
-- Temporal scalability: 
-
-    - we can jump frames and add the missing ones progressively
-
-- Frequency scalability: 
-
-    - lower frequencies to higher frequencies
-
-- Combination of basic schemes
-
-- Granularity: coarse vs fine ones
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-**Object-based scalability**: different resolutions for different objects
-
+**Electron capture**
+Proton converted to a neutron by capturing an electron and releases a neutrino. It happens in nuclei with too few neutrons
 </div>
 
+Since the electron is removed from the shell, it releases **characteristic X-rays**
 
-# 2D motion vs optical flow
+### Summary
 
+![](https://i.imgur.com/5EuIoox.png)
 
 
-![](https://i.imgur.com/DY7iRNh.png)
+![](https://i.imgur.com/Y6AanJm.png)
 
+## Radiopharmaceuticals
+### Production
 
+![](https://i.imgur.com/bYeiVCP.png)
 
-On a une sphere en train de tourner sans illumination: dans le flux video, il n'y a pas de difference.
 
+### Ideal characteristics
 
+Ideal Characteristics
+- Short-half life (but not too short)
+- Monochromatic Gamma-ray production
+- Gamma-ray energy high enough to easily cross patient body (deposing minimal dose)
+- Gamma-ray energy low enough to be stopped by the detector
+- Have minimal production of other particles (add noise to our measurements)
+- Localize to the organ of interest, non toxic, ...
+- Inexpensive and readily available
 
-Prenons ensuite une sphere dont la source lumineuse bouge: l'information visuelle changera.
+Technetium-99m
+- Close to ideal characteristics
+- Decays with $88\%$ in emission of 140.5 keV photon
+- $12\%$ internal conversions (electrons, characteristic x-rays, ...)
 
+### Transport Issues
 
+![](https://i.imgur.com/ddhiFh7.png)
 
-<div class="alert alert-danger" role="alert" markdown="1">
-The observed of apparent 2D motion is called **optical flow**
+### Common Isotopes
 
-</div>
+![](https://i.imgur.com/qAuz6WJ.png)
 
+# Diagnostic Radiology
 
-## Optical flow equation and ambiguity in motion estimation
+## Instrumentation
 
+### Gamma Camera
 
+| Nuclear Imaging $\Leftrightarrow$ | X-ray Imaging     |
+|:--------------------------------- | ----------------- |
+| Radioctive isotope                | X-ray tube        |
+| Collimator                        | Anti-scatter grid |
+| Gamma camera                      | X-ray detector    |
 
-- Imaginons une sequence video $\psi(x,y,t)$
+- Nuclear Medicine detector also measures not only the number of events, but the time and energy of each detected event
+- Ideally imaging is performed from unscattered photons that undergo photoelectric absorption in the detector
+- Scintillator + Electronics must be very fast to detect individual events
 
-- On image un point $(x,y)$ deplace en $(x+d_x,y+d_y)$ au temps $t+d_t$
+![](https://i.imgur.com/TANN5yx.png)
 
+### Pulse Height Analyzer with Nal Crystal
 
+![](https://i.imgur.com/YvZ7Yh1.png)
 
-<div class="alert alert-info" role="alert" markdown="1">
-Under the *constant intensity assumption*, the images of the same object point at different times have the same luminance value
+### Collimators
 
+![](https://i.imgur.com/3mGWeLX.png)
 
+Efficiency
+- Resolution = bar patterns, MTF, FWHM of point source, ...
+- Sensitivity = fraction of gamma rays the pass through the holes (typically $0.01\%$)
+- Increasing blades/holes length: Res $\uparrow$, Sen $\downarrow$
+- Type (parallel, convergence, ...) modulates Res & Sen
+- Increasing blades/holes
 
-$$
+![](https://i.imgur.com/0Oil8u8.png)
 
-\psi(x+d_x,y+d_y,t+d_t)=\psi(x,y,t)
+# Clinical application
 
-$$
+## Single Photon Emission CT
 
-</div>
+![](https://i.imgur.com/4gbaOCb.png)
 
+Characteristics
+- Long decay isotope
+- Single photon emitted and captured by camera
+- Tomography technique generates 3D volume of radioactivity density
+- Multi-head cameras allows for faster acquisitions
+- Poor spatial resolution VS excellent contrast resolution
+- Noise is a major factor
 
-On fait un developpement de Taylor:
+Reconstruction (same as CT)
+- Filtered Back-Projection
+- Iterative techniques
 
+### Applications
 
+![](https://i.imgur.com/OkNiGZl.png)
 
-$$
+## Positron Emission Tomography
 
-\psi(x+d_x,y+d_y,t+d_t)=\psi(x,y,t)+\frac{\partial\psi}{\partial x}d_x+\frac{\partial\psi}{\partial y}d_y+\frac{\partial\psi}{\partial t}d_t
+![](https://i.imgur.com/fWFjvuP.png)
 
-$$
+Characteristics
+- Positron emitter (F-18)
+- Two 511 kEV annihilation photons $180^o$ apart
+- No collimator needed
 
+![](https://i.imgur.com/ymsxxff.png)
 
+### Application
 
-On obtient:
+![](https://i.imgur.com/85UcYKX.png)
 
+# Wrap-up
 
+Isotopes
+- Exponential Decay, half-life
+- Isomeric Transition (Tc-99m), Electronic $\to$ gamma rays, SPECT
+- Beta-plus (F-18) $\to$ PET
+- Beta-minus $\to$ Therapy
 
-$$
-
-\frac{\partial\psi}{\partial x}d_x+\frac{\partial\psi}{\partial y}d_y+\frac{\partial\psi}{\partial t}d_t = 0
-
-$$
-
-
-
-Definisson $v_x=\frac{d_x}{d_t}$, $v_y=\frac{d_y}{d_t}$, $v_t=\frac{d_xt}{d_t}=1$
-
-
-
-$$
-
-\frac{\partial\psi}{\partial x}v_x+\frac{\partial\psi}{\partial y}v_y+\frac{\partial\psi}{\partial t} = 0
-
-$$
-
-
-
-Qui peut etre ecrit:
-
-
-
-$$
-
-\nabla\psi^Tv+\frac{\partial\psi}{\partial t}=0
-
-$$
-
-
-
-Avec $\psi^T$ le gradient spatial
-
-
-
-![](https://i.imgur.com/Kg83lmC.png)
-
-
-
-The flow vector $v$ at any point $x$ can be decomposed into 2 orthogonal components:
-
-
-
-$$
-
-v=v_ne_n+v_te_t
-
-$$
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-As we can observe, when a straight edge moves in the plane, we can only detect the normal $v_n$ of its motion vector !
-
-</div>
-
-
-Because $\nabla\psi=\Vert\nabla\psi\Vert e_n$ the optical flow equation can be rewritten as:
-
-
-
-$$
-
-v_n\Vert\nabla\psi\Vert+\frac{\partial\psi}{\partial t}=0
-
-$$
-
-
-
-Avec $\Vert\nabla\psi\Vert$ la *magnitude* du vecteur gradient.
-
-
-
-Les consequences de ces equations sont:
-
-1. A chaque pixel $x$
-
-2. We can compute
-
-
-
-$$
-
-v_n=-\frac{\frac{\partial\psi}{\partial t}}{\Vert\nabla\psi\Vert}
-
-$$
-
-
-
-![](https://i.imgur.com/Cu0jdXe.png)
-
-
-
-- This ambuigity in estimationg the motion vector is known as the *aperture problem*
-
-- The motion can be estimated uniquely only if the aperture contains at least 2 different gradient directions
-
-
-
-# General methodologies
-
-
-
-- We consider the ME between 2 given frames, $\psi(x,y,t_1)$ and $\psi(x,y,t_2)$
-
-
-
-![](https://i.imgur.com/nnTbnRE.png)
-
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-The problem is referred as to as **forward motion estimation**
-
-</div>
-
-
-## Notation
-
-
-
-*Comment encoder les vecteurs de mouvements ?*
-
-Ils ne sont pas les memes en fonction de l'espace, il faut les encoder de facon parametrique.
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-*Fonction mapping*: nouvelle position
-
-
-
-$$
-
-w(x,a)=x+d(x,a)
-
-$$
-
-
-
-</div>
-
-
-Avec le parametre $a$ qui encode le mouvement, ca nous donne la nouvelle position.
-
-
-
-$$
-
-a=[a_1,a_2,\dots,a_n]^T
-
-$$
-
-
-
-# Motion representation
-
-
-
-![](https://i.imgur.com/fD9E0VK.png)
-
-
-
-Different representations de mouvement.
-
-
-
-Image b: pixel-based
-
-- On a un vecteur pour chaque pixel de l'image
-
-
-
-Image c: on va la faire en TP
-
-- On suppose qu'on fait un decoupage par bloc
-
-- On fait un vecteur de mouvement par bloc
-
-
-
-*Pour le champ de vecteur, comment est-ce qu'on parametrise ?*
-
-> Translations
-
-> Polynomial motions
-
-> Rotations
-
-> ...
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-On estime que l'image est faite de pixel et on fait de la pixel-wise
-
-</div>
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-Ca fait 2 millions d'inconnues a trouver
-
-</div>
-
-
-On rajoute de la **regularite**.
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-En general, on decoupe en **regions**.
-
-</div>
-
-
-*On estime d'abord le mouvement ou une region ?*
-
-
-
-## Approche par blocs
-
-
-
-![](https://i.imgur.com/7MJrtko.png)
-
-
-
-On decompose l'image en blocs (ex: pour une image $100\times100$, en $33\times 33$)
-
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-On a des blocs qui vont se superposer car le mouvement n'est pas uniforme
-
-</div>
-> Et on s'en fout !
-
-
-
-On a egalement des coins qui ont bouges.
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-Il faut faire de la descente de gradient
-
-</div>
-
-
-- Les version les plus simples qu'on peut imaginer c'est en terme de translation
-
-- Les blocs sont un bon compromis entre la precision et la complexite
-
-
-
-![](https://i.imgur.com/BBNALxg.png)
-
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-It can induce **warping effects**
-
-</div>
-
-
-# Motion esimation criteria
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-
-Displaced Frame Difference (DFD):
-
-
-
-$$
-
-E_{DFD}(a)=\sum_{x\in\Lambda}\vert\psi_2(w(x,a))-\psi_1(x)\vert^p
-
-$$
-
-
-
-where $\Lambda$ is the domain of all pixels in $\psi_1$ and $p$ a positive number
-
-
-
-</div>
-
-
-- When $p=1$, the above error is called *mean absolute difference (MAD)* and when $p=2$ *Mean Squared Error (MSE)*
-
-- The *error image* $e(x,a)=\psi_2(w(x,a))-\psi_1(x)$ is usually called displaced frame difference (DFD) image
-
-- When $a$ is optimal ($p=2$)
-
-
-
-$$
-
-\frac{\partial E_{DFD}}{\partial a}=2\sum_{x\in\Lambda}(\psi_2(w(x,a))-\psi_1(x))\frac{d(w(x,a))}{da}\nabla\psi_2(w(x,a))=0
-
-$$
-
-
-
-## Prenons un cas plus simple
-
-
-
-$$
-
-\frac{\partial\psi}{\partial t}d_t=\psi_2(x)-\psi_1(x)
-
-$$
-
-
-
-It is equivalent to minimize:
-
-
-
-$$
-
-E_{flow}=\sum_{x\in\Lambda}\vert\nabla\psi_1(x)^Td(x,a)+\psi_2(x)-\psi_1(x)\vert^p
-
-$$
-
-
-
-This solution verifies when $p=2$
-
-
-
-$$
-
-\frac{\partial E_{flow}}{\partial a}=2\sum_{x\in\Lambda}(\nabla\psi_1(x)^Td(x,a)+\psi_2(x)-\psi_1(x))\frac{\partial d(x,a)}{da}\nabla\psi_i(x)
-
-$$
-
-
-
-We can add a **penalty term** in our equation to enforce the smoothness of our vector field (i.e. must vary smoothly)
-
-
-
-$$
-
-E_s=\sum_{x\in\Lambda}\sum_{y\in N_x}\Vert d(x,a)-d(y,a)\Vert^2
-
-$$
-
-
-
-We want to minimize:
-
-
-
-$$
-
-E_{total}=E_{DFD}+w_sE_s
-
-$$
-
-
-
-with $w$ the *weighting coefficient*.
-
-
-
-- We have to regularize but not too much (to avoid *over-blurring*)
-
-
-
-# Minimzation methods
-
-
-
-On va surtout regarder la methode exhaustive
-
-- La methode de gradient
-
-- La methode de Newton-Raphson
-
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-Avec la descente de gradient et le probleme de dimensionnalite, on tombe souvent sur des minimums locaux et non globaux
-
-</div>
-
-
-![](https://i.imgur.com/HtkyTw7.png)
-
-
-
-- One important search strategy is to use a *multi-resolution* representation of the motion field and conduct the search in a *hierarchical manner*
-
-- The basic idea is to first search the motion parameters in a coarse resolution, propagate this solution into a finer resolution, and then refine the solution in the finer resolution
-
-- It can combat the slowness of exhaustive search methods
-
-
-
-# Regularization
-
-
-
-$$
-
-E=\sum_{x\in\Lambda}(\frac{\partial\psi}{\partial x}v_x+\frac{\partial\psi}{\partial y}+\frac{\partial\psi}{\partial t})^2 + w_s(\Vert\nabla v_x\Vert^2+ \Vert\nabla v_y\Vert^2)
-
-$$
-
-
-
-# Block matching algorithm (BMA)
-
-
-
-- Les blocs peuvent etre de forme polygonale
-
-    - On prend en pratique des carres
-
-- On suppose qu'on fait de la translation
-
-
-
-## The Exhaustive Search Block Matching Algorithm (EBMA)
-
-
-
-Under the block-wise translation model
-
-
-
-$$
-
-w(x;a) = x+d_{m}\quad x\in B_m
-
-$$
-
-
-
-Then the error can be written:
-
-
-
-$$
-
-E(d_m,\forall m\in\mathcal M)=\sum_{m\in\mathcal M}\sum_{x\in B_m}\vert\psi_2 (x+d_m)-\psi_1(x)\vert^p
-
-$$
-
-
-
-We can estimate the MV for each block individually
-
-
-
-$$
-
-E_m(d_m)=\sum_{x\in B_m}\vert\psi_2 (x+d_m)-\psi_1(x)\vert^p
-
-$$
-
-
-
-# Deformable block matching algorithm
-
-
-
-![](https://i.imgur.com/YNVO2t9.png)
-
-
-
-$$
-
-d_m(x)=\sum_{k=1}^K\Phi_{m,k}(x)d_{m,k}\quad x\in B_m
-
-$$
-
-
-
-Le deplacement au bloc $m$ de $x$ est une somme ponderee des deplacements en 4 coins
-
-
-
-# Node-based motion representation
-
-
-
-- Nodal MVs vs Polynomial coefficients
-
-    - Nodal
-
-        - Stabilite
-
-
-
-## Motion estimation using node-based model
-
-
-
-$$
-
-a=[d_k;k\in\mathcal K]
-
-$$
-
-
-
-$$
-
-E(a)=\sum_{x\in B}(\psi_2(w(x,a))-\psi_1(x))^2
-
-$$
-
-
-
-where:
-
-
-
-$$
-
-w(x,a)=x+\sum_{k\in\mathcal K}\phi_k(x)d_k
-
-$$
-
-
-
-# Mesh-based motion estimation
-
-
-
-- Dans le cas des blocs: estime independants et deformes
-
-- Mesh: maillage sur l'image et on se permet de les deplacer en meme temps
-
-    - Tout est corrole
-
-
-
-![](https://i.imgur.com/Fp8ODR8.png)
-
-
-
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-**Contrainte a connaitre**: on ne veut pas que nos 2 carres s'inversent
-
-</div>
-
-
-- On a souvent des discontinuetes au niveau des edges
-
-- Plus on augmente le nombre de noeuds, plus on a une estimation precise
-
-    - Mais la puissance de calcul explose
-
-
-
-# Global motion estimation
-
-
-
-Plusieurs methodes existent
-
-
-
-*Est-ce qu'on est dans le cadre ou pas d'avoir uniquement la camera qui bouge ?*
-
-> Au foot et tennis, une grande partie du decor est stable
-
-
-
-# Region-based motion estimation
-
-
-
-*Est-ce qu'on separe en region ou on estime le mouvement ?*
-
-
-
-3 approches possibles
-
-
-
-# Multi-resolution motion estimation
-
-
-
-- Various ME approaches can be reduced to solving an error minimization problem
-
-- Major difficulties
-
-    - Many local minima in the gradient-descent case
-
-    - Not easy to reach the global minimum
-
-    - Computation high
-
-
-
-![](https://i.imgur.com/HCogSzT.png)
-
-
-
-Pyramide laplacienne: on decompose l'image en bandes de frequence
-
-
+Applications in medicine
+- Radiopharmaceuticals $\to$ fission, cyclotron, accelerators, generators
+- Gamma cameras, collimators
+- SPECT, single photon emission (gamma-rays: 70-400 keV) $\to$ orthopedics
+- PET, positron emission (511 keV) $\to$ oncology
