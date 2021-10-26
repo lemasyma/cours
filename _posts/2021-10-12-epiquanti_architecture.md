@@ -1,859 +1,213 @@
 ---
-
-title:          "EPIQUANTI : Partie logiciel"
-
-date:           2021-10-05 14:00
-
+title:          "EPIQUANTI : Architecture d'un ordinateur quantique et technologies habilitantes"
+date:           2021-10-12 14:00
 categories:     [tronc commun S9, EPIQUANTI]
-
 tags:           [tronc commun, EPIQUANTI, S9]
-
 math: true
-
-description: Partie logiciel
-
 ---
 
-
-
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/SJRoAnFEt)
-
-
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryztYlXBK)
 
 Lien du [livre du prof](https://www.oezratty.net/wordpress/2021/understanding-quantum-technologies-2021/)
 
+[Slide du cours](https://www.oezratty.net/Files/Work/Olivier%20Ezratty%20Quantique%20EPITA%205B%20Oct2021.pdf)
 
+![](https://i.imgur.com/k5BEC4V.png)
 
-[Slide du cours](https://www.oezratty.net/Files/Work/Olivier%20Ezratty%20Quantique%20EPITA%203%20Oct2021.pdf)
+:::warning
+La correction d'erreur "normale" est tres differente de celle de l'informatique quantique
+:::
 
+# QEC Zoo
 
+![](https://i.imgur.com/Lk6GIhP.png)
 
-# Registers 
+## Envoyer un Qubit
 
- 
+:::info
+Principe general
 
-| **n bits register**                      | **n qubits register**                         |
+![](https://i.imgur.com/FoU49xy.png)
 
-| ---------------------------------------- | --------------------------------------------- |
+:::
 
-| $\color{red}{2^n\text{ possible states } \textbf{once at a time}}$ | $\color{green}{ 2^n \text{possible states }\textbf{linearly superposed}}$ |
+## Shor 9 error correction code
 
-| evaluable                                                          | partially evaluable                           |
+![](https://i.imgur.com/zNR7YEN.png)
 
-| independant copies                                                 | no copies                                     |
+## Surface code QEC
 
-| individually erasable                                              | non individualy erasable                      |
+:::info
+QEC adapted to 2D bit architectures like with superconductors from Google
 
-| non destructive readout                                            | value changed after readout                   |
+![](https://i.imgur.com/VVEs4Wq.png)
 
-| deterministic                                                      | probabilistic                                 |
+:::
 
+:::warning
+Au-dessus de 20 qubits, on a trop d'erreurs
+:::
 
+AlissonBob, Amazon et UCI pretendent pouvoir reduire le nombre de qubits physiques necessaires pour faire des calculs.
 
-# Gates
+## More on quantum computing speed
 
+Quand on fait une operation de portes sur des qubits intriques, c'est comme si on faisait cette operation sur plusieurs etats.
 
+On va prendre une porte de Hadamard: on a une vingtaine d'operations.
 
-## Classical logic gates
+Or, d'apres IBM, comme le calcul quantique est probabiliste il faut l'executer plusieurs fois, cad $4000$ fois.
 
+:::success
+$4000\times20=80 000$ portes executees pour juste une porte de Hadamard !
 
+:::warning
+Et c'est un cas **simple**
+:::
 
-![](https://i.imgur.com/D2uCweD.png)
+:::
 
+De meme, pour les autres portes:
 
+![](https://i.imgur.com/hzUADdg.png)
 
-Irreversible gates:
+:::danger
+On veut corriger le taux d'erreur pour utiliser le moins de qubits physiques possible
+:::
 
-- NAND
+## Qubits connectivity
 
-- NOR
+### IBM
 
-- AND
+![](https://i.imgur.com/6uyOW99.png)
 
-- OR
+Rocheser 53 qubits, october 2019
+65 qubits, october 2020
 
+### Google
 
+![](https://i.imgur.com/MCQDvgY.png)
 
-*Quelle est leur consequence ?*
+Sycamore 53 qubits, october 2019
 
-> Comme on perd un bit, on a une **perte d'energie**
+*Pourquoi un qubit blanc ?*
+> Parce qu'il marche pas ptdr
 
-> Decouverte par *Rolf Landauer*
+### IonQ
 
+:::info
+Cas particulier des **ions pieges**
+:::
 
+Ils sont tous connectes les uns aux autres
 
-<div class="alert alert-success" role="alert" markdown="1">
+![](https://i.imgur.com/TheHEeD.png)
 
-Des gens travaillent aujourd'hui pour creer une informatique classique sans perte d'energie
+- 11 qubits, 2018
 
-</div>
+![](https://i.imgur.com/mQ0VOg9.png)
 
+# "Rackability" examples
 
+## Pasqual
 
-## Quantum gates
+Double depth racks
+- Model of cold atoms computer with $100-100$ qubits, planned for $2021-2023$
 
+![](https://i.imgur.com/mnolCDF.png)
 
+## Quandela
 
-<div class="alert alert-info" role="alert" markdown="1">
+Single depth rack
+- Prometheus
 
-Matrix based reversible **unitary transformations**
+![](https://i.imgur.com/TgvYd8C.png)
 
-</div>
 
+## Data center constraints
 
+![](https://i.imgur.com/o0u3pVS.png)
 
-![](https://i.imgur.com/QddSjHl.png)
+*Combien est-ce que ca consomme dans un data center ?*
+> Je sais pas / ca depend
+> [name=Olivier Ezratty] [time=Tue, Oct 12, 2021 4:50 PM] [color=#907bf7]
+> Ca depend du nombre de rack
 
-- NOT: rotation $X$
+# Cooling
 
-- Rotation $Y$
+:::info
+**Goal**: reduce thermal noise affecting qubits
+:::
 
+![](https://i.imgur.com/RmGUwi8.png)
 
+## Micro-waves sources
 
-$$
+![](https://i.imgur.com/nB4woVh.png)
 
-\begin{bmatrix}
+:::warning
+Chaque fils supra-conducteur coute $3000$\$
+:::
 
-0&-i\\
+## Details from a 15 mK cryostat
 
-i&0
+![](https://i.imgur.com/4hmy5BA.png)
 
-\end{bmatrix}
+![](https://i.imgur.com/oU4uTub.png)
 
-$$
+## Some companies
 
+Dilutions and systems
+- Finland 
+    - Bluefors
+    - IBM
+    - Rigetti 
+    - CEA
+- US: 
+    - JanisULT
+    - Google
+- UK: 
+    - Oxford instruments
+    - Microsoft
+    - DWave
+- France: 
+    - CryoConcept
+    - Neel
+    - LPENS
+- Netherlands: 
+    - Leiden Cryogenics
+    - IBM
 
+Cabling
+- Japan
+    - Coax Co. LTD
+- Netherlands
+    - Delft Circuits
+- France
+    - Radiall
 
-- Pauli-Z: rotation $Z$
+Pulse tubes and compressors
+- US
+    - Cryomech
+- Japan
+    - Sumitomo
 
-- Hadamard: superposition
+## Available cooling power
 
+| Cryostat | pulse tubes                    | minimum temperature | 20mK stage               | 100 mK stage                            | MC cold plate                               |
+| -------- | ------------------------------ | ------------------- | ------------------------ | --------------------------------------- |:------------------------------------------- |
+| Bluefors | lD250 <br> XLF400 <br> XLD1000 | 1 <br> 2 <br> 2     | 10mk <br> 8 mK <br> 8 mK | $12\mu$ W <br> $12\mu$ W <br> $34\mu$ W | $250\mu$ W <br> $450\mu$ W <br> $1000\mu$ W |
 
+## IBM
 
-### Porte CNOT
+Goldeneye fridge designed for 1121 qubits Condor completion planned for 2023.
 
+5 and 14 days to cool down.
 
+*design shown is not fake*
 
-<div class="alert alert-info" role="alert" markdown="1">
+![](https://i.imgur.com/golLfWa.png)
 
-On va changer la valeur d'un qubit en fonction d'un autre
+- Cabling paths shows they will use some sort of cryoCMOS
+- using separate pulse tubes to and bottom
 
-
-
-![](https://i.imgur.com/mQz42Js.png)
-
-
-
-</div>
-
-
-
-*Mathematiquement, a quoi ca ressemble ?*
-
-
-
-$$
-
-\begin{bmatrix}
-
-1&0&0&0\\
-
-0&1&0&0\\
-
-0&0&0&1\\
-
-0&0&1&0
-
-\end{bmatrix}
-
-$$
-
-
-
-![](https://i.imgur.com/2BSkpZE.png)
-
-
-
-*Si on intrique des qubits a des portes a 2 qubits, est-ce que ca reste ?*
-
-> Oui
-
-
-
-## C2NOT
-
-
-
-![](https://i.imgur.com/9vIlFMQ.png)
-
-
-
-$$
-
-\begin{bmatrix}
-
-1&0&0&0&0&0&0&0\\
-
-0&1&0&0&0&0&0&0\\
-
-0&0&1&0&0&0&0&0\\
-
-0&0&0&1&0&0&0&0\\
-
-0&0&0&0&1&0&0&0\\
-
-0&0&0&0&0&1&0&0\\
-
-0&0&0&0&0&0&0&1\\
-
-0&0&0&0&0&0&1&0
-
-\end{bmatrix}
-
-$$
-
-
-
-## SWAP
-
-
-
-![](https://i.imgur.com/cAxqf6h.png)
-
-
-
-$$
-
-\begin{bmatrix}
-
-1&0&0&0\\
-
-0&0&1&0\\
-
-0&1&0&0\\
-
-0&0&0&1
-
-\end{bmatrix}
-
-$$
-
-
-
-## Fredkin
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-Conditional SWAP
-
-</div>
-
-
-
-![](https://i.imgur.com/FIvsp0Y.png)
-
-
-
-$$
-
-\begin{bmatrix}
-
-1&0&0&0&0&0&0&0\\
-
-0&1&0&0&0&0&0&0\\
-
-0&0&1&0&0&0&0&0\\
-
-0&0&0&1&0&0&0&0\\
-
-0&0&0&0&1&0&0&0\\
-
-0&0&0&0&0&0&1&0\\
-
-0&0&0&0&0&1&0&0\\
-
-0&0&0&0&0&0&0&1\\
-
-\end{bmatrix}
-
-$$
-
-
-
-## Single qubit operations visualization
-
-
-
-![](https://i.imgur.com/fW0h0fw.gif)
-
-
-
-
-
-## CNOT gate effect
-
-
-
-$$
-
-\begin{matrix}
-
-\color{blue}{\text{control qubit}} &&\color{blue}{\text{tensor product of control and target qubits before CNOT}}\\
-
-\alpha_1\vert0\rangle &&\alpha_1\alpha_1\vert00\rangle+\alpha_1\beta_2\vert01\rangle + \alpha_2\beta_1\vert10\rangle+\beta_1\beta_2\vert11\rangle\\
-
-\bigotimes&\Rightarrow&\text{CNOT}\\
-
-\alpha_2\vert0\rangle+\beta_2\vert1\rangle&&\alpha_1\alpha_1\vert00\rangle+\alpha_1\beta_2\vert01\rangle + \alpha_2\beta_1\vert11\rangle+\beta_1\beta_2\vert10\rangle\\
-
-\color{blue}{\text{target qubit}}&&\color{blue}{\text{control and target qubits state after CNOT}}\\
-
-\color{blue}{\text{control qubit is }\vert0\rangle}\\
-
-\alpha_1=1&&\alpha_2\vert00\rangle+\beta_2\vert01\rangle\\
-
-&\Rightarrow&\text{CNOT}\\
-
-\beta_1=0&&\alpha_2\vert00\rangle+\beta_2\vert01\rangle\\
-
-\end{matrix}
-
-$$
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-CNOT is not changing the qubit
-
-</div>
-
-
-
-## The EPR pair entanglemet building block
-
-
-
-Put control qubit into superposition state, then future gates act on 2 states simultaneously
-
-
-
-$$
-
-\frac{\vert0\rangle+\vert1\rangle}{\sqrt 2}
-
-$$
-
-
-
-![](https://i.imgur.com/U6hQUlf.png) $$\biggr\}\frac{\vert00\rangle+\vert11\rangle}{\sqrt{2}}$$
-
-
-
-Subsenquently, flipping a qubit in an entangled state modifies all of tis components
-
-
-
-## Control-U gate
-
-
-
-On prend une porte U qui est une porte arbitraire
-
-
-
-![](https://i.imgur.com/PYYoF2m.png)
-
-
-
-$$
-
-\begin{bmatrix}
-
-1&\dots&\dots&\dots\\
-
-\dots&1&\dots&\dots\\
-
-\dots&\dots&U_{11}&U_{12}\\
-
-\dots&\dots&U_{21}&U_{22}
-
-\end{bmatrix}
-
-$$
-
-
-
-# Qubit lifecycle
-
-
-
-- Initialization
-
-    - $\vert0\rangle$
-
-- Hadamard gate
-
-    - $\frac{\vert0\rangle + \vert1\rangle}{\sqrt{2}}$
-
-- Other gate
-
-    - aubit vector turning around in Bloch sphere
-
-- Measurement
-
-    - Measurement returns $\vert 0\rangle$ qith a probability $\alpha^2$ depending on the qubit state, then qubit state becomes $\vert0\rangle$
-
-    - Measurement returns $\vert1\rangle$ with a probability $\beta^2$
-
-
-
-# Universal gates sets
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-**Jeu de portes universel**
-
-Jeu de portes *simples* qu'on peut combiner pour recreer toutes les transformations unitaires
-
-</div>
-
-
-
-> Ex: CNOT peut etre recree avec HZH
-
-> Three CNOT gates: one SWAP gate
-
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-**Universal quantum computing** requires a T gate ($\frac{\pi}{4}$ rotation)
-
-</div>
-
-
-
-## Getting confused with phase rotations
-
-
-
-- One round = $2\pi$
-
-- $S=$ one quarter round $=\frac{\pi}{2}$
-
-- $T=$ one eight roung
-
-
-
-## Solovay-Kitaev theorem
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-**Theorem**
-
-
-
-Any desired gate can be approximated by a sequence of gates from an universal gates set.
-
-
-
-A quantum circuit of $m$ constant-qubit gates can be approximated to $\varepsilon$ error by a quantum circuit of $O(m\log^c(\frac{m}{\varepsilon}))$ gates from a desired finite universal gate set with $c=3,97$
-
-
-
-For example, creating a $R_{15}$ gate requires $127$ H/Z/T gates
-
-</div>
-
-
-
-## In other words
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-
-On veut appliquer a $n$ qubits n'importe quelle operation generique $U$, on enchaine une serie de transformations unitaires.
-
-</div>
-
-
-
-# $SU(2^n)$ - Space of unitaries on $n$ qubits
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-Espace contenant toutes les transformations
-
-</div>
-
-
-
-![](https://i.imgur.com/NTCjIQu.png)
-
-
-
-# On reversibility
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-**All quantum gates are mathematically reversible**, this is a property of the matrix linear transformations
-
-</div>
-
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-We could theortically run an algorithm and rewinf it entirely to return to the initial state, which could help recover port of the energy spent in the system
-
-</div>
-
-
-
-On a practical basis:
-
-- The gates are not physically and thermodynamically reversible due to some irreversible processes like micro-wave generations and DACs (digital analog converters)
-
-- The whole digital process taking place before micro-wave generation and after their readout conversion back to digital could be implemented in classical adiabatic\thermodynamically reversible fashion
-
-- Currently being investigated at Sandia Labs, Wisconsin University and with SeeQC
-
-
-
-![](https://i.imgur.com/onkL3T5.png)
-
-
-
-# Inputs and outputs
-
-
-
-![](https://i.imgur.com/1SeTmqH.png)
-
-
-
-## Probabilistic or deterministic readouts ?
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-A single qubit measurement is probabilistic, ie: a qubit registered after a Hadamard gate applied to all qubits is a simple random numbers generator
-
-</div>
-
-
-
-On a practical basis:
-
-- the algorithm is executed many times, up to 8000 for IBM Q Experience
-
-- an average of qubits results is computed, producing a real number
-
-- the averahed result is theoratically deterministic
-
-- modulo the error generated by noise and decoherence
-
-
-
-# Basis, pure and mixed states
-
-
-
-![](https://i.imgur.com/rHcKh3T.png)
-
-
-
-## Examples
-
-
-
-![](https://i.imgur.com/z70JJHi.png)
-
-
-
-> *Normalement vous avez rien compris*
-
-> [name=Olivier Ezratty] [time=Tue, Oct 5, 2021 3:55 PM] [color=#907bf7]
-
-
-
-![](https://i.imgur.com/TzGs5Aw.png)
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-
-L'origine aleatoire du photon provient de la physique classique et non quantique
-
-</div>
-
-
-
-## Single qubit mixed state
-
-
-
-![](https://i.imgur.com/Mhd7O1E.png)
-
-
-
-# Toying with density matrices
-
-
-
-![](https://i.imgur.com/fEpnGpS.png)
-
-
-
-# Qubits measurement
-
-
-
-<div class="alert alert-info" role="alert" markdown="1">
-
-**Measurement** is using a collection ${M_m}$ of operators acting on the measured system state space $\vert\psi\rangle$, with probability of $m$ being:
-
-
-
-$$
-
-p(m)=\langle\psi\vert M_m^✝M+m\vert\psi\rangle
-
-$$
-
-
-
-</div>
-
-
-
-System state after measurement becomes:
-
-
-
-$$
-
-\frac{M_m\vert\psi\rangle}{\sqrt{\langle\psi\vert M_m^✝M+m\vert\psi\rangle}}
-
-$$
-
-
-
-with: 
-
-
-
-$$
-
-\sum_mM_m^✝M+m=1
-
-$$
-
-
-
-## Various qubits measurement methods
-
-
-
-![](https://i.imgur.com/ucEpkHD.png)
-
-
-
-# Computing semantics summary
-
-
-
-![](https://i.imgur.com/6F6xAjC.png)
-
-
-
-# 5 DiVienzo criteria (IBM, 2000)
-
-
-
-![](https://i.imgur.com/SuKkNyW.png)
-
-
-
-## Main qubit types
-
-
-
-![](https://i.imgur.com/5LfK2lw.png)
-
-
-
-# From lab to packaged computers
-
-
-
-Les ordinateurs quantiques actuels d'IBM:
-
-
-
-![](https://i.imgur.com/ourihch.png)
-
-
-
-L'ordinateur version commerciale:
-
-
-
-![](https://i.imgur.com/TGDouPp.png)
-
-> Il y a un cube derriere qui contient l'ordinateur
-
-
-
-IBM pense atteindre $1000$ qubits d'ici 2 ans, mais ca a pas trop l'air possible car au-dessus de $28$ qubits il y a une enorme perte de qualite.
-
-
-
-## Inside a typical quantum computer
-
-
-
-![](https://i.imgur.com/JLlYQaX.png)
-
-
-
-
-
-En resume: 4 composantes
-
-
-
-Avec des atomes froids, on n'aurait pas des compresseurs mais des pompes a ultra-vide.
-
-
-
-## Chez Google
-
-
-
-![](https://i.imgur.com/DJlYR8A.jpg)
-
-
-
-*Pourquoi les fils tournent ?*
-
-> Pour passer plus de temps dans le froid ?
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-
-Systeme de **dilatation thermique** du au changement de temperature hardcore
-
-- Refroidit: contracte
-
-- Rechauffement: dilate
-
-</div>
-
-
-
-*Pourquoi plusieurs etages ?*
-
-> On est a $300K$ a l'exterieur, on veut minimiser plusieurs poches
-
-> Chaque etage = une temperature
-
-> Chaque disque a une taille plus petite en descendant les etages, pour faire passer le moins de chaleur possible
-
-> Chaque etage est isole de celui au-dessus
-
-> Les fils sont des attenuateurs de puissance mais ils generent de la chaleur
-
-
-
-<div class="alert alert-success" role="alert" markdown="1">
-
-C'est l'isolation thermique
-
-</div>
-
-
-
-## Quantum computer architecture
-
-
-
-![](https://i.imgur.com/iy4vWcY.png)
-
-
-
-## Physical layout example
-
-
-
-![](https://i.imgur.com/TND8OMC.png)
-
-
-
-![](https://i.imgur.com/DzcqICU.png)
-
-
-
-# Error correction
-
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-Each quantum gate and readout generate significant errors
-
-</div>
-
-
-
-Coming form decoherence generated by:
-
-- flip, phase and leakage error
-
-- calibration errors
-
-- thermal noise
-
-- electric and magnetic noise
-
-- gravity
-
-- radioactivty
-
-- vacuum quantum fluctuations
-
-- cosmical rays
-
-
-
-<div class="alert alert-warning" role="alert" markdown="1">
-
-It accumulates with the number of quantum gates and qubits
-
-</div>
-
-
-
-![](https://i.imgur.com/43XcjSf.png)
-
-
-
-## QEC zoo
-
-
-
-![](https://i.imgur.com/YVbY7p2.png)
