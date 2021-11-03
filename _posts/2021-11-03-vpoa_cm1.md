@@ -1,0 +1,285 @@
+---
+title:          "PRSTA: TD 4"
+date:           2021-10-27 14:30
+categories:     [Image S9, PRSTA]
+tags:           [Image, S9, PRSTA]
+math: true
+---
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1J96crSt)
+
+# Feuille 4 Exercice 2
+
+## Partie A
+
+La variable aleatoire $X$ suit une loi de densite:
+
+$$
+f(x,\theta)=\theta x^{\theta-1}1_{[0;1]}(x)
+$$
+
+ou le parametre $\theta$ est strictement positif.
+
+En d’autres termes, $f(x, \theta) = 0$ si $x \not\in [0; 1]$ et $f(x, \theta) = \theta x^{\theta−1}$ si $x \in [0; 1]$.
+
+1. Justifier que, pour tout $\theta \gt 0$, $f(., \theta)$ definit bien une densite sur $\mathbb R$.
+2. Calculer $E(X)$
+3. Determiner l’estimateur du maximum de vraisemblance $\hat\theta$ du parametre $\theta$.
+4. Considerons maintenant la variable aleatoire $Y := − \ln X$.
+    1. Pourquoi est-elle bien definie ?
+    2. Montrer que la variable aleatoire $Y$ suit une loi $\Gamma(1, \theta)$.
+
+<details markdown="1"><summary>Solution</summary>
+
+1.
+
+Comme $\theta\gt 0$ et $x\in[0;1]$, $f(x,\theta)$ est strictement positive.
+
+$$
+\begin{aligned}
+\int_0^1f(x,\theta)&=[x^{\theta}]^1_0\\
+&= 1^{\theta}-0 =1
+\end{aligned}
+$$
+
+On a donc bien une densite.
+
+2.
+
+$$
+\begin{aligned}
+E(X)&=\int_0^1xf(x,\theta)1_{[0;1]}dx\\
+&= \int_0^1\theta x^{\theta}dx\\
+&= \biggr[\frac{\theta x^{\theta+1}}{\theta+1}\biggr]\\
+&= \frac{\theta}{theta+1}\gt0
+\end{aligned}
+$$
+
+3.
+
+Considerons:
+
+$$
+\begin{aligned}
+L(x_1,\dots,x_n,\theta) &= \prod_{i=1}^n\theta x_i^{\theta-1}1_{[0;1]}(x_i)\\
+&= \theta^n\prod_{i=1}^nx_i^{\theta-1}\prod_{i=1}^n1_{[0;1]}(x_i)
+\end{aligned}
+$$
+
+*Pourquoi est-ce que les indicatrices ne posent pas de problemes ?*
+> Car nos observations sont entre $0$ et $1$
+
+Pour determiner le maximum, nous pouvons nous restreindre au cas: $(x_1,\dots,x_n)\in[0;1]$ car les $x_i$ sont des observations.
+
+Passons au logarithme:
+
+$$
+\ln(L(x_1,\dots,x_n,\theta))=n\ln(\theta)+(\theta-1)\sum_{i=1}^nx_i
+$$
+
+Calculons la derivee partielle:
+
+$$
+\frac{\partial\ln(x_1,\dots,x_n,\theta)}{\partial\theta}=\frac{n}{\theta}+\sum_{i=1}^n\ln(X_i)\\
+\begin{aligned}
+\frac{\partial\ln(x_1,\dots,x_n)}{\partial\theta}&=0\\
+\Leftrightarrow\theta&=\frac{m}{\sum_{i=1}^n\ln(X_i)}
+\end{aligned}
+$$
+
+Verifions la conditions du second ordre:
+
+$$
+\frac{\partial^2\ln(L(x_1,\dots,x_n,\theta))}{\partial\theta^2}=-\frac{n}{\theta^2}\lt 0\quad \forall \theta\gt 0
+$$
+
+<div class="alert alert-success" role="alert" markdown="1">
+$\hat\theta$ est bien l'EMV!
+</div>
+
+4.
+
+1.
+
+Elle est bien definie car comme $X\in[0;1]$, $\ln(X)\lt0$ donc $-\ln(X)\gt 0$
+
+2.
+
+*Pourquoi on parle de loi $\Gamma$ au lieu de loi exponentielle ?*
+> Car c'est facile d'additionner les loi $\Gamma$.
+
+$$
+\begin{aligned}
+y&=-\ln x\\
+\ln x&=-y\\
+x&=e^{-y}
+\end{aligned}
+$$
+
+On pose $\phi(x)=-\ln(x)$
+
+$$
+\phi'(x)=-\frac{1}{x}\\
+\phi^{-1}(x)=e^{-x}\\
+\begin{aligned}
+f_Y(y)&=\color{red}{-}\frac{1}{\phi'(\phi^{-1}(y))}\cdot f(\phi^{-1}(y))\quad\phi'(\phi^{-1}(y))=\color{red}{-}\frac{1}{e^{-x}}\\
+&=e^{-y}\cdot\theta\phi^{-1}(y)^{\theta-1}\\
+&=e^{-y}\cdot e^{-y(\theta-1)}\\
+&=\theta e^{-\theta y}
+\end{aligned}
+$$
+
+Donc $Y\rightsquigarrow \xi(\theta)=\Gamma(1,\theta)$
+
+<div class="alert alert-success" role="alert" markdown="1">
+$$
+\boxed{\phi_y(t)=\frac{\theta}{\theta-it}}
+$$
+
+car fonction caracteristique de la **loi exponentielle**
+</div>
+
+*Qu'est-ce qu'on a oublie dans notre formule ?*
+> La valeur absolue du Jacobien
+
+</details>
+
+## Partie B
+
+Considerons $n$ variables aleatoires independantes $X_i$ suivant la loi de $X$. Nous souhaitons tester l’hypothese $H_0 : \theta = \theta_0$ contre $H_1 : \theta = \theta_1$ avec $\theta_0 < \theta_1$ a l’aide d’observations $x_i$ issues de l’echantillon precedent.
+
+1. Nous noterons, dans la suite de l’exercice, $Y_i = − \ln X_i$. Montrer que la statistique de Neyman-Pearson est: $T_n:=\sum_{i=1}^nY_i$
+2. Determiner la loi de la variable aleatoire $T_n$ puis celle de la variable aleatoire $U_n:=\frac{T_n}{\theta}$
+3. Exprimer les risques de premiere et de seconde espece $\alpha$ et $\beta$ en fonction du seuil $S_{\alpha}$, des parametres $\theta_0$ et $\theta_1$ et de la fonction de repartition de la variable aleatoire $U_n$.
+
+<details markdown="1"><summary>Solution</summary>
+
+1.
+
+$$
+\begin{aligned}
+\frac{L(X_1,\dots,X_n\theta_1)}{L(X_1,\dots,X_n\theta_0)}&=\frac{\prod_{i=1}^n\theta_1x_i^{\theta_1-1}}{\prod_{i=1}^n\theta_0x_i^{\theta_0-1}}\\
+&= \biggr(\frac{\theta_1}{\theta_2}\biggr)^n\prod_{i=1}^nX_i^{\theta_1-\theta_0}
+\end{aligned}
+$$
+
+$(H_0)$ est rejetee si:
+
+$$
+\begin{aligned}
+T&\gt C_{\alpha}\\
+\ln(T_n)=n\ln(\frac{\theta_1}{\theta_0})+(\theta_n-\theta_0)\sum_{i=1}^n\ln(X_i)&\gt\ln(C_{\alpha})\\
+\sum_{i=1}^n\ln(X_i)&\gt\underbrace{\frac{\ln(C_{\alpha})-n\ln(\frac{\theta_1}{\theta_0})}{\theta_n-\theta_0}}_{S_{\alpha}'}\\
+-\sum\ln(X_i)&\lt -S_{\alpha}'\\
+T_n=-\sum_{i=1}^n\ln(X_i)&\lt S_{\alpha}\quad \text{ou } S_{\alpha}=-S_{\alpha}'
+\end{aligned}
+$$
+
+2.
+
+*Quel loi suit $T_n$ ?*
+
+On sait que $X_i\sim P(1,\theta)$
+
+Donc $\phi_X(t)=\frac{\theta}{\theta-it}$
+
+$$
+T_n=\sum_{i=1}^n Y_i
+$$
+
+Donc
+
+$$
+\phi_{T_n}=(\phi_{Y_i}(t))
+$$
+
+car les $Y_i$ sont independants.
+
+<div class="alert alert-danger" role="alert" markdown="1">
+
+$$
+\boxed{\phi_{T_n}=\biggr(\frac{\theta}{\theta-it}\biggr)^n}
+$$
+
+Donc:
+- $T_n\sim\Gamma(n, \theta_0)$ sous $(H_0)$
+- $T_n\sim\Gamma(n, \theta_1)$ sous $(H_1)$
+
+</div>
+
+On va calculer la densite de $U_n$
+
+$$
+U_n=\theta T_n\\
+\phi:]0;+\infty[\to]0;+\infty[
+$$
+
+$\phi$ est derivable et bijective:
+
+$$
+\phi^{-1}(x)=\frac{x}{\theta}\quad\text{et}\quad\phi'(x)=\theta\\
+\begin{aligned}
+f_{U_n}(u)&=\frac{1}{\theta}\times\frac{1}{\Gamma(n)}\biggr(\frac{u}{\theta}\biggr)^{\alpha-1}\theta^{\alpha}e^{-\theta\frac{u}{\theta}}
+\end{aligned}
+$$
+
+<div class="alert alert-danger" role="alert" markdown="1">
+
+$$
+f_{U_n}(u)=\frac{1}{\Gamma(n)}u^{\alpha-1}e^{-u}
+$$
+
+Donc la loi de $U_n$ ne depend pas de $\theta$
+
+</div>
+
+3.
+
+Notons $H_n$ la fonction de repartition de $U_n$.
+
+$$
+\begin{aligned}
+\alpha&=P(\text{Rejeter }H_0\vert H_0\text{ vraie})\\
+&= P(T_n\lt S_{\alpha}\vert H_0\text{ vraie})\\
+&= P(\theta_0 T_n\le\theta_0 S_{\alpha}\vert\theta=\theta_0)\\
+&= \color{red}{P}(U_n\lt\theta_0 S_{\alpha})\quad\color{red}{\text{Sous } H_0}\\
+&= H_n(\theta_0S_{\alpha})
+\end{aligned}\\
+S_{\alpha}=\frac{H_n^{-1}(\alpha)}{\theta_0}
+$$
+
+<div class="alert alert-success" role="alert" markdown="1">
+
+$$
+H_n(x)=\int_0^x\frac{1}{\Gamma(n)}t^{\alpha-1}e^{-t}dt
+$$
+
+Si $x\lt y$ alors:
+
+$$
+H_n(y)-H_n(x)=\int_x^y\frac{1}{\Gamma(n)}t^{\alpha-1}e^{-t}dt\gt0
+$$
+
+Donc $(H_n)$ est strictement croissante sur $[0;+\infty[$
+
+Par consequence, elle est strictement croissante
+
+</div>
+
+$$
+\begin{aligned}
+\beta &= P(\text{Rejeter } H_1\vert H_0\text{fausse})\\
+&= P(T_n\ge S_{\alpha}\vert \theta=\theta_1)\\
+&= P(\underbrace{\theta_1 T_n}_{\color{green}{U_n}}\ge S_{\alpha}\theta_1\vert \theta=\theta_1)\\
+&= 1-H_n(\theta_1S_{\alpha})
+\end{aligned}
+$$
+
+<div class="alert alert-danger" role="alert" markdown="1">
+
+$$
+\boxed{\beta=1-H_n\biggr(\frac{\theta_1}{\theta_0}H_n^{-1}(\color{green}{\alpha})\biggr)}
+$$
+
+</div>
+
+</details>
