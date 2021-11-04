@@ -1,5 +1,5 @@
 ---
-title:          "VPOA: CM1"
+title:          "VPOA: Perception 3D"
 date:           2021-11-03 09:00
 categories:     [Image S9, VPOA]
 tags:           [Image, S9, VPOA]
@@ -42,9 +42,9 @@ Offre
 
 ![](https://i.imgur.com/0yFT5qq.png)
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Ce n'est **pas** de la sous-traitance
-:::
+</div>
 
 ### Technos cles
 
@@ -75,9 +75,9 @@ Autres
 
 ### Projet H-20
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Projets finances par la comission europeenne
-:::
+</div>
 
 ![](https://i.imgur.com/p8ooAQK.png)
 
@@ -116,7 +116,7 @@ MMT2 pour Thales
 
 > "Un truc de GISTRE"
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 Un domaine inter-disciplinaire pour permettre a une machine d'analyser, traiter et comprendre une representation de l'environnement obtenue par un systeme d'acquisition.
 
@@ -124,11 +124,10 @@ Cette branhe de l'intelligence artificielle implique le developpement d'algorith
 
 ![](https://i.imgur.com/XKdmUo4.png)
 
-:::
+</div>
 
-# Partie 1: Perception 3D
 
-## Introduction
+# Introduction
 
 *Qu'est-ce que la perception ?*
 > Une representation de la realite
@@ -143,7 +142,7 @@ On va *estimer* des choses
 - Interpretation semantique
 - Interpretation d'image
 
-### De l'objet a l'observation
+## De l'objet a l'observation
 
 ![](https://i.imgur.com/JYDpH54.png)
 
@@ -153,11 +152,11 @@ Ce qu'on veut faire en computer vision
 
 ![](https://i.imgur.com/EXZNYmp.png)
 
-## Systemes d'acquisition 3D
+# Systemes d'acquisition 3D
 
 ![](https://i.imgur.com/7vK5yB9.png)
 
-### Tomographie numerique
+## Tomographie numerique
 
 Rayons X
 - Principe de l'IRM
@@ -190,9 +189,9 @@ Mesure du decalage de la phase
 
 ![](https://i.imgur.com/vNixvVB.png)
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Il faut utiliser des longueurs d'ondes adaptees aux utilisations qu'on veut en faire
-:::
+</div>
 
 ![](https://i.imgur.com/N79nglw.png)
 
@@ -225,7 +224,7 @@ Lumiere structuree
 
 ![](https://i.imgur.com/H84qqgA.png)
 
-### Cameras
+## Cameras
 
 Avantages:
 - Pas de contact
@@ -248,25 +247,25 @@ Inconvenients:
 - Difficulte de l'appariement des pixels
 - Precision relativement faible
 
-### Mono-vision passive
+## Mono-vision passive
 
 - Utilisation d'image 2D pour avoir un rendu 3D
 
-### Stereo-vision
+## Stereo-vision
 
 - Vision d'une meme scene depuis 2 endroits legerements decales l'un par rapport a l'autre
 - Principe de la perception 3D chez l'Homme
 
-### Precision et etalonnage
+## Precision et etalonnage
 
 - Les points 3D sont des mesures geometriques obtenues par des principes physique (lumiere, contact, etc.) et mecaniques
 - Les erreurs systematiques de mesure peuvent etre ameliorees par calibrage/etalonnage
 
 ![](https://i.imgur.com/AFqTNao.png)
 
-## Modelisation de la camera
+# Modelisation de la camera
 
-### Geometrie optique
+## Geometrie optique
 
 Postulats:
 - La propagation de la lumiere est decrite par des rayons lumineux provenant d'une source de lumiere
@@ -275,7 +274,7 @@ Postulats:
 - Le chemin parcouru par un rayon lumineux et reversible
 - L'intersection de rayons lumineux est sans effets
 
-### Modelisation de la camera
+## Modelisation de la camera
 
 - Capteur uniquement
 
@@ -288,35 +287,35 @@ Postulats:
 
 ![](https://i.imgur.com/beQfhzx.png)
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 C'est le **modele stenope**
 
 ![](https://i.imgur.com/QIFDCeo.png)
 
-:::
+</div>
 
-### Distance focale
+## Distance focale
 
 ![](https://i.imgur.com/3VHVbhw.png)
 
-### Ouverture
+## Ouverture
 
 ![](https://i.imgur.com/UWMAarU.png)
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 Reduction de la taille de l'ouverture
 - Amelioration de la nettete
 - Reduction de la luminosite
 
 ![](https://i.imgur.com/WKaRkPz.png)
 
-:::
+</div>
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Problematique du computer vision**: choisir la bonne ouverture
-:::
+</div>
 
-### Lumiere
+## Lumiere
 
 - Sans lumiere, pas d'image (pas de bras pas de chocolats)
 - L'illumination de la scene a une influence importante sur le processus d'acquisition
@@ -324,11 +323,11 @@ Reduction de la taille de l'ouverture
 - GLobalement possible de controler l'illuminatino dans l'industrie
 - Difficile a impossible en milieu exterieur
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 
 Il faut si possible controle l'illumination
 
-:::
+</div>
 
 - Sinon, agir sur les parametres physiques de la camera
     - Vitesse d'obturation
@@ -339,31 +338,31 @@ Il faut si possible controle l'illumination
 
 ![](https://i.imgur.com/xgMpgbr.png)
 
-### Lentilles
+## Lentilles
 
 - Utilisation d'une lentille pour concentrer la lumiere sur le plan image
     - Amelioration de la luminosite
     - Amelioration de la nettete
 
-### Distance focale
+## Distance focale
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 La distance entre la lentille et le point ou tous les rayons lumineux convergent
-:::
+</div>
 
-### Focus
+## Focus
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Les objets sont correctement projetes sur le plan image uniquement lorsqu'ils sont a une certaine distance de la lentille/lorsque le capteur est a une certaine distance de la lentille
-:::
+</div>
 
-### Distance de focus
+## Distance de focus
 
 ![](https://i.imgur.com/mUpYbdy.png)
 
-### Hyperfocale
+## Hyperfocale
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Definition**
 
 Distance minimum a laquelle il est possible de faire la mise au point tout en gardant les objets situes a l'infini avec une nettete acceptable
@@ -372,9 +371,9 @@ Distance minimum a laquelle il est possible de faire la mise au point tout en ga
 
 ![](https://i.imgur.com/Jj4tZTn.png)
 
-:::
+</div>
 
-### Validite du modele stenope
+## Validite du modele stenope
 
 On peut assimilier une camera munie d'une lentille a une camera stenope si:
 - On considere uniquement le rayon lumineux central
@@ -383,9 +382,9 @@ On peut assimilier une camera munie d'une lentille a une camera stenope si:
 - On neglige ou corrige les distortions induites par la lentille
 - On ajoute un systeme d'ouverture pour limiter les erreurs
 
-### Distortions
+## Distortions
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 
 Probleme des lentilles
 - Distortion radiale ![](https://i.imgur.com/nlkzrl8.png)
@@ -395,16 +394,16 @@ Probleme des lentilles
 - Astigmatisme ![](https://i.imgur.com/HEsmIgt.png)
     - La distance focale est differente selon l'axe $X$ et l'axe $Y$ car la lentille n'est pas parfaitement circulaire
 
-:::
+</div>
 
-### Abberations
+## Abberations
 
 Probleme des lentilles
 - Aberration chromatique ![](https://i.imgur.com/MwKUfWp.png)
 - Aberration comatique ![](https://i.imgur.com/KRhsXLR.png)
     - S'observe notemment sur les telescopes
 
-### Malformation capteur
+## Malformation capteur
 
 Probleme du capteur
 - Asymetrie des pixels ou "skewness"
@@ -413,7 +412,7 @@ Probleme du capteur
 ![](https://i.imgur.com/SLUUR90.png)
 
 
-### Bruit
+## Bruit
 
 Probleme du capteur
 - Bruit lie a l'electronique
@@ -423,33 +422,33 @@ Probleme du capteur
 
 ![](https://i.imgur.com/KoEKHEc.png)
 
-### Geometrie optique
+## Geometrie optique
 
 ![](https://i.imgur.com/TFosGRf.png)
 
-### Systeme d'equation
+## Systeme d'equation
 
 ![](https://i.imgur.com/sP734Pj.png)
 
-### Centre optique
+## Centre optique
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 Le capteur et la lentille ne sont pas parfaitement alignes $\Rightarrow$ decalage entre le centre optique et le centre de l'image
-:::
+</div>
 
 Le point/pixel de coordonnees $(0,0)$ dans l'image correspond au coin superieur gauche
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 On applique une tranlsation permettant de passer au centre optique $(0,0)$ de l'image
-:::
+</div>
 
-### Parametres intrinseques
+## Parametres intrinseques
 
 ![](https://i.imgur.com/IokVlCL.png)
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 Retenir: matrice intrinseque
-:::
+</div>
 
 3D vers image 2D:
 
@@ -481,12 +480,12 @@ $$
 
 ![](https://i.imgur.com/PQYUIwW.png)
 
-:::danger
+<div class="alert alert-danger" role="alert" markdown="1">
 Les coordonnees du monde ne sont pas necesairement les memes que les coordonnees de la camera
 
 ![](https://i.imgur.com/gqymEcD.png)
 
-:::
+</div>
 
 Il faut convertir du systeme de cooordonnees du monde vers le system de coorodnnnees de la camera
 
@@ -508,7 +507,7 @@ $$
 
 ![](https://i.imgur.com/Htiosuo.png)
 
-### Du monde a l'image
+## Du monde a l'image
 
 ![](https://i.imgur.com/jaMGKpl.png)
 
@@ -529,9 +528,9 @@ Plane-based calibration
 
 ![](https://i.imgur.com/iMbOWLI.png)
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 Cela permet de fixer $Z=0$ pour tous les points du plan observe
-:::
+</div>
 
 ![](https://i.imgur.com/b21EehJ.png)
 
@@ -555,25 +554,25 @@ Y\\
 \end{bmatrix}
 $$
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 A l'aide de ces equations et de la conaissance du plan observe, il est possible de determiner $K$
 
 ![](https://i.imgur.com/gd0MlmU.png)
 
-:::
+</div>
 
-### Parametres de distorsion
+## Parametres de distorsion
 
 - Il est possible d'estimer des aprametres caraterisant les distortions radiales et tangentielles
 - Plusieurs modeles de distorsion existent, notamment le modele polynomial de Brown-Conrady
 
 ![](https://i.imgur.com/GEgOarI.png)
 
-### Modele complet
+## Modele complet
 
 ![](https://i.imgur.com/ExFHiww.png)
 
-### Comment realiser une bonne calibration ?
+## Comment realiser une bonne calibration ?
 
 - La cible doit etre parfaitement plane
 - Les motifs de type cercles asymetrqiues donnent de meilleurs resultats
@@ -584,7 +583,7 @@ A l'aide de ces equations et de la conaissance du plan observe, il est possible 
 
 ![](https://i.imgur.com/uC4L24n.png)
 
-### Controler l'environnement de calibration
+## Controler l'environnement de calibration
 
 - Pas de sources de lumiere directe
 - Pas d'autres cible/motifs similaires visible
@@ -599,13 +598,13 @@ A l'aide de ces equations et de la conaissance du plan observe, il est possible 
 
 ![](https://i.imgur.com/729RDI0.png)
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 Il faut toujours calibrer **sur site**
-:::
+</div>
 
-### Procedure de calibration
+## Procedure de calibration
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 - Mettre la camera dans une position fixe
 - Acquerir 9 images a la distance de travail la plus proche
 - Recommecer pour la distance de travail moyenne
@@ -615,31 +614,31 @@ Il faut toujours calibrer **sur site**
 
 ![](https://i.imgur.com/ykGzyyf.png)
 
-:::
+</div>
 
-## Stereovision
+# Stereovision
 
-### Triangulation
+## Triangulation
 
 ![](https://i.imgur.com/vTeFtb1.png)
 
-### Geometrie epipolaire
+## Geometrie epipolaire
 
 ![](https://i.imgur.com/434Z48b.png)
 
-### Lignes epipolaires
+## Lignes epipolaires
 
 ![](https://i.imgur.com/AleIWzO.png)
 
-### Matrice essentielle $E$
+## Matrice essentielle $E$
 
 ![](https://i.imgur.com/Om5m8ee.png)
 
-### Matrice fondamentale $F$
+## Matrice fondamentale $F$
 
 ![](https://i.imgur.com/XYbrN3T.png)
 
-### Rectification
+## Rectification
 
 Le fait de rendre 2 images "paralleles"
 - Rend la triangulation facile
@@ -647,38 +646,38 @@ Le fait de rendre 2 images "paralleles"
 
 ![](https://i.imgur.com/Bgum11M.png)
 
-### Appariement de points
+## Appariement de points
 
 - Trouver les coordonnees en pixel d'un point 3D dans le plan image des 2 cameras
 - Les points images sont sur la meme ligne lorsque les images sont rectifiees
 
 ![](https://i.imgur.com/1pxOTGT.png)
 
-### Plans image paralelles
+## Plans image paralelles
 
 ![](https://i.imgur.com/IFzUGuK.png)
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 **Disparite**
 Distance en pixels qui separe la projection d'un meme point sur les images des 2 cameras
 
 ![](https://i.imgur.com/9YFfwSz.png)
 
-:::
+</div>
 
 ### Calcul de la profondeur
 
 ![](https://i.imgur.com/DHKN49A.png)
 
-### Image de disparite/clarte de profondeur
+## Image de disparite/clarte de profondeur
 
 ![](https://i.imgur.com/PprUnqm.png)
 
-### Calcul des coordonnees 3D
+## Calcul des coordonnees 3D
 
 ![](https://i.imgur.com/4k9rZg8.png)
 
-### Methodes de correlation
+## Methodes de correlation
 
 *Comment faire pour trouver les points correspondants ?*
 
@@ -693,16 +692,16 @@ De facon naive, recherche identique mais on peut avoir des pixels qui ont la mem
 - Slide the window $w$ along $v=\bar V$ in image 2 and compute $w'(u)$ for each $u$
 - Compute the dot product $w^Tw'(u)$
 
-:::warning
+<div class="alert alert-warning" role="alert" markdown="1">
 C'est sensible aux differences d'exposition
-:::
+</div>
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 On fait de la **normalized crossed-correlation**
 
 ![](https://i.imgur.com/SxAJVq7.png)
 
-:::
+</div>
 
 On peut faire varier la taille de la fenetre
 
@@ -712,10 +711,82 @@ Petite fenetre:
 
 ![](https://i.imgur.com/NNObSwE.png)
 
-### Problemes de la stero-vision
+## Problemes de la stero-vision
 
 ![](https://i.imgur.com/1gq0rjp.png)
 
-### Occlusions
+## Occlusions
 
 ![](https://i.imgur.com/dSeWBsZ.jpg)
+
+## Problemes de la stereo vision
+
+- Regions homogenes et/ou peu texturees
+
+![](https://i.imgur.com/ZjzLZQM.png)
+
+- Patterns repetitifs
+
+![](https://i.imgur.com/gLi1DB7.png)
+
+## Influence de la baseline 
+
+- Petite baseline, petit $\frac{B}{Z}$
+
+![](https://i.imgur.com/g1jApn7.png)
+
+- Grande baseline, grand $\frac{B}{Z}$
+
+![](https://i.imgur.com/6BQrSBC.png)
+
+## Disparite entiere
+
+<div class="alert alert-warning" role="alert" markdown="1">
+Le processus de stereo-correlation permet uniquement de calculer des valeurs entieres de disparite
+
+> Il est necessaire de raliser une interpolation pour lisser les disparite
+
+</div>
+
+Exemples ans interpolation sous-pixellique:
+
+![](https://i.imgur.com/HyMTihN.png)
+
+<div class="alert alert-success" role="alert" markdown="1">
+Une fonction d'interpolation sous-pixellique doit etre implementee
+</div>
+
+La fonction de disparite est estimee en appliquant une fonction de la forme:
+
+$$
+d_{subpix} = d_{int} + f(s_{left}, s_{med}, s_{right})
+$$
+
+avec $s$ les scores de correlation
+
+On peut simpifier la formulation de cette fonction:
+
+$$
+d_{subpix}=\begin{cases}
+d_{int} - 0.5 + f(\frac{l_d}{r_d}) &\text{if } l_d\le r_d\\
+d_{int} + 0.5 + f(\frac{r_d}{l_d}) &\text{otherwise}
+\end{cases}
+$$
+
+L'utilisation d'une fonction d'interpolation sous-pixellique a pour effet d'introduire de petites erreurs sous la forme d'une sinusoide
+
+![](https://i.imgur.com/74mfR2W.png)
+
+Meme si cet effet est difficilement visible sur la carte de disaprtie, il apparait clairement sur la reprojection 3D:
+
+![](https://i.imgur.com/1Hh9rRT.png)
+
+## Deep learning
+
+Reseaux de neurones convolutifs:
+
+![](https://i.imgur.com/YpNu4EJ.png)
+
+[Etat de l'art](http://vision/middlebury.edu/stereo)
+
+![](https://i.imgur.com/1nvcyuj.png)
