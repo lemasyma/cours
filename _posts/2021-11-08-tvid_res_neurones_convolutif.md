@@ -60,7 +60,7 @@ Conv2D(filters = 2, kernel_size = (3, 3), stride = (2, 2), padding = 'same')
 
 En anglais: *atrous convolution*
 
-```python=
+```python
 Conv2D(32, kernel_size=3, dilatation_rate=(2, 2))
 ```
 
@@ -89,7 +89,7 @@ En pratique on fait:
 
 **Conv separee en profondeur** 
 
-```python=
+```python
 kl.SeparableConv2D
 ```
 
@@ -129,7 +129,7 @@ $$
 <div class="alert alert-danger" role="alert" markdown="1">
 **Pooling**
 
-```python=
+```python
 kl.MaxPooling2d(pool_size = (2, 2))
 ```
 ![](https://i.imgur.com/jiVaceA.png)
@@ -217,7 +217,7 @@ Si chaque image de sortie represente les pixels appartenant a la classe $k$, alo
     - `categorical_crossentropy` avec resultats sous la forme $[0,0,..,1,..,0]$ pour indiquer la classe $k$
     - `sparse_categorical_crossentropy` avec les classes indiques par des entier
 
-```python=
+```python
 y_true = [[1, 2], [0, 2]] #image 2x2 with 3 categories
 y_pred = [[0.05, 0.95, 0], [0.1, .01, 0.8], #proba for each category
          [0.7, 0.2, 0.1], [0.2, 0.2, 0.6]] #for each pixel
@@ -248,6 +248,6 @@ Souvent c'est bien utile, en particulier lorsqu'on manque de donnees.
 
 Parfois ca rend la tache plus difficile et ca ne marche pas.
 
-```python=
+```python
 ImageDataGenerator
 ```
