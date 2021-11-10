@@ -1,8 +1,8 @@
 ---
 title:          "DLIM: Reseaux neuronaux convolutifs"
 date:           2021-11-08 14:00
-categories:     [Image S9, TVID]
-tags:           [Image, S9, TVID]
+categories:     [Image S9, DLIM]
+tags:           [Image, S9, DLIM]
 math: true
 ---
 
