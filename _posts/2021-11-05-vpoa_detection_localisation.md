@@ -1,285 +1,619 @@
 ---
-title:          "PRSTA: TD 4"
-date:           2021-10-27 14:30
-categories:     [Image S9, PRSTA]
-tags:           [Image, S9, PRSTA]
+title:          "VPOA: Detection et localisation"
+date:           2021-11-05 09:00
+categories:     [Image S9, VPOA]
+tags:           [Image, S9, VPOA]
 math: true
 ---
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/r1J96crSt)
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryDODPGDK)
 
-# Feuille 4 Exercice 2
+# Introduction 
 
-## Partie A
+*Qu'est-ce que la vision ?*
+- Percevoir le monde
+    - Compose d'objets
+    - Structure en 3D
+    - Efficacement interprete par l'Homme
+- Receuil d'information
+    - Ensemble de points
+    - Information sur la lumiere
+    - Quantite et contenu spectral
+- Representation du monde reel
+    - Les objets n'existent pas sur la retine
+    - Processus visuel d'interpretation
 
-La variable aleatoire $X$ suit une loi de densite:
+Vision humaine
+- **Extremement complexe**
+- Active de nombreuses zones du cerveau
+- Possede des capacites nombreuses et variees
 
-$$
-f(x,\theta)=\theta x^{\theta-1}1_{[0;1]}(x)
-$$
+Vision par ordinateur
+- Bio inspiree ou non
+- Production d'un modele algorithmique fonctionnellement similaire aux capacites du cerveau humain
+- Reprosudit seulement un sous-ensemble de capacites
 
-ou le parametre $\theta$ est strictement positif.
+## Quelques termes
 
-En d’autres termes, $f(x, \theta) = 0$ si $x \not\in [0; 1]$ et $f(x, \theta) = \theta x^{\theta−1}$ si $x \in [0; 1]$.
-
-1. Justifier que, pour tout $\theta \gt 0$, $f(., \theta)$ definit bien une densite sur $\mathbb R$.
-2. Calculer $E(X)$
-3. Determiner l’estimateur du maximum de vraisemblance $\hat\theta$ du parametre $\theta$.
-4. Considerons maintenant la variable aleatoire $Y := − \ln X$.
-    1. Pourquoi est-elle bien definie ?
-    2. Montrer que la variable aleatoire $Y$ suit une loi $\Gamma(1, \theta)$.
-
-<details markdown="1"><summary>Solution</summary>
-
-1.
-
-Comme $\theta\gt 0$ et $x\in[0;1]$, $f(x,\theta)$ est strictement positive.
-
-$$
-\begin{aligned}
-\int_0^1f(x,\theta)&=[x^{\theta}]^1_0\\
-&= 1^{\theta}-0 =1
-\end{aligned}
-$$
-
-On a donc bien une densite.
-
-2.
-
-$$
-\begin{aligned}
-E(X)&=\int_0^1xf(x,\theta)1_{[0;1]}dx\\
-&= \int_0^1\theta x^{\theta}dx\\
-&= \biggr[\frac{\theta x^{\theta+1}}{\theta+1}\biggr]\\
-&= \frac{\theta}{theta+1}\gt0
-\end{aligned}
-$$
-
-3.
-
-Considerons:
-
-$$
-\begin{aligned}
-L(x_1,\dots,x_n,\theta) &= \prod_{i=1}^n\theta x_i^{\theta-1}1_{[0;1]}(x_i)\\
-&= \theta^n\prod_{i=1}^nx_i^{\theta-1}\prod_{i=1}^n1_{[0;1]}(x_i)
-\end{aligned}
-$$
-
-*Pourquoi est-ce que les indicatrices ne posent pas de problemes ?*
-> Car nos observations sont entre $0$ et $1$
-
-Pour determiner le maximum, nous pouvons nous restreindre au cas: $(x_1,\dots,x_n)\in[0;1]$ car les $x_i$ sont des observations.
-
-Passons au logarithme:
-
-$$
-\ln(L(x_1,\dots,x_n,\theta))=n\ln(\theta)+(\theta-1)\sum_{i=1}^nx_i
-$$
-
-Calculons la derivee partielle:
-
-$$
-\frac{\partial\ln(x_1,\dots,x_n,\theta)}{\partial\theta}=\frac{n}{\theta}+\sum_{i=1}^n\ln(X_i)\\
-\begin{aligned}
-\frac{\partial\ln(x_1,\dots,x_n)}{\partial\theta}&=0\\
-\Leftrightarrow\theta&=\frac{m}{\sum_{i=1}^n\ln(X_i)}
-\end{aligned}
-$$
-
-Verifions la conditions du second ordre:
-
-$$
-\frac{\partial^2\ln(L(x_1,\dots,x_n,\theta))}{\partial\theta^2}=-\frac{n}{\theta^2}\lt 0\quad \forall \theta\gt 0
-$$
-
-<div class="alert alert-success" role="alert" markdown="1">
-$\hat\theta$ est bien l'EMV!
+<div class="alert alert-info" role="alert" markdown="1">
+**Traitement d'images**:
+- manipulation dont l'entree et la sortie sont des images
+- Aide l'humain ou la machine a examiner des images
 </div>
 
-4.
+<div class="alert alert-info" role="alert" markdown="1">
 
-1.
+Analyse d'images: analyse ou l'entree est une image mais la sortie est une information
 
-Elle est bien definie car comme $X\in[0;1]$, $\ln(X)\lt0$ donc $-\ln(X)\gt 0$
-
-2.
-
-*Pourquoi on parle de loi $\Gamma$ au lieu de loi exponentielle ?*
-> Car c'est facile d'additionner les loi $\Gamma$.
-
-$$
-\begin{aligned}
-y&=-\ln x\\
-\ln x&=-y\\
-x&=e^{-y}
-\end{aligned}
-$$
-
-On pose $\phi(x)=-\ln(x)$
-
-$$
-\phi'(x)=-\frac{1}{x}\\
-\phi^{-1}(x)=e^{-x}\\
-\begin{aligned}
-f_Y(y)&=\color{red}{-}\frac{1}{\phi'(\phi^{-1}(y))}\cdot f(\phi^{-1}(y))\quad\phi'(\phi^{-1}(y))=\color{red}{-}\frac{1}{e^{-x}}\\
-&=e^{-y}\cdot\theta\phi^{-1}(y)^{\theta-1}\\
-&=e^{-y}\cdot e^{-y(\theta-1)}\\
-&=\theta e^{-\theta y}
-\end{aligned}
-$$
-
-Donc $Y\rightsquigarrow \xi(\theta)=\Gamma(1,\theta)$
-
-<div class="alert alert-success" role="alert" markdown="1">
-$$
-\boxed{\phi_y(t)=\frac{\theta}{\theta-it}}
-$$
-
-car fonction caracteristique de la **loi exponentielle**
 </div>
 
-*Qu'est-ce qu'on a oublie dans notre formule ?*
-> La valeur absolue du Jacobien
+TODO
 
-</details>
+## Processus d'integration dans un systeme
 
-## Partie B
+![](https://i.imgur.com/B9vP5wM.png)
 
-Considerons $n$ variables aleatoires independantes $X_i$ suivant la loi de $X$. Nous souhaitons tester l’hypothese $H_0 : \theta = \theta_0$ contre $H_1 : \theta = \theta_1$ avec $\theta_0 < \theta_1$ a l’aide d’observations $x_i$ issues de l’echantillon precedent.
+## Objectifs de la seance
 
-1. Nous noterons, dans la suite de l’exercice, $Y_i = − \ln X_i$. Montrer que la statistique de Neyman-Pearson est: $T_n:=\sum_{i=1}^nY_i$
-2. Determiner la loi de la variable aleatoire $T_n$ puis celle de la variable aleatoire $U_n:=\frac{T_n}{\theta}$
-3. Exprimer les risques de premiere et de seconde espece $\alpha$ et $\beta$ en fonction du seuil $S_{\alpha}$, des parametres $\theta_0$ et $\theta_1$ et de la fonction de repartition de la variable aleatoire $U_n$.
+- Trouver/extraire dans l'image des informations pertinentes pour TODO
 
-<details markdown="1"><summary>Solution</summary>
+### Detection Deep-learning
 
-1.
+![](https://i.imgur.com/iY54sij.png)
 
-$$
-\begin{aligned}
-\frac{L(X_1,\dots,X_n\theta_1)}{L(X_1,\dots,X_n\theta_0)}&=\frac{\prod_{i=1}^n\theta_1x_i^{\theta_1-1}}{\prod_{i=1}^n\theta_0x_i^{\theta_0-1}}\\
-&= \biggr(\frac{\theta_1}{\theta_2}\biggr)^n\prod_{i=1}^nX_i^{\theta_1-\theta_0}
-\end{aligned}
-$$
+> On a entraine le modele a detecter des voitures mais ca ne reconnais que l'avant des camions
 
-$(H_0)$ est rejetee si:
+### Detection et tracking
 
-$$
-\begin{aligned}
-T&\gt C_{\alpha}\\
-\ln(T_n)=n\ln(\frac{\theta_1}{\theta_0})+(\theta_n-\theta_0)\sum_{i=1}^n\ln(X_i)&\gt\ln(C_{\alpha})\\
-\sum_{i=1}^n\ln(X_i)&\gt\underbrace{\frac{\ln(C_{\alpha})-n\ln(\frac{\theta_1}{\theta_0})}{\theta_n-\theta_0}}_{S_{\alpha}'}\\
--\sum\ln(X_i)&\lt -S_{\alpha}'\\
-T_n=-\sum_{i=1}^n\ln(X_i)&\lt S_{\alpha}\quad \text{ou } S_{\alpha}=-S_{\alpha}'
-\end{aligned}
-$$
+![](https://i.imgur.com/A7pJ63x.jpg)
 
-2.
+# Geometrie projective
 
-*Quel loi suit $T_n$ ?*
+## Coordonnees homogenes
 
-On sait que $X_i\sim P(1,\theta)$
+<div class="alert alert-info" role="alert" markdown="1">
+Systeme de coordonnees pour la geometrie projective
+</div>
 
-Donc $\phi_X(t)=\frac{\theta}{\theta-it}$
+Passer des coordonnees cartesiennes aux coordonnees homogenes:
 
 $$
-T_n=\sum_{i=1}^n Y_i
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix} \Rightarrow
+\begin{bmatrix}
+x\\
+y\\
+1
+\end{bmatrix}
 $$
 
-Donc
+Passer des coordonnees homogenes aux coordonnees cartesiennes:
 
 $$
-\phi_{T_n}=(\phi_{Y_i}(t))
+\begin{bmatrix}
+u\\
+v\\
+w
+\end{bmatrix}=
+\begin{bmatrix}
+u / w\\
+v / w\\
+1
+\end{bmatrix} \Rightarrow
+\begin{bmatrix}
+u / w\\
+v /w
+\end{bmatrix} =
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
 $$
 
-car les $Y_i$ sont independants.
+![](https://i.imgur.com/u6CNtwy.png)
+
+![](https://i.imgur.com/cSZsGnh.png)
+
+![](https://i.imgur.com/aR3SU38.png)
+
+Propriete homogene: $\bar x\sim\lambda \bar x, \forall \lambda\in\mathbb R, \lambda \neq =0$
+
+Point a l'infini: 
+
+$$
+\bar x_{inf} = \begin{bmatrix}x \\ y \\0 \end{bmatrix}
+$$
+
+![](https://i.imgur.com/kzwe2kq.png)
+
+## Modele du plan projectif
+
+<div class="alert alert-info" role="alert" markdown="1">
+Le plan projectif $P^2$ represente l'espace 3D sur un plan
+</div>
+
+Intrepretation geometrique de l'homographie
+
+![](https://i.imgur.com/PeupaZz.png)
+
+## Homographies
+
+![](https://i.imgur.com/B7uW7aT.png)
+
+### Estimation d'homographie
+
+![](https://i.imgur.com/wWf5gMc.png)
+
+Estimation par Direct Linear Transform
+
+- Necessite au moins 4 points pour obtenir une solution exacte (2 equations par point et 8 inconnues)
+- Etant donne $n\ge 4$, correspondances de points 2D, determiner $H$ tel que $\bar x_i'=H\bar x_i$
+
+Algorithme:
+- Pour chaque correspondance $\bar x_i\leftrightarrow \bar x_i'$ pour claculer $A_i$
+- Assembler les matrices $A_i$ en une matrice $9\times 9$: $A$
+- Calculer le SVD de $A$: $U\Sigma V$
+- Solution pour $h$: derniere colonne de $V$
+- Determiner $H$ a partir de $h$
+
+![](https://i.imgur.com/JrKRkqE.png)
+
+
+## Homographie et plan 3D
+
+![](https://i.imgur.com/muiUmRQ.png)
+
+Le passage de n'importe quel plan vers n'importe quel autre plan (y compris le plan image) est une homographie
+
+![](https://i.imgur.com/iuhko5j.png)
+
+# Extraction de caracteristiques locales
+
+## Representation d'une image
+
+$I(x, y)$: valeur d'un pixel
+
+- Dans $\mathbb R$ en monochrome
+- Dans $\mathbb R^3$ en couleurs
+
+### Variations
+
+- De luminosite globale: $I(x,y)\to I(x,y)+\alpha$
+- De contraste: $I(x,y)\to\lambda I(x,y)$
+- Par translation
+
+## Comparaison de points
+
+Trouver le point le plus similaire
+
+![](https://i.imgur.com/TIuMbWD.png)
+
+Stereo-vision: on suppose que les points similaires sont sur la meme ligne
+
+![](https://i.imgur.com/SOmWfvj.png)
+
+*Comment trouver des points facilement identifiables ?*
+> Gradients
+> Contours
+> Etc
+
+## Kernel
+
+<div class="alert alert-info" role="alert" markdown="1">
+Aussi appele noyau ou masque ou matrice de convolution
+</div>
+
+- Permet d'appliquer une operation a l'image
+- Convolution:
+
+![](https://i.imgur.com/BEBUXgp.png)
+
+## Gradient 
+
+<div class="alert alert-success" role="alert" markdown="1">
+Va nous permettre d'obtenir une caracteristique de variabilite autour d'un point
+</div>
+
+En 1D:
+![](https://i.imgur.com/mDCiKnB.png)
+
+En 2D: Filtre de Sobel
+
+![](https://i.imgur.com/AkWZgZz.png)
+
+![](https://i.imgur.com/RT91Spq.png)
+
+![](https://i.imgur.com/Norvcpq.png)
+
+### Laplacien
+
+Detection de contours
+
+![](https://i.imgur.com/g7YZ4xd.png)
+
+## Detection de coins
+
+<div class="alert alert-info" role="alert" markdown="1">
+Zones ou le gradient varie dans plusieurs directions
+</div>
+
+Detecteur de Harris:
+
+![](https://i.imgur.com/nHRZMFX.png)
+
+### Changement d'echelle
+
+*Comment reconnaitre un point apres un changement d'echelle ?*
+
+![](https://i.imgur.com/Vqw9JpI.png)
+
+<div class="alert alert-success" role="alert" markdown="1">
+Avec des descripteurs !
+</div>
+
+## Descripteur
+
+- Moyen de decrire une zone locale de l'image
+- Les "features" sont associees a des points localement distincts dans l'image
+- Les descripteurs sont la signature de ces points
+
+![](https://i.imgur.com/GaTjlU0.png)
+
+### Differences de Gaussiennes
+
+Detection de blobs par differences de Gaussiennes:
+
+![](https://i.imgur.com/ngGG4El.png)
+
+On soustrait l'image floutee a l'image normale
+
+Invariance par changement d'echelle pour les differences de Gaussiennes:
+
+![](https://i.imgur.com/oVczY6i.png)
+
+### Descripteur SIFT
+
+<div class="alert alert-info" role="alert" markdown="1">
+Scale Invariant Feature Transform
+</div>
+
+Detection de blobs par la methode des differences de gaussienne
+
+![](https://i.imgur.com/wPVNwyJ.png)
+
+## Rotation
+
+*Comment reconnaitre un point apres une rotation ?*
+
+### Descripteur SIFT
+
+Histogramme d'orientations du gradient
+
+![](https://i.imgur.com/XOLda1b.png)
+
+- Decoupage en $4\times 4$ fenetres
+- Histogramme sur 8 directions
+
+![](https://i.imgur.com/RuGMtQo.png)
+
+Resume:
+
+![](https://i.imgur.com/funLyNS.png)
+
+- Identification/Matching des keypoints
+
+![](https://i.imgur.com/nYLkqcf.png)
+
+## Autres descripteurs
+
+- MSER (Maximally Stabel Extremal Regions)
+- SURF (Speeded Up Robust Features)
+- ORB (Oriented FAST and Rotated BRIEF)
+    - SIFT et SURF sont brevetes
+    - OpenCV a invente ORB comme alternative open-source et gratuite
+- BRIEF
+- FAST
+- KAZE
+- etc
+
+## Extraction de caracteristiques locales
+
+*Comment valoriser l'information ?*
+- Reconaissance/detection d'objets
+- Estimation de la pose/localisation
+    - De la projection d'objets 3D sur le plan Image
+    - D'objets 3D dans le monde
+    - De la camera dans le monde
+- Estimation du mouvement
+
+# Reconaissance d'objets
+
+Objectifs:
+- Detection d'instances d'objets par points d'interet
+    - Transformee de Hough
+    - RANSAC
+- Detection de categories d'objets
+    - Sac de mots visuels
+
+![](https://i.imgur.com/ILLjg3c.png)
+
+![](https://i.imgur.com/nvH682P.png)
+
+## Transformee de Hough
+
+A l'origine, detection de lignes droites:
+- Chaque point votre pour "toutes" les lignes qui passent par lui
+- Les votes sont accumules
+- Un maximum local corresponds a des lignes candidates
+
+![](https://i.imgur.com/hcSfnBE.png)
+
+Possible probleme: trouver le maximum vrai
+- Mean shift
+- Gaussian convolution
+- ...
+
+![](https://i.imgur.com/BTxhMam.png)
+
+Transformee de Hough generalisee
+- Contour/forme arbitraire
+    - Choix d'un point de reference our le contour (e.g. le centre)
+    - Pour chaque point du contour, se rappeler de sa position par rapport au point de reference
+    - Calcul de l'angle
+
+## RANSAC
+
+Cas de lignes
+- Choix aleatoire de droites
+- Vote base sur le nombre de points proches de la ligne
+- todo
+
+Amelioration
+- Elimination de outliers par RANSAC
+- Amelioration de l'estimation de RANSAC TODO
+
+### Comparaison
+
+![](https://i.imgur.com/vfwAGTw.png)
+
+## Reconnaissance d'objets 3D
+
+Base sur la detection de features
+- 3 features minimum sont necessaires pour la reconnaissance
+
+Reconnaissance d'objet 3D base sur la detection d'un modele 3D connu
+
+![](https://i.imgur.com/Cwgmt5I.png)
+
+## Mots visuels
+
+Principe: extraction de features locales a partir d'un certain nombre d'images
+
+![](https://i.imgur.com/0UOpkQy.png)
+
+- Cartographie des descripteurs vers de mots visuels qui quantifient l'espace des features
+- Le centre des clusters definissent les prototypes de mots
+
+![](https://i.imgur.com/fftVGoo.png)
+
+- Determination de quel mot doit etre assigne a chaque nouvelle region de l'image en trouvant le centre du cluster le plus proche
+
+![](https://i.imgur.com/dVROtkP.png)
+
+### Exemple
+
+Chaque groupe de patch correspond a un meme mot visuel
+
+![](https://i.imgur.com/ynnmD0x.png)
+
+- Resumer une image entiere a partir de sa distribution de presence de mots
+- Analogue a un sac de mots souvent utilise pour les documents de texte
+
+![](https://i.imgur.com/RmeoXEY.png)
+
+Creation d'un vocabulaire visuel:
+- Repertorier un ensemble de mots visuels (~ dictionnaire)
+- Differentes strategies
+    - Apprentissage supervise
+    - Deep learning
+    - etc
+
+Strategies d'echantillonnage:
+
+![](https://i.imgur.com/ixWAtiB.png)
+
+Arbre de vocabulaire:
+
+![](https://i.imgur.com/iCpzPCg.png)
+
+- Remplissage:
+
+![](https://i.imgur.com/HEpcWhN.png)
+
+![](https://i.imgur.com/bDsQ99t.png)
+
+Probleme:
+- certains mots visuels sont discriminants
+- D'autres apparaissent dans de nombreuses images
+
+Calcul d'un poids pour chaque mot visuel
+- Le poid correspond a la quantite d'info esperee 
+- Normalisation des histogrammes en fonction de ce poids
+
+# Estimation du mouvement
+
+## Objectifs
+
+- Detection/ Estimation du mouvement dans la scene
+    - Du au mouvement de la cmaera
+    - Mouvement des objets
+- Perception du mouvement apparent
+    - Champs des vecteurs de deplacement
+    - Flux optique
+
+## Flux optique
+
+Difficultes de l'estimation du flux optique
+- Ambiguites
+
+![](https://i.imgur.com/jceMWVx.png)
+
+- Premiere image: deplacement de drone, champ de vecteurs = deplacement des pixels
+- Si on aune voiture qui se rapproche de nous, on peut segementer la voiture du reste de l'image a partir de champs de vecteurs
+
+Interpretation du flux:
+
+![](https://i.imgur.com/RUSDZIj.png)
+
+Vitesse:
+- La camera se deplace a une vitesse $(X', Y', Z')$ par rapport a la scene
+- Si on derive les equations de perspective on a donc:
+
+![](https://i.imgur.com/ufEgE5x.png)
+
+### Interpretation du flux
+
+Translation pure selon $X$ (ou $Y$)
+
+![](https://i.imgur.com/SAjpekQ.png)
+
+Translation pure selon $Z$:
+
+![](https://i.imgur.com/7KY4y9P.png)
+
+Cas general:
+- Donne la direction du deplacement
+- Mouvement $(X', Y', Z')$
+- Soit $[X_0, Y_0, Z_0]^T$ un point de la scene, apres un temps $t$, il est projete sur l'image au point $[u_t, v_t]^t$ avec:
+
+![](https://i.imgur.com/oZhsKcm.png)
+
+
+Temps avant collision:
+- Mesure de la taille d''un element $\lambda = f\frac{\Lambda}{z}$
+
+![](https://i.imgur.com/mJblqFp.png)
+
+## Bundle adjustment
+
+- Nous avons pour l'instant uniquement utilise des paires d'image pour obtenir une information de profondeur
+- Dans le cas general, il est possible d'utiliser $N\gt 2$ images/cameras
+
+![](https://i.imgur.com/8LGDpMS.jpg)
+
+<div class="alert alert-info" role="alert" markdown="1">
+Le Bundle (block) adjustment ou ajustement de faisceaux en bloc, est une methode de resolution au sens des moindres carres les coordonnees 3D des points et aligner les images
+
+Plusieurs images sont corrigees "en bloc"
+</div>
+
+Principe:
+- Demarrer avec une approximation initiale
+- Projeter les points 3D sur les plans images des cameras
+- Comparaison avec la mesure
+- Ajustement pour minimiser l'erreur
+
+<div class="alert alert-warning" role="alert" markdown="1">
+
+Le BA est une approche non-lineaire de resolution par moindres carres:
+- $\bar x_{ij} + \hat e_{x_{ij}} = \lambda_{ij}P_{ij}\bar X_i$
+- Avec $\hat e_{x_{ij}}$ l'erreur de mesure du point $\bar X_i$
+- $i l'indice du point, $j$ l'indice de la camera
+
+</div>
+
+Elimination du facteur d'echelle:
+- $\bar x_{ij} + \hat e_{x_{ij}} = \frac{P_{1:2_{ij}}\bar X_i}{P_{3_{ij}}\bar X_i}$
+- Resolution par SVD
+
+## Odometrie Visuelle
+
+<div class="alert alert-info" role="alert" markdown="1">
+Estimation du mouvement de la camera par rapport au monde
+</div>
+
+Necessaire a de nombreuses applications
+- Pas de GPS
+    - Genre sur Mars
+- IMU et/ou odometrie des roues insuffisants
+    - On va mettre des encodeurs sur les roues et lire de combien s'est deplace la roue
+
+Odometrie:
+- Estimation du mouvement base sur le modele cinematique
+- Extansion a la vision
+
+Triangulation
+- Permet de connaitre la position 3D d'un point
+
+![](https://i.imgur.com/vrUQGxx.png)
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
-$$
-\boxed{\phi_{T_n}=\biggr(\frac{\theta}{\theta-it}\biggr)^n}
-$$
-
-Donc:
-- $T_n\sim\Gamma(n, \theta_0)$ sous $(H_0)$
-- $T_n\sim\Gamma(n, \theta_1)$ sous $(H_1)$
+Principe:
+- Trouver des correspondances de points entre 2 images successives: utilisation de descripteurs
+- Si le monde est statique et les points bien apparies alors on peut estimer la transformation $(R,t)$ a partir des parametres extrinseque
+- Probleme de minimisation de l'erreur de reprojection
+    - Necessite d'une bonne calibration
 
 </div>
 
-On va calculer la densite de $U_n$
+<div class="alert alert-warning" role="alert" markdown="1">
 
-$$
-U_n=\theta T_n\\
-\phi:]0;+\infty[\to]0;+\infty[
-$$
-
-$\phi$ est derivable et bijective:
-
-$$
-\phi^{-1}(x)=\frac{x}{\theta}\quad\text{et}\quad\phi'(x)=\theta\\
-\begin{aligned}
-f_{U_n}(u)&=\frac{1}{\theta}\times\frac{1}{\Gamma(n)}\biggr(\frac{u}{\theta}\biggr)^{\alpha-1}\theta^{\alpha}e^{-\theta\frac{u}{\theta}}
-\end{aligned}
-$$
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-$$
-f_{U_n}(u)=\frac{1}{\Gamma(n)}u^{\alpha-1}e^{-u}
-$$
-
-Donc la loi de $U_n$ ne depend pas de $\theta$
+Peu robuste aux rotations pures
+- On compense ave l'IMU et l'odometrie des roues
 
 </div>
 
-3.
+Pseudo code:
 
-Notons $H_n$ la fonction de repartition de $U_n$.
+```
+Capturer l'image I_k
+Calculer les correspondannce entre I_k-1 et I_k
+Calcul de la matrice essentielle E et que p^TEp' = 0
+Decomposition de E en R_k et t_k par SVD
+Calcul du modele 3D (coordonnees des points de correspondance)
+Redimensionnement de t_k pour prendre en compte l'echelle
+    Attention ! p^TEp' = 0 <=> lambda p^TEp'=0
+k = k + 1
+```
 
-$$
-\begin{aligned}
-\alpha&=P(\text{Rejeter }H_0\vert H_0\text{ vraie})\\
-&= P(T_n\lt S_{\alpha}\vert H_0\text{ vraie})\\
-&= P(\theta_0 T_n\le\theta_0 S_{\alpha}\vert\theta=\theta_0)\\
-&= \color{red}{P}(U_n\lt\theta_0 S_{\alpha})\quad\color{red}{\text{Sous } H_0}\\
-&= H_n(\theta_0S_{\alpha})
-\end{aligned}\\
-S_{\alpha}=\frac{H_n^{-1}(\alpha)}{\theta_0}
-$$
+## SLAM
 
-<div class="alert alert-success" role="alert" markdown="1">
-
-$$
-H_n(x)=\int_0^x\frac{1}{\Gamma(n)}t^{\alpha-1}e^{-t}dt
-$$
-
-Si $x\lt y$ alors:
-
-$$
-H_n(y)-H_n(x)=\int_x^y\frac{1}{\Gamma(n)}t^{\alpha-1}e^{-t}dt\gt0
-$$
-
-Donc $(H_n)$ est strictement croissante sur $[0;+\infty[$
-
-Par consequence, elle est strictement croissante
-
+<div class="alert alert-info" role="alert" markdown="1">
+Simultaneous Localization and Mapping
 </div>
 
-$$
-\begin{aligned}
-\beta &= P(\text{Rejeter } H_1\vert H_0\text{fausse})\\
-&= P(T_n\ge S_{\alpha}\vert \theta=\theta_1)\\
-&= P(\underbrace{\theta_1 T_n}_{\color{green}{U_n}}\ge S_{\alpha}\theta_1\vert \theta=\theta_1)\\
-&= 1-H_n(\theta_1S_{\alpha})
-\end{aligned}
-$$
+- Si une carte est fournie, possibilite de se localiser dans cette carte uniquement
+- Si une position est fournie, possibilite de creer une carte de l'environnement
+- Le SLAM est l'estimation conjointe d'une carte de l'environnement et de la position de la camera dans cette carte
+- Necessaire des qu'un robot doit explorer un environnement totalement ou partiellement inconnu
+- Amelioration de l'odometrie visuelle
+- On sauvegarde les coordonnees des points 3D extraits et de leurs caracteristiques locales
+- Creation d'une carte de features 3D
 
-<div class="alert alert-danger" role="alert" markdown="1">
+![](https://i.imgur.com/FLT34Uv.png)
 
-$$
-\boxed{\beta=1-H_n\biggr(\frac{\theta_1}{\theta_0}H_n^{-1}(\color{green}{\alpha})\biggr)}
-$$
+3 categories principales de methodes pour l'estimation de l'etat:
+- Extended Kalman Filter
+- Particle Filter
+- Least Squares => Graph-based SLAM
 
-</div>
+Graph-based SLAM
+- Utilisation d'un graphe pour representer les variables et les relations entre ces variables
+- Pose Graph: contient uniquement les positions
+- Factor Graph: contient des facteurs reliant les differentes variables
 
-</details>
+Pose Graph:
+- Chaque noeud represente une pose
+- Les liaisons entre ces noeuds contiennent leur relation spatiale
+- L'optimisation essaye de trouver la position optimale d'un noeud qui minimise l'erreur introduite dans les liaisons
+
+![](https://i.imgur.com/Fu6J4Sf.png)
+
+*Quels sont les avantages ?*
+- Meilleure estimation des coordonnees 3D des points/features
+- Fermeture de boucles (Loop-closure)
+- Plus robuste face aux rotations pures
+
+![](https://i.imgur.com/i5zUBRl.png)
