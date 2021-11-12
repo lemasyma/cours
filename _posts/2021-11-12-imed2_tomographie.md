@@ -127,7 +127,7 @@ Evolution sinusoidale en fonction de $\theta\to$ **SINOGRAMME**
 
 ![](https://i.imgur.com/BU1bTnC.png)
 
-```python=
+```python
 vol_geom = astra.creat_vol_geom(N, N)
 proj_geom = astra.create_proj_geom('parallel', 1.0, nbins, angles)
 # For CPU-based algorithms, a "projectro" object specifies the projection
@@ -135,7 +135,7 @@ proj_geom = astra.create_proj_geom('parallel', 1.0, nbins, angles)
 proj_id = astra.create_projector('strip', proj_geom, vol_geom)
 ```
 
-```python=
+```python
 sinogram_id, sinogram = astra.create_sino(img, proj_id)
 plt.imshow(sinogram, extent = [detector.min(), detector.max(), angles.max() * 180 / np.pi])
 ```
