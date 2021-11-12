@@ -1,253 +1,148 @@
 ---
-title:          "DLIM: Reseaux neuronaux convolutifs"
-date:           2021-11-08 14:00
-categories:     [Image S9, TVID]
-tags:           [Image, S9, TVID]
+title:          "IMED2: X-Ray Imaging"
+date:           2021-10-29 09:00
+categories:     [Image S9, IMED2]
+tags:           [Image, S9, IMED2]
 math: true
 ---
 
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1-YkiLwt)
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJZYe7YIt)
 
-# Un reseau de neurones convolutif
+# Principe physiques de la radiologie numerique
 
-![](https://i.imgur.com/Gusjhh3.png)
+> Rappels
 
-## Le but est d'extraire les caracteristiques
+- kVp
+- mA
+- Temps d'exposition
 
-![](https://i.imgur.com/HXXmFvh.jpg)
+![](https://i.imgur.com/Ruwqtce.png)
 
-## Les formules de convolution
+Adaptation du faisceau:
+- Filtration uniforme (Cu)
+- Lames de collimation
 
-Continue 1D:
+![](https://i.imgur.com/98yidG6.png)
 
-$$
-(f * g)(x) = \int_{-\infty}^{+\infty}f(x-t)g(t)dt = \int_{-\infty}^{+\infty} f(t)g(x-t)dt
-$$
+Interactions avec la matiere:
+- Diffusion elastique
+- Diffusion inelastique
+- Effet photoelectrique
 
-Discrete 2D:
+# Les chaines images selon les modalites
 
-$$
-(f*\omega)(x,y) = \sum_{dx=-a}^a\sum_{dy=-b}^b\omega(a + dx, b + dy)f(x + dx, y+dy)
-$$
+> Quelques exemples
 
-$f$ est l'aimeg, $\omega$ le noyau, son support est $[-a,a]\times[-b, b]$
+![](https://i.imgur.com/zEp6reJ.png)
 
-Exemple de noyaux $\omega$ (WP Noyau_(traitement_d'image)):
+![](https://i.imgur.com/xTd0yJb.png)
 
-![](https://i.imgur.com/X1325di.png)
+![](https://i.imgur.com/AlzLNSn.png)
 
-# Conv2D
+![](https://i.imgur.com/CZU1RHq.png)
 
-```python
-x = kl.Conv2D(filters = 4, kernel_size=(5, 5))(x)
-```
+# Qu'est-ce qu'une "bonne" image ?
 
-L'image d'entree a 3 canaux -> chaque filtre a $5\times5\times 3 + 1$ poids
-L'image de sortie a 4 canaux, elle pert 4 pixels dans chaque direction
+## Tout depend de la tache
 
-## En details + stride + padding = 'same'
+On a 3 choses tres importantes:
+- bruit ![](https://i.imgur.com/7lkD2Xr.png)
+- nettete
+    - Resolution spatiale
+    - ![](https://i.imgur.com/2QiUPkx.png)
+- contraste 
+    - Contraste-to-noise ratio ![](https://i.imgur.com/zuRKj3f.png)
 
-```python
-Conv2D(filters = 2, kernel_size = (3, 3), stride = (2, 2), padding = 'same')
-```
+## Bonne image a rayons X ?
 
-![](https://i.imgur.com/do3CIuS.gif)
+> Ca depend encore de la tache
 
-- Stride: une facon de reduire la taille d'une image
-- padding = 'same': la sortie a la meme taille
+<div class="alert alert-info" role="alert" markdown="1">
+Differentiation de matieres
 
-## Convolution a trous
+![](https://i.imgur.com/LtIeTG1.png)
 
-En anglais: *atrous convolution*
+</div>
 
-```python
-Conv2D(32, kernel_size=3, dilatation_rate=(2, 2))
-```
-
-![](https://i.imgur.com/yDxMfxd.gif)
+![](https://i.imgur.com/04O1QIc.png)
 
 <div class="alert alert-success" role="alert" markdown="1">
-
-Couvre la meme surface qu'un noyau $5\times 5$, ou que $2$ convolutions $3\times 3$ a la suite, mais pour un cout moins cher (en poids)
-
+Pas d'artefacts (e.g., halos pres des contours, lignes, colonnes, mouvement, flou...)
 </div>
 
-Ne reduit pas la taille de l'image (padding = `same`)
+> Si on a un halo autout d'un implant, on a un peu de jeu autour
+> Il faut certainement rajouter quelque chose pour reparer ca
+> Ca peut etre tres dangereux (patient fragile, agee, etc.)
 
-## Convolution separee 
+# Zoom sur la chaine de traitement numerique
 
-- **spatiale**: une conv $2D\to1$ conv. $1D$
-- **profondeur**: $N$ conv $2D$ sur $M$ couches $\to$ $M$ conv $2D$ puis $N$ conv $1D$
+> L'image qu'on voit est loin d'etre l'image qu'on mesure
 
-**Convolution separeee spatiale**
+![](https://i.imgur.com/Sxvec36.png)
 
-![](https://i.imgur.com/CiDOpZd.png)
+Sur la premiere image on a une ligne au centre
 
-En pratique on fait:
+![](https://i.imgur.com/036ogcj.png)
 
-![](https://i.imgur.com/StH7rLK.png)
+# Qualite Image et tache clinique
 
-**Conv separee en profondeur** 
+- Qui est mon patient ?
+    - Un gamin
+    - Un adulte
+    - Une personne agee
+- Pour quel acte vient-il ?
+    - Un suivi de scoliose / un bilan general de posture
+    - Un depistage de cancer du sein
+    - Une ablation de tumeur hepatique
 
-```python
-kl.SeparableConv2D
-```
+<div class="alert alert-warning" role="alert" markdown="1">
+Selon les cas, le besoin en qualite image et la *tolerance en terme d'irradtion* serra differente
+</div>
 
-Ici 3 couches:
-- $3$ conv $2D$ + $4$ conv $1D$
-- $4$ couches en sortie
+- Un principe historique: **ALARA** (*As Low As Reasonnably Achievable*)
+- Un acronyme qui a tendance a etre remplace par **ALADA** (*As Low As Diagnostically Achievable*)
 
-Gain de calcul important
-perte de representation $\to$ utilise
+Du coup il y a des guidelines:
 
-[MobileNet](https://arxiv.org/abs/1704.04861)
+![](https://i.imgur.com/BwtK7to.png)
 
-## La convolution transposee (ou deconvolution)
+## Controle automatique de l'exposition
+
+> AEC: la technologie de tous les appareils modernes d'imagerie RX
 
 <div class="alert alert-info" role="alert" markdown="1">
-*Convolution*: **concentre** en un pixel un bloc de pixel (fois un noyau)
-</div>
+"*Automatic Exposure Control (AEC) is an X-ray exposure termination device*"
+- Wikipedia
 
-<div class="alert alert-info" role="alert" markdown="1">
-*Conv transposee*: **distribue** un pixel (fois un noyau) a un bloc de pixel
-</div>
-
-![](https://i.imgur.com/RBr2eiZ.png)
-
-
-Mathematiquement les deux sont des convolutions mais la conv. transposee a pour but de simuler l'operation inverse de la conv
-
-$$
-\begin{aligned}
-\text{propagation conv transposee} &\leftrightarrow \text{retro-propagation conv}\\
-\text{retro-propagation conv. transposee} &\leftrightarrow\text{propagation conv.}
-\end{aligned}
-$$
-
-## Trucs d'architecture
-
-<div class="alert alert-danger" role="alert" markdown="1">
-**Pooling**
-
-```python
-kl.MaxPooling2d(pool_size = (2, 2))
-```
-![](https://i.imgur.com/jiVaceA.png)
-
-Si on veut augmenter le nombre de couches il faut diminuer la taille de l'image sinon BOOM
-
-On veut une vision multi-echelle il faut diminuer la taille de l'image + ponts.
-
-L'inverse du *pooling* est kl
+![](https://i.imgur.com/DHZ3bf0.png)
 
 </div>
 
+![](https://i.imgur.com/5QUL3yJ.png)
 
-<div class="alert alert-danger" role="alert" markdown="1">
-**Ponts**
+![](https://i.imgur.com/bzirPQ5.png)
 
-La grande astuce de ResNet qui leur a permis de tout gagner
+## Radiographie conventionnelle
 
-![](https://i.imgur.com/geGwGQT.png)
+> Une technique aussi vieille que les rayons X
 
-![](https://i.imgur.com/gsMUa9w.png)
+![](https://i.imgur.com/ldn4ylf.png)
 
-![](https://i.imgur.com/0JZRffW.png)
-- vert $\to$
-- rouge $\leftarrow$
+On faisait du *stitching*, mais on avait des problemes de deformation geometriques
 
-Prog. et retro-prog.
+## EOS/EOSedge et l'imagerie orthopedique 
 
-Lors de la retropropagation l'erreur prend le pont et les convolutions $\to$ les premieres couches sont corrigees
+![](https://i.imgur.com/EoO52xY.png)
 
-</div>
+[Video de presentation](https://youtu.be/B1DojRTcTQ8)
 
-<div class="alert alert-danger" role="alert" markdown="1">
+## Pathologies en orthopedie
 
-**Dropout ou BatchNormalization**
+![](https://i.imgur.com/bZFI23o.jpg)
 
-Pas besoin de dropout si BatchNormalization
+- Diagnostic, correction & suivi de scolioses
+    - Chirurgie: tiges et vis
+- Implants (hanches, genou)
+- Osteoporose
+- Polyarthrite
 
-![](https://i.imgur.com/LKglSCh.png)
-
-Evite que les poids importants en bloquent d'autres
-
-![](https://i.imgur.com/a6ZPQiZ.png)
-
-Apres convolution
-Avant fonction d'activation
-Reduit le besoin de normaliser les donnees
-
-</div>
-
-# Types de problemes en vision
-
-Semantic segmentation
-
-![](https://i.imgur.com/T8Yjc0Z.png)
-
-![](https://i.imgur.com/Fe8XbHm.jpg)
-
-- Classification
-- Classification + localisation
-- Object detection
-- Instance segmentation
-    - Celle qu'on va faire
-
-## U-net (2015)
-
-Separation semantique d'images medicales
-
-![](https://i.imgur.com/TIXfKwb.png)
-
-Multi-echelle
-
-*Notre projet aujourd'hui !*
-
-Copy & crops: ce sont des PONTS
-- Ca sert a faire des concatenations
-
-# Fonctions d'erreur pour la segmentation
-
-Si chaque image de sortie represente les pixels appartenant a la classe $k$, alors on peut finir avec un `softmax`: $y+k = e^{z_k}/\sum_{i}e^{z_i}$
-
-- Erreur quadratique `mse`: pente douce, pas d'information d'exclusion
-- Entropie croisee: $E=-\sum_kt\log y_k+(1-t_k)\log(1-y_k)$
-    - `binary_crossentropy` avec $t_k=0$ ou $1$
-    - `categorical_crossentropy` avec resultats sous la forme $[0,0,..,1,..,0]$ pour indiquer la classe $k$
-    - `sparse_categorical_crossentropy` avec les classes indiques par des entier
-
-```python
-y_true = [[1, 2], [0, 2]] #image 2x2 with 3 categories
-y_pred = [[0.05, 0.95, 0], [0.1, .01, 0.8], #proba for each category
-         [0.7, 0.2, 0.1], [0.2, 0.2, 0.6]] #for each pixel
-loss = keras.losses.SparseCategoricalCrossentropy()
-loss(y_true, y_pred).numpy()
-```
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-**Focal loss**
-
-$$
-E_{FL} = -\sum_k t_k(1-y_k)^{\gamma}+(1-t_k)(1-y_k)^{\gamma}\log(1-y_k)
-$$
-
-Comme la pente du log est forte, elle favorise les cas simples a detecter. On peut ecraser la courbe de $(1-\gamma_k)$ pour aider à trouver les cas difficiles.
-
-![](https://i.imgur.com/L6XTOML.png)
-
-</div>
-
-# Augmenter le nombre de donnees
-
-Souvent c'est bien utile, en particulier lorsqu'on manque de donnees.
-
-![](https://i.imgur.com/7dtm6dZ.png)
-
-Parfois ca rend la tache plus difficile et ca ne marche pas.
-
-```python
-ImageDataGenerator
-```
