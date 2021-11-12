@@ -1,253 +1,222 @@
 ---
-title:          "DLIM: Reseaux neuronaux convolutifs"
-date:           2021-11-08 14:00
-categories:     [Image S9, TVID]
-tags:           [Image, S9, TVID]
+title:          "TNSI: Traitement numerique du signal"
+date:           2021-11-10 09:00
+categories:     [Image S9, TNSI]
+tags:           [Image, S9, TNSI]
 math: true
 ---
 
-Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1-YkiLwt)
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJxQ-Ztvt)
 
-# Un reseau de neurones convolutif
+# Presentation
 
-![](https://i.imgur.com/Gusjhh3.png)
+Parcours:
+- Ingenieur topographe - INSA
+- These en traitement du signal et de l'image - Telecom
 
-## Le but est d'extraire les caracteristiques
+Ingenieur Chercheur a EDF R&D (Saclay)
+- Groupe realite virtuelle et visualisation scientifique (avec Arnaud MAS)
+- Numerisation et apprentissage statistique (image et 3D)
 
-![](https://i.imgur.com/HXXmFvh.jpg)
+## Groupe Realite Virtuelle Visualisation Scientifique
 
-## Les formules de convolution
+- Aider l'exploitant des sites de production nucleaire a decider lors des phases de preparation et de realisation des arretes de tranche
+- Aider
 
-Continue 1D:
+## OCR pour les plans techniques
+
+![](https://i.imgur.com/rroAJpP.png)
+
+## La reconnaissance de forme dans les images
+
+![](https://i.imgur.com/IZye8az.jpg)
+
+Segmentation semantique: deux reseau
+- Segmentation pixelique
+- Segmentation semantique pour classifier les pixels de l'image
+
+![](https://i.imgur.com/lq7hSnj.png)
+
+## La reconnaissance de forme *dans les nuages de points*
+
+![](https://i.imgur.com/kAh6IEB.jpg)
+> Donnees DP2D FES2
+> Local R250
+> 280 millions de points
+
+Actuellement: manuel
+- Segmentation en petit nuage de points + ajustement de forme
+
+# Traitement numerique du signal
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Definition**
+
+Representation de la variation d'un phenomene physique
+
+</div>
+
+> Exemples
+> Evolution de la temperature ou de la pression dans le temps
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Definition**
+
+Transcrire numeriquement (i.e. des donnees) un signal continu (monde reel)
+
+</div>
+
+On veut passer du monde continu au monde discret
+
+![](https://i.imgur.com/cklHObs.png)
+
+*Comment on fait le passage du continu au discret ?*
+> On va faire un echantillonage en temps et en amplitude
+
+*Quelle est la precision de cette discretisation ?*
+> On utilise le theoreme de Shannon
+
+En resume: on prend notre signal, on compare dans chaque base de fonction a quel point notre signal ressemble et on va pouvoir voir a quel point notre signal est haute frequence et basse frequence.
+
+![](https://i.imgur.com/TvaWcT2.png)
+
+<div class="alert alert-danger" role="alert" markdown="1">
+Avec les transformee de Fourier, on veut passer en temporel **sans perdre d'information**
+</div>
+
+## Theoreme d'interpolation
+
+<div class="alert alert-info" role="alert" markdown="1">
+Decoule du theoreme de Shannon
+</div>
+
+On utilise un *sinus cardinal*
+
+Le theoreme de Shannon nous dit qu'on a un signal continu:
 
 $$
-(f * g)(x) = \int_{-\infty}^{+\infty}f(x-t)g(t)dt = \int_{-\infty}^{+\infty} f(t)g(x-t)dt
+x(t) = \sum_{n=-\infty}^{+\infty}x[n]\underbrace{\frac{\sin\biggr(\frac{\pi(\overbrace{t-\color{red}{nT_e}}^{\text{translation}})}{\underbrace{\color{red}{T_e}}_{\text{echelle}}}\biggr)}{\frac{\pi(t-nT_e)}{T_e}}}_{\color{red}{sinc}}
 $$
 
-Discrete 2D:
+![](https://i.imgur.com/xPCan8j.png)
+
+## Exercice
 
 $$
-(f*\omega)(x,y) = \sum_{dx=-a}^a\sum_{dy=-b}^b\omega(a + dx, b + dy)f(x + dx, y+dy)
+x(t) = \sin(10t) + 2\sin(2t) + \sin(5t) - 3\sin(\frac{t}{2})\\
+t = [-2, 2]\to 400
 $$
 
-$f$ est l'aimeg, $\omega$ le noyau, son support est $[-a,a]\times[-b, b]$
+1. Normaliser et centrer
+2. $T_e=0.1$
+3. Interpoler avec $sinc$
 
-Exemple de noyaux $\omega$ (WP Noyau_(traitement_d'image)):
+On reprendre notre figure
 
-![](https://i.imgur.com/X1325di.png)
+![](https://i.imgur.com/rWmIKr9.png)
 
-# Conv2D
+On prend des echantillons a intervalles regulire
 
-```python
-x = kl.Conv2D(filters = 4, kernel_size=(5, 5))(x)
-```
+![](https://i.imgur.com/ZdBEWja.png)
 
-L'image d'entree a 3 canaux -> chaque filtre a $5\times5\times 3 + 1$ poids
-L'image de sortie a 4 canaux, elle pert 4 pixels dans chaque direction
+On va sommer les sinus cardinaux:
 
-## En details + stride + padding = 'same'
+![](https://i.imgur.com/1FBfJc8.png)
 
-```python
-Conv2D(filters = 2, kernel_size = (3, 3), stride = (2, 2), padding = 'same')
-```
+Ca va nous permettre de reconstruire notre signal:
 
-![](https://i.imgur.com/do3CIuS.gif)
+![](https://i.imgur.com/fplEQWb.png)
 
-- Stride: une facon de reduire la taille d'une image
-- padding = 'same': la sortie a la meme taille
+*Quel est l'interet du sinus cardinal ?*
+> On peut utiliser n'importe quelle interpolation, mais le sinus cardinal est le meilleur
 
-## Convolution a trous
+## Quantification
 
-En anglais: *atrous convolution*
+<div class="alert alert-info" role="alert" markdown="1">
+**Quantification scalaire**: arrondir a l'entier le plus proche
+</div>
 
-```python
-Conv2D(32, kernel_size=3, dilatation_rate=(2, 2))
-```
+![](https://i.imgur.com/FPDCbTe.png)
 
-![](https://i.imgur.com/yDxMfxd.gif)
+- $x$: amplitude des valeurs
+- $q(x)$: valeur de quantification
+
+## Traitement
+
+*Comment on debruite un signal ?*
+> Convolution avec une fonction gaussienne ?
+> Convolution avec une porte ?
+> Non local means ? (c'est un flou gaussien ou un flou uniforme)
+
+On a un signal avec un flou gaussien:
+
+![](https://i.imgur.com/4EWwML3.png)
 
 <div class="alert alert-success" role="alert" markdown="1">
-
-Couvre la meme surface qu'un noyau $5\times 5$, ou que $2$ convolutions $3\times 3$ a la suite, mais pour un cout moins cher (en poids)
-
+On fait une convolution avec une porte
 </div>
 
-Ne reduit pas la taille de l'image (padding = `same`)
+## En resume
 
-## Convolution separee 
+- Comment echantilloner et reconstruire un signal
+- Comment analyser un signal
+- Comment filtrer une partie de l'information d'un signal
 
-- **spatiale**: une conv $2D\to1$ conv. $1D$
-- **profondeur**: $N$ conv $2D$ sur $M$ couches $\to$ $M$ conv $2D$ puis $N$ conv $1D$
+# Transformee de Fourier
 
-**Convolution separeee spatiale**
+1. Rappel rapide
+2. Analyser harmonique
+    1. Decomposition en serie de Fourier
+    2. Discrete Time Fourier Transform (DTFT)
+        - Tf a temps discret
+    3. Discrete Fourier Transform (DFT)
+        - TF discrete
+    4. Continuous Fourier Transform (CFT)
+    5. Fast Fourier Transform (FFT)
 
-![](https://i.imgur.com/CiDOpZd.png)
+## Produit scalaire
 
-En pratique on fait:
-
-![](https://i.imgur.com/StH7rLK.png)
-
-**Conv separee en profondeur** 
-
-```python
-kl.SeparableConv2D
-```
-
-Ici 3 couches:
-- $3$ conv $2D$ + $4$ conv $1D$
-- $4$ couches en sortie
-
-Gain de calcul important
-perte de representation $\to$ utilise
-
-[MobileNet](https://arxiv.org/abs/1704.04861)
-
-## La convolution transposee (ou deconvolution)
-
-<div class="alert alert-info" role="alert" markdown="1">
-*Convolution*: **concentre** en un pixel un bloc de pixel (fois un noyau)
-</div>
-
-<div class="alert alert-info" role="alert" markdown="1">
-*Conv transposee*: **distribue** un pixel (fois un noyau) a un bloc de pixel
-</div>
-
-![](https://i.imgur.com/RBr2eiZ.png)
-
-
-Mathematiquement les deux sont des convolutions mais la conv. transposee a pour but de simuler l'operation inverse de la conv
+*Comment est-ce qu'on calcule un produit scalaire ?*
 
 $$
-\begin{aligned}
-\text{propagation conv transposee} &\leftrightarrow \text{retro-propagation conv}\\
-\text{retro-propagation conv. transposee} &\leftrightarrow\text{propagation conv.}
-\end{aligned}
+\langle x, y\rangle = \sum_{n=-\infty}^{+\infty}x[n]y[n]^*\\
+\langle x, y\rangle = \int_{-\infty}^{+\infty}x(t)y^*(t)dt
 $$
 
-## Trucs d'architecture
-
-<div class="alert alert-danger" role="alert" markdown="1">
-**Pooling**
-
-```python
-kl.MaxPooling2d(pool_size = (2, 2))
-```
-![](https://i.imgur.com/jiVaceA.png)
-
-Si on veut augmenter le nombre de couches il faut diminuer la taille de l'image sinon BOOM
-
-On veut une vision multi-echelle il faut diminuer la taille de l'image + ponts.
-
-L'inverse du *pooling* est kl
-
+<div class="alert alert-warning" role="alert" markdown="1">
+Avec Fourier, on est en complexes
 </div>
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-**Ponts**
-
-La grande astuce de ResNet qui leur a permis de tout gagner
-
-![](https://i.imgur.com/geGwGQT.png)
-
-![](https://i.imgur.com/gsMUa9w.png)
-
-![](https://i.imgur.com/0JZRffW.png)
-- vert $\to$
-- rouge $\leftarrow$
-
-Prog. et retro-prog.
-
-Lors de la retropropagation l'erreur prend le pont et les convolutions $\to$ les premieres couches sont corrigees
-
-</div>
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-**Dropout ou BatchNormalization**
-
-Pas besoin de dropout si BatchNormalization
-
-![](https://i.imgur.com/LKglSCh.png)
-
-Evite que les poids importants en bloquent d'autres
-
-![](https://i.imgur.com/a6ZPQiZ.png)
-
-Apres convolution
-Avant fonction d'activation
-Reduit le besoin de normaliser les donnees
-
-</div>
-
-# Types de problemes en vision
-
-Semantic segmentation
-
-![](https://i.imgur.com/T8Yjc0Z.png)
-
-![](https://i.imgur.com/Fe8XbHm.jpg)
-
-- Classification
-- Classification + localisation
-- Object detection
-- Instance segmentation
-    - Celle qu'on va faire
-
-## U-net (2015)
-
-Separation semantique d'images medicales
-
-![](https://i.imgur.com/TIXfKwb.png)
-
-Multi-echelle
-
-*Notre projet aujourd'hui !*
-
-Copy & crops: ce sont des PONTS
-- Ca sert a faire des concatenations
-
-# Fonctions d'erreur pour la segmentation
-
-Si chaque image de sortie represente les pixels appartenant a la classe $k$, alors on peut finir avec un `softmax`: $y+k = e^{z_k}/\sum_{i}e^{z_i}$
-
-- Erreur quadratique `mse`: pente douce, pas d'information d'exclusion
-- Entropie croisee: $E=-\sum_kt\log y_k+(1-t_k)\log(1-y_k)$
-    - `binary_crossentropy` avec $t_k=0$ ou $1$
-    - `categorical_crossentropy` avec resultats sous la forme $[0,0,..,1,..,0]$ pour indiquer la classe $k$
-    - `sparse_categorical_crossentropy` avec les classes indiques par des entier
-
-```python
-y_true = [[1, 2], [0, 2]] #image 2x2 with 3 categories
-y_pred = [[0.05, 0.95, 0], [0.1, .01, 0.8], #proba for each category
-         [0.7, 0.2, 0.1], [0.2, 0.2, 0.6]] #for each pixel
-loss = keras.losses.SparseCategoricalCrossentropy()
-loss(y_true, y_pred).numpy()
-```
-
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-**Focal loss**
 
 $$
-E_{FL} = -\sum_k t_k(1-y_k)^{\gamma}+(1-t_k)(1-y_k)^{\gamma}\log(1-y_k)
+\Vert x\Vert^2 = \langle x,x\rangle = \sum_{n=-\infty}^{+\infty}\vert x[n]\vert
 $$
 
-Comme la pente du log est forte, elle favorise les cas simples a detecter. On peut ecraser la courbe de $(1-\gamma_k)$ pour aider à trouver les cas difficiles.
+## Decomposition/reconstruction
 
-![](https://i.imgur.com/L6XTOML.png)
+Soit $$\{f_n\}_{n\in\mathbb N}\to$$ base orthogonale.
 
-</div>
+$$
+\langle f_n,f_p\rangle = 0\quad n\neq p
+$$
 
-# Augmenter le nombre de donnees
+$\exists$ une suite $\lambda[n]$ telle que $\lim_{N\to+\infty}\Vert x-\sum\lambda[n]f_n\Vert = 0$
 
-Souvent c'est bien utile, en particulier lorsqu'on manque de donnees.
+$$
+x=\sum_{n=0}^{+\infty}\lambda_n f_n\quad\text{avec }\lambda_n = \frac{\langle x,f_n\rangle}{\Vert f_n\Vert^2}
+$$
 
-![](https://i.imgur.com/7dtm6dZ.png)
+## Exercice
 
-Parfois ca rend la tache plus difficile et ca ne marche pas.
+$$
+x = \sin(2\pi t) + 2\sin(3\times 2\pi t) - 3\sin(5\times 2\pi t) + \sin(7\times 2\pi t)\\
+t = [0,1]
+$$
 
-```python
-ImageDataGenerator
-```
+1. 
+    - Tracer $x$ avec 1000 echantillons
+    - Decomposition de $x$ avec $$\{\sin(n\cdot 2\pi t)\}_{n\in N}\to$$ $N = [0,...,5]$ ou $N = [0,...,20]$
+        - Verifier l'orthogonalite
+    - Tracer les coefficients
+    - Reconstruction
+2. Si on ajoute une phase au sinus ?
+    - Idem
