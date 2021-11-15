@@ -127,7 +127,7 @@ Evolution sinusoidale en fonction de $\theta\to$ **SINOGRAMME**
 
 ![](https://i.imgur.com/BU1bTnC.png)
 
-```python
+```python=
 vol_geom = astra.creat_vol_geom(N, N)
 proj_geom = astra.create_proj_geom('parallel', 1.0, nbins, angles)
 # For CPU-based algorithms, a "projectro" object specifies the projection
@@ -135,7 +135,7 @@ proj_geom = astra.create_proj_geom('parallel', 1.0, nbins, angles)
 proj_id = astra.create_projector('strip', proj_geom, vol_geom)
 ```
 
-```python
+```python=
 sinogram_id, sinogram = astra.create_sino(img, proj_id)
 plt.imshow(sinogram, extent = [detector.min(), detector.max(), angles.max() * 180 / np.pi])
 ```
@@ -262,3 +262,54 @@ $$
 - Le theorime coupe-projection relie la projection et explique pourquoi la tomographie ca marche
 - Back Projection $\theta$
 - Changement de donnees de cartesien vers polaire
+
+Rampe $p\to\vert p\vert$
+
+$$
+\begin{aligned}
+\rho\to\vert \rho\vert &= \overbrace{(2i\pi\rho)}^{\color{red}{\text{derivee spartiale}}}times \frac{1}{2\pi}(\overbrace{-i\times\text{signe}(\rho)}^{\color{red}{\text{transformee de } \underline{\text{Hilbert}}}})\\
+\phi(t) &= \int_{-\infty}^{+\infty} F_1[\phi](\rho)e^{2i\pi\rho t}d\rho\\
+\phi'(t) &= \int_{-\infty}^{+\infty} F_1[\phi](\rho)(2i\pi\rho)e^{2i\pi\rho t}d\rho
+\end{aligned}
+$$
+
+![](https://i.imgur.com/doA9W5x.png)
+
+
+## Etape 5
+
+<div class="alert alert-info" role="alert" markdown="1">
+Formulation semi-discrete
+</div>
+
+- Seul l'echantillonnage angulaire est decrit: $N$ projections acquises aux angles $\{\theta_1,\dots,\theta_N\}$
+- Le reste de la formule reste exprimee dans le domain continu
+
+$$
+f(x) = \int_{0}^{\pi}FBP_{\theta}[p_{\theta}]d\theta\\
+\downarrow\\
+f(x) = \frac{\pi}{N}\sum_{k=1}^NFBP_{\theta_k}[p_{\theta_k}](x)
+$$
+
+<div class="alert alert-info" role="alert" markdown="1">
+Formulation discrete
+</div>
+
+- On inclut dans la discretisation, le caractere discret de dl'image et de sa projection
+- TODO
+
+# Unites des niveaux de gris
+
+<div class="alert alert-danger" role="alert" markdown="1">
+***Housnfield Units (HU)***
+
+$$
+HU = 1000\times \frac{\mu-\mu_{water}}{\mu_{water}-\mu_{air}}
+$$
+
+</div>
+
+- Echelle normalisee et standard pour tous les appareils de tomodensitometrie (CT)
+- Parfois utilsee avec un offset de  (sans offset : $Air = -1000$; avec offset : Air = 0 HU)
+- Valeurs typiques (sans offset)
+   - TODO

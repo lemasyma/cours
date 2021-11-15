@@ -1,11 +1,3 @@
----
-title:          "IMED2: TP1"
-date:           2021-11-12 09:00
-categories:     [Image S9, IMED2]
-tags:           [Image, S9, IMED2]
-math: true
----
-
 ```python
 # from google.colab import drive
 # drive.mount('/content/gdrive',force_remount=True)
@@ -140,7 +132,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_9_0.png)
+![png](output_9_0.png)
     
 
 
@@ -164,7 +156,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_10_0.png)
+![png](output_10_0.png)
     
 
 
@@ -205,7 +197,7 @@ plt.plot(grad)
 
 
     
-![png](/assets/img/imed2_tp1output_12_1.png)
+![png](output_12_1.png)
     
 
 
@@ -231,7 +223,7 @@ ax1.plot(range(bmin,bmax),grad[bmin:bmax],c='r',ls='--',alpha=0.4)
 
 
     
-![png](/assets/img/imed2_tp1output_13_1.png)
+![png](output_13_1.png)
     
 
 
@@ -255,7 +247,7 @@ plt.plot(range(bmin1,bmax1),prof0[bmin1:bmax1])
 
 
     
-![png](/assets/img/imed2_tp1output_14_1.png)
+![png](output_14_1.png)
     
 
 
@@ -289,7 +281,7 @@ plt.plot(range(u20,u21),prof0[u20:u21],c='r',lw=5)
 
 
     
-![png](/assets/img/imed2_tp1output_15_1.png)
+![png](output_15_1.png)
     
 
 
@@ -335,7 +327,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_19_0.png)
+![png](output_19_0.png)
     
 
 
@@ -373,7 +365,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_21_0.png)
+![png](output_21_0.png)
     
 
 
@@ -393,7 +385,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_23_0.png)
+![png](output_23_0.png)
     
 
 
@@ -419,7 +411,7 @@ ax[1].set_title('Offset-corrected')
 
 
     
-![png](/assets/img/imed2_tp1output_24_1.png)
+![png](output_24_1.png)
     
 
 
@@ -448,13 +440,13 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_26_0.png)
+![png](output_26_0.png)
     
 
 
 
     
-![png](/assets/img/imed2_tp1output_26_1.png)
+![png](output_26_1.png)
     
 
 
@@ -474,7 +466,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_27_1.png)
+![png](output_27_1.png)
     
 
 
@@ -501,13 +493,13 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_29_0.png)
+![png](output_29_0.png)
     
 
 
 
     
-![png](/assets/img/imed2_tp1output_29_1.png)
+![png](output_29_1.png)
     
 
 
@@ -527,7 +519,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_30_0.png)
+![png](output_30_0.png)
     
 
 
@@ -556,7 +548,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_32_1.png)
+![png](output_32_1.png)
     
 
 
@@ -583,7 +575,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_34_0.png)
+![png](output_34_0.png)
     
 
 
@@ -626,7 +618,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_36_1.png)
+![png](output_36_1.png)
     
 
 
@@ -636,7 +628,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_36_3.png)
+![png](output_36_3.png)
     
 
 
@@ -651,7 +643,7 @@ ax[1].set_axis_off()
 
 
     
-![png](/assets/img/imed2_tp1output_37_0.png)
+![png](output_37_0.png)
     
 
 
@@ -701,7 +693,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_41_1.png)
+![png](output_41_1.png)
     
 
 
@@ -716,7 +708,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_42_0.png)
+![png](output_42_0.png)
     
 
 
@@ -736,7 +728,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_43_0.png)
+![png](output_43_0.png)
     
 
 
@@ -760,7 +752,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_45_0.png)
+![png](output_45_0.png)
     
 
 
@@ -792,7 +784,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_47_0.png)
+![png](output_47_0.png)
     
 
 
@@ -820,7 +812,7 @@ ax[1].set_axis_off()
 
 
     
-![png](/assets/img/imed2_tp1output_50_0.png)
+![png](output_50_0.png)
     
 
 
@@ -841,7 +833,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_51_0.png)
+![png](output_51_0.png)
     
 
 
@@ -874,7 +866,7 @@ plt.show()
 
 
     
-![png](/assets/img/imed2_tp1output_52_1.png)
+![png](output_52_1.png)
     
 
 
@@ -966,3 +958,8 @@ plt.show()
 - Le diffusé conduit à une diminution du contraste global de l'image
 - La correction numérique du diffusé (après acquisition) permet de restaurer le contraste de l'image, mais conduit aussi à une image plus bruitée
 - Afin de présenter une image plus acceptable à l'utilisateur final, il faut prendre en compte ce phénomène, soit en amont (réjection du diffusé avant qu'il atteigne le détecteur) ou en aval (correction de diffusé et débruitage)
+
+
+```python
+
+```
