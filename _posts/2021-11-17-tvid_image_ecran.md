@@ -1,6 +1,6 @@
 ---
 title:          "TVID: La video numerique en pratique"
-date:           2021-11-10 14:00
+date:           2021-11-17 14:00
 categories:     [Image S9, TVID]
 tags:           [Image, S9, TVID]
 math: true
