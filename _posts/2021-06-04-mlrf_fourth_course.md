@@ -141,7 +141,6 @@ General idea:
     - $y_i$ takes all possible values on a coarse polar grid containing $n_d$ points
 
 ![](https://i.imgur.com/AXKYqZM.png)
-TODO
 
 **What is the best approach ?**
 

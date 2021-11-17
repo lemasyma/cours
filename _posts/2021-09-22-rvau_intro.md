@@ -202,7 +202,7 @@ C'est utilise pour la 3DS :0
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Metaphore**
-> *Au lieu d'exploiter un comportement sensori-moteur et acquis de la personne, nous lui proposons, visuellement en general, une TODO*
+> *Au lieu d’exploiter un comportement sensori-moteur et acquis de la personne, nous lui proposons, visuellement en général, une image symbolique de l’action ou de la perception souhaitée*
 </div>
 
 *Manipuler un objet ?*
