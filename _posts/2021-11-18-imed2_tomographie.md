@@ -177,7 +177,3 @@ On arrivera a reconstruire notre vue, tant bien meme que l'objet est tronquee
 > Catastrophique en image de bas de contrastes (tissus mous) comme en imagerie vasculaire
 
 ![](https://i.imgur.com/X6xidrx.png)
-
-![](https://i.imgur.com/QkwlEyC.png)
-
-![](https://i.imgur.com/UhCZ30z.png)
