@@ -185,7 +185,7 @@ network response.
 
 # The MTCNN face detection algorithm (2016)
 
-## Zhang, Zhang $ Li
+## Zhang, Zhang & Li
 
 - Real-time deep-learning-based face detection algorithm
 - The MTCNN is a cascade of 3 similar networks (P/R/O-nets)
