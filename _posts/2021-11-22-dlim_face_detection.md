@@ -1,8 +1,8 @@
 ---
 title:          "DLIM: Face detection"
 date:           2021-11-22 14:00
-categories:     [Image S9, TVID]
-tags:           [Image, S9, TVID]
+categories:     [Image S9, DLIM]
+tags:           [Image, S9, DLIM]
 math: true
 ---
 
