@@ -1,5 +1,5 @@
 ---
-title:          "IMED2: X-Ray Imaging"
+title:          "IMED2: Principe physiques de la radiologie numerique"
 date:           2021-10-29 09:00
 categories:     [Image S9, IMED2]
 tags:           [Image, S9, IMED2]
@@ -7,8 +7,6 @@ math: true
 ---
 
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/BJZYe7YIt)
-
-# Principe physiques de la radiologie numerique
 
 > Rappels
 
