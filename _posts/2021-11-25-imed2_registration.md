@@ -320,3 +320,117 @@ Mais si c'est des organes, pas moyen de reconnaitre le patient
 
 *Anonymiser les donnees ?*
 > Possible de desanonymiser
+
+# Motion compensation for liver
+
+![](https://i.imgur.com/Taj3Vgb.png)
+
+## Trans-Arterial Chemo-Embolization - **TACE** procedure
+
+> Radio-embolization procedure
+
+![](https://i.imgur.com/vHvQ3Cr.png)
+
+Pour essayer de tuer la tumeur, on fait de la chimiotherapie
+
+<div class="alert alert-info" role="alert" markdown="1">
+**Chimio therapie**: version NAPALM du traitement, on balance tout en esperant de tuer la tumeur
+</div>
+
+<div class="alert alert-info" role="alert" markdown="1">
+**TACE**: chimio et embolization
+
+On donne du poison et on coupe les vaisseaux sanguins
+</div>
+
+<div class="alert alert-warning" role="alert" markdown="1">
+La tumeur peut recreer des vaisseaux et se re-alimenter mais ca dimniuera deja sa taille
+</div>
+
+![](https://i.imgur.com/EHtIuBB.png)
+
+Par rapport a l'appareil precedent: le detecteur est plus gros
+
+Le systeme est sur roulette pour pouvoir s'ecarter pendant l'intervention:
+
+![](https://i.imgur.com/LzT2bgU.jpg)
+
+<div class="alert alert-danger" role="alert" markdown="1">
+Mais il faut trouver la tumeur !
+</div>
+
+## 3D Set Up
+
+1. Brief patient
+2. Leave the room
+3. Set-up injector
+4. Set-up system
+5. Start test-spin
+6. STOP BREATHING
+7. Acquire !
+
+![](https://i.imgur.com/Fny5fcS.png)
+
+<div class="alert alert-warning" role="alert" markdown="1">
+Il y a des TONNES de raison pour lesquelles ont peut avoir une reconstruction de merde
+</div>
+
+![](https://i.imgur.com/GDJFeQO.jpg)
+
+> Il y a eu du mouvement pendant l'intervention
+
+![](https://i.imgur.com/wOCLc42.png)
+
+![](https://i.imgur.com/OhkkObw.png)
+
+## Our proposition: motion compensated reconstruction
+
+![](https://i.imgur.com/Usj7xQk.png)
+
+*Est-ce qu'il n'y a pas moyen de refaire l'acquisition avec de la compensation de mouvement ?*
+
+![](https://i.imgur.com/kq7HYVC.png)
+
+*Qu'est-ce que GE Healthcare a fait ?*
+
+![](https://i.imgur.com/stObvWD.gif)
+
+<div class="alert alert-warning" role="alert" markdown="1">
+Il n'est pas possible de breveter un algo mais **on peut breveter un workflow**
+</div>
+
+On teste formellement:
+
+![](https://i.imgur.com/xFK01oe.png)
+
+> La cage est un "patient"
+
+## What we measured for absolute & relative comparison
+
+![](https://i.imgur.com/xfDjV3J.png)
+
+## Clinical impact evaluation
+
+![](https://i.imgur.com/Q5pjCXm.jpg)
+
+## Statistical analysis on clinical features
+
+> Cases with significant motion
+
+![](https://i.imgur.com/1k9Q4Wm.png)
+
+Pearson Chi square test
+- N-categorical
+- Unpaired data
+
+Fisher exact test:
+- 2-categorical
+- Unpaired data
+
+McNemar test
+- Categorical
+- Paired data
+
+## Clinical impact evaluation
+
+![](https://i.imgur.com/IJ0He3R.png)
