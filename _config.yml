@@ -52,7 +52,7 @@ google_analytics:
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
-    enable: true
+    enabled: true
     proxy_endpoint: 'https://cours-v2.ew.r.appspot.com/query?id=agplfmNvdXJzLXYychULEghBcGlRdWVyeRiAgIDo14eBCgw'
     cache: # pv data local cache, good for the users from GFW area.
 
