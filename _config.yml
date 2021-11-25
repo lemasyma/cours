@@ -35,16 +35,16 @@ twitter:
 
 social:
   name: lemasyma                 # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  email: masselles.lea@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    # - https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/lemasyma       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+google_site_verification: mErcVOJcxNzULHvQ99qSclI_DTX0zANqgpsd3jGhkfs # change to your verification string
 # --------------------------
 
 google_analytics:
@@ -52,6 +52,7 @@ google_analytics:
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
+    enable: true
     proxy_endpoint: 'https://cours-v2.ew.r.appspot.com/query?id=agplfmNvdXJzLXYychULEghBcGlRdWVyeRiAgIDo14eBCgw'
     cache: # pv data local cache, good for the users from GFW area.
 
