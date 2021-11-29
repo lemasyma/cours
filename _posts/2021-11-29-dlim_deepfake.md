@@ -1,106 +1,159 @@
 ---
-title:          "IMED2: 3D/3D registration with labeled atlas"
-date:           2021-11-26 9:00
-categories:     [Image S9, IMED2]
-tags:           [Image, S9, IMED2]
+title:          "DLIM: Deepfake"
+date:           2021-11-29 14:00
+categories:     [Image S9, DLIM]
+tags:           [Image, S9, DLIM]
 math: true
 ---
 
-# DPH and TURP treatment
+Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/Bkh1-8MYF)
 
-![](https://i.imgur.com/2Yo0onS.png)
+# Deepfake
 
-## The endo-vascular treatment for BPH
+Les GAN permettent de creer de faux surprenat avec des reseaux profonds (d'ou *Deepfakes*)
+- Creation de visage (StyleGAN) ![](https://i.imgur.com/IbMcGmR.png)
+- Fausse video comme celle de [Poutine soulignant la faiblesse des democraties](https://youtu.be/sbFHhpYU15w)
 
-![](https://i.imgur.com/6zvJDsc.png)
+## Autoencoders
 
-*C'est quoi le challenge ?*
+:::info
+Avant les GAN il y a eu les autoencodeurs qui ne demandent pas de verite terrain
+:::
 
-<div class="alert alert-warning" role="alert" markdown="1">
-La prostate a BEAUCOUP de variantes anatomiques
-</div>
+![](https://i.imgur.com/IPpGxM8.png)
 
-![](https://i.imgur.com/60NNHTo.jpg)
+Les resultats sont moyens
 
-La variante anatomique la moins embetante est la C. Meme si on bouche les vaisseaux, les os ne risque pas de se necroser.
+![](https://i.imgur.com/USNs8FD.png)
 
-La plus compliquer est la B car le point de bifurcation est proche des arteres et du penis, boucher les vaisseaux pourrait tout niquer.
+## U-net
 
-Quand on fait un volume rendering, on voit *ca*:
+:::info
+U-net est une sorte d'autoencodeur avec une verite terrain et des ponts
+:::
 
-![](https://i.imgur.com/tRwUssu.jpg)
+![](https://i.imgur.com/VLI4MzU.png)
 
-## From CBCT to clinical information
+## Autoencodeur variationel (VAE)
 
-![](https://i.imgur.com/cI5MPOJ.png)
+On decoupe l'espace latent en sa moyenne et son ecart-type
 
-Une fois sur le *centerline*, on peut labeliser les vaisseaux a la main, en fonction de si c'est des vaisseaux d'interets ou non.
+![](https://i.imgur.com/NIX9qzr.png)
 
-*Pourquoi on n'essaierai pas de faire ca automatiquement ?*
+Pour construire ce reseau on definit 2 fonctions d'erreur:
+- Distance image d'arrivee/image de depart (*cf* autoencodeur)
+- Divergence de Kullback-Leibler entre le vecteur de l'espace latent et une gaussienne type: $KL(N(\mu, \sigma), N(0,I))$
 
-![](https://i.imgur.com/zEGJ2RU.png)
+$$
+E=\alpha E_{reconstruction} + \beta[\text{mean}^2 + \text{std_deriv}^2 - \log (\text{std_deriv}^2)-1]
+$$
 
-![](https://i.imgur.com/OzLt3c6.png)
+## VAE - generation
 
-On a essaye dans un premier temps de classifier les arteres: on fait une boule autour de la prostate et on regarde
+:::info
+On peut créer de nouvelles images en gardant la moyenne et en modulant l’écart type $z=\mu+\varepsilon\sigma$
+:::
 
-![](https://i.imgur.com/zDUFia4.png)
+Avec les chiffres manuscrits et un espace latent a 2 dimensions $[\mu, \sigma]$ on a:
 
-<div class="alert alert-warning" role="alert" markdown="1">
-Mais ca ne marche pas pour regarder tous les vaisseaux autours
-</div>
+![](https://i.imgur.com/Dsivdsn.png)
 
-## State of the art on vessel classification
+[Exemple de Keras](https://keras.io/examples/generative/vae/)
 
-![](https://i.imgur.com/l4uQ6Zg.png)
+# Vector Quantised-Variational AutoEncoder (VQ-VAE)
 
-> Pour tester les classifier, on ouvre scikit et on teste tous les classifiers a la main
+On fabrique une collection de valeurs de vecteurs latents (*embedding space*). Une valeur est un vecteur lorsque le vecteur latent est en 3D
 
-# Vascular tree labeling as a classification problem on subtrees
+Si la sortie de l'encodeur est de $32\times 32\times 50$ alors la collection a des vecteurs de dimension $50$.
 
-## Overview
+On traduit la sortie de l'encodeur en prenant pour chaque valeur, la plus proche dans la collection
 
-1. Compute descriptors
-2. Predict a lable
-3. Branch label assignment
+![](https://i.imgur.com/ZUF0W9Y.png)
 
-## Tackle a machine learning problem
+## VQ-VAE Compression
 
-> A best practice proposal inspired from different courses
+![](https://i.imgur.com/BI494c2.png)
 
-- Data splitting
-    - To ensure statistical relevance of the results
-- Metric definition
-    - To compare algorithms and evaluate performances
-- Define metrics targets
-    - Human level
-    - Dumb algorithm
-    - State of the art
-- Data preprocessing
-    - Explore, 
-    - outlier removal, 
-    - feature engineering normalization
-- Model selection
-    - Identify relevant models to test
-- Hyper-parameter tuning
-    - Either panda or caviar
-- Iterate
-    - Evaluate the model
-    - Learn from failure
-    - Augment data
+Un facteur de compression de $42$:
+- L'image d'origine a $128\times128\times 3\times 8$ bits
+- L'image est encodee avec $32\times32\times9$ bits ($521$ valeurs possibles)
+- (il faut aussi stocker la collection de valeurs soit $512\times D$)
 
-## Large Diffeomorphic Deformations Metric Mapping
+On peut entrainer un classifieur sur les images $32\times 32\times 1$, ca marche
 
-![](https://i.imgur.com/GWESNDn.png)
+## VQ-VAE-2 - Multi-echelle
 
-### Compute the registration
+![](https://i.imgur.com/0FqjEWA.png)
 
-*Pourquoi utiliser ca ?*
-1. Utiliser une deformation tres non-rigide
-2. On a besoin de statistiques
+# GAN
 
-![](https://i.imgur.com/K3Lw0YQ.png)
+:::info
+Un Generative Adversarial Network (GAN) est un autoencodeur avec un **discriminateur** qui indique si le resultat est un vrai ou faux
 
-## Toward atlas building
+![](https://i.imgur.com/w4PY46X.png)
 
-![](https://i.imgur.com/glx1nQt.png)
+:::
+
+L'erreur du discriminateur permet qu'il se corrige (minimise l'erreur) et que le generateur se corrige (maximise l'erreur du discriminateur)
+
+## Conditional GAN
+
+:::info
+Le principe est d'enrichier un GAN en ajoutant des informations supplementaires (la classe de l'image par ex.) en entree du generateur et du discriminateur
+
+![](https://i.imgur.com/TM8yxrE.png)
+
+:::
+
+:::success
+On a ainsi des images plus realistes en sortie
+:::
+
+## Pix2Pix
+
+C'est un GAN conditionel
+
+![](https://i.imgur.com/64eapce.png)
+
+Le generateur est un reseau en U et le discriminateur un classifieur CNN adapte.
+
+On peut ainsi generer des images a partir de dessins.
+
+# Cycle GAN
+
+*Peut-on faire de l'auto-apprentissage (sans verite terrain) avec un GAN ?*
+
+Si le but est de passer d'un type d'image a un autre, c'est possible.
+Pour cela on utilise 2 generateurs, $G$ et $F$, et 2 discriminateurs, $DX$ et $DY$
+- $G$ fabrique une image de type $Y$ a partir d'une image de type $X$
+- $F$ fabrique une image de type $X$ a partir d'une image de type $Y$
+- $DX$ indique si l'image donnee est vraie ou a ete generee par $F$
+- $DY$ indique si l'image donnee est vraie ou a ete generee par $G$
+
+![](https://i.imgur.com/kJdVWwj.png)
+
+## Applications
+
+![](https://i.imgur.com/0JsEQel.png)
+
+# StyleGAN
+
+![](https://i.imgur.com/CnNihr6.png)
+
+## Melange de style
+
+Avec 2 vecteurs de l'espace latent on peut melanger $2$ visage en injectant le 1er jusqu'a une couche dans la synthese, puis le second
+
+![](https://i.imgur.com/DiVS1JF.png)
+
+Plus on injecte tard le 2e, moins l'impact est important (seulement les hautes frequences)
+
+## Vers le visage moyen
+
+Lorsqu'on est dans l'espace $\mathcal W$ avec une valeur latente $w$ on peut interpler le visage moyen $\bar w$
+
+$$
+w=\bar w+\psi(w-\bar w)
+$$
+
+![](https://i.imgur.com/d5YVMmr.png)
