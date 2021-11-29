@@ -16,9 +16,9 @@ Les GAN permettent de creer de faux surprenat avec des reseaux profonds (d'ou *D
 
 ## Autoencoders
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Avant les GAN il y a eu les autoencodeurs qui ne demandent pas de verite terrain
-:::
+</div>
 
 ![](https://i.imgur.com/IPpGxM8.png)
 
@@ -28,9 +28,9 @@ Les resultats sont moyens
 
 ## U-net
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 U-net est une sorte d'autoencodeur avec une verite terrain et des ponts
-:::
+</div>
 
 ![](https://i.imgur.com/VLI4MzU.png)
 
@@ -50,9 +50,9 @@ $$
 
 ## VAE - generation
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 On peut créer de nouvelles images en gardant la moyenne et en modulant l’écart type $z=\mu+\varepsilon\sigma$
-:::
+</div>
 
 Avec les chiffres manuscrits et un espace latent a 2 dimensions $[\mu, \sigma]$ on a:
 
@@ -87,27 +87,27 @@ On peut entrainer un classifieur sur les images $32\times 32\times 1$, ca marche
 
 # GAN
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Un Generative Adversarial Network (GAN) est un autoencodeur avec un **discriminateur** qui indique si le resultat est un vrai ou faux
 
 ![](https://i.imgur.com/w4PY46X.png)
 
-:::
+</div>
 
 L'erreur du discriminateur permet qu'il se corrige (minimise l'erreur) et que le generateur se corrige (maximise l'erreur du discriminateur)
 
 ## Conditional GAN
 
-:::info
+<div class="alert alert-info" role="alert" markdown="1">
 Le principe est d'enrichier un GAN en ajoutant des informations supplementaires (la classe de l'image par ex.) en entree du generateur et du discriminateur
 
 ![](https://i.imgur.com/TM8yxrE.png)
 
-:::
+</div>
 
-:::success
+<div class="alert alert-success" role="alert" markdown="1">
 On a ainsi des images plus realistes en sortie
-:::
+</div>
 
 ## Pix2Pix
 
