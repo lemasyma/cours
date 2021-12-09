@@ -216,7 +216,7 @@ On est a l'exterieur de l'atmosphere:
 
 ## Radiation mechanism
 
-![Uploading file..._xmizolcjh]()
+![](https://i.imgur.com/1T9cFiR.png)
 
 ## Radiation component
 
