@@ -296,6 +296,7 @@ Spectral irradiance at the earth’s surface
 $$
 E_{\lambda} = \tau_s(\lambda)E_{\lambda}^0
 $$
+
 </div>
 
 ![](https://i.imgur.com/rv5Jp9c.png)
@@ -309,6 +310,7 @@ $$
 $$
 E_{\lambda}(x,y) = \langle\tau_s(\lambda)E_{\lambda}^0n(x,y), s\rangle = \tau_s(\lambda)E_{\lambda}^0\cos[\theta(x,y)]
 $$
+
 </div>
 
 ![](https://i.imgur.com/LxtDGTI.png)
@@ -334,6 +336,7 @@ with $\rho$ the **diffuse spectral reflectance**, $\pi$ geometric factor
 $$
 BRDF(x,y,\phi,\theta)\simeq \frac{L_{\lambda}(\phi)}{E_{\lambda}(x,y)}
 $$
+
 </div>
 
 ### Measuring the BRDF
@@ -413,7 +416,7 @@ L'interet est d'essayer de voir, si on traite une image donnee, quelles sont les
 **Instaneous Field of View** (IFOV)
 
 $$
-IFOV = 2\arctan \biggr (\frac{w}{2f}\biggr)\simeq \frac{w}{f}
+\text{IFOV} = 2\arctan \biggr (\frac{w}{2f}\biggr)\simeq \frac{w}{f}
 $$
 
 - $f$: focal length
@@ -424,8 +427,9 @@ $$
 **Instantaneous Ground-projected Field Of View** (GIFOV)
 
 $$
-GIFOV = 2H\tan\biggr(\frac{\text{IFOV}}{2}\biggr)\simeq \frac{w}{m}
+\text{GIFOV} = 2H\tan\biggr(\frac{\text{IFOV}}{2}\biggr)\simeq \frac{w}{m}
 $$
+
 </div>
 
 ![](https://i.imgur.com/TKQTFJD.png)
