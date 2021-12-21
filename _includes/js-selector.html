@@ -2,20 +2,28 @@
   JS selector for site.
 -->
 
-{% if page.layout == 'home' or page.layout == 'post' %}
-  {% if site.google_analytics.pv.enabled %}
+<!-- layout specified -->
+
+{% if page.layout == 'post' %}
+  {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
     <!-- pv-report needs countup.js -->
     <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
-    <script async src="{{ '/assets/js/dist/pvreport.min.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/dist/pvreport.min.js' | relative_url }}"></script>
   {% endif %}
 {% endif %}
 
+{% if page.layout == 'post' or page.layout == 'page' %}
+  <!-- image lazy-loading & popup -->
+  <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
+{% endif %}
+
 {% if page.layout == 'home'
+    or page.layout == 'categories'
     or page.layout == 'post'
-    or page.layout == 'categories' %}
+    or page.layout == 'page' %}
   {% assign type = page.layout %}
 {% else %}
-  {% assign type = "page" %}
+  {% assign type = "commons" %}
 {% endif %}
 
 {% assign js = type | prepend: '/assets/js/dist/' | append: '.min.js' %}
@@ -23,9 +31,43 @@
 
 {% if page.math %}
   <!-- MathJax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        tagSide: "right"
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      CommonHTML: { linebreaks: { automatic: true } },
+      "HTML-CSS": { linebreaks: { automatic: true } },
+      SVG: { linebreaks: { automatic: true } }
+    });
+    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
+      MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
+        clearTag() {
+          if (!this.global.notags) {
+            this.super(arguments).clearTag.call(this);
+          }
+        }
+      });
+    });
+  </script>
+
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript" charset="utf-8"
+    src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML">
+  </script>
+
 {% endif %}
+
+<!-- commons -->
+
+<script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
 
 {% if jekyll.environment == 'production' %}
   <!-- PWA -->

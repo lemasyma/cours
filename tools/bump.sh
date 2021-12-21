@@ -1,32 +1,30 @@
 #!/usr/bin/env bash
 #
-# 1. Bump latest version number to files:
+#
+# 1. Bump latest version number to the following files:
+#
 #   - _sass/jekyll-theme-chirpy.scss
-#   - assets/js/.copyright.js
+#   - _javascript/copyright
 #   - assets/js/dist/*.js (will be built by gulp later)
 #   - jekyll-theme-chirpy.gemspec
-#   - Gemfile.lock
 #   - package.json
 #
-# 2. Create a git-tag on release branch
+# 2. Then create a commit to automatically save the changes.
 #
-# 3. Build a RubyGems package base on the latest git-tag
+# Usage:
 #
+#   Run on the default branch or hotfix branch
 #
-# Requires: Git, Gulp, RubyGems
+# Requires: Git, Gulp
 
 set -eu
 
-manual_release=false
-
 ASSETS=(
   "_sass/jekyll-theme-chirpy.scss"
-  "assets/js/.copyright"
+  "_javascript/copyright"
 )
 
 GEM_SPEC="jekyll-theme-chirpy.gemspec"
-
-GEM_LOCK="Gemfile.lock"
 
 NODE_META="package.json"
 
@@ -40,12 +38,6 @@ _check_src() {
 check() {
   if [[ -n $(git status . -s) ]]; then
     echo "Error: Commit unstaged files first, and then run this tool againt."
-    exit -1
-  fi
-
-  # ensure the current branch is 'master'
-  if [[ "$(git branch --show-current)" != "master" ]]; then
-    echo "Error: This operation must be performed on the 'master' branch!"
     exit -1
   fi
 
@@ -75,76 +67,15 @@ _bump_node() {
     $NODE_META
 }
 
-_bump_gemlock() {
-  sed -i \
-    "s/jekyll-theme-chirpy ([[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+/jekyll-theme-chirpy ($1/" \
-    $GEM_LOCK
-}
-
 bump() {
   _bump_assets "$1"
   _bump_gemspec "$1"
   _bump_node "$1"
-  _bump_gemlock "$1"
 
   if [[ -n $(git status . -s) ]]; then
     git add .
     git commit -m "Bump version to $1"
   fi
-}
-
-build_gem() {
-  rm -f ./*.gem
-  gem build "$GEM_SPEC"
-}
-
-release() {
-  _version="$1"
-  _major=""
-  _minor=""
-
-  IFS='.' read -r -a array <<< "$_version"
-
-  for elem in "${array[@]}"; do
-    if [[ -z $_major ]]; then
-      _major="$elem"
-    elif [[ -z $_minor ]]; then
-      _minor="$elem"
-    else
-      break
-    fi
-  done
-
-  _release_branch="$_major-$_minor-stable"
-
-  if $manual_release; then
-    echo -e "Bump version to $_version (manual release)\n"
-    bump "$_version"
-    exit 0
-  fi
-
-  if [[ -z $(git branch -v | grep "$_release_branch") ]]; then
-    git checkout -b "$_release_branch"
-  else
-    git checkout "$_release_branch"
-    # cherry-pick the latest commit from master branch to release branch
-    git cherry-pick "$(git rev-parse master)"
-  fi
-
-  echo -e "Bump version to $_version\n"
-  bump "$_version"
-
-  echo -e "Create tag v$_version\n"
-  git tag "v$_version"
-
-  echo -e "Build the gem pakcage for v$_version\n"
-  build_gem
-
-  # head back to master branch
-  git checkout master
-  # cherry-pick the latest commit from release branch to master branch
-  git cherry-pick "$_release_branch" -x
-
 }
 
 main() {
@@ -163,7 +94,8 @@ main() {
       exit -1
     fi
 
-    release "$_version"
+    echo -e "Bump version to $_version\n"
+    bump "$_version"
 
   else
 
@@ -171,19 +103,5 @@ main() {
   fi
 
 }
-
-while (($#)); do
-  opt="$1"
-  case $opt in
-    -m | --manual)
-      manual_release=true
-      shift
-      ;;
-    *)
-      echo "unknown option '$opt'!"
-      exit 1
-      ;;
-  esac
-done
 
 main

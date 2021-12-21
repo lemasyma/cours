@@ -4,6 +4,52 @@
 
 /* ---------- scss placeholder --------- */
 
+%heading {
+  color: var(--heading-color);
+  font-weight: 400;
+  font-family: 'Lato', 'Microsoft Yahei', sans-serif;
+}
+
+%section {
+  #core-wrapper & {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+%anchor {
+  > a {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  @media (hover: hover) {
+    > a {
+      border-bottom: none !important;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease-in, visibility 0s ease-in 0.25s;
+    }
+
+    &:hover {
+      > a {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.25s ease-in, visibility 0s ease-in 0s;
+      }
+    }
+  }
+}
+
+%anchor-relative {
+  @extend %anchor;
+
+  > a {
+    position: relative;
+    bottom: 1px;
+  }
+}
+
 %tag-hover {
   background: var(--tag-hover);
   transition: background 0.35s ease-in-out;
@@ -29,25 +75,24 @@
   border-bottom: 1px solid var(--link-underline-color);
 }
 
+%clickable-transition {
+  transition: color 0.35s ease-in-out;
+}
+
+%no-cursor {
+  user-select: none;
+}
+
 %no-bottom-border {
   border-bottom: none;
 }
 
-%heading {
-  font-weight: 400;
-  font-family: 'Lato', 'Microsoft Yahei', sans-serif;
+%cursor-pointer {
+  cursor: pointer;
 }
 
-%section {
-  #post-wrapper & {
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-}
-
-%anchor {
-  padding-top: 3.5rem;
-  margin-top: -2.5rem;
+%normal-font-style {
+  font-style: normal;
 }
 
 /* ---------- scss mixin --------- */
@@ -56,17 +101,9 @@
   text-decoration: none;
 }
 
-@mixin sidebar-links($color: rgba(255, 255, 255, 0.5)) {
-  color: $color;
-  transition: color 0.35s ease-in-out;
+%sidebar-links {
+  color: rgba(117, 117, 117, 0.9);
   user-select: none;
-}
-
-@mixin icon-round($diameter) {
-  border: 1px solid;
-  border-radius: 50%;
-  width: $diameter;
-  height: $diameter;
 }
 
 @mixin ml-mr($value) {
@@ -83,26 +120,10 @@
   opacity: 0.6;
 }
 
-@mixin semi-bold {
-  font-weight: 600;
-}
-
 @mixin label($font-size: 1rem, $font-weight: 600, $color: var(--label-color)) {
   color: $color;
   font-size: $font-size;
   font-weight: $font-weight;
-}
-
-@mixin panel-label {
-  @include label(inherit);
-
-  display: block;
-  line-height: 1.2;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  letter-spacing: -0.02em;
 }
 
 @mixin align-center {
