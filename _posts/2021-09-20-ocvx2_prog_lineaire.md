@@ -279,7 +279,7 @@ On cherche a minimiser, on translate dans la direction opposee au vecteur normal
 $$
 p^{*}\in(D_1)\cap(D_2)\\
 p^{*}=\biggr(\frac{1}{3},\frac{1}{3}\biggr)\\
-f_0^{*}=f_0(x^*,y^*)=\color{red}{\frac{5}{9}}
+f_0^{*}=f_0(x^*,y^*)=\color{red}{\frac{5}{3}}
 $$
 
 *Comment on trouve la courbe de niveau 6 ?*
