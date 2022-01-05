@@ -55,7 +55,7 @@ $$
 \alpha^*(\frac{1}{3\alpha^{*^2}}+\frac{1}{4\alpha^{*^2}}-4)&=0\\
 \frac{1}{3\alpha^*}+\frac{1}{4\alpha^*}-4\alpha^*&=0\\
 \frac{7}{12\alpha^*}&=4\alpha^*\\
-\frac{1}{4}\frac{7}{12\alpha^*}&=\alpha^{*^2}\\
+\frac{1}{4}\frac{7}{12}&=\alpha^{*2}\\
 \alpha^*&=\frac{1}{4}\sqrt{\frac{7}{3}}
 \end{aligned}
 $$
