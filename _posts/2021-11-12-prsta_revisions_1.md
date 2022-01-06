@@ -11,6 +11,13 @@ Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/B1MOKYFLY)
 
 ## Partie 1
 
+Une variable aleatoire $X$ suit une loi normale de moyenne et de variance $1$. Nous voulons tester l’hypothese $H_0 : m = 0$ contre l’hypothese $H_1 : m \gt 0$.
+
+Pour ce faire, nous disposons des observations : $-2.3, -0.2, 4.3, 1.1, 0,
+2.4, -1.6, 1.4, -1$ et $0.8$.
+
+L’hypothese $(H_0)$ est-elle rejetee avec un risque d’erreur de premiere espece de $5\%$.
+
 <details markdown="1"><summary>Solution</summary>
 
 Sous l'hypothese $H_0$,
@@ -34,6 +41,12 @@ $t\not\in \color{red}{R}$ $\color{red}{\text{donc}}$ l'hypothese $(H_0)$ n'est p
 </details>
 
 ## Partie 2
+
+Une variable aleatoire $Y$ suit une loi normale de moyenne et de variance inconnue. Nous voulons tester l’hypothese $H_0 : m = 0$ contre l’hypothese $H_1 : m \neq 0$.
+
+Pour ce faire, nous disposons des memes observations : $-2.3, -0.2, 4.3, 1.1, 0, 2.4, -1.6, 1.4, -1$ et $0.8$.
+
+L’hypothese $(H_0)$ est-elle rejetee avec un risque d’erreur de premiere espece de $5\%$.
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -64,6 +77,13 @@ $\color{green}{\text{Pas}}$ de rejet car $\color{blue}{t\not\in R}$
 
 ## Partie 3
 
+Une variable aleatoire $Z$ suit une loi normale de moyenne inconnue et de variance $\sigma^2$. Nous voulons tester l’hypothese $H_0 : \theta^2 = 4$ contre l’hypothese $H_1 : σ^2 \lt 4$.
+
+Pour ce faire, nous disposons des memes observations : $-2.3, -0.2, 4.3, 1.1, 0, 2.4, -1.6, 1.4, -1$ et $0.8$.
+
+L’hypothese $(H_0)$ est-elle rejet´ee avec un risque d’erreur de premiere
+espece de $10\%$.
+
 <details markdown="1"><summary>Solution</summary>
 
 $$
@@ -93,6 +113,19 @@ Donc l'hypotese $(H_0)$ n'est pas rejetee.
 
 # Exercice 2
 
+Selon une etude, la duree des smartphones de la marque Pomme suit une loi exponentielle de parametre $\frac{1}{\theta}$ avec $\theta \gt 0$ inconnu.
+
+Considerons un echantillon de taille $n$ que nous noterons $(X1,\dots,Xn)$. L’entreprise souhaite savoir si elle peut garantir ses telephones pour une duree de deux ans.
+
+1. Justifier que le probleme se ramene au test des hypotheses : $H_0 : \theta = 2$ contre $H1 : \theta \lt 2$.
+2. Francois propose la regle de decision suivante : L’hypothese $(H_0)$ est rejetee si $T \lt 2$ ou $$T = \min_{1 \le i\le n} Xi$$.
+3. Justifier que la variable al´eatoire T suit une loi exponentielle dont le parametre sera precise.
+4. En deduire que, sous l’hypothese $(H_0)$, $P(T \lt 2) = 1 − \exp(−n)$.
+5. 
+    - (a) Pour $n = 10$, determiner la valeur de $\alpha$.
+    - (b) De meme, pour $n = 100$, que remarquez-vous ?
+6. Que pensez-vous de la regle de decision retenue par Francois ?
+
 <details markdown="1"><summary>Solution</summary>
 
 1.
@@ -101,7 +134,7 @@ Comme le parametres est $\frac{1}{\theta}$, on veut affirmer sur la duree de vie
 
 2.
 
-$H_0$ rejetee si $T\lt 2$ avec $T:=\min_{1\le i\le n}X_i$
+$H_0$ rejetee si $T\lt 2$ avec $$T:=\min_{1\le i\le n}X_i$$
 
 3.
 
@@ -214,128 +247,5 @@ Pour $n$ suffisamment grand:
 $$
 \{R\sim\chi^2(1)\}
 $$
-
-</details>
-
-# Feuille 4 Exercice 4
-
-<details markdown="1"><summary>Solution</summary>
-
-$$
-\color{green}{\boxed{T=\sum_{i=1}^nX_i^3}}
-$$
-
-$$
-\color{green}{Y_{ii} = \frac{2}{\theta}X_i^3\sim X^2(2)}
-$$
-
-$$
-\Rightarrow \frac{2}{\theta} T\sim \chi^2(2n)
-$$
-
-$$
-\begin{aligned}
-\alpha &=P(\text{Rejeter }H_0\vert H_0\text{ vraie})\\
-&= P(T\gt S_{\alpha}\vert\theta = \theta_0)\\
-&= P(\frac{2}{\theta_0}T\gt \frac{2}{\theta_0}S_{\alpha}\vert \theta=\theta_0)
-\end{aligned}
-$$
-
-Sous $(H_0)$, $\color{red}{\frac{2}{\theta_0}T\sim\chi^2(2n)}$
-
-$\color{green}{F_n \text{ est la fonction de repartition }\chi^2(2n)}$
-
-$$
-\alpha = P(W\gt \frac{2}{\theta_0}S_{\alpha})
-$$
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-$$
-\alpha = 1 -F_n(\frac{2}{\theta_0}S_{\alpha})
-$$
-
-</div>
-
-$\color{red}{Donc}$
-
-$$
-1-\alpha = F_n(\frac{2}{\theta_0}S_{\alpha})
-$$
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-$$
-S_{\alpha} = \frac{\theta_0}{2}F_n^{-1}(1-\alpha)
-$$
-
-</div>
-
-$$
-\begin{aligned}
-\color{red}{\beta} &= P(\text{Rejeter }H_1\vert H_1\text{vraie})\\
-&= P(T\le S_{\alpha}\vert \theta=\theta_1)\\
-&= P(\frac{2}{\theta_1}T\le \frac{2}{\theta_1}S_{\alpha}\vert \theta = \theta_1)
-\end{aligned}
-$$
-
-$$
-w_1 = \frac{2}{\theta_1}T\sim \chi^2(2n)
-$$
-
-<div class="alert alert-danger" role="alert" markdown="1">
-
-$$
-\beta = F_n(\frac{2}{\theta_1}S_{\alpha})
-$$
-
-
-$$
-\color{green}{\beta = F_n\biggr(\frac{\theta_0}{\theta_1}F_n^{-1}(1-\alpha)\biggr)}
-$$
-
-</div>
-
-Passons aux applications numeriques:
-
-```python
-scipy.stats.chi2.cdf(0.5 * scipy.stats.ppf(0.95, 30), 30)
-```
-
-```
-0.14185880202947254
-```
-
-```python
-scipy.stats.chi2.cdf(0.2 * scipy.stats.ppf(0.95, 60), 60)
-```
-
-```
-1.6239064341119149e-09
-```
-
-```python
-scipy.stats.chi2.cdf(0.5 * scipy.stats.ppf(0.99, 20), 20)
-```
-
-```
-0.46403880816957155
-```
-
-```python
-scipy.stats.chi2.cdf(0.2 * scipy.stats.ppf(0.99, 20), 20)
-```
-
-```
-1.87204631776198e-08
-```
-
-```python
-scipy.stats.chi2.cdf(1.0001 * scipy.stats.ppf(0.99, 20), 20)
-```
-
-```
-0.9900104784496678
-```
 
 </details>
