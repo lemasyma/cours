@@ -66,7 +66,7 @@ On definit le Lagrangien de (OPT) comme la fonction:
 $$
 \begin{aligned}
 \mathscr L:\mathbb R^n\times\mathbb R^m\times\mathbb R^p&\to\mathbb R\\
-(x,\alpha,\beta)&\mapsto\mathscr L(x,\alpha,\beta) = f(x)+\sum_{i-1}^m\alpha_ig_i(x)+\sum_{j=1}^p\beta_jh_j(x)
+(x,\alpha,\beta)&\mapsto\mathscr L(x,\alpha,\beta) = f(x)+\sum_{i=1}^m\alpha_ig_i(x)+\sum_{j=1}^p\beta_jh_j(x)
 \end{aligned}\\
 \begin{aligned}
 &\text{variables duales}\begin{cases}
