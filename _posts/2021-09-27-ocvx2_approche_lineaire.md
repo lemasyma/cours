@@ -129,8 +129,11 @@ p*\in\mathcal C_4(f)\Leftrightarrow 3x^{*^2}+y^{*^2}=4\\
 p*\in\mathcal C_{f_0^*}\Leftrightarrow 2x^*+y^*=f_0^*
 $$
 
+<div class="alert alert-danger" role="alert" markdown="1">
+
 Le gradient d'une fonction en un point donne est orthogonal a la courbe de niveau qui passe par ce point la.
 
+<\div>
 
 ![](https://i.imgur.com/a2Hia0V.png)
 
