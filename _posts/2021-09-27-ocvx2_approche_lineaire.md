@@ -133,7 +133,7 @@ $$
 
 Le gradient d'une fonction en un point donne est orthogonal a la courbe de niveau qui passe par ce point la.
 
-<\div>
+</div>
 
 ![](https://i.imgur.com/a2Hia0V.png)
 
