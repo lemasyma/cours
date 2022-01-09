@@ -77,7 +77,7 @@ $$
 $$
 
 | $g(x)\gt0\to\alpha=+\infty$ | $h(x)\neq0, \beta=signe(h(x))\infty$ |
-|:---------------------------:|:------------------------------:|
+|-----------------------------|---------------------------------|
 |    $g(x)\le0\to\alpha=0$    |  $h(x)=0,$ peu importe $\beta$  |
 
 $$
@@ -125,7 +125,7 @@ $$
 <div class="alert alert-info" role="alert" markdown="1">
 **Lemme**
 
-Si $$(\alpha,\beta) \\ \alpha\ge0$$ dual admissible, $\theta_D(\alpha,\beta)\le p^{\*}$
+Si $(\alpha,\beta) \\ \alpha\ge0$ dual admissible, $\theta_D(\alpha,\beta)\le p^{\*}$
 
 </div>
 
