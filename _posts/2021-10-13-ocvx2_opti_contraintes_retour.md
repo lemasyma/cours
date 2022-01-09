@@ -182,7 +182,7 @@ p^{*}=d^{*}&=\theta_D(\alpha^{*},\beta^{*})\\
 &= \min_x\mathscr L(x,\alpha^{*},\beta^{*})\\
 &\le\mathscr L(x^*,\alpha^*,\beta^*)=\underbrace{f(x^*)}_{p^*}+\underbrace{\overbrace{\alpha^*}^{\ge0}\overbrace{g(x^*)}^{\le0}}_{\le0}+\overbrace{\beta^*\underbrace{h(x^*)}_{=0}}^{=0}
 \end{aligned}\\
-p^*\le p^*+\underbrace{\alpha^*}_{\ge0}\to\alpha^*+g(x^*)=0\\
+p^*\le p^*+\underbrace{\alpha^*g(x^*)}_{\le0}\to\alpha^*+g(x^*)=0\\
 \begin{cases}
 \alpha^*\gt0&\to g(x^*)=0\\
 g(x^*)\lt0&\to\alpha^*=0
