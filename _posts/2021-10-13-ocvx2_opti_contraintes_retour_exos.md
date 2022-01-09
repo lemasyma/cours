@@ -38,7 +38,7 @@ g(x,y)&=3x^2+y^2-4
 &= -\frac{7}{12\alpha}-4\alpha
 \end{aligned}\\
 \begin{aligned}
-\nabla_{\alpha}\theta_D(\alpha)&=\frac{7}{12\alpha^2}=0\\
+\nabla_{\alpha}\theta_D(\alpha)&=\frac{7}{12\alpha^2}-4=0\\
 &=\frac{7}{12\alpha^2}=4\\
 &=\frac{1}{4}\frac{7}{12}=\alpha^2\\
 \alpha&=\frac{1}{2}\sqrt{\frac{7}{12}}=\frac{1}{4}\sqrt{\frac{7}{3}}
