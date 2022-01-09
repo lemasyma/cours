@@ -148,8 +148,7 @@ $$
 \begin{aligned}
 \sum_{i=1}^nx_i&=1\\
 \sum_{i=1}e^{-(\beta\ln2+1)}&=1\\
-ne^{-(\beta)}\\
-ne^{-(\eta\ln 2+1)}&=1\\
+ne^{-(\beta\ln 2+1)}&=1\\
 \underbrace{e^{-(\beta\ln 2+1)}}_{x_i}&=\frac{1}{n}
 \end{aligned}
 $$
