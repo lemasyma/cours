@@ -208,7 +208,7 @@ $$
 
 Soient $x^{\*}\in\mathbb R^n$, $\alpha^{\*}\in\mathbb R^m$ et $\beta^{\*}\in\mathbb R^p$ satisfait les conditions:
 
-1. Stationnarite de $\mathscr L$: $$\nabla_x\mathscr L(x^*,\alpha^*,\beta^*)=\nabla_x f(x^*)+\sum_{i=1}^n\alpha_i^*\nabla g_i(x^*)+\sum_{j=1}^p\beta_j^*\nabla_x h(x^*)=0$$
+1. Stationnarite de $\mathscr L$: $$\nabla_x\mathscr L(x^*,\alpha^*,\beta^*)=\nabla_x f(x^*)+\sum_{i=1}^n\alpha_i^*\nabla_x g_i(x^*)+\sum_{j=1}^p\beta_j^*\nabla_x h_j(x^*)=0$$
 2. Admissibilite primale: $g_i(x^{\*})\le0$ $\forall i$ et $h_j(x^{\*})=0$ $\forall j$
 3. Admissibilite duale: $\alpha_i^{\*}\ge0$ $\forall i$
 4. Complementarite: $\alpha_i^{\*}g_i(x^{\*})=0$ $\forall i$
