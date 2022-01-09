@@ -8,6 +8,8 @@ description: Programme Lineaires
 ---
 Lien de la [note Hackmd](https://hackmd.io/@lemasymasa/ryqrFeUXF)
 
+# OCVX2: Programme Lineaires
+
 Quelques changements par rapport a ce qui etait prevu
 > OCVX le retour
 > OCVX qui ne va pas se passer comme prevu
@@ -23,20 +25,42 @@ Bashar doit reprendre une partie du boulot de Corinne, pour pas qu'il creve il n
 
 <div class="alert alert-danger" role="alert" markdown="1">
 
-Programme lineaire:
-Fonction affine que nous cherchons a minimiser plus les contraintes
+**Programme lineaire**
+
+On cherche a minimiser $f_0(x)$ $x\in\mathbb R^n$ tel que $f_i(x)\le 0$ avec $i=1,\dots,p$, $f_0, f_i$ $(i=1,\dots,p)$ fonctions affine. On note ce probleme $P_1$.
+
+$$
+\begin{matrix}
+\text{minimiser}&f_0(x)&x\in\mathbb R^n\\
+\text{tel que}&f_i(x)\le 0&f_0,f_i&\text{fonctions affines}\\
+&i=1,\dots,p
+\end{matrix}
+$$
 
 </div>
 
 # Exercice 1
 
-![](https://i.imgur.com/Y9iQVDD.png)
+Soit $A_u$ le lieu de $\mathbb R^2$ decrit par les contraintes
 
-On cherche a minimiser $f_0(x)$ $x\in\mathbb R^n$ tel que $f_i(x)\le 0$ avec $i=1,\dots,p$, $f_0, f_i$ $(i=1,\dots,p)$ fonctions affine. On note ce problem $P_1$.
+$$
+A_u\begin{cases}
+-x+2y&\le -1\\
+x+y&\le 1
+\end{cases}
+$$
+
+Et $A_b$ le lieu decrit par les contraintes de $A_u$ auxquelles on ajoute $x-3y\le 6$
 
 On va se donner un espace
-- $$A_u=\{(x,y)\in\mathbb R^2\text{ tq } \begin{aligned} -x+2y &\le 1&(D_1) \\ x+y&\le1&(D_2) \end{aligned}\}$$
-- $A_b=A_u\cap\{(x,y)\in\mathbb R^2\text{ tq } \underbrace{x-3y\le 6}_{(D_3)}\}$
+- $$A_u=\biggr\{(x,y)\in\mathbb R^2\text{ tq } \begin{aligned} -x+2y &\le 1&(D_1) \\ x+y&\le1&(D_2) \end{aligned}\biggr\}$$
+- $$A_b=A_u\cap\{(x,y)\in\mathbb R^2\text{ tq } \underbrace{x-3y\le 6}_{(D_3)}\}$$
+
+1. Etudier le programme lineaire de lieu admissible $A_u$ et minimisant $y$. Que se passe-t-il si on remplace $y$ par $-y$ ?
+2. A-t-on toujours une valeur minimale pour un programme lineaire ayant pour lieu admissible $A_b$ ?
+3. Etudier le programme lineaire de lieu admissible $A_b$ et minimisant $x+y$. Effectuer cette meme etude pour la fonction objectif $-x-y$
+
+<details markdown="1"><summary>Solution</summary>
 
 ## Question 1
 
@@ -220,35 +244,68 @@ f_0^*&=f_0(x^*,y^*) \\
 $$
 </div>
 
+</details>
+
 # Exercice 2
 
 Donnez un exemple de programme lineaire:
 
 ## Non borne
 
+<details markdown="1"><summary>Solution</summary>
+
 $$
 \text{min}_{(x,y)\in A_u} y
 $$
 
+</details>
+
 ## De lieu admissible non borne mais de solution finie
+
+<details markdown="1"><summary>Solution</summary>
 
 $$
 \text{max}_{(x,y)\in A_u} y
 $$
 
+</details>
+
 ## Ayant une infinite de solutions/points optimaux
+
+<details markdown="1"><summary>Solution</summary>
 
 $$
 \text{max}_{(x,y)\in A_b} x+y
 $$
 
+</details>
+
 ## Ayant une unique solution
+
+<details markdown="1"><summary>Solution</summary>
 
 $$
 \text{min}_{(x,y)\in A_b}
 $$
 
+</details>
+
 # Exercice 3
+
+On considere le programme lineaire suivant
+
+$$
+\begin{matrix}
+\text{(P)}&\text{minimiser}&f_0(x,y)=3x+2y\\
+&\text{sujet a}&x-y\le 0\\
+&&4x-y\ge 1\\
+&&-x-y\ge-5
+\end{matrix}
+$$
+
+1. Representer le lieu admissible de $(P)$ dans le plan euclidien
+2. Tracer $\mathcal C_6(f_0)$ la courbe de niveau $6$ de la focntion objectif de $(P)$. Indiquer les demi-espcaes positifs et negatif definis par $\mathcal C_6(f_0)$. Dans quelle direction translater $\mathcal C_6(f_0)$ afin de minimiser $f_0$ ?
+3. Tracer la courbe de niveau qui realise le minimum de $(P)$ et calculer l'unique point optimal de $(P)$. Quelle est la valeur optimale de $(P)$ ?
 
 <div class="alert alert-info" role="alert" markdown="1">
 **Methode**
@@ -259,8 +316,9 @@ $$
 4. Point optimal (analytiquement)
 5. Valeur optimale
 
-
 </div>
+
+<details markdown="1"><summary>Solution</summary>
 
 ## Question 1
 
@@ -279,7 +337,7 @@ On cherche a minimiser, on translate dans la direction opposee au vecteur normal
 $$
 p^{*}\in(D_1)\cap(D_2)\\
 p^{*}=\biggr(\frac{1}{3},\frac{1}{3}\biggr)\\
-f_0^{*}=f_0(x^*,y^*)=\color{red}{\frac{5}{3}}
+f_0^{*}=f_0(x^*,y^*)=\color{red}{\frac{5}{9}}
 $$
 
 *Comment on trouve la courbe de niveau 6 ?*
@@ -292,7 +350,23 @@ C_6(f_0)=\{(x,y)\in\mathbb R^2, f_0(x,y)&=6\}\\
 \end{aligned}
 $$
 
+</details>
+
 # Exercice 4
+
+On considere le programme lineaire suivant
+
+$$
+\begin{matrix}
+\text{(P_2)}&\text{minimiser}&f_0(x,y)=x+2y\\
+&\text{sujet a}&-1\le x\le 1\\
+&&-1\le y\le 1\\
+\end{matrix}
+$$
+
+Resoudre $(P_2)$ en suivant la demarche precedente
+
+<details markdown="1"><summary>Solution</summary>
 
 Sujet a 
 
@@ -315,3 +389,5 @@ $$
 p^*=(-1,-1)\\
 f_0^*=-3
 $$
+
+</details>
