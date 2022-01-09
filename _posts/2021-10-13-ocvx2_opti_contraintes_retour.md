@@ -149,13 +149,13 @@ Probleme dual $$\to\max_{\alpha,\beta \\ \alpha\ge0}\theta_D(\alpha,\beta)=d^*\l
 C'est le **principe de dualite faible**: vrai pour tout probleme primal et dual
 </div>
 
-On aimerait ici que le saut de dualite $p^*-d^*$ soit egaux a $0\to p^*=d^*$
+On aimerait ici que le saut de dualite $p^\*-d^\*$ soit egaux a $0\to p^\*=d^\*$
 
 <div class="alert alert-success" role="alert" markdown="1">
 On peut resoudre le primal en resolvant le dual
 </div>
 
-On a cherche les conditions ("qualifications de contraintes") pour que $p^*=d^*$.
+On a cherche les conditions ("qualifications de contraintes") pour que $p^\*=d^\*$.
 
 Dans le cas ou tout est convexe:
 
