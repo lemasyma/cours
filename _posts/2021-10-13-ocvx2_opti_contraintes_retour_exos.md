@@ -85,6 +85,7 @@ A=\begin{pmatrix}1&1&2 \\ 1&4&2\end{pmatrix}\\
 b=\begin{pmatrix}1 \\ _3\end{pmatrix}\\
 $$
 
+# Exercice 3
 
 $X=\{S_1,\dots,S_N\}$ avec proba discrete $p_i=\mathbb P(X=S_i)$ et $\sum_{i=1}^Np_i=1$.
 
