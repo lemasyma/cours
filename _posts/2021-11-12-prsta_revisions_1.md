@@ -64,7 +64,7 @@ $$
 Zone de rejet: on rejette **des 2 cotes**
 
 $$
-\{T\gt 2.26\}\cup\{T\lt \color{green}{-1,28}\}\\
+\{T\gt 2.26\}\cup\{T\lt \color{green}{-2.26}\}\\
 R=\color{green}{\{T\gt q_{0,975}\}\cup\{T\lt q_{0,025}\}}
 $$
 
