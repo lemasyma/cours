@@ -82,7 +82,7 @@ $\rightarrow$ generalise la notion d'intervallle pour $\mathbb R^n$, $n\ge2$
 Boule ouverte centree sur un point $x_0$ de rayon $r$
 
 $$
-\mathcal B_{\Vert\Vert}(x_0,\varepsilon)=\{y\in\mathbb R^n\vert\Vert x_0-y\Vert\le \varepsilon\} \text{ boule ouverte}\\
+\mathcal B_{\Vert\Vert}(x_0,\varepsilon)=\{y\in\mathbb R^n\vert\Vert x_0-y\Vert < \varepsilon\} \text{ boule ouverte}\\
 $$
 
 $$
