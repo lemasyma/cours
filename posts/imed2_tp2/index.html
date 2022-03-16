@@ -1,0 +1,765 @@
+<!DOCTYPE html><html lang="fr-FR" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="pv-proxy-endpoint" content="https://cours-v2.ew.r.appspot.com/query?id=agplfmNvdXJzLXYychULEghBcGlRdWVyeRiAgIDo14eBCgw"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="IMED2: TP2" /><meta property="og:locale" content="fr_FR" /><meta name="description" content="Reconstruction tomographique (1/3)" /><meta property="og:description" content="Reconstruction tomographique (1/3)" /><link rel="canonical" href="https://lemasyma.github.io/cours/posts/imed2_tp2/" /><meta property="og:url" content="https://lemasyma.github.io/cours/posts/imed2_tp2/" /><meta property="og:site_name" content="Cours" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-11-15T09:00:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="IMED2: TP2" /><meta name="google-site-verification" content="mErcVOJcxNzULHvQ99qSclI_DTX0zANqgpsd3jGhkfs" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-12-22T15:37:02+01:00","datePublished":"2021-11-15T09:00:00+01:00","description":"Reconstruction tomographique (1/3)","headline":"IMED2: TP2","mainEntityOfPage":{"@type":"WebPage","@id":"https://lemasyma.github.io/cours/posts/imed2_tp2/"},"url":"https://lemasyma.github.io/cours/posts/imed2_tp2/"}</script><title>IMED2: TP2 | Cours</title><link rel="apple-touch-icon" sizes="180x180" href="/cours/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/cours/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/cours/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/cours/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/cours/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Cours"><meta name="application-name" content="Cours"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/cours/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cours-v2.ew.r.appspot.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://cours-v2.ew.r.appspot.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/cours/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/cours/" alt="avatar" class="mx-auto"> <img src="/cours/assets/img/favicons/logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/cours/">Cours</a></div><div class="site-subtitle font-italic">Certains cours sont en francais, certains sont en anglais, d'autres sont un mix des deux</div></div><ul class="w-100"><li class="nav-item"> <a href="/cours/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/cours/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/cours/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/cours/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/cours/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/lemasyma" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="" aria-label="" target="_blank" rel="noopener"> <i class=""></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/cours/"> Home </a> </span> <span>IMED2: TP2</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>IMED2: TP2</h1><div class="post-meta text-muted"><div> By <em> <a href="https://github.com/lemasyma">lemasyma</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" date="2021-11-15 09:00:00 +0100" data-toggle="tooltip" data-placement="bottom" title="Mon, Nov 15, 2021, 9:00 AM +0100" >Nov 15, 2021</em> </span> <span> Updated <em class="timeago" date="2021-12-22 15:37:02 +0100 " data-toggle="tooltip" data-placement="bottom" title="Wed, Dec 22, 2021, 3:37 PM +0100" >Dec 22, 2021</em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3308 words"> <em>18 min</em> read</span> <span> <em id="pv" class="pageviews"> <i class="fas fa-spinner fa-spin fa-fw"></i> </em> views </span></div></div></div><div class="post-content"><h1 id="reconstruction-tomographique-13">Reconstruction tomographique (1/3)</h1><p>Vous avez déjà apprivoisé la radiographie numérique rayons X, nous voici maintenant partis pour explorer l’univers de la tomographie ! La tomographie (du grec $\tau\omicron\mu\omicron\varsigma$, coupe) recouvre l’ensemble des technologies permettant de visualiser l’intérieur d’un patient (comme une tranche de jambon), sans l’ouvrir pour autant (car le jambon, dans notre cas, c’est le patient !).</p><p>Ce premier cours sur la tomographie focalise sur les mathématiques de la reconstruction tomographique. Il est plus aride que votre cours sur la radiographie numérique, mais la maîtrise des outils mathématiques appliqués à la tomographie est absolument indispensable : ce notebook doit vous aider à vous les approprier ! Vous allez également découvrir ASTRA Toolbox, dont vous trouverez les détails ici : https://www.astra-toolbox.com/</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="p">.</span><span class="n">mount</span><span class="p">(</span><span class="s">'/content/gdrive'</span><span class="p">,</span><span class="n">force_remount</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s">"/content/gdrive/My Drive/EPITA-2021/TP2 - Q4 2021"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+<span class="n">mpl</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'image'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">cwd</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">image</span><span class="o">==</span><span class="mf">0.18</span>
+<span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">disk</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre>Mounted at /content/gdrive
+Requirement already satisfied: scikit-image==0.18 in /usr/local/lib/python3.7/dist-packages (0.18.0)
+Requirement already satisfied: scipy&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (1.4.1)
+Requirement already satisfied: networkx&gt;=2.0 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (2.6.3)
+Requirement already satisfied: numpy&gt;=1.16.5 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (1.19.5)
+Requirement already satisfied: matplotlib!=3.0.0,&gt;=2.0.0 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (3.2.2)
+Requirement already satisfied: PyWavelets&gt;=1.1.1 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (1.2.0)
+Requirement already satisfied: imageio&gt;=2.3.0 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (2.4.1)
+Requirement already satisfied: pillow!=7.1.0,!=7.1.1,&gt;=4.3.0 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (7.1.2)
+Requirement already satisfied: tifffile&gt;=2019.7.26 in /usr/local/lib/python3.7/dist-packages (from scikit-image==0.18) (2021.11.2)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib!=3.0.0,&gt;=2.0.0-&gt;scikit-image==0.18) (2.8.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib!=3.0.0,&gt;=2.0.0-&gt;scikit-image==0.18) (2.4.7)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib!=3.0.0,&gt;=2.0.0-&gt;scikit-image==0.18) (1.3.2)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.7/dist-packages (from matplotlib!=3.0.0,&gt;=2.0.0-&gt;scikit-image==0.18) (0.11.0)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.7/dist-packages (from python-dateutil&gt;=2.1-&gt;matplotlib!=3.0.0,&gt;=2.0.0-&gt;scikit-image==0.18) (1.15.0)
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># !apt-get install automake libtool
+# !pip install astra-toolbox
+</span>
+<span class="c1"># !apt-get install automake libtool
+# !git clone https://github.com/astra-toolbox/astra-toolbox
+# %cd astra-toolbox/build/linux
+# !./autogen.sh
+# !./configure --with-cuda=/usr/local/cuda \
+#              --with-python \
+#              --with-install-type=module
+# !make -j2
+# !make install
+</span>
+<span class="kn">import</span> <span class="nn">astra</span>
+</pre></table></code></div></div><h2 id="partie-1---géométrie-parallèle-projection-parallèle-sinogrammes">Partie 1 - Géométrie parallèle, projection parallèle, sinogrammes<a href="#partie-1---géométrie-parallèle-projection-parallèle-sinogrammes"><i class="fas fa-hashtag"></i></a></h2></h2><p>Comme présenté au début du cours, on considère la géométrie parallèles suivante :</p><p><img data-proofer-ignore data-src="https://drive.google.com/uc?id=1KXuoCiREWPF-6d2lm0cmzfVXVQ4LiYcc" style="width: 400px;" /></p><p>Le principe de la reconstruction tomographique est le suivant. Dans le cas idéal, la mesure au détecteur correspond à une loi de Beer-Lambert $I=I_0e^{-p}$, d’où je peux récupérer $p$, qui est ma ligne intégrale. Si mon image est bi-dimensionnelle, $p$ est un signal mono-dimensionnel. On appelle <em>acquisition tomographique</em>, la collection de telles lignes intégrales $p$, lorsque l’angle des lignes intégrales couvre un certain intervalle angulaire : \(A_\Theta = \left\lbrace p_\theta \right\rbrace_{\theta\in\Theta}, \quad p_\theta(u) = \iint_{u_\theta(\underline{x})=u} \mu(\underline{x})\mathrm{d}\underline{x}.\) En géométrie parallèle, dans notre cas d’étude, $\Theta = [0,\pi]$. En mots simples, l’acquisition tomographique revient donc à collecter les projections d’un objet sous tous les angles d’un demi-cercle. En mots compliqués, l’acquisition tomographique est la transformée de Radon de $\mu$.</p><p>Le problème de la <em>reconstruction tomographique</em> consiste à répondre à la question suivante : Etant donnée $A_\Theta$, est-il possible de reconstruire une carte 2D des $\mu$ ? Selon que l’on se place dans un cas idéal ou non, que l’on couvre bien tout le demi-cercle $[0,\pi]$ ou non, que les projections soient tronquées ou non, etc., la réponse à cette question sera plus ou moins simple. Dans la suite, on appellera $f$, la quantité reconstruite à partir de $A_\Theta$.</p><p>Nous allons reprendre les résultats mathématiques fondamentaux qui permettent de répondre au problème de la reconstruction tomographique dans un cas idéal en géométrie parallèle 2D. Comme nous l’avons fait en radiographie numérique, nous verrons qu’il est nécessaire de réfléchir hors du cadre idéal dans les cours 2 et 3 de tomographie.</p><h3 id="questions">Questions<a href="#questions"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Quelle est l’équation qui relie le point $\underline{x}=(x,y)$ à sa coordonnée projetée $u_\theta(\underline{x})$ ?<li>On se donne un nombre <code class="language-plaintext highlighter-rouge">nbins</code> de bins de détecteurs (voyez cela comme un nombre de pixels sur une image à une ligne). Définissez l’axe <code class="language-plaintext highlighter-rouge">detector</code>, dont l’origine est au milieu du détecteur ; on s’attend à quelque chose comme : [-191.5 -190.5 -189.5 -188.5 … 188.5 189.5 190.5 191.5] lorsque <code class="language-plaintext highlighter-rouge">nbins=384</code>.<li>On définit une taille d’image <code class="language-plaintext highlighter-rouge">N</code> et une image synthétique, constituée d’un simple petit carré blanc sur fond noir. Afin de coller à la définition de la géométrie ci-dessus, définissez les axes <code class="language-plaintext highlighter-rouge">X</code> et <code class="language-plaintext highlighter-rouge">Y</code> afin de placer l’origine au centre de l’image, comme sur la figure ci-dessus. Déduisez-en les valeurs des coordonnées $(x_0, y_0)$ du centre du carré blanc, dans ce système de coordonnées. Vérifiez sur l’image que les lignes rouges intersectent bien le centre du carré. <em>Attention aux axes : rappelez-vous qu’en Python, la première coordonnée donne la position verticale, la second coordonnée donne la position horizontale.</em><li>On définit un vecteur d’angles de $[0,\pi]$. Quelle est la trajectoire du point $(x_0,y_0)$ en fonction des angles ?<li>On utilise les fonctionnalités d’ASTRA pour créer une géométrie d’image et un projecteur (regardez la documentation d’ASTRA pour en savoir plus). Puis, on génère un <em>sinogramme</em> : il s’agit d’une image dont chaque ligne correspond à la projection au détecteur pour une angulation donnée (on parcourt le vecteur des angles d’acquisition en parcourant les lignes du sinogramme). Rajoutez à cette image votre estimation de la trajectoire du point $(x_0,y_0)$ : qu’observez-vous ?<li>Faites de même pour une image avec plusieurs carrés de différents niveaux de gris ; observez le sinogramme généré : que pouvez-vous en dire ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2
+</span><span class="k">def</span> <span class="nf">getDetectorAxis</span><span class="p">(</span><span class="n">nbins</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">nbins</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">nbins</span> <span class="o">=</span> <span class="mi">384</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">getDetectorAxis</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="n">N</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ctr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span><span class="mi">192</span><span class="p">]</span>
+<span class="n">img</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">:</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">:</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Question 3
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">getDetectorAxis</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="o">-</span><span class="n">getDetectorAxis</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">Y</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">X</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">X</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">Y</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">Y</span><span class="p">.</span><span class="nb">max</span><span class="p">()])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_5_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span><span class="k">def</span> <span class="nf">getTrajectory</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">angles</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x0</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span> <span class="o">+</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">getTrajectory</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">angles</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span><span class="n">traj</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Angles (rad)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Detector coordinate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_6_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre><span class="c1"># ASTRA framework :
+# - create image geometry (NxN image array)
+# - create projection geometry (parallel-beam, detector bin size, detector size, angular positions)
+# - create a projector (projection method, from an image geometry to a projection geometry)
+# - apply the projector to an existing image (img is adapted to the image geometry that was defined)
+#   returns: an ID and a sinogram
+</span><span class="n">vol_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_vol_geom</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">proj_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_proj_geom</span><span class="p">(</span><span class="s">'parallel'</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">nbins</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+<span class="n">proj_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_projector</span><span class="p">(</span><span class="s">'strip'</span><span class="p">,</span> <span class="n">proj_geom</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+<span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_sino</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">proj_id</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">detector</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">detector</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">angles</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="n">angles</span><span class="p">.</span><span class="nb">min</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Sinogram'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'auto'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Detector coordinate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Angle (deg)'</span><span class="p">)</span>
+
+<span class="c1"># Question 5
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span><span class="n">angles</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_7_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">50</span><span class="p">,</span><span class="mi">250</span><span class="p">],[</span><span class="mi">250</span><span class="p">,</span><span class="mi">50</span><span class="p">],[</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">],[</span><span class="mi">64</span><span class="p">,</span><span class="mi">128</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ctr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">centers</span><span class="p">):</span>
+    <span class="n">img</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">:</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">:</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="c1"># Question 6
+</span>    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">Y</span><span class="p">[</span><span class="n">ctr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">X</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">X</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">Y</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">Y</span><span class="p">.</span><span class="nb">max</span><span class="p">()])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_sino</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">proj_id</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">detector</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">detector</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">angles</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="n">angles</span><span class="p">.</span><span class="nb">min</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Sinogram'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'auto'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Detector coordinate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Angle (deg)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_8_0.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_8_1.png" alt="png" /></p><h2 id="partie-1--ce-quil-faut-retenir">Partie 1 : Ce qu’il faut retenir<a href="#partie-1--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Un peu de géométrie de lycée suffit à caractériser la géométrie d’acquisition parallèle !<li>Lorsqu’on tourne autour d’un point du plan image, celui-ci se projette à différents endroits du détecteur ; sa trajectoire en fonction de l’angle d’acquisition décrit une sinusoïde.<li>On représente l’acquisition $A_\Theta$ sous la forme d’un sinogramme : il s’agit simplement des profils projetés au détecteur à chaque angle d’acquisition.</ul><h1 id="partie-2---rétro-projection-filtrée">Partie 2 - Rétro-projection filtrée</h1><h2 id="rétro-projection-filtrée">Rétro-projection filtrée<a href="#rétro-projection-filtrée"><i class="fas fa-hashtag"></i></a></h2></h2><p>C’est là qu’il va falloir refaire appel à vos cours de mathématiques ! Au programme : calcul intégral, changements de variables, analyse de Fourier… et distributions de Dirac !</p><p>Tout commence avec le <strong>théorème coupe-projection</strong> qui est le suivant : \(\mathcal{F}_2[f](\rho\underline{\theta}) = \mathcal{F}_1[p_\theta](\rho),\) où : $\mathcal{F}<em>n$ désigne la transformée de Fourier en $n$ dimensions, $f$ est l’image 2D correspondant à l’acquisition tomographique, $p</em>\theta$ est la projection de $f$ selon l’angle $\theta$, $\rho\in\mathbb{R}$, et $\theta\in[0,\pi]$.</p><h3 id="questions-1">Questions<a href="#questions-1"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>On se propose de démontrer le théorème fondamental de la reconstruction tomographique, appelé “théorème coupe-projection” :</ol><ul><li>Partez de la définition de la transformée de Fourier 1D de $p_\theta$<li>Utilisez la définition de la ligne intégrale de $p_\theta$ pour exprimer $p_\theta$ en fonction de $f$<li>Trouvez une transformée de Fourier 2D dans l’expression que vous obtenez</ul><ol><li>Ce théorème fondamental est en réalité tout ce dont vous avez besoin pour reconstruire $f$ à partir de $A_\Theta$.<ul><li>Ecrivez $f$ comme la transformée de Fourier inverse de $\mathcal{F}_2[f]$<li>Appliquez un changement de variables<li>Utilisez le théorème coupe-projection</ul></ol><p>Le résultat de la question 2 doit aboutir à l’inversion classique de la <strong>rétroprojection filtrée</strong> : \(f(\underline{x}) = \int_0^\pi (h * p_\theta)(u_\theta(\underline{x})) \mathrm{d}\theta,\) où $h$ est appelé le <em>filtre rampe</em> et correspond à une multiplication dans l’espace de Fourier par $\rho\mapsto|\rho|$. Pourquoi cette étape de filtrage est-elle vraiment nécessaire ? C’est ce qu’on va étudier dans la suite de ce notebook.</p><h3 id="questions-2">Questions<a href="#questions-2"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>On génère une image synthétique constituée d’un disque uniforme centré de rayon $R$. On définit le sinogramme associé avec ASTRA (https://www.astra-toolbox.com/files/misc/ICTMS2019/20190722_ICTMS_ASTRA_workshop_2d.pdf). Auriez-vous pu calculer analytiquement la valeur de cette projection ?</ol><p>On se propose de réaliser une rétroprojection “simple” (<em>backprojection</em> en anglais). Cela revient à reconstruire : $f_{\mathrm{BP}}(\underline{x}) = \int_0^\pi p_\theta(u_\theta(\underline{x})) \mathrm{d}\theta.$ En termes simples, la rétroprojection d’une projection $p_\theta$ revient à prendre la valeur de chaque point de $p_\theta$, et à recopier cette valeur tout le long de la ligne de projection.</p><ol><li>Observez l’image reconstruite : comment vous semble-t-elle ? Renormalisez l’image reconstruite pour que son maximum corresponde à l’image idéale. Tracez un profil horizontal au milieu de l’image pour l’image idéale et l’image reconstruite : que pouvez-vous en déduire ? L’observation sur ces profils est-elle cohérente avec votre lecture de l’image ?<li><div class="table-wrapper"><table><tbody><tr><td>A vous d’ajouter le filtre rampe ! Une façon de faire est de remarquer que $<td>\rho<td>= \frac{1}{2\pi}(2i\pi\rho)(-i\mathrm{sign}(\rho))$. Reconnaissez-vous à quoi correspond la multiplications par $2i\pi\rho$ dans Fourier ? Et la multiplication par $-i\mathrm{sign}(\rho)$ ?</table></div><li>Réalisez un filtre rampe et appliquez-le à notre sinogramme. Tracez une ligne du sinogramme. L’effet du filtre est-il passe-bas ? passe-haut ? passe-bande ?…<li>Lancez la reconstruction du sinogramme filtré, et comparez à nouveau les profils horizontaux au centre de l’image : qu’observez-vous ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3
+</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">vol_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_vol_geom</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">nbins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">proj_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_proj_geom</span><span class="p">(</span><span class="s">'parallel'</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">nbins</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">getDetectorAxis</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+<span class="n">proj_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_projector</span><span class="p">(</span><span class="s">'strip'</span><span class="p">,</span> <span class="n">proj_geom</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">disk</span><span class="p">((</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="n">R</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_sino</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">proj_id</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Synthetic image'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">detector</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">detector</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">angles</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="n">angles</span><span class="p">.</span><span class="nb">min</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Sinogram'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">axis</span><span class="p">(</span><span class="s">'auto'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Detector coordinate'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Angle (deg)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">analyticalCenteredDiskProjection</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
+    <span class="s">"""
+    Projection analytique d'un disque uniforme centré de rayon R
+    et de coefficient linéaire d'atténuation mu sur le détecteur detector
+    """</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">detector</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)).</span><span class="n">clip</span><span class="p">(</span><span class="nb">max</span> <span class="o">=</span> <span class="n">R</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">sinogram</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s">'Sinogram profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">analyticalCenteredDiskProjection</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span><span class="s">'--'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">'Analytical projection'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_11_0.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:35: RuntimeWarning: invalid value encountered in sqrt
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_11_2.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre><td class="rouge-code"><pre><span class="c1"># Create a data object for the reconstruction
+</span><span class="n">rec_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">data2d</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">'-vol'</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+
+<span class="c1"># Set up the parameters for a reconstruction algorithm using the CPU
+</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">astra_dict</span><span class="p">(</span><span class="s">'BP'</span><span class="p">)</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ReconstructionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">rec_id</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sinogram_id</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectorId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">proj_id</span>
+<span class="c1"># cfg['FilterType'] = 'none'
+</span>
+<span class="c1"># Create the algorithm object from the configuration structure
+</span><span class="n">alg_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<span class="c1"># Run the algorithm
+</span><span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">alg_id</span><span class="p">)</span>
+
+<span class="c1"># Get the result
+</span><span class="n">rec</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">data2d</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span> <span class="o">/</span> <span class="n">angles</span><span class="p">.</span><span class="n">size</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'BP Reconstruction'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_12_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span><span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)).</span><span class="n">astype</span><span class="p">(</span><span class="s">'int'</span><span class="p">)</span>
+<span class="n">prof0</span> <span class="o">=</span> <span class="n">rec</span><span class="p">[:,</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="n">prof</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">prof</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">'BP middle profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">prof0</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">'Ideal profile'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_13_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre><td class="rouge-code"><pre><span class="c1"># Question 6
+</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">hilbert</span>
+
+<span class="n">prof</span> <span class="o">=</span> <span class="n">analyticalCenteredDiskProjection</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span><span class="mi">1000</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="n">prof_grad</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">prof</span><span class="p">)</span>
+<span class="n">filt</span> <span class="o">=</span>  <span class="n">hilbert</span><span class="p">(</span><span class="n">prof_grad</span><span class="p">).</span><span class="n">imag</span>
+<span class="n">prof0_grad</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">prof0</span><span class="p">)</span>
+<span class="n">filt0</span> <span class="o">=</span> <span class="n">hilbert</span><span class="p">(</span><span class="n">prof0_grad</span><span class="p">).</span><span class="n">imag</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sinogram</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">sinogram</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">filt</span>
+
+<span class="n">sdiff</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filt</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">filt0</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span><span class="n">filt</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'BP profile'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">detector</span><span class="p">[</span><span class="n">sdiff</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="n">sdiff</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">filt0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Ideal profile'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">detector</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">detector</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="n">angles</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="n">angles</span><span class="p">.</span><span class="nb">min</span><span class="p">()</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Sinogram'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">axis</span><span class="p">(</span><span class="s">'auto'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Detector coordinate'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Angle (deg)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:35: RuntimeWarning: invalid value encountered in sqrt
+/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:452: UserWarning: Warning: converting a masked element to nan.
+  dv = np.float64(self.norm.vmax) - np.float64(self.norm.vmin)
+/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:459: UserWarning: Warning: converting a masked element to nan.
+  a_min = np.float64(newmin)
+/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:464: UserWarning: Warning: converting a masked element to nan.
+  a_max = np.float64(newmax)
+&lt;string&gt;:6: UserWarning: Warning: converting a masked element to nan.
+/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: UserWarning: Warning: converting a masked element to nan.
+  return array(a, dtype, copy=False, order=order)
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_14_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="c1"># Question 7
+</span><span class="n">out_id</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">creators</span><span class="p">.</span><span class="n">create_reconstruction</span><span class="p">(</span><span class="s">'BP'</span><span class="p">,</span> <span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">/=</span> <span class="n">angles</span><span class="p">.</span><span class="n">size</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">prof</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">out</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">prof</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">'FBP middle profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">img</span><span class="p">[</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s">'Ideal profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:452: UserWarning: Warning: converting a masked element to nan.
+  dv = np.float64(self.norm.vmax) - np.float64(self.norm.vmin)
+/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:459: UserWarning: Warning: converting a masked element to nan.
+  a_min = np.float64(newmin)
+/usr/local/lib/python3.7/dist-packages/matplotlib/image.py:464: UserWarning: Warning: converting a masked element to nan.
+  a_max = np.float64(newmax)
+&lt;string&gt;:6: UserWarning: Warning: converting a masked element to nan.
+/usr/local/lib/python3.7/dist-packages/numpy/core/_asarray.py:83: UserWarning: Warning: converting a masked element to nan.
+  return array(a, dtype, copy=False, order=order)
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_15_1.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>{'type': 'BP', 'ReconstructionDataId': 12, 'ProjectionDataId': 10, 'ProjectorId': 8}
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_15_3.png" alt="png" /></p><p>On peut directement appliquer le filtre rampe en choisissant non pas une rétroprojection simple (BP) mais une rétroprojection filtrée (FBP). C’est ce qui est fait ci-dessous. Le résultat est normalisé par la taille d’un bin détecteur.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="n">cfg</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">astra_dict</span><span class="p">(</span><span class="s">'FBP'</span><span class="p">)</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ReconstructionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">rec_id</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sinogram_id</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectorId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">proj_id</span>
+<span class="n">cfg</span><span class="p">[</span><span class="s">'FilterType'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ram-lak'</span>
+
+<span class="c1"># Create the algorithm object from the configuration structure
+</span><span class="n">alg_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<span class="c1"># Run 20 iterations of the algorithm
+# This will have a runtime in the order of 10 seconds.
+</span><span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">alg_id</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1"># Get the result
+</span><span class="n">rec</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">data2d</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Reconstruction'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_18_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">prof</span> <span class="o">=</span> <span class="n">rec</span><span class="p">[</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">prof</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">'FBP middle profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">img</span><span class="p">[</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s">'Ideal profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_19_0.png" alt="png" /></p><p>En regardant l’image avec un fenêtrage plus serré autour de zéro, on voit apparaître des motifs dans le fond de l’image : ce sont des motifs typiques de phénomènes d’interpolation liés à l’implémentation des projecteurs / rétroprojecteurs. Regardez cette image avec ou sans zoom !</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="n">zoom</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">),</span><span class="nb">slice</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">zoom</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">[</span><span class="n">zoom</span><span class="p">],</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Reconstruction'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_21_0.png" alt="png" /></p><h2 id="partie-2--ce-quil-faut-retenir">Partie 2 : Ce qu’il faut retenir<a href="#partie-2--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>La rétroprojection simple est un opérateur qui redistribue un profil projeté le long de sa direction de projection.<li>La rétroprojection simple ne reconstruit pas l’image attendue ; pour reconstruire l’image, un pré-filtrage des projections par le filtre <em>rampe</em> est nécessaire.<li>ASTRA Toolbox permet de réaliser ces reconstructions.</ul><h1 id="partie-3---echantillonnage-angulaire">Partie 3 - Echantillonnage angulaire</h1><p>Dans cette partie, nous allons commencer à toucher du doigt les problématiques d’échantillonnage angulaire. La formule FBP est une formule continue, que l’on discrétise ensuite pour en faire un algorithme : on boucle sur chaque projection, on filtre, on rétroprojette en accumulant le résultat dans un buffer. Que se passe-t-il si le nombre de projections n’échantillonne plus correctement l’intervalle $[0,\pi]$ ?</p><p>On se construit à nouveau une image synthétique, constituée d’un disque centré, et d’un point de très fort contraste.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="n">highIntensity</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">disk</span><span class="p">((</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="n">R</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">if</span> <span class="n">highIntensity</span><span class="p">:</span>
+    <span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">disk</span><span class="p">((</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">//</span><span class="mi">5</span><span class="p">),</span> <span class="n">R</span><span class="o">//</span><span class="mi">8</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cc</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">5000</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>&lt;matplotlib.colorbar.Colorbar at 0x7fbe107756d0&gt;
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_24_1.png" alt="png" /></p><h3 id="questions-3">Questions<a href="#questions-3"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Définissez deux fonctions, <code class="language-plaintext highlighter-rouge">project</code> et <code class="language-plaintext highlighter-rouge">reconstruct</code>, pour automatiser la projection et la reconstruction.<ul><li><code class="language-plaintext highlighter-rouge">project</code> prend en entrée une image, un nombre d’angles, et un offset ; cela permet de créer un vecteur d’angles entre <code class="language-plaintext highlighter-rouge">angleOffset</code> et <code class="language-plaintext highlighter-rouge">angleOffset+np.pi</code>, dont la taille est donnée par le nombre d’angles. On peut ensuite créer la géométrie de projection, le détecteur, le projecteur, et le sinogramme.<li><code class="language-plaintext highlighter-rouge">reconstruct</code> prend en entrée un identifiant ASTRA d’un projecteur, un identifiant ASTRA d’un sinogramme, et crée un reconstructeur FBP, qu’on utilisera pour reconstruire une image.</ul><li>Lancez les différentes expériences, en générant différents sinogrammes avec un nombre décroissant de vues, et en reconstruisant les images à partir de ces sinogrammes. Qu’observez-vous ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre><td class="rouge-code"><pre><span class="c1"># Question 1
+</span>
+<span class="k">def</span> <span class="nf">project</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">nAngles</span><span class="p">,</span><span class="n">angleOffset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">angleOffset</span><span class="p">,</span> <span class="n">angleOffset</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">nAngles</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vol_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_vol_geom</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">nbins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">proj_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_proj_geom</span><span class="p">(</span><span class="s">'parallel'</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">nbins</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+    <span class="n">detector</span> <span class="o">=</span> <span class="n">getDetectorAxis</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+    <span class="n">proj_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_projector</span><span class="p">(</span><span class="s">'strip'</span><span class="p">,</span> <span class="n">proj_geom</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+    <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_sino</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">proj_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">vol_geom</span>
+
+<span class="k">def</span> <span class="nf">reconstruct</span><span class="p">(</span><span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">):</span>
+    <span class="n">rec_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">data2d</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">'-vol'</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">astra_dict</span><span class="p">(</span><span class="s">'FBP'</span><span class="p">)</span>
+    <span class="n">cfg</span><span class="p">[</span><span class="s">'ReconstructionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">rec_id</span>
+    <span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectionDataId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sinogram_id</span>
+    <span class="n">cfg</span><span class="p">[</span><span class="s">'ProjectorId'</span><span class="p">]</span> <span class="o">=</span> <span class="n">proj_id</span>
+    <span class="n">cfg</span><span class="p">[</span><span class="s">'FilterType'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ram-lak'</span>
+    <span class="n">alg_id</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+    <span class="n">astra</span><span class="p">.</span><span class="n">algorithm</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">alg_id</span><span class="p">)</span>
+    <span class="n">rec</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">data2d</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rec</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2
+</span><span class="k">for</span> <span class="n">nAngles</span> <span class="ow">in</span> <span class="mi">180</span><span class="o">//</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">nAngles</span><span class="p">)</span>
+    <span class="c1"># projection de img avec nAngles vues
+</span>    <span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">vol_geom</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">nAngles</span><span class="p">)</span>
+    <span class="c1"># reconstruction
+</span>    <span class="n">rec</span> <span class="o">=</span> <span class="n">reconstruct</span><span class="p">(</span><span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">500</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Reconstruction'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rec</span><span class="p">[</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>180
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_1.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_2.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>90
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_4.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_5.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>45
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_7.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_8.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>22
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_10.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_11.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>11
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_13.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_27_14.png" alt="png" /></p><p>Dans cette dernière expérience, on génère une image très grande (de taille 5120x5120), dans laquelle on n’a qu’un petit disque (de rayon 8 !).</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="n">N</span> <span class="o">=</span> <span class="mi">5120</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">disk</span><span class="p">((</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="n">R</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
+<span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">zoom</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">128</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">128</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="n">zoom</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_29_0.png" alt="png" /></p><h3 id="questions-4">Questions<a href="#questions-4"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Choisissez <code class="language-plaintext highlighter-rouge">nAngles=32</code> vues, et générez un sinogramme à partir de cette image. Cela peut prendre un peu de temps, l’image est plus grande qu’avant !<li>Reconstruisez l’image à partir de ce sinogramme, et visualisez l’image avec le petit zoom proposé (afin de mieux voir les artefacts d’échantillonnage). Là encore, soyez patient !<li>Regénérez un sinogramme à partir de cette reconstruction, mais cette fois-ci, décalez les angles d’acquisition d’un demi-pas d’échantillonnage angulaire. Que remarquez-vous sur le sinogramme obtenu ?<li>Justifiez ce résultat mathématiquement ! Repartez cette fois de l’algorithme FBP en tant que boucle sur les angles d’acquisition, et remontez jusqu’au plan de Fourier !…</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3
+</span><span class="n">nAngles</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">vol_geom</span> <span class="o">=</span> <span class="n">astra</span><span class="p">.</span><span class="n">create_vol_geom</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">nbinsIdeal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">vol_geom</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">nAngles</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span><span class="n">rec</span> <span class="o">=</span> <span class="n">reconstruct</span><span class="p">(</span><span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">vol_geom</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">zoom</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">128</span><span class="p">),</span><span class="nb">slice</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span><span class="n">rec</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">128</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rec</span><span class="p">[</span><span class="n">zoom</span><span class="p">],</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_32_0.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>&lt;matplotlib.colorbar.Colorbar at 0x7fbe0a33dfd0&gt;
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_32_2.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1"># Question 5
+</span><span class="n">angleOffset</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">angles</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">proj_id</span><span class="p">,</span> <span class="n">sinogram_id</span><span class="p">,</span> <span class="n">sinogram</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">vol_geom</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">nAngles</span><span class="p">,</span> <span class="n">angleOffset</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sinogram</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'auto'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_33_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="c1"># Question 5
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sinogram</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">median</span><span class="p">(</span><span class="n">sinogram</span><span class="p">))</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>0.0
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp2/output_34_1.png" alt="png" /></p><h2 id="partie-3--ce-quil-faut-retenir">Partie 3 : Ce qu’il faut retenir<a href="#partie-3--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>FBP, en tant qu’algorithme, rétroprojette des projections filtrées avec leurs rebonds liés au filtre rampe.<li>Lorsque l’échantillonnage angulaire diminue, ces rebonds ne se compensent plus entre eux et ils deviennent visibles dans l’image sous forme de stries de sous-échantillonnage.<li>Ces stries sont intrinsèquement liées au peuplement du plan de Fourier de l’image reconstruite.</ul><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/cours/categories/image-s9/'>Image S9</a>, <a href='/cours/categories/imed2/'>IMED2</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/cours/tags/image/" class="post-tag no-text-decoration" >Image</a> <a href="/cours/tags/s9/" class="post-tag no-text-decoration" >S9</a> <a href="/cours/tags/imed2/" class="post-tag no-text-decoration" >IMED2</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=IMED2: TP2 - Cours&url=https://lemasyma.github.io/cours/posts/imed2_tp2/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=IMED2: TP2 - Cours&u=https://lemasyma.github.io/cours/posts/imed2_tp2/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=IMED2: TP2 - Cours&url=https://lemasyma.github.io/cours/posts/imed2_tp2/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recent Update</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/cours/posts/ocvx_norme/">OCVX: Norme</a><li><a href="/cours/posts/imed2_tp3/">IMED2: TP3</a><li><a href="/cours/posts/prsta_revisions_1/">PRSTA: Revisions 1</a><li><a href="/cours/posts/prsta_td5/">PRSTA: TD 5</a><li><a href="/cours/posts/prsta_td4/">PRSTA: TD 4</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/cours/tags/image/">Image</a> <a class="post-tag" href="/cours/tags/s8/">S8</a> <a class="post-tag" href="/cours/tags/s9/">S9</a> <a class="post-tag" href="/cours/tags/tronc-commun/">tronc commun</a> <a class="post-tag" href="/cours/tags/scia/">SCIA</a> <a class="post-tag" href="/cours/tags/s6/">S6</a> <a class="post-tag" href="/cours/tags/shannon/">Shannon</a> <a class="post-tag" href="/cours/tags/cama/">CAMA</a> <a class="post-tag" href="/cours/tags/loi/">loi</a> <a class="post-tag" href="/cours/tags/rvau/">RVAU</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/cours/posts/imed2_tp3/"><div class="card-body"> <em class="timeago small" date="2021-11-25 09:00:00 +0100" >Nov 25, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: TP3</h3><div class="text-muted small"><p> Reconstruction tomographique (2/3) Vous avez tous les outils pour comprendre la reconstruction tomographique 2D en géométrie parallèle dans le cadre idéal : à partir des lignes intégrales (transfo...</p></div></div></a></div><div class="card"> <a href="/cours/posts/imed2_project/"><div class="card-body"> <em class="timeago small" date="2021-11-25 11:00:00 +0100" >Nov 25, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: Project</h3><div class="text-muted small"><p> Lien de la note Hackmd Part 1 Retinal fundus image segmentation Iterative Closest Point - ICP Quand on itere, on reste bloques sur des minimums local En remplacant points par courbes: On...</p></div></div></a></div><div class="card"> <a href="/cours/posts/imed2_registration_3D/"><div class="card-body"> <em class="timeago small" date="2021-11-26 09:00:00 +0100" >Nov 26, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: 3D/3D registration with labeled atlas</h3><div class="text-muted small"><p> DPH and TURP treatment The endo-vascular treatment for BPH C’est quoi le challenge ? La prostate a BEAUCOUP de variantes anatomiques La variante anatomique la moins embetante est la C...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/cours/posts/prsta_revisions_1/" class="btn btn-outline-primary" prompt="Older"><p>PRSTA: Revisions 1</p></a> <a href="/cours/posts/imed2_tomographie/" class="btn btn-outline-primary" prompt="Newer"><p>IMED2: Reconstruction tomographique - quand rien n'est ideal</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://github.com/lemasyma">lemasyma</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/cours/tags/image/">Image</a> <a class="post-tag" href="/cours/tags/s8/">S8</a> <a class="post-tag" href="/cours/tags/s9/">S9</a> <a class="post-tag" href="/cours/tags/tronc-commun/">tronc commun</a> <a class="post-tag" href="/cours/tags/scia/">SCIA</a> <a class="post-tag" href="/cours/tags/s6/">S6</a> <a class="post-tag" href="/cours/tags/shannon/">Shannon</a> <a class="post-tag" href="/cours/tags/cama/">CAMA</a> <a class="post-tag" href="/cours/tags/loi/">loi</a> <a class="post-tag" href="/cours/tags/rvau/">RVAU</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/cours/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> <script defer src="/cours/assets/js/dist/pvreport.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/cours/assets/js/dist/post.min.js"></script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" }, tagSide: "right" }, tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, CommonHTML: { linebreaks: { automatic: true } }, "HTML-CSS": { linebreaks: { automatic: true } }, SVG: { linebreaks: { automatic: true } } }); MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () { MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({ clearTag() { if (!this.global.notags) { this.super(arguments).clearTag.call(this); } } }); }); </script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"> </script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/cours/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PVWXSNG5J8"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PVWXSNG5J8'); }); </script>

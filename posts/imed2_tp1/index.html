@@ -1,0 +1,797 @@
+<!DOCTYPE html><html lang="fr-FR" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="pv-proxy-endpoint" content="https://cours-v2.ew.r.appspot.com/query?id=agplfmNvdXJzLXYychULEghBcGlRdWVyeRiAgIDo14eBCgw"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="IMED2: TP1" /><meta property="og:locale" content="fr_FR" /><meta name="description" content="```python from google.colab import drive drive.mount(‘/content/gdrive’,force_remount=True)" /><meta property="og:description" content="```python from google.colab import drive drive.mount(‘/content/gdrive’,force_remount=True)" /><link rel="canonical" href="https://lemasyma.github.io/cours/posts/imed2_tp1/" /><meta property="og:url" content="https://lemasyma.github.io/cours/posts/imed2_tp1/" /><meta property="og:site_name" content="Cours" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-11-12T09:00:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="IMED2: TP1" /><meta name="google-site-verification" content="mErcVOJcxNzULHvQ99qSclI_DTX0zANqgpsd3jGhkfs" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-12-22T15:37:02+01:00","datePublished":"2021-11-12T09:00:00+01:00","description":"```python from google.colab import drive drive.mount(‘/content/gdrive’,force_remount=True)","headline":"IMED2: TP1","mainEntityOfPage":{"@type":"WebPage","@id":"https://lemasyma.github.io/cours/posts/imed2_tp1/"},"url":"https://lemasyma.github.io/cours/posts/imed2_tp1/"}</script><title>IMED2: TP1 | Cours</title><link rel="apple-touch-icon" sizes="180x180" href="/cours/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/cours/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/cours/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/cours/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/cours/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Cours"><meta name="application-name" content="Cours"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/cours/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cours-v2.ew.r.appspot.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://cours-v2.ew.r.appspot.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/cours/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/cours/" alt="avatar" class="mx-auto"> <img src="/cours/assets/img/favicons/logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/cours/">Cours</a></div><div class="site-subtitle font-italic">Certains cours sont en francais, certains sont en anglais, d'autres sont un mix des deux</div></div><ul class="w-100"><li class="nav-item"> <a href="/cours/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/cours/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/cours/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/cours/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/cours/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/lemasyma" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="" aria-label="" target="_blank" rel="noopener"> <i class=""></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/cours/"> Home </a> </span> <span>IMED2: TP1</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>IMED2: TP1</h1><div class="post-meta text-muted"><div> By <em> <a href="https://github.com/lemasyma">lemasyma</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" date="2021-11-12 09:00:00 +0100" data-toggle="tooltip" data-placement="bottom" title="Fri, Nov 12, 2021, 9:00 AM +0100" >Nov 12, 2021</em> </span> <span> Updated <em class="timeago" date="2021-12-22 15:37:02 +0100 " data-toggle="tooltip" data-placement="bottom" title="Wed, Dec 22, 2021, 3:37 PM +0100" >Dec 22, 2021</em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3978 words"> <em>22 min</em> read</span> <span> <em id="pv" class="pageviews"> <i class="fas fa-spinner fa-spin fa-fw"></i> </em> views </span></div></div></div><div class="post-content"><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1"># from google.colab import drive
+# drive.mount('/content/gdrive',force_remount=True)
+</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s">"./"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+<span class="n">mpl</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'image'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="partie-1---loi-de-beer-lambert-bruit-contrastes">Partie 1 - Loi de Beer-Lambert, bruit, contrastes</h1><h2 id="jouer-avec-les-projections">Jouer avec les projections…<a href="#jouer-avec-les-projections"><i class="fas fa-hashtag"></i></a></h2></h2><h3 id="loi-de-beer-lambert">Loi de Beer-Lambert<a href="#loi-de-beer-lambert"><i class="fas fa-hashtag"></i></a></h3></h3><p>Tout matériau est caractérisé par un <em>coefficient linéaire d’atténuation</em> $\mu$ qui a comme dimension l’inverse d’une longueur. A la traversée d’un milieu, l’intensité initiale d’un faisceau de rayons X ($I_0$) est atténuée selon la loi de Beer-Lambert suivante : \(I = I_0 \exp(-p),\) où : \(p = \int_L \mu(l)dl,\) et $L$ est la ligne suivie par les photons X. Nous raffinerons cette formule au fur et à mesure du cours, car cette modélisation est incomplète. A commencer par l’absence de bruit statistique ! En réalité, l’observation $I$ fluctue autour de la valeur donnée par la loi de Beer-Lambert selon une loi de Poisson : \(I \sim \mathcal{P}\left(I_0 \exp\left(-\int_L \mu(l)dl\right)\right).\)</p><p>En pratique, si on mesure $I$, on s’intéresse plutôt à l’intégrale $p$, obtenue (lorsqu’on néglige le bruit) par passage au logarithme: \(p=\log(I_0)-\log(I).\)</p><h3 id="questions">Questions<a href="#questions"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Une loi de Poisson a pour densité de probabilité $P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}$. Calculer l’espérance et la variance d’une variable aléatoire suivant une loi de Poisson. Qu’en déduisez-vous sur l’évolution du SNR en fonction de $I_0$ ? (Faites le calcul !)<li>Ecrire une fonction <code class="language-plaintext highlighter-rouge">sumCols(img)</code> qui prend une image 2D en entrée et retourne le profil somme le long de l’axe vertical (l’axe des $x$ de l’image). A quoi correspond cette fonction dans la loi de Beer-Lambert ?<li>Ecrire une fonction <code class="language-plaintext highlighter-rouge">beerLambert(img,I0)</code> qui calcule le signal au détecteur après application de la loi de Beer-Lambert (avec sa statistique de Poisson) sur un profil 1D tel que sorti de <code class="language-plaintext highlighter-rouge">sumCols()</code>.</ol><p>1. \(\begin{aligned} E[X]&amp;=\sum_{k=0}^{+\infty}kP(X=k)\\ &amp;= \sum_{k=0}^{+\infty}k\frac{\lambda^k}{k!}e^{-\lambda}\\ &amp;= e^{-\lambda}\sum_{k=1}^{+\infty}\frac{\lambda^k}{(k-1)!}\\ &amp;= e^{-\lambda}\sum_{k=1}^{+\infty}\frac{\lambda^{k+1}}{k!}\\ &amp;= \lambda e^{-\lambda}\underbrace{\sum_{k=0}^{+\infty}\frac{\lambda^k}{k!}}_{e^{\lambda}} \end{aligned}\\ \boxed{E[X] = \lambda}\\\)</p>\[\sigma^2=\lambda\]<p>3.</p><p><code class="language-plaintext highlighter-rouge">sumCols(img)</code> $\to[\int_{c_1}\mu d, \int_{c_2}\mu d, \dots]$ car une integrale n’est rien d’autre qu’une somme</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2
+</span><span class="k">def</span> <span class="nf">sumCols</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="s">"""
+    img est un np.ndarray (de dimension 2)
+    sumCols(img) retourne un vecteur de même taille que le nombre de colonnes de img,
+    chaque élément du vecteur étant égal à la somme des éléments de la colonne correspondante dans img
+    """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Question 3
+</span><span class="k">def</span> <span class="nf">beerLambert</span><span class="p">(</span><span class="n">prof</span><span class="p">,</span><span class="n">I0</span><span class="p">):</span>
+    <span class="s">"""
+    prof est une sortie de sumCols()
+    I0 est un paramètre correspondant à l'intensité dans l'air (feu nu)
+    beerLambert(prof,I0) renvoie une réalisation de la loi de Beer-Lambert (statistique de Poisson)
+    """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">I0</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">prof</span><span class="p">))</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">arr</span><span class="p">,</span> <span class="n">beerLambert</span><span class="p">(</span><span class="n">sumCols</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>(array([[1, 2],
+        [3, 4]]),
+ array([0, 0]))
+</pre></table></code></div></div><h3 id="questions-1">Questions<a href="#questions-1"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Lancez le code ci-dessous, qui génère une image synthétique composée d’un objet de “fond” (le grand carré) et d’une structure d’intérêt (le petit carré). Distinguez-vous bien le petit carré du grand carré à l’oeil nu?<li>Générez des profils de mesures selon la loi de Beer-Lambert (loi de Poisson), avec <code class="language-plaintext highlighter-rouge">I0 = 1e6</code>, <code class="language-plaintext highlighter-rouge">I0 = 1e4</code>, <code class="language-plaintext highlighter-rouge">I0 = 1e2</code>, et <code class="language-plaintext highlighter-rouge">I0 = 1</code>. Qu’observez-vous sur le profil d’atténuation ? sur le profil reconverti en log ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span>
+<span class="n">backgroundValue</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">relativeContrast</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># Génération d'une image synhtétique
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+<span class="n">img</span><span class="p">[</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">32</span><span class="p">]</span> <span class="o">+=</span> <span class="n">backgroundValue</span>
+<span class="n">img</span><span class="p">[</span><span class="mi">48</span><span class="p">:</span><span class="o">-</span><span class="mi">48</span><span class="p">,</span><span class="mi">48</span><span class="p">:</span><span class="o">-</span><span class="mi">48</span><span class="p">]</span> <span class="o">+=</span> <span class="n">relativeContrast</span><span class="o">*</span><span class="n">backgroundValue</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_9_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># I0 = 1e6, 1e4, 1e2, 1
+</span><span class="n">I0</span><span class="o">=</span><span class="mf">1e6</span>
+
+<span class="c1"># Question 5 : génération du profil d'atténuation
+</span><span class="n">prof0</span> <span class="o">=</span> <span class="n">sumCols</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">attenuation</span> <span class="o">=</span> <span class="n">beerLambert</span><span class="p">(</span><span class="n">prof0</span><span class="p">,</span> <span class="n">I0</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">prof0</span><span class="p">,</span><span class="s">'-o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">attenuation</span><span class="p">,</span><span class="s">'-o'</span><span class="p">)</span>
+<span class="c1"># profil reconverti en log
+</span><span class="n">prof</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">I0</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">attenuation</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">prof</span><span class="p">,</span><span class="s">'-o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_10_0.png" alt="png" /></p><h2 id="analyser-les-données-de-façon-plus-quantitative">Analyser les données de façon plus quantitative<a href="#analyser-les-données-de-façon-plus-quantitative"><i class="fas fa-hashtag"></i></a></h2></h2><p>Nous allons quantifier les phénomènes observés pour en tirer des conclusions plus solides. Le but de l’exercice est ici de comparer le niveau de contraste que l’on observe dans <code class="language-plaintext highlighter-rouge">img</code> entre le petit et le grand carré, et le niveau de “contraste” associé dans le profil issu de <code class="language-plaintext highlighter-rouge">sumCols(img)</code>. Aller chercher de façon plus ou moins automatique ce genre d’informations nécessite de savoir jouer un peu avec les signaux.</p><h3 id="questions-2">Questions<a href="#questions-2"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Calculez (sans fonction toute faite) une différence finie d’ordre 1 : Si $p$ est le profil issu de <code class="language-plaintext highlighter-rouge">sumCols(img)</code>, alors la différence finie à l’indice $i$ est $g_i = p_{i+1}-p{i}$. Tracez le profil de la valeur absolue de cette différence finie : que fait-il ressortir ?<li>Nous allons extraire des informations de ce nouveau profil $g$. Utilisez la fonction <code class="language-plaintext highlighter-rouge">np.where</code> pour récupérer les points de $g$ qui correspondent à la zone projetée du grand carré.<li>Pouvez-vous répéter l’opération pour trouver les points correspondant à la projection du petit carré ?<li>Déduisez-en les calculs des quantités suivantes : valeur moyenne $B$ dans le “fond” (la projection du grand carré seul), valeur moyenne $C$ dans la “structure” (la projection du grand carré et du petit carré ensemble), écart-type $\sigma_B$ dans le “fond”. Calculez les valeurs de contraste relatif $C_r$ et de CNR (https://howradiologyworks.com/x-ray-cnr/) définis comme suit : \(C_r = \frac{C-B}{B}, \quad \mathrm{CNR} = \frac{|C-B|}{\sigma_B}.\)</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Question 6 : différence finie d'ordre 1
+</span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s">"""
+    g(x) calcule la différence finie "Euler forward"
+    g(x)[i] = x[i+1]-x[i]
+    """</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">prof0</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>[&lt;matplotlib.lines.Line2D at 0x7efe27a46490&gt;]
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_12_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 7 : trouver les points de grad (et donc de prof0) qui correspondent à la projection du grand carré
+</span>
+<span class="n">bmin</span><span class="p">,</span> <span class="n">bmax</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">grad</span> <span class="o">&gt;</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">grad</span><span class="p">.</span><span class="nb">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bmin</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bmin</span><span class="p">,</span><span class="n">bmax</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">bmin</span><span class="p">:</span><span class="n">bmax</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">=</span><span class="n">ax</span><span class="p">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax1</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bmin</span><span class="p">,</span><span class="n">bmax</span><span class="p">),</span><span class="n">grad</span><span class="p">[</span><span class="n">bmin</span><span class="p">:</span><span class="n">bmax</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'--'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>[&lt;matplotlib.lines.Line2D at 0x7efe27963070&gt;]
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_13_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1"># Question 8 : même principe, pour récupérer la zone de projection du petit carré
+</span>
+<span class="n">bmin1</span><span class="p">,</span> <span class="n">bmax1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">grad</span><span class="p">[</span><span class="n">bmin</span><span class="p">:</span><span class="n">bmax</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[</span><span class="n">bmin</span><span class="p">:</span><span class="n">bmax</span><span class="p">].</span><span class="nb">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bmin1</span> <span class="o">+=</span> <span class="n">bmin</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">bmax1</span> <span class="o">+=</span> <span class="n">bmin</span> 
+
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bmin1</span><span class="p">,</span><span class="n">bmax1</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">bmin1</span><span class="p">:</span><span class="n">bmax1</span><span class="p">])</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>[&lt;matplotlib.lines.Line2D at 0x7efe278dd4c0&gt;]
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_14_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1"># Question 9 : Construction des zones d'intérêt du profil
+# [u00,u01[ : zone de fond gauche
+# [u10,u11[ : zone de contraste
+# [u20,u21[ : zone de fond droite
+</span>
+<span class="n">margin</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">u00</span> <span class="o">=</span> <span class="n">bmin</span> <span class="o">+</span> <span class="n">margin</span>
+<span class="n">u01</span> <span class="o">=</span> <span class="n">bmin1</span> <span class="o">-</span> <span class="n">margin</span>
+<span class="n">u10</span> <span class="o">=</span> <span class="n">bmin1</span> <span class="o">+</span> <span class="n">margin</span>
+<span class="n">u11</span> <span class="o">=</span> <span class="n">bmax1</span> <span class="o">-</span> <span class="n">margin</span>
+<span class="n">u20</span> <span class="o">=</span> <span class="n">bmax1</span> <span class="o">+</span> <span class="n">margin</span>
+<span class="n">u21</span> <span class="o">=</span> <span class="n">bmax</span> <span class="o">-</span> <span class="n">margin</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bmin</span><span class="p">,</span><span class="n">bmax</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">bmin</span><span class="p">:</span><span class="n">bmax</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">u00</span><span class="p">,</span><span class="n">u01</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">u00</span><span class="p">:</span><span class="n">u01</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="n">u11</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">u10</span><span class="p">:</span><span class="n">u11</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s">'g'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">u20</span><span class="p">,</span><span class="n">u21</span><span class="p">),</span><span class="n">prof0</span><span class="p">[</span><span class="n">u20</span><span class="p">:</span><span class="n">u21</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>[&lt;matplotlib.lines.Line2D at 0x7efe278c1d60&gt;]
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_15_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 9 (suite) : calcul du contraste relatif et du CNR sur prof
+</span><span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">prof</span><span class="p">[</span><span class="n">u00</span><span class="p">:</span><span class="n">u01</span><span class="p">],</span> <span class="n">prof</span><span class="p">[</span><span class="n">u20</span><span class="p">:</span><span class="n">u21</span><span class="p">]])</span>
+<span class="n">backgroundEstimate</span> <span class="o">=</span> <span class="n">background</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># B
+</span><span class="n">backgroundNoiseEstimate</span> <span class="o">=</span> <span class="n">background</span><span class="p">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># C
+</span><span class="n">contrastEstimate</span> <span class="o">=</span> <span class="n">prof</span><span class="p">[</span><span class="n">u10</span><span class="p">:</span><span class="n">u11</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># teta_b
+</span><span class="n">relativeContrast</span> <span class="o">=</span> <span class="p">(</span><span class="n">backgroundNoiseEstimate</span> <span class="o">-</span> <span class="n">backgroundEstimate</span><span class="p">)</span> <span class="o">/</span> <span class="n">backgroundEstimate</span> <span class="c1"># Cr = (C - B) / B
+</span><span class="n">cnr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">backgroundNoiseEstimate</span> <span class="o">-</span> <span class="n">backgroundEstimate</span><span class="p">)</span> <span class="o">/</span> <span class="n">contrastEstimate</span> <span class="c1"># CNR = |C - B| / teta_b 
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Relative contrast:'</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="n">relativeContrast</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'CNR:'</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="n">cnr</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>Relative contrast: -0.998
+CNR: 0.975
+</pre></table></code></div></div><h2 id="partie-1--ce-quil-faut-retenir">Partie 1 : Ce qu’il faut retenir<a href="#partie-1--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Il est plus facile d’identifier un contraste dans une image que dans une projection<li>Le bruit de Poisson rend la tâche d’identification de faibles contrastes dans les projections encore plus difficile<li>Le bon côté du bruit de Poisson, c’est que le bruit augmente moins vite que le signal avec $I_0$: ainsi le SNR s’améliore lorsque $I_0$ augmente<li>Une image en dynamique exponentielle est difficile à lire: on préfère récupérer une dynamique plus linéaire en passant au log</ul><h1 id="partie-2---chaîne-de-traitement-dune-image-de-radiographie-numérique">Partie 2 - Chaîne de traitement d’une image de radiographie numérique</h1><p>Une image brute lue au détecteur à rayons X est loin d’être acceptable pour un radiologue ; dans cette partie, nous allons explorer la chaîne de traitement appliquée sur une image brute afin de la préparer à être présentée au radiologue.</p><p>Chargez l’image mesurée au détecteur : c’est une image inexploitable en l’état ! “Bad pixels”, non-uniformités du fond, dynamique exponentielle… Cette image a besoin d’être traitée avant d’être regardable.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="n">I0</span> <span class="o">=</span> <span class="mf">1e6</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s">"homer_measurement_noisy.704.640.raw"</span><span class="p">)</span>
+<span class="n">measurement</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">measurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_19_0.png" alt="png" /></p><h2 id="correction-doffsets-de-gains-bad-pixels">Correction d’offsets, de gains, bad pixels<a href="#correction-doffsets-de-gains-bad-pixels"><i class="fas fa-hashtag"></i></a></h2></h2><p>En théorie, lorsque la loi de Beer-Lambert annonce que l’on doit (au bruit près) mesurer une valeur $I$ au détecteur, on s’attend à ce que la mesure soit égale à $I$. En pratique, ce n’est pas le cas : le plus souvent, on considère que la mesure est une fonction affine de la valeur théorique : $I_m = aI+b$. Cette fonction affine est <strong>différente pour chaque pixel</strong>.</p><p>On appelle <em>offsets</em>, les valeurs qui sortent d’un détecteur alors qu’il n’est pas exposé aux rayons X : en théorie, le détecteur devrait retourner une image noire (zéros) ; en pratique, l’électronique du détecteur, les défauts de conception, font que l’image non exposée n’est pas nulle. Les offsets correspondent donc au paramètre $b$ de la fonction linéaire.</p><p>Lorsque le détecteur n’est pas exposé aux rayons X, il peut lire à vide plusieurs images à la suite : c’est à partir de ces lectures multiples que l’on peut estimer une carte d’offsets $b$.</p><p>De même, lorsque l’on exposre uniformément le détecteur sans objet dans le champ, on s’attend à mesurer une intensité constante au détecteur <em>après soustraction des offsets</em> ; en pratique, on mesure $I_m-b=aI$, là encore, avec des valeurs de $a$ différentes par pixel.</p><p>Une lecture multiple du détecteur exposé aux rayons X peut permettre d’estimer la carte des gains $a$.</p><p>Les “bad pixels” sont des pixels du détecteur qui ne répondent tout simplement plus ; il y en a forcément, car malgré toutes les précautions lors de la production et de l’acheminement des détecteurs, il est impossible de garantir l’infaillibilité de tous les pixels du détecteur. Heureusement, il est possible d’identifier la position de ces bad pixels, et d’interpoler les valeurs à partir des pixels voisins.</p><h3 id="questions-3">Questions<a href="#questions-3"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Chargez la série d’images de lectures à vide du détecteur ; affichez la première image de la série : que voyez-vous ? Qu’est-ce qui diffère d’une image à l’autre ?<li>Proposez une estimation de la carte d’offsets à partir de cette série d’images; corrigez la mesure en offsets : voyez-vous beaucoup de différences entre l’image corrigée et non corrigée ? pourquoi ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="c1"># Question 1
+</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"offsetMapAcq.50.704.640.raw"</span><span class="p">)</span>
+<span class="n">offsetMapAcq</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">offsetMapAcq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_21_0.png" alt="png" /></p><p><em>D’ou vient ce bruit ?</em></p><blockquote><p>Il y a un bruit inherent a l’electronique du detecteur</p></blockquote><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2
+</span>
+<span class="n">offsetMap</span> <span class="o">=</span> <span class="n">offsetMapAcq</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">offsetMap</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_23_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2 (suite)
+</span>
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">measurement</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Measurement'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">((</span><span class="n">measurement</span><span class="o">-</span><span class="n">offsetMap</span><span class="p">).</span><span class="n">clip</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Offset-corrected'</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Text(0.5, 1.0, 'Offset-corrected')
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_24_1.png" alt="png" /></p><h3 id="question">Question<a href="#question"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Chargez la série d’images de lectures du détecteur uniformément exposé ; proposez une estimation de la carte d’offsets à partir de cette série d’images, et corrigez la mesure en gain : qu’observez-vous ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3
+</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"gainMapAcq.50.704.640.raw"</span><span class="p">)</span>
+<span class="n">gainMapAcq</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gainMapAcq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">gainMap</span> <span class="o">=</span> <span class="p">(</span><span class="n">gainMapAcq</span> <span class="o">-</span> <span class="n">offsetMap</span><span class="p">).</span><span class="n">clip</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">gainMap</span> <span class="o">/=</span> <span class="n">np</span><span class="p">.</span><span class="n">median</span><span class="p">(</span><span class="n">gainMap</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gainMap</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_26_0.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_26_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3 (suite)
+</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="n">measurement</span> <span class="o">-</span> <span class="n">offsetMap</span><span class="p">).</span><span class="n">clip</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">gainMap</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>&lt;ipython-input-17-a5367ba78078&gt;:3: RuntimeWarning: invalid value encountered in true_divide
+  tmp = (measurement - offsetMap).clip(min=0) / gainMap
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_27_1.png" alt="png" /></p><h3 id="question-1">Question<a href="#question-1"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Proposez une détection des pixels “morts” (bad pixels) ; comparez votre détection à la carte des bad pixels que vous aurez chargé. Terminez la correction de l’image déjà corrigée en offsets et en gains, en fournissant la carte des bad pixels à la fonction d’inpainting.</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span>
+<span class="c1"># (...)
+</span><span class="n">badPixelMap</span> <span class="o">=</span> <span class="p">(</span><span class="n">offsetMap</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">badPixelMap</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"badPixels.704.640.raw"</span><span class="p">)</span>
+<span class="n">badPixels</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">badPixels</span><span class="o">-</span><span class="n">badPixelMap</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_29_0.png" alt="png" /></p><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_29_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4 (suite)
+</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="n">tmp</span><span class="p">[</span><span class="n">badPixelMap</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">inpaint</span><span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="s">'float32'</span><span class="p">),</span> <span class="n">badPixelMap</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="s">'uint8'</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">INPAINT_NS</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_30_0.png" alt="png" /></p><h3 id="question-2">Question<a href="#question-2"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Chargez la détection “idéale” ; comparez l’image idéale et l’image corrigée : qu’observez-vous ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 5
+</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"Inoisy.704.640.raw"</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span><span class="o">-</span><span class="n">I</span><span class="p">)</span><span class="o">/</span><span class="n">I</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">res</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">res</span><span class="p">.</span><span class="n">std</span><span class="p">(),</span><span class="n">vmax</span><span class="o">=</span><span class="n">res</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">res</span><span class="p">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>&lt;ipython-input-20-63d627f3aeb6&gt;:5: RuntimeWarning: divide by zero encountered in true_divide
+  res = (output-I)/I
+&lt;ipython-input-20-63d627f3aeb6&gt;:5: RuntimeWarning: invalid value encountered in true_divide
+  res = (output-I)/I
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_32_1.png" alt="png" /></p><h2 id="transformation-log">Transformation log<a href="#transformation-log"><i class="fas fa-hashtag"></i></a></h2></h2><p>Rappelez-vous que la loi de Beer-Lambert fournit $I=I_0e^{-p}$ ; puisque $p$ est la quantité réellement intéressante, on transforme les mesures suivant : \(p = \log(I_0)-\log(I).\)</p><h3 id="questions-4">Questions<a href="#questions-4"><i class="fas fa-hashtag"></i></a></h3></h3><ol><li>Transformez l’image corrigée via l’équation précédente ; afin de ne pas appliquer le log à zéro, utilisez la fonction <code class="language-plaintext highlighter-rouge">np.clip</code> pour clipper les valeurs inférieures à $10^{-3}$. Qu’observez-vous ?<li>Définissez une fonction <code class="language-plaintext highlighter-rouge">linlog(x,x0)</code> qui correspond au logarithme de $x$ au-delà d’un seuil $x_0$, et qui se prolonge linéairement jusqu’à zéro avec continuité des pentes. <img data-proofer-ignore data-src="linlog.png" /><li>Transformez l’image corrigée en utilisant cette nouvelle fonction : le résultat est-il plus convaincant ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c1"># Question 6
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">I0</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">clip</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_34_0.png" alt="png" /></p><p>Des qu’on arrive dans des zones petites, notre lof <em>s’effondre</em>, d’ou le bruit blanc. C’est pour ca qu’on prefere linearise le $\log$ pour avoir des pentes plus douces</p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre><span class="c1"># Questions 7 &amp; 8
+</span>
+<span class="k">def</span> <span class="nf">linlog</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
+    <span class="s">"""
+    linlog(x,x0) est un logarithme naturel standard au-dessus de x0
+    En-dessous de x0, linlog(x,x0) est linéaire, avec une continuité de pentes en x0
+    """</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span> <span class="k">else</span> <span class="n">x</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="c1">#     return np.where(x &gt;= x0, np.log(x), (1/x0)*x)
+</span>    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># ax + b
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nb">max</span><span class="p">())</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span><span class="n">label</span><span class="o">=</span><span class="s">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nb">max</span><span class="p">())</span><span class="o">-</span><span class="n">linlog</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s">'linlog'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">outLog</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">I0</span><span class="p">)</span><span class="o">-</span><span class="n">linlog</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">outLog</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>&lt;ipython-input-23-34dfaf741c3b&gt;:11: RuntimeWarning: divide by zero encountered in log
+  return np.where(x &gt;= x0, np.log(x), (1/x0) * x + np.log(x0)-1)  # ax + b
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_36_1.png" alt="png" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>&lt;ipython-input-23-34dfaf741c3b&gt;:11: RuntimeWarning: divide by zero encountered in log
+  return np.where(x &gt;= x0, np.log(x), (1/x0) * x + np.log(x0)-1)  # ax + b
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_36_3.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">measurement</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">outLog</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_37_0.png" alt="png" /></p><p>On a moins de bruit et on recupere des infos interessantes.</p><h2 id="partie-2--ce-quil-faut-retenir">Partie 2 : Ce qu’il faut retenir<a href="#partie-2--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Une image brute doit être traitée avant d’être présentée à l’utilisateur<li>Ces traitements comprennent généralement une correction en offsets et en gains, et une correction de bad pixels<li>Ces corrections sont issues de procédures de calibration <em>offline</em>, fournissant des informations utilisées ensuite <em>online</em> sur les images<li>La transformation via le logarithme peut poser problème dans les zones de faible exposition : dans ce cas, un logarithme linéarisé dans les faibles valeurs est pertinent</ul><h1 id="partie-3---contrôle-automatique-de-lexposition-aec">Partie 3 - Contrôle automatique de l’exposition (AEC)</h1><p>Le principe ALARA (as low as reasonably achievable, de plus en plus remplacé par le terme ALADA – as low as diagnostically achievable) signifie que si l’on doit fournir une dose importante là où on en a besoin (et où l’analyse bénéfice/risque est en faveur de cette exposition aux radiations), en revanche il faut à tout prix réduire la dose de rayonnements ionisants lorsque celle-ci n’apporte rien d’un point de vue clinique. C’est dans cette optique que les techniques de contrôle automatique de l’exposition (automatic exposure control, ou AEC) ont été développées dans différentes modalités.</p><p>Dans l’exemple qui suit, on se place dans le cadre d’une adaptation <em>ligne à ligne</em> de l’exposition du patient ; cela peut être le résultat d’un filtre physique qui s’adapterait en sortie du tube, ou d’un système à balayage qui scannerait ligne à ligne.</p><p>Supposons que les structures d’intérêt soient “correctement” centrées au niveau du détecteur ; le bruit au détecteur dépendant de la ligne intégrale traversée $p$, si l’on veut garantir un niveau de bruit supérieur ou égal à un niveau cible sur une ligne du détecteur, il faut identifier la zone “centrée” la plus radio-opaque de cette ligne. En répétant cette recherche ligne à ligne, on obtient des points ${p_{\max,i}}_i$ qui nous définissent une courbe caractéristique $t$.</p><h2 id="questions-5">Questions<a href="#questions-5"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>Re-définissez l’image idéale $p$ à partir de <code class="language-plaintext highlighter-rouge">I</code> et <code class="language-plaintext highlighter-rouge">I0</code> ; pour chaque ligne, récupérez le maximum de cette ligne <em>dans le tiers central</em>, ainsi que les indices des points réalisant ce maximum. Tracez le profil résultant de cette opération.<li>Lissez ce profil à l’aide d’un filtre à moyenne glissante : il s’agit d’une convolution par un noyau constitué uniquement de 1. Utilisez une taille de 32 pour le noyau.</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># Question 1
+</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"Inoisy.704.640.raw"</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">I0</span><span class="p">)</span> <span class="o">-</span> <span class="n">linlog</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="n">n</span> <span class="o">+</span> <span class="n">img</span><span class="p">[:,</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="n">n</span> <span class="p">:</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="n">n</span><span class="p">].</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">integrals</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">img</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">idx</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">integrals</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Row number (from top to bottom)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Max value (in central area)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>&lt;ipython-input-23-34dfaf741c3b&gt;:11: RuntimeWarning: divide by zero encountered in log
+  return np.where(x &gt;= x0, np.log(x), (1/x0) * x + np.log(x0)-1)  # ax + b
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_41_1.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c1"># Question 1 (complément)
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">I</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_42_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Question 2
+</span><span class="n">size</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">/</span> <span class="n">size</span> 
+<span class="n">window</span> <span class="o">=</span> <span class="n">size</span><span class="o">//</span><span class="mi">2</span>
+<span class="n">integrals</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">pad</span><span class="p">(</span><span class="n">integrals</span><span class="p">,(</span><span class="n">window</span><span class="p">,</span><span class="n">window</span><span class="p">),</span><span class="s">'edge'</span><span class="p">),</span><span class="n">kernel</span><span class="p">,</span><span class="s">'same'</span><span class="p">)[</span><span class="n">window</span><span class="p">:</span><span class="o">-</span><span class="n">window</span><span class="p">]</span>
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax1</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">integrals</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_43_0.png" alt="png" /></p><h2 id="questions-6">Questions<a href="#questions-6"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>Utilisez les mêmes coordonnées de l’image pour tracer le profil des signaux détecteurs de <code class="language-plaintext highlighter-rouge">I</code>. Varient-ils beaucoup ?<li>Vous avez jusqu’ici travaillé en supposant $I_0$ constant pour toute l’image : on parle d’exposition constante ou uniforme. Essayez maintenant d’adapter les paramètres de tir d’une ligne à l’autre de l’image, afin de ramener le profil que vous venez de tracer constant autour de 100. On va donc adapter la valeur de $I_0$ d’une ligne à l’autre. Pouvez-vous déterminer ce profil de modulation <code class="language-plaintext highlighter-rouge">I0Vector</code>, de la taille de la hauteur de l’image ? En supposant que le kVp reste fixe, quelle quantité physique est ainsi modulée ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3
+</span>
+<span class="n">detectorSignal</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">I</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">.</span><span class="n">size</span><span class="p">)])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">detectorSignal</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yscale</span><span class="p">(</span><span class="s">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Image row (top to bottom)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Detector signal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Signal profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_45_0.png" alt="png" /></p><p>On a un profile qui va essayer de baisser les valeurs la ou on a sous-expose et les augmenter la ou on a sur-expose.</p><p>On a $p_i=\int udl$ qui est l’epaisseur</p><p>Le profil au-dessus est</p>\[I_n=I_0^{\text{(red)}}e^{-p}\] \[I\simeq \text{target}\]<div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="c1"># Question 4
+</span>
+<span class="n">targetSignal</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">I0Vector</span> <span class="o">=</span> <span class="n">targetSignal</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">integrals</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">I0Vector</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Image row (top to bottom)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'$I_0$ value'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_47_0.png" alt="png" /></p><p>Par rapport a notre image avec la courbe et Homer, quand on regarde le profil d’epaisseur, on se rend compte que la dynamique est faible $\in[3;14]$. Il faut un peu plus d’epaisseur pour en tirer le maximum et obtenir le meilleur resultat possible.</p><h2 id="questions-7">Questions<a href="#questions-7"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>Etant donnés $p$ et le vecteur de modulation $I_0$, simulez l’image ainsi acquise (sans ajout de bruit).<li>Tracez le profil des signaux détecteurs de <code class="language-plaintext highlighter-rouge">I</code> avec cette nouvelle acquisition. Comparez-le au profil qui aurait été obtenu avec un $I_0$ fixe égal à la moyenne du vecteur de modulation. Qu’observez-vous ?<li>Estimez le niveau de réduction de dose par rapport à une acquisition à techniques fixes lorsque : (a) $I_0$ est constant égal au maximum des valeurs du vecteurs de modulation ; (b) $I_0$ est constant égal à la valeur moyenne du vecteur de modulation. A quoi correspondent ces deux cas ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Question 5
+</span>
+<span class="n">Imod</span> <span class="o">=</span> <span class="n">I0Vector</span><span class="p">[:,</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">img</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Unmodulated'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">Imod</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">'gray'</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Modulated'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_50_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c1"># Question 6
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="n">Imod</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">idx</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">.</span><span class="n">size</span><span class="p">)],</span><span class="n">label</span><span class="o">=</span><span class="s">'With modulation'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="n">I</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="o">/</span> <span class="n">I0</span> <span class="o">*</span> <span class="n">I0Vector</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">.</span><span class="n">size</span><span class="p">)],</span><span class="n">label</span><span class="o">=</span><span class="s">'Without modulation'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">targetSignal</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">yscale</span><span class="p">(</span><span class="s">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Image row (top to bottom)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Detector signal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Signal profile'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_51_0.png" alt="png" /></p><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="c1"># Question 7
+</span>
+<span class="n">cumulativeI0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">I0Vector</span><span class="p">)</span>
+
+<span class="c1"># Cas (a)
+</span><span class="n">cumulativeI0FixedMax</span> <span class="o">=</span> <span class="n">cumulativeI0</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span>
+<span class="c1"># Cas (b)
+</span><span class="n">cumulativeI0FixedMean</span> <span class="o">=</span> <span class="n">cumulativeI0</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Case (a): dose reduction of'</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cumulativeI0</span><span class="o">/</span><span class="n">cumulativeI0FixedMax</span><span class="p">),</span><span class="mi">2</span><span class="p">),</span><span class="s">'%'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Case (b): dose reduction of'</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cumulativeI0</span><span class="o">/</span><span class="n">cumulativeI0FixedMean</span><span class="p">),</span><span class="mi">2</span><span class="p">),</span><span class="s">'%'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">I0Vector</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">I0Vector</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">I0Vector</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Image row (top to bottom)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'$I_0$ value'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>Case (a): dose reduction of 0.0 %
+Case (b): dose reduction of 0.0 %
+</pre></table></code></div></div><p><img data-proofer-ignore data-src="/cours/assets/img/imed2_tp1/output_52_1.png" alt="png" /></p><h2 id="partie-3--ce-quil-faut-retenir">Partie 3 : Ce qu’il faut retenir<a href="#partie-3--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Le principe ALARA (ALADA) est à l’origine des développements récents en stratégies AEC<li>Le but est d’atteindre un signal cible au détecteur, gage d’un niveau de qualité, et de moduler l’exposition en conséquence<li>Tirer à techniques fixes avec la valeur moyenne de modulation revient à utiliser la même dose, mais distribuée de façon non optimale (sous-exposition à certains endroits, sur-exposition à d’autres)<li>EOSedge est le premier système d’imagerie RX à balayage intégrant une stratégie AEC : la Flex Dose</ul><p><img data-proofer-ignore data-src="https://www.eos-imaging.com/wp-content/uploads/2020/12/flex-dose.png" style="width: 400px;" /></p><h1 id="partie-4---diffusé-et-qualité-image">Partie 4 - Diffusé et qualité image</h1><p>En première approximation, le rayonnement diffusé peut être vu comme un signal additionnel basse fréquence du signal initial (dit primaire). Si $I$ est le rayonnement primaire, et $S$ le rayonnement diffusé, l’intensité mesurée au détecteur est $I_{s}=I+S$.</p><h2 id="questions-8">Questions<a href="#questions-8"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>Quel est l’effet du diffusé $S$ sur l’estimation de la ligne intégrale $p=\log(I_0)-\log(I_s)$ ? Qu’en déduisez-vous sur le niveau de gris moyen dans l’image $p$ par rapport à l’image idéale $p_{\mathrm{true}} = \log(I_0)-\log(I)$ ?<li>A l’aide de la fonction <code class="language-plaintext highlighter-rouge">cv2.GaussianBlur</code>, filtrez l’image <code class="language-plaintext highlighter-rouge">I</code> avec un noyau isotrope de taille 51, et multipliez-la par 0.1. Appelez cette nouvelle image <code class="language-plaintext highlighter-rouge">S</code> : ce sera notre image de diffusé. Ajoutez ce diffusé à l’image primaire <code class="language-plaintext highlighter-rouge">I</code> : appelez <code class="language-plaintext highlighter-rouge">Iscatter</code> cette nouvelle image. Générez une réalisation de bruit de Poisson associée à cette image corrompue par du diffusé. De même, générez une réalisation de bruit de Poisson associée à l’image <em>non corrompue</em> <code class="language-plaintext highlighter-rouge">I</code>.<li>Ecrivez une fonction qui applique la transformation log vue précédemment. Transformez l’image <code class="language-plaintext highlighter-rouge">Iscatter</code> : qu’observez-vous par rapport à la transformation de <code class="language-plaintext highlighter-rouge">I</code> ?<li>Supposez que vous connaissez la carte de diffusé (c’est le cas ici, puisqu’on l’a générée) ; soustrayez-la à votre acquisition corrompue : que donne l’image en log par rapport à l’image en log corrompue ? par rapport à l’image en log idéale ? Comment expliquez-vous ce résultat ?</ol><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre><td class="rouge-code"><pre><span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">/</span><span class="s">"I.704.640.raw"</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">'float32'</span><span class="p">).</span><span class="n">reshape</span><span class="p">((</span><span class="mi">704</span><span class="p">,</span><span class="mi">640</span><span class="p">))</span>
+
+<span class="c1"># Question 2
+</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">(...)</span>
+<span class="n">Iscatter</span> <span class="o">=</span> <span class="n">I</span><span class="o">+</span><span class="n">S</span>
+
+<span class="n">Iscatter</span> <span class="o">=</span> <span class="p">(...)</span> <span class="c1"># add noise to Iscatter
+</span><span class="n">InoScatter</span> <span class="o">=</span> <span class="p">(...)</span> <span class="c1"># add noise to I
+</span>
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'$I$'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'$S$'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">Iscatter</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'$I_s=I+S$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="c1"># Question 3
+</span>
+<span class="k">def</span> <span class="nf">logCompress</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(...)</span>
+
+<span class="c1"># Vous pouvez sélectionner une sous-région anatomique ou `full` pour voir toute l'image
+</span><span class="n">brain</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">),</span><span class="nb">slice</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">cervicals</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span><span class="mi">600</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">teeth</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">600</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">full</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+<span class="c1"># Choisissez la région que vous voulez dans `anat`
+</span><span class="n">anat</span> <span class="o">=</span> <span class="n">brain</span>
+
+<span class="c1"># Questions 3 et 4
+</span>
+<span class="n">pTrue</span> <span class="o">=</span> <span class="n">logCompress</span><span class="p">(</span><span class="n">InoScatter</span><span class="p">)</span>
+<span class="n">pScatter</span> <span class="o">=</span> <span class="n">logCompress</span><span class="p">(</span><span class="n">Iscatter</span><span class="p">)</span>
+<span class="n">pScatterCorrected</span> <span class="o">=</span> <span class="n">logCompress</span><span class="p">((...))</span>
+
+<span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span> <span class="o">=</span> <span class="n">pTrue</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span> <span class="n">pTrue</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span>
+
+<span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">pTrue</span><span class="p">[</span><span class="n">anat</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'True image'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">pScatter</span><span class="p">[</span><span class="n">anat</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Scatter-corrupted'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">imshow</span><span class="p">(</span><span class="n">pScatterCorrected</span><span class="p">[</span><span class="n">anat</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Scatter-corrected'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><h2 id="partie-4--ce-quil-faut-retenir">Partie 4 : Ce qu’il faut retenir<a href="#partie-4--ce-quil-faut-retenir"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Le rayonnement diffusé est une image basse fréquence qui se superpose au rayonnement primaire<li>Le diffusé conduit à une diminution du contraste global de l’image<li>La correction numérique du diffusé (après acquisition) permet de restaurer le contraste de l’image, mais conduit aussi à une image plus bruitée<li>Afin de présenter une image plus acceptable à l’utilisateur final, il faut prendre en compte ce phénomène, soit en amont (réjection du diffusé avant qu’il atteigne le détecteur) ou en aval (correction de diffusé et débruitage)</ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/cours/categories/image-s9/'>Image S9</a>, <a href='/cours/categories/imed2/'>IMED2</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/cours/tags/image/" class="post-tag no-text-decoration" >Image</a> <a href="/cours/tags/s9/" class="post-tag no-text-decoration" >S9</a> <a href="/cours/tags/imed2/" class="post-tag no-text-decoration" >IMED2</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=IMED2: TP1 - Cours&url=https://lemasyma.github.io/cours/posts/imed2_tp1/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=IMED2: TP1 - Cours&u=https://lemasyma.github.io/cours/posts/imed2_tp1/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=IMED2: TP1 - Cours&url=https://lemasyma.github.io/cours/posts/imed2_tp1/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recent Update</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/cours/posts/ocvx_norme/">OCVX: Norme</a><li><a href="/cours/posts/imed2_tp3/">IMED2: TP3</a><li><a href="/cours/posts/prsta_revisions_1/">PRSTA: Revisions 1</a><li><a href="/cours/posts/prsta_td5/">PRSTA: TD 5</a><li><a href="/cours/posts/prsta_td4/">PRSTA: TD 4</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/cours/tags/image/">Image</a> <a class="post-tag" href="/cours/tags/s8/">S8</a> <a class="post-tag" href="/cours/tags/s9/">S9</a> <a class="post-tag" href="/cours/tags/tronc-commun/">tronc commun</a> <a class="post-tag" href="/cours/tags/scia/">SCIA</a> <a class="post-tag" href="/cours/tags/s6/">S6</a> <a class="post-tag" href="/cours/tags/shannon/">Shannon</a> <a class="post-tag" href="/cours/tags/cama/">CAMA</a> <a class="post-tag" href="/cours/tags/loi/">loi</a> <a class="post-tag" href="/cours/tags/rvau/">RVAU</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/cours/posts/imed2_tp3/"><div class="card-body"> <em class="timeago small" date="2021-11-25 09:00:00 +0100" >Nov 25, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: TP3</h3><div class="text-muted small"><p> Reconstruction tomographique (2/3) Vous avez tous les outils pour comprendre la reconstruction tomographique 2D en géométrie parallèle dans le cadre idéal : à partir des lignes intégrales (transfo...</p></div></div></a></div><div class="card"> <a href="/cours/posts/imed2_project/"><div class="card-body"> <em class="timeago small" date="2021-11-25 11:00:00 +0100" >Nov 25, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: Project</h3><div class="text-muted small"><p> Lien de la note Hackmd Part 1 Retinal fundus image segmentation Iterative Closest Point - ICP Quand on itere, on reste bloques sur des minimums local En remplacant points par courbes: On...</p></div></div></a></div><div class="card"> <a href="/cours/posts/imed2_registration_3D/"><div class="card-body"> <em class="timeago small" date="2021-11-26 09:00:00 +0100" >Nov 26, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>IMED2: 3D/3D registration with labeled atlas</h3><div class="text-muted small"><p> DPH and TURP treatment The endo-vascular treatment for BPH C’est quoi le challenge ? La prostate a BEAUCOUP de variantes anatomiques La variante anatomique la moins embetante est la C...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/cours/posts/tvid_video_numerique_pratique/" class="btn btn-outline-primary" prompt="Older"><p>TVID: La video numerique en pratique</p></a> <a href="/cours/posts/disclaimer/" class="btn btn-outline-primary" prompt="Newer"><p>Petit disclaimer</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://github.com/lemasyma">lemasyma</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/cours/tags/image/">Image</a> <a class="post-tag" href="/cours/tags/s8/">S8</a> <a class="post-tag" href="/cours/tags/s9/">S9</a> <a class="post-tag" href="/cours/tags/tronc-commun/">tronc commun</a> <a class="post-tag" href="/cours/tags/scia/">SCIA</a> <a class="post-tag" href="/cours/tags/s6/">S6</a> <a class="post-tag" href="/cours/tags/shannon/">Shannon</a> <a class="post-tag" href="/cours/tags/cama/">CAMA</a> <a class="post-tag" href="/cours/tags/loi/">loi</a> <a class="post-tag" href="/cours/tags/rvau/">RVAU</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/cours/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> <script defer src="/cours/assets/js/dist/pvreport.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/cours/assets/js/dist/post.min.js"></script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" }, tagSide: "right" }, tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, CommonHTML: { linebreaks: { automatic: true } }, "HTML-CSS": { linebreaks: { automatic: true } }, SVG: { linebreaks: { automatic: true } } }); MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () { MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({ clearTag() { if (!this.global.notags) { this.super(arguments).clearTag.call(this); } } }); }); </script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"> </script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/cours/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PVWXSNG5J8"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PVWXSNG5J8'); }); </script>
