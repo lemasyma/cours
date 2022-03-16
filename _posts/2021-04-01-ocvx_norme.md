@@ -309,7 +309,7 @@ $$
 <div class="alert alert-success" role="alert" markdown="1">
 
 $$
-\Vert\infty\Vert\le\Vert x\Vert_2\le\Vert x\Vert_1\le n\Vert x\Vert_{\infty}
+\Vert x\Vert_{\infty}\le\Vert x\Vert_2\le\Vert x\Vert_1\le n\Vert x\Vert_{\infty}
 $$
 
 </div>
